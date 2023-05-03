@@ -1,0 +1,312 @@
+/*Header assume a largura da tela e sua altura padrão*/
+.header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 1;
+}
+
+section{
+    position: relative;
+    height: 100vh - 60px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*Escondendo scrollbar*/
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/*Tamanho e fontes da div principal*/
+#principal {
+    margin-top: 8vh;
+    width: 60vw;
+    margin: auto;
+    max-width: 100%;
+    font-family:Verdana, Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    top: 60px;
+}
+
+/*Definir o display, tamanho e cor de tudo do banner até as abas*/
+#perfil {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+#divBanner {
+    height: 290px;
+}
+
+/*Tamanho do banner, ocupa toda sua div e mantém a proporção da imagem e muda de tamanho mas corta parte dela*/
+#banner {
+    margin-bottom: 0%;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/*Margem negativa que empurra a parte de baixo do perfil para cima*/
+#perfil-cima{
+    margin-bottom: -40px;
+}
+
+/*Tamanho da parte de baixo do perfil*/
+#perfil-baixo {
+    height: 100%;
+    object-fit: fill;
+}
+
+
+/*Display da parte de cima da parte de baixo do perfil*/
+#perfil-baixo-cima {
+    display: flex;
+    max-width: 100%s ;
+}
+
+/*Define o tamanho, display em linha, margem e espaçamento para baixo da div que contém foto e nome do perfil*/
+#div-perfil{
+    margin-left: 5%; 
+    width: 150px;
+    padding-bottom: 3px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+/*Define borda e tamanho da foto de perfil*/
+#fperfil {
+    width: 100%;
+    height: auto;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 100px;
+}
+
+/*Tamanho, espaçamento e margem da div com o botão seguir*/
+#div-seguir {
+    margin-left: auto;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+/*Define o tamanho, borda, cocr e espaçamento do botão de seguir*/
+button {
+    margin-top: 40%;
+    font-size: 16px;
+    max-width: 100%;
+    font-family: inherit;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 50px;
+    background-color: #329ef1;
+    color: white;
+}
+
+/*Define o espaçamento e display (em linha) da parte de meio da parte de baixo do perfil*/
+#perfil-baixo-meio {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/*Define o display em coluna das informações do usuário*/
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Margem e impede o texto de quebrar*/
+.info span {
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+/*Tamanho da fonte, negrito e margem do nome*/
+#nome {
+    font-size: 24px;
+    font-weight: 550;
+    margin-left: 15px;
+}
+
+/*Impede o nome do usuário de quebrar*/
+#nome span {
+    white-space: nowrap;
+}
+
+/*Display e fonte da descrição*/
+.desc {
+    font-size: 20px;
+    display: inline;
+}
+
+/*Define cor e fonte da biografia*/
+.desc2{
+    color: grey;
+    font-size: 16px;
+}
+
+/*Define fonte, display (centralizado), margem, fonte, tamanho das abas e centraliza elas*/
+#perfil-baixo-baixo {
+    justify-content: center;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    gap: 70px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 90%;
+    font-size: 17px;
+}
+
+/*Espaçamento dentro das abas, tira borda, faz texto clicável*/
+.tab{
+    display:block;
+    padding:8px 16px;
+    border:none;
+    cursor: pointer;
+}
+
+/*Define a borda de baixo das avaliações para ficar azul, como se estivesse selecionada*/
+#tavaliacoes {
+    border-bottom: 3px solid #329ef1;
+}
+
+/*Faz a aba assumir outra cor quando o mouse passar por cima dela*/
+#perfil-baixo-baixo :hover{
+    background-color: #9acff8;
+}
+
+/*Tamanho da aba de avaliações*/
+#avaliacoes {
+    max-width: 100%;
+}
+
+/*Define a aba visitas para não aparecer de início*/
+#visitas {
+    display: none;
+}
+
+/*Define o display em colunas, margem entre os registro, espaçamento interno e borda*/
+.registro {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    position: relative;
+    flex-wrap: wrap;
+    box-shadow: 0 1px 0.5px lightgrey;
+}
+
+/*Da div onde está os nomes e fotos de perfil, define o display em linha, tamanho (de toda a div)*/
+.imgPerfilAvaliacao{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/*Alinha as divs dentro da div imgPerfilAvaliação, impede a quebra dos nomes e coloca no meio*/
+.imgPerfilAvaliacao div{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/*Define o tamanho e borda das fotos do perfil e do estabelecimento*/
+.fotoPerfil{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/*Essas 2 divs fazem a mesma coisa, mas uma coloca margem na direita e outra na esquerda para o usuário e estabelecimento respectivamente*/
+.usuario img{
+    margin-right: 10px;
+}
+.estabelecimento img{
+    margin-left: 10px;
+}
+
+/*Define o que está sendo dito na avaliação para ocupar toda a largura da div registro, coloca margem e centraliza o conteúdo da div*/
+.caixaDesc{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+/*Contêiner das estrelas, define o tamanho, coloca margem e posiciona o conteúdo no final da div*/
+.caixaEstrela{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/*Tamanho das estrelas para ocupar 20% da sua div*/
+.estrelaAvaliacao{
+    width: 20%;
+    height: auto;
+}
+
+/*Tamanho e borda da foto do estabelecimento na página de visitas*/
+.fotoEstabelecimentoVisita {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/*Div com foto e nome do estabelecimento visitado, define o tamano da fonte, espaçamento interno, margem para esquerda, tamanho, impede o nome de quebrar e centraliza o verticalmente*/
+.div-foto-visita {
+    font-size: 18px;
+    margin-left: 3%;
+    width: 100%;
+    padding-bottom: 3px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/*Coloca uma margem de 10 pixels na esquerda da div e imagem da div*/
+.div-foto-visita img{
+    margin-left: 10px;
+}
+.div-foto-visita div {
+    margin-left: 10px;
+}
+
+/*Div que cotém todo o conteúdo dentro da div registro, define seu display em linha, tamanho para ocupar todo o registro e alinha o conteúdo no centro verticalmente*/
+.divGeralRegistro{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+/*Define o tamanho da div que contém as estrelas e posiciona o conteúdo no final*/
+.estrelas {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 20%;
+}
+
+/*Tamanho e margem do selo*/
+.selo {
+    margin-right: 15%;
+    width: 10%;
+}

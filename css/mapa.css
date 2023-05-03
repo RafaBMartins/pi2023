@@ -1,0 +1,110 @@
+/*importando a fonte lemonmilk*/
+@import url('https://fonts.cdnfonts.com/css/lemonmilk');
+
+/*definindo a formatacao padrao dos elementos*/
+*{  
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*limitando o tamanho do minimo do body e definindo a altura como 100 porcento da altura da tela*/
+body{
+    min-width: 1000px;
+    height: 100%;
+}
+
+/*aplicando o display flex e posicionando os itens do menu*/
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*aplicando o display flex ao cabecalho e posicionando os elementos dentro do header*/
+.header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 1;
+}
+
+
+/*classe que faz o menu crescer quando ativado*/
+.menuSelecionado{
+    width: 100%;
+}
+
+
+/*estiliza e posiona o menu lateral onde fica a barra de pesquisa*/
+#menuLateral{
+    display: flex;
+    align-items: center;
+    min-width: 3vw;
+    width: 3vw;
+    justify-content: flex-start;
+    transition: width 0.3s ease-in-out;
+    overflow: visible;
+    z-index: 9997;
+    position: absolute;
+    height: 50px;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+/*container para posicionar a barra de pesquisa*/
+#containerPesquisa{
+    width: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*classe que faz a barra de pesquisa ficar visivel*/
+.menuLateralAcionado{
+    min-width: 20vw !important;
+    width: 20vw !important;
+    display: flex !important;
+}
+
+
+/*container que contem a seta para fechar o menu de pesquisa*/
+.containerSetaMapa{
+    width: 10%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/*seta do menu de pesquisa*/
+#setaMenuLateral{
+    color: #00427F;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*classe do campo de pesquisa*/
+#inpPesquisa{
+    height: 40px;
+    width: 100%;
+    margin-top: 15px;
+    display: block;
+    padding-left: 5px;
+    outline: 0;
+    border-radius: 10px;
+    border: 1px solid #00427F;
+    font-size: 16px;
+}
+
+/*place holder do campo de pesquisa*/
+#inpPesquisa::placeholder{
+    font-size: 18px;
+}
+
+/*definindo o mapa como o elemento mais atras nas camadas*/
+#mapa{
+    z-index: -1;
+}
+
