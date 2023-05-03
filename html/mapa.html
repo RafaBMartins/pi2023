@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <!--importando as bibliotecas dos ícones de configuracao e seta do menu de pesquisa-->
+    <link rel="stylesheet" type="text/css" href="../css/mapa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <!--importando o script da página e a biblioteca de mapas do bing-->
+    <script src="../script/mapa.js" defer></script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario&key=Agz-GsinzRU8zLEoIGspfeW14MkrCmOv1RXL5foc3GtKtQWkGHydai2rkhG_ZwQu&libs=Microsoft.Maps.Search'></script>
+
+</head>
+<body>
+    <!--abrindo o header-->
+    <object id="objeto" data="header.html" type="text/html" class="header"></object>
+
+    <!--section onde o mapa e o menu de pesquisa lateral ficara posicionado-->
+    <section id="containerMapa">
+        <!--container do menu lateral-->
+        <div id="menuLateral" class="menuLateralAcionado">
+            <!--container onde fica os itens do menu referentes a pesquisa-->
+            <div id="containerPesquisa">
+                <input type="text" id="inpPesquisa" name="pesquisa" placeholder="Pesquisa">
+            </div>
+            <!--container onde a seta que minimiza o menu esta-->
+            <div class="containerSetaMapa">
+                <!--seta que minimiza o menu-->
+                <i class='fa-solid fa-arrow-right-long' id="setaMenuLateral"></i>
+            </div>
+        </div>
+        <!--div onde o mapa sera renderizado-->
+        <div id="mapa"></div>
+    <!--Fim da section-->
+    </section>
+
+    
+
+</body>
+</html>

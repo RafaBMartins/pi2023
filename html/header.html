@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelieWay</title>
+    <link rel="stylesheet" href="..\css\header.css">
+    <script src="../script/header.js"></script>
+</head>
+
+<body>
+
+    <!-- Header é a parte de cima do site, que acompanha quando voccê faz a rolagem -->
+    <header>
+        
+        <div class="logo">
+            <img src="..\img\logo.svg">
+            <p>WheelieWay</p>
+        </div>
+
+        <div class="opcoesHeader">
+            <p>BUSCA</p>
+            <p>MAPA</p>
+            <p>FAVORITOS</p>
+        </div>
+
+        <div class="header_perfil_burguerMenu">
+            <img src="..\img\profileIcon.svg" class="perfilIcon" id="iconePerfil">
+            <img src="..\img\confIcon.svg" class="confIcon">
+        </div>
+
+    </header>
+
+    <div id="containerPerfil">
+        <!--div para aplicar o fundo de cor diferente no perfil e ajudar na disposicao dos elementos-->
+        <div class="fundoPerfil">
+            <!--container para posicionar os elementos-->
+            <div id="dados">
+                <!--foto do usuario-->
+                <img src="../img/mapa/perfil.png" id="fotoContainer">
+                <!--nome do usuario-->
+                <span id="nomeUser">Nome da pessoa</span>
+                <!--email do usuario-->
+                <div id="emailUser">emaildoUsuario@gmail.com</div>
+                <!--link para direcionar ao perfil do usuario-->
+                <a id="verMais">Ver mais</a>
+                <!--botao para ver os seguidores-->
+                <input class="botaoSeguidores" type="button" value="Seguidores">
+            </div>
+        </div>
+        <!--botao de logout -->
+        <div id="botaoSair">Sair</div>
+    </div>
+
+</body>
+</html>

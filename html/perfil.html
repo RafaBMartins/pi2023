@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Perfil</title>
+        <meta charset="utf-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/perfil.css">
+        <script src="../script/javaperfil.js"></script>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <object data="header.html" type="text/html" class="header"></object>
+
+        <!-- Div principal com o perfil -->
+        <div id="principal">
+
+            <!-- Div com a parte do perfil com informações -->
+            <div id="perfil">     
+                
+                <!-- Parte de cima do perfil, banner -->
+                <div id="perfil-cima">
+                    <div id="divBanner">
+                        <img id="banner" src="../img/perfil/1500500.jpg">
+                    </div>   
+                </div>
+
+                <!-- Parte de baixo do perfil com foto e informações -->
+                <div id="perfil-baixo">
+
+                    <!-- Parte de cima da parte de baixo do perfil -->
+                    <div id="perfil-baixo-cima">
+
+                        <!-- Nome e foto do usuário -->
+                        <div id="div-perfil">
+                            <img id="fperfil" src="../img/perfil/img1.jpg">
+                            <span id="nome">
+                                <span>Sergio Malandro</span>
+                            </span>
+                        </div>
+
+                        <!-- Botão seguir -->
+                        <div id="div-seguir">
+                            <button>Seguir</button>
+                        </div>
+                    </div>
+
+                    <!-- Parte do meio da parte de baixo do perfil -->
+                    <div id="perfil-baixo-meio">   
+
+                        <!-- Descrição -->
+                        <div class="desc desc2">
+                            <a>A conta Oficial do Rei do Glu Glu, Sérgio Mallandro! A conta Oficial do Rei do Glu Glu, Sérgio Mallandro!</a>
+                        </div>
+
+                        <!-- Algumas informações do usuário -->
+                        <div class="desc">
+                            <div class="info">
+                                <span>Contribuições: 20</span>
+                                <span>Deficiência: Cadeirante</span>
+                                <span>Seguidores 30000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parte de baixo da parte de baixo do perfil com as abas -->
+                    <div id="perfil-baixo-baixo">
+                        <a class="tab" id="tavaliacoes" onclick="mudarTab('avaliacoes', 'visitas')">Avaliações</a>
+                        <a class="tab" id="tvisitas" onclick="mudarTab('visitas', 'avaliacoes')">Lugares visitados</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Atividades do perfil, lugares que visitou e suas avaliações -->
+            <div id="atividade">
+
+                <!-- Avaliações daquele usuário -->
+                <div id="avaliacoes">
+
+                    <!-- Registro é a div maior para uma avaliação ou lugar visitado -->
+                    <div class="registro">
+
+                        <!-- Div com a foto e nome do perfil de quem comentou e do estabelecimento avaliado -->
+                        <div class="imgPerfilAvaliacao">
+                            <div class="usuario"> 
+                                <img src="../img/perfil/img1.jpg" class="fotoPerfil">
+                                <div>Sergio Malandro</div>
+                            </div>
+                            <div class="estabelecimento">
+                                <div>Severion Boteco Porreta</div>
+                                <img src="../img/perfil/porreta.jpg" class="fotoPerfil">
+                            </div>
+                        </div>
+
+                        <!-- O que o usuário tem a dizer sobre o establecimento -->
+                        <div class="caixaDesc">
+                            <div>
+                                Bom bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar uma dose
+                            </div>
+                        </div>
+
+                        <!-- Avaliação do usuário em estrelas -->
+                        <div class="caixaEstrela">
+                                <img src="../img/perfil/5estrela.png" alt="" class="estrelaAvaliacao">
+                        </div>
+                    </div>
+                    <!-- Fim da última avaliação feita e começo da próxima-->            
+            
+                    <div class="registro">
+                        <div class="imgPerfilAvaliacao">
+                            <div class="usuario"> 
+                                <img src="../img/perfil/img1.jpg" class="fotoPerfil">
+                                <div>Sergio Malandro</div>
+                            </div>
+                            <div class="estabelecimento">
+                                <div>Grelha do Zezerê</div>
+                                <img src="../img/perfil/grelhazeze.jpg" class="fotoPerfil">
+                            </div>
+                        </div>
+                        <div class="caixaDesc">
+                            <div>
+                                FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO FOGÃO 
+                            </div>
+                        </div>
+                        <div class="caixaEstrela">
+                            <img src="../img/perfil/5estrela.png" alt="" class="estrelaAvaliacao">
+                        </div>
+                    </div>    
+                </div>
+
+
+                <!-- Aba com os lugares que o usuário visitou, fica escondido inicialmente -->
+                <div id="visitas">
+
+                    <!-- Registro é a div maior para uma avaliação ou lugar visitado -->
+                    <div class="registro">
+
+                        <!-- Div com o conteúdo do registro -->
+                        <div class="divGeralRegistro">
+
+                            <!-- Div com foto e nome do lugar visitado-->
+                            <div class="div-foto-visita"> 
+                                <img src="../img/perfil/grelhazeze.jpg" class="fotoEstabelecimentoVisita">
+                                <div>
+                                    <div>Grelha do Zezerê</div>
+                                </div>
+                            </div>
+
+                            <!-- Foto da avaliação do local quanto à acessibilidade (selo) e qualidade geral (estrelas)-->
+                            <img src="../img/seloOuro.svg" alt="Selo ouro" class="selo">
+                            <img src="../img/perfil/4estrela.png" class="estrelas">
+                        </div>
+                    </div>
+                    <!-- Fim do último lugar visitado e começo do próximo. OBS.: A "Grelha do Zezerê" foi a última a ser visitado, porém, sua avaliação foi feita antes da avaliação do "Severino Boteco Porreta", por isso a diferença de ordem entre visitas e avaliações-->
+
+
+                    <div class="registro">
+                        <div class="divGeralRegistro">
+                            <div class="div-foto-visita"> 
+                                <img src="../img/perfil/potente.jpg" class="fotoEstabelecimentoVisita">
+                                <div>
+                                    <div>BAR POTENTE</div>
+                                </div>
+                            </div>
+                            <img src="../img/seloBronze.svg" alt="Selo bronze" class="selo">
+                            <img src="../img/perfil/5estrela.png" class="estrelas">
+                        </div>
+                    </div>
+                    <!-- Fim do penúltimo lugar visitado e começo do próximo-->
+
+                    
+                    <div class="registro">
+                        <div class="divGeralRegistro">
+                            <div class="div-foto-visita"> 
+                                <img src="../img/perfil/porreta.jpg" class="fotoEstabelecimentoVisita">
+                                <div>
+                                    <div>Severino Boteco Porreta</div>
+                                </div>
+                            </div>
+                            <img src="../img/seloPrata.svg" alt="Selo prata" class="selo">
+                            <img src="../img/perfil/5estrela.png" class="estrelas">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
