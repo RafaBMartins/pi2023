@@ -69,17 +69,22 @@ body::-webkit-scrollbar {
 /*Display da parte de cima da parte de baixo do perfil*/
 #perfil-baixo-cima {
     display: flex;
-    max-width: 100%s ;
+    flex-flow: row wrap;
+    width: 100%s ;
 }
 
 /*Define o tamanho, display em linha, margem e espaçamento para baixo da div que contém foto e nome do perfil*/
 #div-perfil{
     margin-left: 5%; 
-    width: 150px;
     padding-bottom: 3px;
     display: flex;
     flex-flow: row;
     align-items: center;
+}
+
+
+#divFoto {
+    width: 150px;
 }
 
 /*Define borda e tamanho da foto de perfil*/
@@ -90,10 +95,24 @@ body::-webkit-scrollbar {
     border-radius: 100px;
 }
 
+
+/*Tamanho da fonte, negrito e margem do nome*/
+#nome {
+    font-size: 24px;
+    font-weight: 550;
+    margin-left: 15px;
+    width: 75%;
+}
+
+/*Impede o nome do usuário de quebrar*/
+#nome span {
+    white-space:normal;
+}
+
 /*Tamanho, espaçamento e margem da div com o botão seguir*/
 #div-seguir {
+    position: relative;
     margin-left: auto;
-    max-width: 100%;
     padding-left: 10px;
     padding-bottom: 5px;
 }
@@ -134,18 +153,6 @@ button {
     white-space: nowrap;
 }
 
-/*Tamanho da fonte, negrito e margem do nome*/
-#nome {
-    font-size: 24px;
-    font-weight: 550;
-    margin-left: 15px;
-}
-
-/*Impede o nome do usuário de quebrar*/
-#nome span {
-    white-space: nowrap;
-}
-
 /*Display e fonte da descrição*/
 .desc {
     font-size: 20px;
@@ -154,7 +161,7 @@ button {
 
 /*Define cor e fonte da biografia*/
 .desc2{
-    color: grey;
+    color: black;
     font-size: 16px;
 }
 
