@@ -46,6 +46,7 @@ var map = null;
 /*esta funcao carrega o mapa*/
 function loadMapScenario() {
     const mapa = document.getElementById("mapa");
+    calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
     map = new Microsoft.Maps.Map(document.getElementById("mapa"), {

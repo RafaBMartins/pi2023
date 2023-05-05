@@ -153,8 +153,7 @@ nav{
     overflow: visible;
     z-index: 9997;
     position: absolute;
-    height: 50px;
-    margin-top: 80px;
+    margin-top: 20px;
     margin-left: 20px;
 }
 
@@ -212,5 +211,6 @@ nav{
 /*definindo o mapa como o elemento mais atras nas camadas*/
 #mapa{
     z-index: -1;
+    position: absolute;
 }
 
