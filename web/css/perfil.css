@@ -230,13 +230,15 @@ header {
 #div-seguir {
     position: relative;
     margin-left: auto;
-    padding-left: 10px;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     padding-bottom: 5px;
 }
 
 /*Define o tamanho, borda, cocr e espaçamento do botão de seguir*/
 button {
-    margin-top: 40%;
+    /*margin-top: 40%;*/
     font-size: 16px;
     max-width: 100%;
     font-family: inherit;
@@ -251,15 +253,17 @@ button {
 #perfil-baixo-meio {
     padding-top: 10px;
     padding-left: 10px;
-    padding-bottom: 90px;
+    padding-right: 10px;
+    padding-bottom: 40px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     gap: 10px;
 }
 
 /*Define o display em coluna das informações do usuário*/
 .info{
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -298,6 +302,7 @@ button {
 
 /*Espaçamento dentro das abas, tira borda, faz texto clicável*/
 .tab{
+    text-align: center;
     display:block;
     padding:8px 16px;
     border:none;
@@ -410,8 +415,6 @@ button {
 
 /*Div com foto e nome do estabelecimento visitado, define o tamano da fonte, espaçamento interno, margem para esquerda, tamanho, impede o nome de quebrar e centraliza o verticalmente*/
 .div-foto-visita {
-    font-size: 16px;
-    margin-left: 3%;
     width: 100%;
     padding-bottom: 3px;
     display: flex;
@@ -434,28 +437,25 @@ button {
     align-items: center;
 }
 
-.bb {
-    width: 33%;
-}
-
 /*Define o tamanho da div que contém as estrelas e posiciona o conteúdo no final*/
 .estrelas {
     display: flex;
     flex-direction: row-reverse;
-    width: 100%;
-    min-width: 10%;
+    width: 60%;
 }
 
-/*Tamanho e margem do selo*/
+/*Tamanhodo selo*/
 .selo {
-    margin-right: 15%;
     height: 60px;
 }
 
 .nomeEst {
-    width: 230px;
-    height: 23px;
+    width: 98%;
+    margin-left: 5px;
+    font-size: 16px;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -465,19 +465,48 @@ button {
       background-color: yellowgreen;
     }
     
-    body {
-        background-color: aqua;
+    .div-foto-visita {
+        padding-left: 1px;
     }
 
     .fotoPerfil {
         width: 50px;
     }
+
+    .fotoEstabelecimentoVisita {
+        height: 60px;
+    }
+
+    .nomeEst {
+       width: 65%;
+        font-size: 13px;
+    }
+
+    .selo {
+        height: 45px;
+    }
+
+    .fotoEstabelecimentoVisita {
+        height: 50px;
+    }
+
+    .estrelas {
+        width: 50%;
+    }
+
+    #perfil_baixo_meio{
+        padding-bottom: 30px;
+    }
+
+    .desc {
+        font-size: 16px;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
     #principal {
       font-size: 13px;
-      background-color: rgb(255, 0, 0);
     }
     
     body {
