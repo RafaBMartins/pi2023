@@ -23,6 +23,13 @@ document.getElementById("setaMenuLateral").addEventListener('click', (e) => {
     }
 })
 
+document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
+    if(e.key == 'Enter'){
+        pesquisaMapa()
+    }
+
+})
+
 
 
 /*funcao que calcula o tamanho do mapa com base no tamanho da tela*/
@@ -34,29 +41,54 @@ function calculaTamanhoMapa(mapa){
     mapa.style.height = `${alturaPagina - posicaoYMapa}px`;
 }
 
+var map = null;
+
 /*esta funcao carrega o mapa*/
 function loadMapScenario() {
     const mapa = document.getElementById("mapa");
+    var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
-    var map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
-        credentials: "Agz-GsinzRU8zLEoIGspfeW14MkrCmOv1RXL5foc3GtKtQWkGHydai2rkhG_ZwQu"
+    map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
     });
-    
-    /*cria um campo de pesquisa do bing*/
-    /*nao esta funcionando ainda*/
+
+    Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
+        var options = {
+            maxResults: 4,
+            map: map
+        };
+        var manager = new Microsoft.Maps.AutosuggestManager(options);
+        manager.attachAutosuggest(document.getElementById("inpPesquisa"), document.getElementById("containerPesquisa"), selectedSuggestion);
+    });
+
+    var pushpin = new Microsoft.Maps.Pushpin(locIfes, {
+        color: "green",
+        title: "Ifes Campus Serra",
+    })
+    map.entities.push(pushpin);
+}
+
+function selectedSuggestion(suggestionResult) {
+    map.setView({ bounds: suggestionResult.bestView });
+    var pushpin = new Microsoft.Maps.Pushpin(suggestionResult.location);
+    console.log(pushpin)
+    map.entities.push(pushpin);
+}
+
+function pesquisaMapa(){
+
     Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
         var searchManager = new Microsoft.Maps.Search.SearchManager(map);
-        var searchBox = new Microsoft.Maps.Search.SearchBox(document.getElementById('inpPesquisa'), {
-          searchManager: searchManager,
-          autoCompleteDelay: 0,
-          showSuggestions: true,
-          suggestionPoiTypes: [Microsoft.Maps.Search.PoiCategory.landmark],
-          suggestionNearby: true,
-          suggestionDistance: 20000,
-          suggestionIcon: 'pin-magenta',
-          suggestionListHeader: '<div style="background-color: #f2f2f2; padding: 5px;">Sugestões</div>'
-        });
-      });
+        var lugar = document.getElementById("inpPesquisa").value;
+        var requestOptions = {
+            bounds: map.getBounds(),
+            where: lugar,
+            callback: function (answer, userData) {
+                map.setView({ bounds: answer.results[0].bestView });
+                map.entities.push(new Microsoft.Maps.Pushpin(answer.results[0].location));
+            }
+        };
+        searchManager.geocode(requestOptions);
+    });
 }
 
 /*adiciona o evento de resize para a janela, assim o tamanho do mapa sera recalculado toda vez*/
