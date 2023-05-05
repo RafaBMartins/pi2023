@@ -148,6 +148,7 @@ nav{
     align-items: center;
     min-width: 3vw;
     width: 3vw;
+    flex-wrap: wrap;
     justify-content: flex-start;
     transition: width 0.3s ease-in-out;
     overflow: visible;
@@ -162,6 +163,7 @@ nav{
     width: 90%;
     padding-left: 10px;
     padding-right: 10px;
+    z-index: 999999;
 }
 
 /*classe que faz a barra de pesquisa ficar visivel*/
@@ -206,6 +208,16 @@ nav{
 /*place holder do campo de pesquisa*/
 #inpPesquisa::placeholder{
     font-size: 18px;
+}
+
+#perfilEstabelecimento{
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    z-index: 10;
+    display: none;
+    margin-top: 10px;
+    border-radius: 10px
 }
 
 /*definindo o mapa como o elemento mais atras nas camadas*/
