@@ -64,6 +64,7 @@ function loadMapScenario() {
     var pushpin = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
         title: "Ifes Campus Serra",
+        icon: "../img/pinoEscola.svg"
     })
     map.entities.push(pushpin);
 
