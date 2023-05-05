@@ -66,6 +66,10 @@ function loadMapScenario() {
         title: "Ifes Campus Serra",
     })
     map.entities.push(pushpin);
+
+    Microsoft.Maps.Events.addHandler(pushpin, 'click', function (e) { 
+        document.getElementById("perfilEstabelecimento").style.display = document.getElementById("perfilEstabelecimento").style.display === "block" ? "none" : "block";
+    });
 }
 
 function selectedSuggestion(suggestionResult) {
