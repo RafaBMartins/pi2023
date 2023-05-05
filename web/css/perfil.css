@@ -237,8 +237,16 @@ button {
 /*Define o tamanho e borda das fotos do perfil e do estabelecimento*/
 .fotoPerfil{
     width: 70px;
-    height: 70px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
+}
+
+.usuario {
+    margin-right: 10px;
+}
+
+.estabelecimento {
+    margin-left: 10px;
 }
 
 /*Essas 2 divs fazem a mesma coisa, mas uma coloca margem na direita e outra na esquerda para o usuário e estabelecimento respectivamente*/
