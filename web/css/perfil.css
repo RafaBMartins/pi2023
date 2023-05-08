@@ -159,15 +159,15 @@ header {
 }
 
 #divBanner {
-    height: 290px;
+    
+    width: 100%;
 }
 
 /*Tamanho do banner, ocupa toda sua div e mantém a proporção da imagem e muda de tamanho mas corta parte dela*/
 #banner {
+    aspect-ratio: 3/1;
     margin-bottom: 0%;
     width: 100%;
-    max-height: 100%;
-    object-fit: cover;
 }
 
 /*Margem negativa que empurra a parte de baixo do perfil para cima*/
@@ -278,6 +278,7 @@ button {
 .desc {
     font-size: 20px;
     display: inline;
+    margin-bottom: max(4px, 20px);
 }
 
 /*Define cor e fonte da biografia*/
