@@ -27,9 +27,9 @@ Descrição textual das regras de negócio definidas como um subconjunto do mund
 ![DIC_EAP](https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/EAP-Dicionario.jpg "DIC_EAP")<br>
 
 #### 3.2. Requisitos funcionais e não funcionais
-## Requisitos funcionais
+##### Requisitos funcionais
 a) <img src="https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/RF.jpg" /> <br>
-## Requisitos não funcionais
+##### Requisitos não funcionais
 b) <img src="https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/RNF.jpg" /> <br>
 
 #### 3.3 Validação da Ideia.
