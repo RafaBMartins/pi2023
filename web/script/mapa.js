@@ -52,32 +52,97 @@ function loadMapScenario() {
     map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
     });
 
+    locaisProprios = {}
+
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
         var options = {
             maxResults: 4,
-            map: map
+            map: map,
+            center: locIfes
         };
         var manager = new Microsoft.Maps.AutosuggestManager(options);
-        manager.attachAutosuggest(document.getElementById("inpPesquisa"), document.getElementById("containerPesquisa"), selectedSuggestion);
+        // manager.attachAutosuggest(document.getElementById("inpPesquisa"), document.getElementById("containerPesquisa"), selectedSuggestion);
+        document.getElementById("inpPesquisa").addEventListener('keyup', (e) => {
+            var pesquisa = document.getElementById("inpPesquisa").value.toLowerCase()
+            if(pesquisa.length == 0){
+                document.getElementById("sugestoes").style.display = "none";
+                var divSugestoes = document.getElementById("sugestoes").querySelectorAll("div")
+                for(let item of divSugestoes){
+                    item.remove()
+                }
+            }
+            var correspondentes = []
+            for(let item in locaisProprios){
+                    if(locaisProprios[item]["nome"].toLowerCase().slice(0,pesquisa.length) == pesquisa){
+                        correspondentes.push(locaisProprios[item])
+                    }
+            }
+            manager.getSuggestions(pesquisa, function (suggestionResult){
+                if(suggestionResult.length > 0){
+                document.getElementById("sugestoes").style.display = "block";
+                var quatroSugestoes = suggestionResult.slice(0,4)
+                var quantidade = correspondentes.length
+                for(let i = 0; i < quatroSugestoes.length-quantidade; i++){
+                    let local = {
+                        'nome': quatroSugestoes[i].formattedSuggestion,
+                        'pushpin': new Microsoft.Maps.Pushpin(quatroSugestoes[i].location, {
+                            color: "red",
+                            title: quatroSugestoes[i].title
+                        })
+                    }
+                    correspondentes.push(local)
+            }
+            var containerSugestoes = document.getElementById("sugestoes")
+            var divSugestoes = containerSugestoes.querySelectorAll("div")
+            for(let item of divSugestoes){
+                    item.remove()
+            }
+           for(item of correspondentes){
+                div = document.createElement("div")
+                div.textContent = item["nome"]
+                div.addEventListener('click', (e) =>{
+                    let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div")
+                    let sugestoes = Array.from(divSugestoes)
+                    let clicada = correspondentes[sugestoes.indexOf(e.target)]
+                    map.setView({
+                        center: clicada["pushpin"].getLocation(),
+                        zoom: 16
+                    })
+                })
+                containerSugestoes.appendChild(div)
+           }
+        }
+    })
+        })
     });
 
-    var pushpin = new Microsoft.Maps.Pushpin(locIfes, {
+    var ifes = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
         title: "Ifes Campus Serra",
-        icon: "../img/pinoEscola.svg"
     })
-    map.entities.push(pushpin);
 
-    Microsoft.Maps.Events.addHandler(pushpin, 'click', function (e) { 
-        document.getElementById("perfilEstabelecimento").style.display = document.getElementById("perfilEstabelecimento").style.display === "block" ? "none" : "block";
-    });
-}
+    var jaymeDosSantosNeves = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.199232504534884, -40.227077110956316), {
+        color: "red",
+        title: "Hospital Jayme dos Santos Neves"
+    })
 
-function selectedSuggestion(suggestionResult) {
-    map.setView({ bounds: suggestionResult.bestView });
-    var pushpin = new Microsoft.Maps.Pushpin(suggestionResult.location);
-    console.log(pushpin)
-    map.entities.push(pushpin);
+
+    locaisProprios[1] = {
+        nome: "Ifes campus Serra",
+        pushpin: ifes
+    }
+    locaisProprios[2] = {
+        "nome": "Jayme dos Santos Neves",
+        "pushpin": jaymeDosSantosNeves
+    }
+
+    for(let item in locaisProprios){
+        map.entities.push(locaisProprios[item]["pushpin"]);
+
+        Microsoft.Maps.Events.addHandler(locaisProprios[item]["pushpin"], 'click', function (e) { 
+            document.getElementById("perfilEstabelecimento").style.display = document.getElementById("perfilEstabelecimento").style.display === "block" ? "none" : "block";
+        });
+    }
 }
 
 function pesquisaMapa(){
