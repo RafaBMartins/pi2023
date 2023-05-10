@@ -119,6 +119,7 @@ function loadMapScenario() {
     var ifes = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
         title: "Ifes Campus Serra",
+        icon: "../img/pinoEscola.svg"
     })
 
     var jaymeDosSantosNeves = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.199232504534884, -40.227077110956316), {
@@ -143,6 +144,19 @@ function loadMapScenario() {
             document.getElementById("perfilEstabelecimento").style.display = document.getElementById("perfilEstabelecimento").style.display === "block" ? "none" : "block";
         });
     }
+
+    Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function (e){
+            if(map.getZoom() < 16){
+                for(let item in locaisProprios){
+                    map.entities.pop(locaisProprios[item]["pushpin"])
+                }
+            }
+            else{
+                for(let item in locaisProprios){
+                    map.entities.push(locaisProprios[item]["pushpin"])
+                }
+            }
+    })
 }
 
 function pesquisaMapa(){
