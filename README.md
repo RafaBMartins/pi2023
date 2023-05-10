@@ -28,9 +28,9 @@ Descrição textual das regras de negócio definidas como um subconjunto do mund
 
 #### 3.2. Requisitos funcionais e não funcionais
 ##### Requisitos funcionais
-a) <img src="https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/RF.jpg" /> <br>
+<img src="https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/RF.jpg" /> <br>
 ##### Requisitos não funcionais
-b) <img src="https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/RNF.jpg" /> <br>
+<img src="https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/RNF.jpg" /> <br>
 
 #### 3.3 Validação da Ideia.
 a) Link do formulário desenvolvido
