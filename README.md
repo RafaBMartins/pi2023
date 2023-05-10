@@ -1,13 +1,14 @@
-# TRABALHO DE PI:  Título do Trabalho
+# TRABALHO DE PI:  Wheelieway: Aplicação de avaliação de estabelecimentos com base na acessibilidade
 Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 
 # Sumário
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-primeiro_componente_do_grupo:email_primeiro_componente@dominio.com<br>
-segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
-...
+Rafael Barbosa Martins:rafaelmartinscouto@gmail.com<br>
+Gabriel de Paula Brunetti:gabrieldpbrunetti@gmail.com<br>
+Caio Fraga Coelho Cintra:caiofcintra@gmail.com<br>
+Matheus Santos Nascimento:ifrn.jucurutu@gmail.com<br>
 
 ### 2.MINIMUNDO<br>
 Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar)
