@@ -24,6 +24,7 @@ Descrição textual das regras de negócio definidas como um subconjunto do mund
 
 #### 3.1. EAP - Estrutura Analítica do Projeto
 ![EAP](https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/EAP(Aplica%C3%A7%C3%A3o%20para%20Pcd%20).svg "EAP")<br>
+##### Dicionário do EAP
 ![DIC_EAP](https://github.com/RafaBMartins/pi2023/blob/main/imagensReadme/EAP-Dicionario.jpg "DIC_EAP")<br>
 
 #### 3.2. Requisitos funcionais e não funcionais
