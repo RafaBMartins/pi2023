@@ -1,5 +1,7 @@
 # TRABALHO DE PI:  Wheelieway: Aplicação de avaliação de estabelecimentos com base na acessibilidade
 Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
+## Kanban
+https://github.com/users/caiofraga123/projects/3
 
 # Sumário
 
