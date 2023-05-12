@@ -29,10 +29,28 @@
     }
 
     .panel {
-      margin-bottom: 0px;
-    }
+  position: relative;
+}
 
-  </style>
+.lpo {
+  position: relative;
+  margin-top: -25px;
+  margin-left: 25px;
+  z-index: 2;
+}
+
+#div-perfil {
+  position: relative;
+  z-index: 3;
+}
+
+.btn{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+</style>
 </head>
 <body>
   <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -119,18 +137,30 @@
     </div> -->
 
     <div class="col-sm-12">
-    
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
-            <div class="panel-body">
-                <img src="bird.jpg" class="ratio ratio-21x9 " height="40%">
-
-              <p contenteditable="true">Status: Feeling Blue</p>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>     
-            </div>
+              <div class="julo ratio ratio-21x9 ">
+                <img src="bird.jpg">
+              </div>
+              <div id="div-perfil" class="clearfix">
+                <div class="col-sm-1">
+                  <div id="divFoto">
+                    <img class="lpo img-circle" src="pcamigos.jfif" height="150" width="150">
+                    <div id="nome">
+                    <div class="h2">Sergio Malandro</div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                  
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <button type="button" class="btn btn-default btn-sm">
+                  <span class=""></span> Seguir
+                </button>     
+              </div>
           </div>
         </div>
       </div>
