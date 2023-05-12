@@ -1,6 +1,6 @@
 const menuLateral = document.getElementById("menuLateral");
 const alturaPagina = window.innerHeight;
-
+var ultimoPushpinClicado = null
 
 /*adicionando o evento de click a seta, a funcao faz as alteracoes necessarias para que o campo de pesquisa suma, diminuindo sua largura, e faz a seta girar*/
 document.getElementById("setaMenuLateral").addEventListener('click', (e) => {
@@ -12,6 +12,7 @@ document.getElementById("setaMenuLateral").addEventListener('click', (e) => {
         document.getElementById("inpPesquisa").style.display = "block";
         document.getElementById("setaMenuLateral").style.marginRight = "0";
         document.getElementById("setaMenuLateral").style.transform = "rotate(180deg)"
+        document.getElementById("sugestoes").style.display = "none";
     }
     else{
         /*remove a classe que torna o campo de pesquisa visivel*/
@@ -19,7 +20,8 @@ document.getElementById("setaMenuLateral").addEventListener('click', (e) => {
         document.getElementById("containerPesquisa").style.dislay = "none";
         document.getElementById("inpPesquisa").style.display= "none";
         document.getElementById("setaMenuLateral").style.marginRight = "3vw";
-        document.getElementById("setaMenuLateral").style.transform = "rotate(0)"
+        document.getElementById("setaMenuLateral").style.transform = "rotate(0)";
+        document.getElementById("sugestoes").style.display = "none";
     }
 })
 
@@ -52,36 +54,38 @@ function loadMapScenario() {
     map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
     });
 
-    locaisProprios = {}
+    var locaisProprios = {}
 
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
         var options = {
             maxResults: 4,
             map: map,
-            center: locIfes
+            center: locIfes,
+            zoom: 14
         };
         var manager = new Microsoft.Maps.AutosuggestManager(options);
         // manager.attachAutosuggest(document.getElementById("inpPesquisa"), document.getElementById("containerPesquisa"), selectedSuggestion);
         document.getElementById("inpPesquisa").addEventListener('keyup', (e) => {
             var pesquisa = document.getElementById("inpPesquisa").value.toLowerCase()
+            document.getElementById("perfilEstabelecimento").style.display = "none";
             if(pesquisa.length == 0){
                 document.getElementById("sugestoes").style.display = "none";
-                var divSugestoes = document.getElementById("sugestoes").querySelectorAll("div")
+                var divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
                 for(let item of divSugestoes){
-                    item.remove()
+                    item.remove();
                 }
             }
             var correspondentes = []
             for(let item in locaisProprios){
                     if(locaisProprios[item]["nome"].toLowerCase().slice(0,pesquisa.length) == pesquisa){
-                        correspondentes.push(locaisProprios[item])
+                        correspondentes.push(locaisProprios[item]);
                     }
             }
             manager.getSuggestions(pesquisa, function (suggestionResult){
                 if(suggestionResult.length > 0){
                 document.getElementById("sugestoes").style.display = "block";
-                var quatroSugestoes = suggestionResult.slice(0,4)
-                var quantidade = correspondentes.length
+                var quatroSugestoes = suggestionResult.slice(0,4);
+                var quantidade = correspondentes.length;
                 for(let i = 0; i < quatroSugestoes.length-quantidade; i++){
                     let local = {
                         'nome': quatroSugestoes[i].formattedSuggestion,
@@ -90,26 +94,29 @@ function loadMapScenario() {
                             title: quatroSugestoes[i].title
                         })
                     }
-                    correspondentes.push(local)
+                    correspondentes.push(local);
             }
-            var containerSugestoes = document.getElementById("sugestoes")
-            var divSugestoes = containerSugestoes.querySelectorAll("div")
+            var containerSugestoes = document.getElementById("sugestoes");
+            var divSugestoes = containerSugestoes.querySelectorAll("div");
             for(let item of divSugestoes){
-                    item.remove()
+                    item.remove();
             }
            for(item of correspondentes){
-                div = document.createElement("div")
-                div.textContent = item["nome"]
+                div = document.createElement("div");
+                div.textContent = item["nome"];
                 div.addEventListener('click', (e) =>{
-                    let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div")
-                    let sugestoes = Array.from(divSugestoes)
-                    let clicada = correspondentes[sugestoes.indexOf(e.target)]
+                    let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
+                    let sugestoes = Array.from(divSugestoes);
+                    let clicada = correspondentes[sugestoes.indexOf(e.target)];
+                    document.getElementById("perfilEstabelecimento").style.display = "block"
+                    document.getElementById("sugestoes").style.display = "none";
+                    document.getElementById("inpPesquisa").value = "";
                     map.setView({
                         center: clicada["pushpin"].getLocation(),
                         zoom: 16
-                    })
+                    });
                 })
-                containerSugestoes.appendChild(div)
+                containerSugestoes.appendChild(div);
            }
         }
     })
@@ -120,43 +127,53 @@ function loadMapScenario() {
         color: "green",
         title: "Ifes Campus Serra",
         icon: "../img/pinoEscola.svg"
-    })
+    });
 
     var jaymeDosSantosNeves = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.199232504534884, -40.227077110956316), {
         color: "red",
-        title: "Hospital Jayme dos Santos Neves"
-    })
-
+        title: "Hospital Jayme dos Santos Neves",
+        icon: "../img/pinoHospital.svg"
+    });
 
     locaisProprios[1] = {
-        nome: "Ifes campus Serra",
-        pushpin: ifes
-    }
+        "nome": "Ifes campus Serra",
+        "pushpin": ifes
+    };
     locaisProprios[2] = {
         "nome": "Jayme dos Santos Neves",
-        "pushpin": jaymeDosSantosNeves
-    }
+        "pushpin": jaymeDosSantosNeves,
+    };
 
     for(let item in locaisProprios){
         map.entities.push(locaisProprios[item]["pushpin"]);
 
         Microsoft.Maps.Events.addHandler(locaisProprios[item]["pushpin"], 'click', function (e) { 
-            document.getElementById("perfilEstabelecimento").style.display = document.getElementById("perfilEstabelecimento").style.display === "block" ? "none" : "block";
+            if(ultimoPushpinClicado == e.target){
+                document.getElementById("perfilEstabelecimento").style.display = document.getElementById("perfilEstabelecimento").style.display == "block" ? "none" : "block";
+                document.getElementById("sugestoes").style.display = "none";
+                document.getElementById("inpPesquisa").value = "";
+            }
+            else{
+                ultimoPushpinClicado = e.target;
+                document.getElementById("perfilEstabelecimento").style.display = "block"
+                document.getElementById("sugestoes").style.display = "none";
+                document.getElementById("inpPesquisa").value = "";
+            }
         });
     }
 
     Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function (e){
             if(map.getZoom() < 16){
                 for(let item in locaisProprios){
-                    map.entities.pop(locaisProprios[item]["pushpin"])
+                    map.entities.pop(locaisProprios[item]["pushpin"]);
                 }
             }
             else{
                 for(let item in locaisProprios){
-                    map.entities.push(locaisProprios[item]["pushpin"])
+                    map.entities.push(locaisProprios[item]["pushpin"]);
                 }
             }
-    })
+    });
 }
 
 function pesquisaMapa(){
