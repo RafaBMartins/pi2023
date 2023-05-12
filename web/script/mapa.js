@@ -45,6 +45,11 @@ function calculaTamanhoMapa(mapa){
 
 var map = null;
 
+function carregaPerfil(clicada){
+    document.getElementById("nomeEstabelecimento").textContent = clicada["pushpin"].getTitle();
+    document.getElementById("imgPerfilEstabelecimento").setAttribute('src', clicada["imagem"]);
+}
+
 /*esta funcao carrega o mapa*/
 function loadMapScenario() {
     const mapa = document.getElementById("mapa");
@@ -52,6 +57,8 @@ function loadMapScenario() {
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
     map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
+        center: locIfes,
+        zoom: 16
     });
 
     var locaisProprios = {}
@@ -60,8 +67,6 @@ function loadMapScenario() {
         var options = {
             maxResults: 4,
             map: map,
-            center: locIfes,
-            zoom: 14
         };
         var manager = new Microsoft.Maps.AutosuggestManager(options);
         // manager.attachAutosuggest(document.getElementById("inpPesquisa"), document.getElementById("containerPesquisa"), selectedSuggestion);
@@ -115,6 +120,7 @@ function loadMapScenario() {
                         center: clicada["pushpin"].getLocation(),
                         zoom: 16
                     });
+                    carregaPerfil(clicada)
                 })
                 containerSugestoes.appendChild(div);
            }
@@ -135,14 +141,27 @@ function loadMapScenario() {
         icon: "../img/pinoHospital.svg"
     });
 
+    var cafeArrumado = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.19826402415827, -40.224856532079116), {
+        color: "blue",
+        title: "Café Arrumado"
+    })
+
     locaisProprios[1] = {
         "nome": "Ifes campus Serra",
-        "pushpin": ifes
+        "pushpin": ifes,
+        "imagem": "../img/ifesPerfil.jpg"
     };
     locaisProprios[2] = {
         "nome": "Jayme dos Santos Neves",
         "pushpin": jaymeDosSantosNeves,
+        "imagem": "../img/jaymePerfil.jpg"
     };
+
+    locaisProprios[3] = {
+        "nome": "Café Arrumado",
+        "pushpin": cafeArrumado,
+        "imagem": "../img/cafeArrumadoPerfil.jpg"
+    }
 
     for(let item in locaisProprios){
         map.entities.push(locaisProprios[item]["pushpin"]);
