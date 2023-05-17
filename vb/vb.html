@@ -19,8 +19,6 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
   <style>    
-
-  
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
@@ -28,11 +26,60 @@
       padding: 15px;
     }
 
-    .panel {
+    
+    .lpo {
+      display: block;
+      position: relative;
+      margin-top: -25px;
+      margin-left: 25px;
+    }
+
+    .taba{
+      text-align: center;
+      display:block;
+      padding:0px 16px;
+      border:none;
+      cursor: pointer;
       margin-bottom: 0px;
     }
 
-  </style>
+    #beto :hover{
+    background-color: #9acff8;
+    }
+
+    #tavaliacoes {
+      border-bottom: 3px solid #329ef1;
+    }
+
+    @media (max-width: 767px) {
+      .lpo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+</style>
+
+<script>
+  /*Função para mudar de aba*/
+function mudarTab(colocar, tirar) {
+
+/*Pega as divs das páginas (atividades e visitas) de acordo com o parâmetro passado*/
+let div_tirado = document.getElementById(tirar);
+let div_colocado = document.getElementById(colocar);
+
+/*Pega a borda das abas (onde clica)*/
+let borda_tirado = document.getElementById("t" + tirar);
+let borda_colocado = document.getElementById("t" + colocar)
+
+/*Esconde e mostra a div das páginas*/
+div_tirado.style.display = "none";
+div_colocado.style.display = "block";
+
+/*Tira e coloca borda*/
+borda_tirado.style.borderBottom = "none";
+borda_colocado.style.borderBottom = "3px solid #329ef1";
+}
+</script>
 </head>
 <body>
   <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -119,75 +166,120 @@
     </div> -->
 
     <div class="col-sm-12">
-    
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default text-left">
-            <div class="panel-body">
-                <img src="bird.jpg" class="ratio ratio-21x9 " height="40%">
+              <div class="julo ratio ratio-21x9 ">
+                <img src="bird.jpg">
+              </div>
+              <div class="row gy-4">
+                <div class="col-md-2">
+                  <img class="lpo img-circle" height="150" width="150" src="pcamigos.jfif">
+                    
+                </div>
+                <div class="col-md-8 d-flex justify-content-center">
+                    <p class="h2 d-inline text-center" >Sergio Malandro</p>
+                </div>
+                <div class="col-md-2 d-flex align-items-md-center justify-content-center">
+                    <button type="button" class="btn btn-default btn-sm rounded-pill bg-primary">
+                      <span class="h4 text-white">Seguir</span> 
+                    </button>
 
-              <p contenteditable="true">Status: Feeling Blue</p>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>     
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 d-flex justify-content-center">
+                  <span class="h4">A conta Oficial do Rei do Glu Glu, Sérgio Mallandro! A conta Oficial do Rei do Glu Glu, Sérgio Mallandro!</span> 
+                </div>
+              </div>
+              <div class="row gy-4">
+                <div class="col-sm-4 d-flex justify-content-center">
+                  <span class="">Contribuições: 20</span> 
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center">
+                  <span class="">Deficiência: Cadeirante</span> 
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center">
+                  <span class="">Seguidores 30000</span> 
+                </div>
+              </div>
+              <div class="row gy-4">
+                <div id="beto" class="col-sm-12 d-flex justify-content-center">
+                  <p class="taba" id="tavaliacoes" onclick="mudarTab('avaliacoes', 'visitas')">Avaliações</p>
+                  <p class="taba" id="tvisitas" onclick="mudarTab('visitas', 'avaliacoes')">Lugares visitados</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="avaliacoes">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="well">
+            <p>John</p>
+            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="well">
+            <p>John</p>
+            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="well">
+              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="">
+            <p>Bo</p>
+            <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="">
+            <p>Bo</p>
+            <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="well">
+              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p>John</p>
-           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+      <div id="visitas">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+            <p>Jane</p>
+            <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="well">
+              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            </div>
           </div>
         </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="well">
+            <p>Anja</p>
+            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+            </div>
           </div>
-        </div>
+          <div class="col-sm-9">
+            <div class="well">
+              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+            </div>
+          </div>
+        </div>     
       </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p>Bo</p>
-           <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p>Jane</p>
-           <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well">
-           <p>Anja</p>
-           <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-          </div>
-        </div>
-      </div>     
-    </div>
 
     <!-- <div class="col-sm-2 well">
       <div class="thumbnail">
