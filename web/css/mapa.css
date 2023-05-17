@@ -230,6 +230,7 @@ nav{
     z-index: 10;
     display: none;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 /*definindo o mapa como o elemento mais atras nas camadas*/
@@ -238,3 +239,13 @@ nav{
     position: absolute;
 }
 
+
+.imgPerfilEstabelecimento{
+    width: 100%;
+    height: 200px;
+}
+
+#containerNomeEstabelecimento{
+    display: flex;
+    flex-flow: row;
+}
