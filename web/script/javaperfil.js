@@ -15,5 +15,5 @@ function mudarTab(colocar, tirar) {
 
     /*Tira e coloca borda*/
     borda_tirado.style.borderBottom = "none";
-    borda_colocado.style.borderBottom = "3px solid #329ef1";
+    borda_colocado.style.borderBottom = "3px solid #397FBF";
 }
