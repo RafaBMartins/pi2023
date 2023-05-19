@@ -1,0 +1,45 @@
+.lpo {
+      display: block;
+      margin-top: -25px;
+      margin-left: 25px;
+      min-width: 100px;
+      max-width: 160px;
+    }
+
+    .taba{
+      text-align: center;
+      display:block;
+      padding:0px 16px;
+      border:none;
+      cursor: pointer;
+      margin-bottom: 0px;
+    }
+
+    #beto :hover{
+    background-color: #9acff8;
+    }
+
+    #tavaliacoes {
+      border-bottom: 3px solid #329ef1;
+    }
+
+    #visitas {
+      display: none;
+    }
+
+    .jj {
+      margin-right: -10px;
+    }
+
+    @media (max-width: 575px) {
+      .lpo {
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        width: 50%;
+      }
+
+      .jj {
+        margin-right: auto;
+      }
+    }
