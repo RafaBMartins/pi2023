@@ -3,19 +3,18 @@
     height: 50px;
 }
 
+
+
 .textoMarca{
     color: #397FBF;
-    font-size: 24px;
 }
 
 .itemMenu{
     color:#397FBF;
-    font-size: 20px;
 }
 
 .itemMenu:hover{
     color:#005CB3;
-    font-size: 20px;
 }
 
 .active{
@@ -50,9 +49,6 @@
 }
 
 .opConfigNav{
-    border: 0 !important; 
-    color: #397FBF; 
-    font-size: 20px; 
     display: none;
 }
 
@@ -77,7 +73,6 @@
     .opConfigNav{
         border: 0 !important; 
         color: #397FBF; 
-        font-size: 20px; 
         display: block;
     }
   }
