@@ -55,12 +55,24 @@ function loadMapScenario() {
     calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
-    map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
-        center: locIfes,
-        zoom: 16,
-        NavigationBarMode: "minified",
-        navigationBarOrientation: "horizontal"
-    });
+    if(window.innerWidth <= 470){
+        map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
+            center: locIfes,
+            zoom: 16,
+            NavigationBarMode: "minified",
+            navigationBarOrientation: "horizontal",
+            showMapTypeSelector: false,
+            showLocateMeButton: true,
+        });
+    }
+    else{
+         map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
+            center: locIfes,
+            zoom: 16,
+            NavigationBarMode: "minified",
+            navigationBarOrientation: "horizontal"
+        });
+    }
 
     var locaisProprios = {}
 
@@ -215,5 +227,5 @@ function pesquisaMapa(){
 
 /*adiciona o evento de resize para a janela, assim o tamanho do mapa sera recalculado toda vez*/
 window.addEventListener("resize", (e) =>{
-    calculaTamanhoMapa(document.getElementById("mapa"))
+    calculaTamanhoMapa(document.getElementById("mapa"));
 } )

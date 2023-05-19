@@ -17,7 +17,6 @@
 
 /*estiliza e posiona o menu lateral onde fica a barra de pesquisa*/
 #menuLateral{
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -26,7 +25,6 @@
     position: absolute;
     margin-top: 20px;
     margin-left: 20px;
-    width: 20vw !important;
     display: flex !important;
 }
 
@@ -44,8 +42,8 @@
 
 /*classe que faz a barra de pesquisa ficar visivel*/
 .menuLateralAcionado{
-    min-width: 20vw !important;
-    width: 20vw !important;
+    min-width: 450px !important;
+    width: 30vw !important;
     display: flex !important;
 }
 
@@ -123,7 +121,7 @@
 }
 
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 470px) {
     .menuConfig{
         display: none;
     }
@@ -135,7 +133,7 @@
     
     #inpPesquisa{
         height: 40px;
-        width: calc(100vw - 110px);
+        width: calc(100vw - 50px) !important;
         display: block;
         padding-left: 5px;
         outline: 0;
@@ -143,6 +141,33 @@
         border: 1px solid #00427F;
         font-size: 16px;
     }
+
+    #menuLateral{
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        overflow: visible;
+        z-index: 9997;
+        position: absolute;
+        display: flex !important;
+        width:calc(100vw - 50px) !important;
+        min-width: calc(100vw - 50px) !important;
+        margin-top: 10px;
+        margin-left: 0;
+        padding: 0 10px
+}
+
+#containerPesquisa{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: width 0.3s ease-in-out;
+}
+
 
 
     #setaMenuLateral{
