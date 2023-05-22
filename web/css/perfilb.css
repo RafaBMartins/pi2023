@@ -1,16 +1,12 @@
 .lpo {
-      display: block;
       margin-top: -25px;
-      margin-left: 25px;
       min-width: 100px;
       max-width: 160px;
     }
     
     .taba{
       text-align: center;
-      display:block;
       padding:0px 16px;
-      border:none;
       cursor: pointer;
       margin-bottom: 0px;
     }
@@ -27,19 +23,12 @@
       display: none;
     }
 
-    .jj {
-      margin-right: -10px;
-    }
-
     @media (max-width: 575px) {
       .lpo {
         margin-left: auto;
         margin-right: auto;
+        min-width: 75px;
         height: auto;
         width: 50%;
-      }
-
-      .jj {
-        margin-right: auto;
-      }
+      }      
     }
