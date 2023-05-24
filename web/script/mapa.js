@@ -1,5 +1,4 @@
 const menuLateral = document.getElementById("menuLateral");
-const alturaPagina = window.innerHeight;
 var ultimoPushpinClicado = null
 
 /*adicionando o evento de click a seta, a funcao faz as alteracoes necessarias para que o campo de pesquisa suma, diminuindo sua largura, e faz a seta girar*/
@@ -37,10 +36,10 @@ document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
 /*funcao que calcula o tamanho do mapa com base no tamanho da tela*/
 function calculaTamanhoMapa(mapa){
     const posicaoYMapa = mapa.offsetTop;
-    const posicaoXMapa = mapa.offsetLeft;
-    const larguraPagina = window.innerWidth;
-    mapa.style.width = `${larguraPagina}px`;
+    var alturaPagina = window.innerHeight;
     mapa.style.height = `${alturaPagina - posicaoYMapa}px`;
+    mapa.style.width = `${document.querySelector("nav").clientWidth}px`
+    console.log(document.getElementById("mapa").style.height, window.innerHeight, posicaoYMapa, alturaPagina-posicaoYMapa)
 }
 
 var map = null;
@@ -56,10 +55,24 @@ function loadMapScenario() {
     calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
-    map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
-        center: locIfes,
-        zoom: 16
-    });
+    if(window.innerWidth <= 470){
+        map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
+            center: locIfes,
+            zoom: 16,
+            NavigationBarMode: "minified",
+            navigationBarOrientation: "horizontal",
+            showMapTypeSelector: false,
+            showLocateMeButton: true,
+        });
+    }
+    else{
+         map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
+            center: locIfes,
+            zoom: 16,
+            NavigationBarMode: "minified",
+            navigationBarOrientation: "horizontal"
+        });
+    }
 
     var locaisProprios = {}
 
@@ -214,5 +227,5 @@ function pesquisaMapa(){
 
 /*adiciona o evento de resize para a janela, assim o tamanho do mapa sera recalculado toda vez*/
 window.addEventListener("resize", (e) =>{
-    calculaTamanhoMapa(document.getElementById("mapa"))
+    calculaTamanhoMapa(document.getElementById("mapa"));
 } )
