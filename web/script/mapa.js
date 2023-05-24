@@ -1,28 +1,6 @@
 const menuLateral = document.getElementById("menuLateral");
 var ultimoPushpinClicado = null
 
-/*adicionando o evento de click a seta, a funcao faz as alteracoes necessarias para que o campo de pesquisa suma, diminuindo sua largura, e faz a seta girar*/
-document.getElementById("setaMenuLateral").addEventListener('click', (e) => {
-    let menuLateral = document.getElementById("menuLateral");
-    if(!menuLateral.classList.contains("menuLateralAcionado")){
-        /*adiciona a classe que faz com que o campo de pesquisa apareca*/
-        menuLateral.classList.add("menuLateralAcionado");
-        document.getElementById("containerPesquisa").style.dislay = "flex";
-        document.getElementById("inpPesquisa").style.display = "block";
-        document.getElementById("setaMenuLateral").style.marginRight = "0";
-        document.getElementById("setaMenuLateral").style.transform = "rotate(180deg)"
-        document.getElementById("sugestoes").style.display = "none";
-    }
-    else{
-        /*remove a classe que torna o campo de pesquisa visivel*/
-        menuLateral.classList.remove("menuLateralAcionado");
-        document.getElementById("containerPesquisa").style.dislay = "none";
-        document.getElementById("inpPesquisa").style.display= "none";
-        document.getElementById("setaMenuLateral").style.marginRight = "3vw";
-        document.getElementById("setaMenuLateral").style.transform = "rotate(0)";
-        document.getElementById("sugestoes").style.display = "none";
-    }
-})
 
 document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
     if(e.key == 'Enter'){
@@ -39,7 +17,6 @@ function calculaTamanhoMapa(mapa){
     var alturaPagina = window.innerHeight;
     mapa.style.height = `${alturaPagina - posicaoYMapa}px`;
     mapa.style.width = `${document.querySelector("nav").clientWidth}px`
-    console.log(document.getElementById("mapa").style.height, window.innerHeight, posicaoYMapa, alturaPagina-posicaoYMapa)
 }
 
 var map = null;
@@ -60,7 +37,7 @@ function loadMapScenario() {
             center: locIfes,
             zoom: 16,
             NavigationBarMode: "minified",
-            navigationBarOrientation: "horizontal",
+            navigationBarOrientation: "vertical",
             showMapTypeSelector: false,
             showLocateMeButton: true,
         });
@@ -180,16 +157,21 @@ function loadMapScenario() {
         map.entities.push(locaisProprios[item]["pushpin"]);
 
         Microsoft.Maps.Events.addHandler(locaisProprios[item]["pushpin"], 'click', function (e) { 
+            var perfilEstabelecimento = document.getElementById("perfilEstabelecimento");
             if(ultimoPushpinClicado == e.target){
-                document.getElementById("perfilEstabelecimento").style.display = document.getElementById("perfilEstabelecimento").style.display == "block" ? "none" : "block";
-                document.getElementById("sugestoes").style.display = "none";
-                document.getElementById("inpPesquisa").value = "";
+               perfilEstabelecimento.style.display = perfilEstabelecimento.style.display === "flex" ? "none" :"flex";
             }
             else{
                 ultimoPushpinClicado = e.target;
-                document.getElementById("perfilEstabelecimento").style.display = "block"
-                document.getElementById("sugestoes").style.display = "none";
-                document.getElementById("inpPesquisa").value = "";
+                perfilEstabelecimento.style.display = "flex";
+                perfilEstabelecimento.classList.remove("desaparecer");
+                for(let local in locaisProprios){
+                    if(locaisProprios[local]["pushpin"] == e.target){
+                        var itemClicado = locaisProprios[local]
+                    }
+                }
+                document.getElementById("nomeEstabelecimento").textContent = itemClicado["nome"];
+                document.getElementById("imgPerfilEstabelecimento").setAttribute("src", itemClicado["imagem"]);
             }
         });
     }
@@ -206,6 +188,10 @@ function loadMapScenario() {
                 }
             }
     });
+}
+
+function fechaPerfil(){
+    document.getElementById("perfilEstabelecimento").style.display = "none";
 }
 
 function pesquisaMapa(){

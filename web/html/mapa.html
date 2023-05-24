@@ -82,21 +82,42 @@
             <!--container onde fica os itens do menu referentes a pesquisa-->
             <div id="containerPesquisa">
                 <input type="text" id="inpPesquisa" name="pesquisa" placeholder="Pesquisa">
-                <div class="containerSetaMapa">
-                    <!--seta que minimiza o menu-->
-                    <i class='fa-solid fa-arrow-right-long' id="setaMenuLateral"></i>
-                </div>
+                  <i class="fa-solid fa-rectangle-xmark" style="color: #ff0000; font-size: 36px;"  onclick="fechaPerfil()"></i>
             </div>
             <div id="sugestoes"></div>
             <!--container onde a seta que minimiza o menu esta-->
-            <div id="perfilEstabelecimento">
-                <img src="" alt="" class="imgPerfilEstabelecimento" id="imgPerfilEstabelecimento">
-                <div id="containerNomeEstabelecimento">
-                    <i class='fa-solid fa-arrow-right-long' style="transform: rotate(180deg); width: 10%;"></i>
-                    <div id="nomeEstabelecimento" style="width: 90%; text-align: center; font-size: 24px;"></div>
-                </div>
-            </div>
         </div>
+        <div id="perfilEstabelecimento" style="width: 20rem; z-index: 3; position: absolute; margin-top: 5rem; margin-left: 2rem; display: none;" class="card bg-light">
+          
+          <img src="../img/jaymePerfil.jpg" alt="" class="img-fluid card-img-top" id="imgPerfilEstabelecimento">
+          <div class="card-body">
+            <p id="nomeEstabelecimento" class="card-title" style="text-align: center; font-size: 24px;">Hospital Jayme dos Santos Neves</p>
+            <div class="row align-items-center">
+              <img src="../img/perfil/5estrela.png" alt="" class="img-fluid col-12 mb-0">
+              <img src="../img/seloOuro.svg" alt="" class="img-fluid col-8 mt-0" style="transform: scale(0.4);">
+              <i class="fa-solid fa-hospital col-4" style="font-size: 42px;"></i>
+            </div>
+            <p class="card-text" style="font-size: 20px;"><span style="color: #00427F">Telefone:</span> 3331-7500</p>
+            
+            <div class="btn-group dropend col-12 mb-2">
+              <button type="button" class="dropdown-toggle bg-light" style="color:#00427F; outline: 0; border: 0; font-size: 20px;" data-bs-toggle="dropdown" aria-expanded="false">
+                Horários
+              </button>
+              <ul class="dropdown-menu ps-3" style="width: 15rem;">
+                <li class="my-1"><span style="color:#00427F">Domingo: </span>24 Horas</li>
+                <li class="my-1"><span style="color:#00427F">Segunda feira: </span>24 Horas</li>
+                <li class="my-1"><span style="color:#00427F">Terça feira: </span>24 Horas</li>
+                <li class="my-1"><span style="color:#00427F">Quarta feira: </span>24 Horas</li>
+                <li class="my-1"><span style="color:#00427F">Quinta feira: </span>24 Horas</li>
+                <li class="my-1"><span style="color:#00427F">Sexta: </span>24 Horas</li>
+                <li class="my-1"><span style="color:#00427F">Sábado: </span>24 Horas</li>
+              </ul>
+            </div>
+
+            <a href="#" class="card-link col-12">Ver Mais</a>
+
+          </div>
+      </div>
 
         
         <!--div onde o mapa sera renderizado-->
