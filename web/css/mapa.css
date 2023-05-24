@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+.desaparecer{
+    display: none;
+}
+
 
 /*classe que faz o menu crescer quando ativado*/
 .menuSelecionado{
@@ -26,6 +30,8 @@
     margin-top: 20px;
     margin-left: 20px;
     display: flex !important;
+    min-width: 450px !important;
+    width: 30vw !important;
 }
 
 /*container para posicionar a barra de pesquisa*/
@@ -40,23 +46,7 @@
     transition: width 0.3s ease-in-out;
 }
 
-/*classe que faz a barra de pesquisa ficar visivel*/
-.menuLateralAcionado{
-    min-width: 450px !important;
-    width: 30vw !important;
-    display: flex !important;
-}
 
-
-/*seta do menu de pesquisa*/
-#setaMenuLateral{
-    color: #00427F;
-    transform: rotate(180deg);
-    transition: transform 0.3s ease-in-out;
-    font-size: 24px;
-    margin-left: 10px;
-    cursor: pointer;
-}
 
 #sugestoes{
     background-color: white;
@@ -93,32 +83,12 @@
     font-size: 18px;
 }
 
-#perfilEstabelecimento{
-    width: 800px;
-    height: 800px;
-    background-color: white;
-    z-index: 10;
-    display: none;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-
 /*definindo o mapa como o elemento mais atras nas camadas*/
 #mapa{
     z-index: -1;
     position: absolute;
 }
 
-
-.imgPerfilEstabelecimento{
-    width: 100%;
-    height: 200px;
-}
-
-#containerNomeEstabelecimento{
-    display: flex;
-    flex-flow: row;
-}
 
 
 @media only screen and (max-width: 470px) {
