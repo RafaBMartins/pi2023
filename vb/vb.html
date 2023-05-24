@@ -26,12 +26,13 @@
       padding: 15px;
     }
 
-    
     .lpo {
       display: block;
       position: relative;
       margin-top: -25px;
       margin-left: 25px;
+      min-width: 100px;
+      max-width: 160px;
     }
 
     .taba{
@@ -51,9 +52,21 @@
       border-bottom: 3px solid #329ef1;
     }
 
-    @media (max-width: 767px) {
+    #visitas {
+      display: none;
+    }
+
+    .jj {
+      margin-right: -10px;
+    }
+
+    @media (max-width: 575px) {
       .lpo {
         margin-left: auto;
+        margin-right: auto;
+      }
+
+      .jj {
         margin-right: auto;
       }
     }
@@ -101,7 +114,7 @@ borda_colocado.style.borderBottom = "3px solid #329ef1";
       </li>
     </ul>
   </nav> -->
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse mb-0">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -166,137 +179,165 @@ borda_colocado.style.borderBottom = "3px solid #329ef1";
     </div> -->
 
     <div class="col-sm-12">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default text-left">
-              <div class="julo ratio ratio-21x9 ">
-                <img src="bird.jpg">
-              </div>
-              <div class="row gy-4">
-                <div class="col-md-2">
-                  <img class="lpo img-circle" height="150" width="150" src="pcamigos.jfif">
-                    
-                </div>
-                <div class="col-md-8 d-flex justify-content-center">
-                    <p class="h2 d-inline text-center" >Sergio Malandro</p>
-                </div>
-                <div class="col-md-2 d-flex align-items-md-center justify-content-center">
-                    <button type="button" class="btn btn-default btn-sm rounded-pill bg-primary">
-                      <span class="h4 text-white">Seguir</span> 
-                    </button>
-
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12 d-flex justify-content-center">
-                  <span class="h4">A conta Oficial do Rei do Glu Glu, Sérgio Mallandro! A conta Oficial do Rei do Glu Glu, Sérgio Mallandro!</span> 
-                </div>
-              </div>
-              <div class="row gy-4">
-                <div class="col-sm-4 d-flex justify-content-center">
-                  <span class="">Contribuições: 20</span> 
-                </div>
-                <div class="col-sm-4 d-flex justify-content-center">
-                  <span class="">Deficiência: Cadeirante</span> 
-                </div>
-                <div class="col-sm-4 d-flex justify-content-center">
-                  <span class="">Seguidores 30000</span> 
-                </div>
-              </div>
-              <div class="row gy-4">
-                <div id="beto" class="col-sm-12 d-flex justify-content-center">
-                  <p class="taba" id="tavaliacoes" onclick="mudarTab('avaliacoes', 'visitas')">Avaliações</p>
-                  <p class="taba" id="tvisitas" onclick="mudarTab('visitas', 'avaliacoes')">Lugares visitados</p>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div id="avaliacoes">
+      <div class="border border-top-0">
         <div class="row">
-          <div class="col-sm-6">
-            <div class="well">
-            <p>John</p>
-            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="well">
-            <p>John</p>
-            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-            </div>
-          </div>
           <div class="col-sm-12">
-            <div class="well">
-              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="">
-            <p>Bo</p>
-            <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="">
-            <p>Bo</p>
-            <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
-            </div>
-          </div>
-          <div class="col-sm-9">
-            <div class="well">
-              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="visitas">
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="well">
-            <p>Jane</p>
-            <img src="bandmember.png" class="img-circle" height="55" width="55" alt="Avatar">
-            </div>
-          </div>
-          <div class="col-sm-9">
-            <div class="well">
-              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="well">
-            <p>Anja</p>
-            <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-            </div>
-          </div>
-          <div class="col-sm-9">
-            <div class="well">
-              <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-            </div>
-          </div>
-        </div>     
-      </div>
+            <div class="panel mt-0 ">
+                <div class="ratio ratio-21x9">
+                  <img src="bird.jpg" class="object-fit-cover">
+                </div>
+                <div class="row gy-4 mb-4">
+                  <div class="col-sm-3">
+                    <img class="lpo img-circle" width="70%" src="pcamigos.jfif">
+                      
+                  </div>
+                  <div class="col-sm-6 d-flex justify-content-center">
+                      <p class="h2 d-inline text-center">Sergio Malandrodsdsd</p>
+                  </div>
+                  <div class="col-sm-3 d-flex align-items-sm-center justify-content-center">
+                      <button type="button" class="btn btn-default btn-sm rounded-3 bg-primary p-3">
+                        <span class="h4 text-white">Seguir</span> 
+                      </button>
 
-    <!-- <div class="col-sm-2 well">
-      <div class="thumbnail">
-        <p>Upcoming Events:</p>
-        <img src="bird.jpg" alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Fri. 27 November 2015</p>
-        <button class="btn btn-primary">Info</button>
-      </div>      
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div> -->
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-sm-12 d-flex justify-content-center">
+                    <span class="h4">A conta Oficial do Rei do Glu Glu, Sérgio Mallandro! A conta Oficial do Rei do Glu Glu, Sérgio Mallandro!</span> 
+                  </div>
+                </div>
+                <div class="row gy-4 mb-4">
+                  <div class="col-sm-4 d-flex justify-content-center">
+                    <span class="">Contribuições: 20</span> 
+                  </div>
+                  <div class="col-sm-4 d-flex justify-content-center">
+                    <span class="">Deficiência: Cadeirante</span> 
+                  </div>
+                  <div class="col-sm-4 d-flex justify-content-center">
+                    <span class="">Seguidores 30000</span> 
+                  </div>
+                </div>
+                <div class="row gy-4">
+                  <div id="beto" class="col-sm-12 d-flex justify-content-center">
+                    <p class="taba" id="tavaliacoes" onclick="mudarTab('avaliacoes', 'visitas')">Avaliações</p>
+                    <p class="taba" id="tvisitas" onclick="mudarTab('visitas', 'avaliacoes')">Lugares visitados</p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="avaliacoes">
+            <div class="row">
+              <div class="col-6">
+                <div class="">
+                <p>Sergio Malandro</p>
+                <img src="pcamigos.jfif" class="img-circle" height="70" width="70" alt="Avatar">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="">
+                <p>Severion Boteco Porreta</p>
+                <img src="bird.jpg" class="img-circle" height="70" width="70" alt="Avatar">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="p-3">
+                  <p>Just Forgot that I had tosad ad wjjhd wawae wae waegwya gdygw ydgwa dgyudg wayd gyuawdg dwuia hwdhwuiadhauh wh ui huiw huih mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="border-bottom pb-2 mb-2">
+                  <img src="0estrela.png" height="42" width="275">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="">
+                <p>Sergio Malandro</p>
+                <img src="pcamigos.jfif" class="img-circle" height="70" width="70" alt="Avatar">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="">
+                  <p>Severion Boteco Porreta</p>
+                  <img src="bird.jpg" class="img-circle" height="70" width="70" alt="Avatar">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="p-3">
+                  <p>om bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar uma dose</p>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="border-bottom pb-2 mb-2">
+                  <img src="0estrela.png" height="42" width="275">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="visitas">
+            <div class="row mb-4">
+              <div class="col-sm-2 mr-3">
+                <div class="mr-2">
+                  <img src="bird.jpg" class="img-circle jj" height="55" width="55" alt="Avatar">
+                </div>
+              </div>
+              <div class="col-sm-2 d-flex align-items-center justify-content-center">
+                <div class="">
+                  <p>Severino boteco porreta</p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <img src="bird.jpg" class="img-circle" height="60" width="60" alt="Avatar">
+              </div>
+              <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <div class="">
+                  <img src="0estrela.png" height="35" width="229">
+                </div>
+              </div>
+            </div>  
+            <div class="row mb-4">
+              <div class="col-sm-2 mr-3">
+                <div class="mr-2">
+                  <img src="bird.jpg" class="img-circle jj" height="55" width="55" alt="Avatar">
+                </div>
+              </div>
+              <div class="col-sm-2 d-flex align-items-center justify-content-center">
+                <div class="">
+                  <p>Severino boteco porreta</p>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <img src="bird.jpg" class="img-circle" height="60" width="60" alt="Avatar">
+              </div>
+              <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                <div class="">
+                  <img src="0estrela.png" height="35" width="229">
+                </div>
+              </div>
+            </div>     
+          </div>
+        </div>
 
+      <!-- <div class="col-sm-2 well">
+        <div class="thumbnail">
+          <p>Upcoming Events:</p>
+          <img src="bird.jpg" alt="Paris" width="400" height="300">
+          <p><strong>Paris</strong></p>
+          <p>Fri. 27 November 2015</p>
+          <button class="btn btn-primary">Info</button>
+        </div>      
+        <div class="well">
+          <p>ADS</p>
+        </div>
+        <div class="well">
+          <p>ADS</p>
+        </div>
+      </div> -->
+    </div>
+    </div>
   </div>
 </div>
 
