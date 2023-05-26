@@ -32,7 +32,7 @@ function loadMapScenario() {
     calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
-    if(window.innerWidth <= 470){
+    if(window.innerWidth <= 540){
         map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
             center: locIfes,
             zoom: 16,
@@ -63,6 +63,7 @@ function loadMapScenario() {
         document.getElementById("inpPesquisa").addEventListener('keyup', (e) => {
             var pesquisa = document.getElementById("inpPesquisa").value.toLowerCase()
             document.getElementById("perfilEstabelecimento").style.display = "none";
+            document.getElementById("botFechaPerfil").style.display = "none";
             if(pesquisa.length == 0){
                 document.getElementById("sugestoes").style.display = "none";
                 var divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
@@ -103,6 +104,7 @@ function loadMapScenario() {
                     let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
                     let sugestoes = Array.from(divSugestoes);
                     let clicada = correspondentes[sugestoes.indexOf(e.target)];
+                    document.getElementById("botFechaPerfil").style.display = "block";
                     document.getElementById("perfilEstabelecimento").style.display = "block"
                     document.getElementById("sugestoes").style.display = "none";
                     document.getElementById("inpPesquisa").value = "";
@@ -160,14 +162,16 @@ function loadMapScenario() {
             var perfilEstabelecimento = document.getElementById("perfilEstabelecimento");
             if(ultimoPushpinClicado == e.target){
                perfilEstabelecimento.style.display = perfilEstabelecimento.style.display === "flex" ? "none" :"flex";
+               document.getElementById("botFechaPerfil").style.display = document.getElementById("botFechaPerfil").style.display === "block" ? "none" : "block"; 
             }
             else{
                 ultimoPushpinClicado = e.target;
                 perfilEstabelecimento.style.display = "flex";
+                document.getElementById("botFechaPerfil").style.display = "block";
                 perfilEstabelecimento.classList.remove("desaparecer");
                 for(let local in locaisProprios){
                     if(locaisProprios[local]["pushpin"] == e.target){
-                        var itemClicado = locaisProprios[local]
+                        var itemClicado = locaisProprios[local];
                     }
                 }
                 document.getElementById("nomeEstabelecimento").textContent = itemClicado["nome"];
@@ -192,6 +196,7 @@ function loadMapScenario() {
 
 function fechaPerfil(){
     document.getElementById("perfilEstabelecimento").style.display = "none";
+    document.getElementById("botFechaPerfil").style.display = "none";
 }
 
 function pesquisaMapa(){
