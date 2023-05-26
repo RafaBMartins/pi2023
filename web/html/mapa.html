@@ -82,15 +82,15 @@
             <!--container onde fica os itens do menu referentes a pesquisa-->
             <div id="containerPesquisa">
                 <input type="text" id="inpPesquisa" name="pesquisa" placeholder="Pesquisa">
-                  <i class="fa-solid fa-rectangle-xmark" style="color: #ff0000; font-size: 36px;"  onclick="fechaPerfil()"></i>
+                  <i class="fa-solid fa-rectangle-xmark" style="color: #ff0000; font-size: 36px; display: none; margin-left: 10px; cursor: pointer;"  id="botFechaPerfil" onclick="fechaPerfil()"></i>
             </div>
             <div id="sugestoes"></div>
             <!--container onde a seta que minimiza o menu esta-->
         </div>
-        <div id="perfilEstabelecimento" style="width: 20rem; z-index: 3; position: absolute; margin-top: 5rem; margin-left: 2rem; display: none;" class="card bg-light">
+        <div id="perfilEstabelecimento" class="perfilEstabelecimento" style="width: 20rem; z-index: 3; position: absolute; margin-top: 5rem; margin-left: 2rem; display: none;" class="card bg-light">
           
           <img src="../img/jaymePerfil.jpg" alt="" class="img-fluid card-img-top" id="imgPerfilEstabelecimento">
-          <div class="card-body">
+          <div class="card-body card-body-cell">
             <p id="nomeEstabelecimento" class="card-title" style="text-align: center; font-size: 24px;">Hospital Jayme dos Santos Neves</p>
             <div class="row align-items-center">
               <img src="../img/perfil/5estrela.png" alt="" class="img-fluid col-12 mb-0">
