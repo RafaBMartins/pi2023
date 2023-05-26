@@ -1,0 +1,39 @@
+.lpp {
+  margin-top: -2rem;
+  min-width: 100px;
+}
+
+.mw {
+  max-width: 130px;
+}
+
+.um-por-um {
+    aspect-ratio: 1/1;
+}
+
+.taba{
+  text-align: center;
+  padding:0px 16px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+#beto :hover{
+background-color: #9acff8;
+}
+
+#tavaliacoes {
+  border-bottom: 3px solid #397FBF;
+}
+
+#visitas {
+  display: none;
+}
+
+
+@media (max-width: 575px) {
+  .meio-sm {
+    margin-left: auto;
+    margin-right: auto;
+  }      
+}

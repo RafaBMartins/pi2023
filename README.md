@@ -82,7 +82,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](https://github.com/discproint/template_projeto_integrador/blob/main/arquivos/concept_sample.png?raw=true "Modelo Conceitual")
+![Alt text](imagensReadme/conceitual.png)
       
     
 #### 7 Descrição dos dados 
@@ -123,7 +123,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
   b) Além da consulta deve ser apresentada uma imagem com o resultado obtido para cada consulta.<br>
 
  ### 13 Gráficos, relatórios, integração com Linguagem de programação e outras solicitações.<br>
-     OBS: Observe as instruções relacionadas a cada uma das atividades abaixo.<br>
+     https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  #### 13.1	Integração com Linguagem de programação; <br>
  #### 13.2	Desenvolvimento de gráficos/relatórios pertinentes, juntamente com demais <br>
  #### solicitações feitas pelo professor. <br>

@@ -1,0 +1,78 @@
+.logo{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.textoMarca{
+    color: #397FBF;
+}
+
+.itemMenu{
+    color:#397FBF;
+}
+
+.itemMenu:hover{
+    color:#005CB3;
+}
+
+.active{
+    color: #005CB3;
+}
+
+.containerOpcoes{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.containerOpcoes div{
+    cursor: pointer;
+}
+
+.tituloConfig{
+    font-size: 20px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.opConfigNav{
+    display: none;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+    color: #397FBF!important;
+    }
+
+.navbar .navbar-toggler:focus{
+        color: #397FBF;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(57, 127, 191, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  }
+
+
+
+@media only screen and (max-width: 991px) {
+    .menuConfig{
+        display: none;
+    }
+    .opConfigNav{
+        border: 0 !important; 
+        color: #397FBF; 
+        display: block;
+    }
+  }

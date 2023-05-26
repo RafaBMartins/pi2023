@@ -8,131 +8,8 @@
     box-sizing: border-box;
 }
 
-/*limitando o tamanho do minimo do body e definindo a altura como 100 porcento da altura da tela*/
-body{
-    min-width: 1000px;
-    height: 100%;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    padding-right: 10px;
-    padding-left: 10px;
-    box-shadow: 0.1px 0.2px 2px #397fbf;
-    background-color: #f7f7f7;
-    width: 100%;
-    height: 60px;
-}
-
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-
-.logo > img {
-    height: 50px;
-    width: 50px;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-
-.logo > p {
-    margin: 0;
-    color: #397fbf;
-    font-family: 'Lemon/Milk', sans-serif;
-    font-size: 22px;
-    pointer-events: none;
-}
-
-
-.opcoesHeader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-.opcoesHeader > p {
-    margin: 0;
-    margin-left: 20px;
-    color: #397fbf;
-    font-family: 'Lemon/Milk', sans-serif;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
-    cursor: pointer;
-}
-
-
-@keyframes animacao_opcoesHeader {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.20);
-    }
-}
-
-
-.opcoesHeader > p:hover {
-    animation-name: animacao_opcoesHeader;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}
-
-
-.opcoesHeader > p::after {
-    display: flex;
-    content: "";
-    width: 0;
-    height: 2px;
-    background: #397fbf;
-    transition: 0.5s ease-in-out;
-}
-
-
-.opcoesHeader > p:hover::after {
-    width: 100%;
-}
-
-
-.header_perfil_burguerMenu {
-    display: flex;
-    align-items: center;
-}
-
-
-.header_perfil_burguerMenu > img {
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    margin-right: 15px;
-}
-
-/*aplicando o display flex e posicionando os itens do menu*/
-nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*aplicando o display flex ao cabecalho e posicionando os elementos dentro do header*/
-.header {
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    z-index: 1;
+.desaparecer{
+    display: none;
 }
 
 
@@ -144,7 +21,6 @@ nav{
 
 /*estiliza e posiona o menu lateral onde fica a barra de pesquisa*/
 #menuLateral{
-    display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -153,9 +29,9 @@ nav{
     position: absolute;
     margin-top: 20px;
     margin-left: 20px;
-    min-width: 20vw !important;
-    width: 20vw !important;
     display: flex !important;
+    min-width: 450px !important;
+    width: 30vw !important;
 }
 
 /*container para posicionar a barra de pesquisa*/
@@ -170,23 +46,7 @@ nav{
     transition: width 0.3s ease-in-out;
 }
 
-/*classe que faz a barra de pesquisa ficar visivel*/
-.menuLateralAcionado{
-    min-width: 20vw !important;
-    width: 20vw !important;
-    display: flex !important;
-}
 
-
-/*seta do menu de pesquisa*/
-#setaMenuLateral{
-    color: #00427F;
-    transform: rotate(180deg);
-    transition: transform 0.3s ease-in-out;
-    font-size: 24px;
-    margin-left: 10px;
-    cursor: pointer;
-}
 
 #sugestoes{
     background-color: white;
@@ -223,18 +83,64 @@ nav{
     font-size: 18px;
 }
 
-#perfilEstabelecimento{
-    width: 800px;
-    height: 800px;
-    background-color: white;
-    z-index: 10;
-    display: none;
-    margin-top: 10px;
-}
-
 /*definindo o mapa como o elemento mais atras nas camadas*/
 #mapa{
     z-index: -1;
     position: absolute;
 }
 
+
+
+@media only screen and (max-width: 470px) {
+    .menuConfig{
+        display: none;
+    }
+    .opConfigNav{
+        border: 0 !important; 
+        color: #397FBF; 
+        display: block;
+    }
+    
+    #inpPesquisa{
+        height: 40px;
+        width: calc(100vw - 50px) !important;
+        display: block;
+        padding-left: 5px;
+        outline: 0;
+        border-radius: 10px;
+        border: 1px solid #00427F;
+        font-size: 16px;
+    }
+
+    #menuLateral{
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        overflow: visible;
+        z-index: 9997;
+        position: absolute;
+        display: flex !important;
+        width:calc(100vw - 50px) !important;
+        min-width: calc(100vw - 50px) !important;
+        margin-top: 10px;
+        margin-left: 0;
+        padding: 0 10px
+}
+
+#containerPesquisa{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: width 0.3s ease-in-out;
+}
+
+
+
+    #setaMenuLateral{
+        display: none;
+    }
+}
