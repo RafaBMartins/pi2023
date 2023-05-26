@@ -138,13 +138,9 @@
     transition: width 0.3s ease-in-out;
 }
 
-#perfilEstabelecimento{
-    position: absolute;
-    bottom: 0;   
-}
 
-.card-body-cell{
-    display: none;
-}
 
+    #setaMenuLateral{
+        display: none;
+    }
 }
