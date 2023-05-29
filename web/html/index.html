@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="h-100">
+<html lang="pt-BR" class="h-100 w-100">
 
 <head>
     <meta charset="UTF-8">
@@ -21,44 +21,45 @@
                 <img src="..\img\logo.svg" class="img-fluid h-75">  
             </div>
 
-            <div class="col-12 h-50 d-flex justify-content-center">
-                <form class="w-25">
-                    <div class="row justify-content-center">
+            <div class="col-12 h-60 d-flex justify-content-center align-items-center align-items-sm-start">
 
-                        <div class="col-9 form-floating">
-                            <input type="email" class="form-control w-100 custom-border pb-1 id="email-input" placeholder="name@example.com">
-                            <label for="email-input">E-mail</label>
+                <form class="w-100">
+
+                    <div class="row justify-content-center align-items-center d-flex flex-column">
+
+                        <div class="col-sm-3 form-floating">
+                            <input type="email" class="form-control w-100 custom-border pb-1 mb-4" id="email-input" placeholder="name@example.com">
+                            <label for="email-input" class="myplace">E-mail</label>
                         </div>
 
-                        <div class="col-9 mt-3 form-floating">
+                        <div class="col-sm-3 mt-3 form-floating">
                             <input type="password" class="form-control w-100 custom-border pb-1" id="senha-input" placeholder="Password">
-                            <label for="senha-input">Senha</label>
+                            <label for="senha-input" class="myplace">Senha</label>
                         </div>
 
-                        <div class="col-4 text-center mt-3">
-                            <button type="submit" class="btn btn-primary">ENTRAR</button>
+                        <div class="col-sm-3 text-center mt-5 mb-2 d-flex justify-content-center align-items-center">
+                            <button type="submit" class="btn btn-primary botao w-50">ENTRAR</button>
                         </div>
 
-                        <div class="col-9 form-check mt-3 d-flex justify-content-center ps-0">
+                        <div class="col-sm-3 form-check mt-3 d-flex justify-content-center px-0">
                             <input type="checkbox" class="form-check-input" id="checkbox1">
-                            <label for="checkbox1" class="form-check-label ps-2 pb-2">Lembre de mim</label>
+                            <label for="checkbox1" class="form-check-label ps-2 pb-2 font-form">Lembre de mim</label>
                         </div>
 
-                        <div class="col-6 mt-3">
-                            <a href="registrar.html">Não tem uma conta?</a>
+                        <div class="col-sm-3 mt-3 d-flex justify-content-between flex-column flex-sm-row">
+                            <a href="registrar.html" class="text-nowrap text-center my-3 font-form">Não tem uma conta?</a>
+                            <a href="esqueciSenha.html" class="text-nowrap text-center mb-3 my-sm-3 font-form">Esqueci minha senha</a>
                         </div>
-
-                        <div class="col-6 mt-3">
-                            <a href="esqueciSenha.html" class=" pe-0">Esqueci minha senha</a>
-                        </div>
-
+                        
                     </div>
+
                 </form>
+
             </div>
 
-            <!-- Nome do site -->
-            <div class="col-12 h-25 text-center">
-                <span>WHEELIEWAY</span>
+
+            <div class=" h-15 col-12 azul d-flex justify-content-center align-items-center">
+                <span class="font">WHEELIEWAY</span>
             </div>
 
         </div>
