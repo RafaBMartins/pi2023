@@ -10,34 +10,34 @@
 }
 
 .azul {
-    background-color: #397fbf
+    background-color: #397fbf !important;
 }
 
 .font {
-    font-size: 5vh;
-    color: white;
-    font-family: 'Lemon/Milk', sans-serif;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    font-size: 5vh !important;
+    color: white !important;
+    font-family: 'Lemon/Milk', sans-serif !important;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25) !important;
 }
 
 .botao{
-    border: 0;
-    background-color: #397fbf;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0.5px 1px 3px black;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    border: 0 !important;
+    background-color: #397fbf !important;
+    color: white !important;
+    border-radius: 20px !important;
+    box-shadow: 0.5px 1px 3px black !important;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25) !important;
 }
 
 .myplace {
-    font-family: Verdana, Geneva, Thoma, sans-serif;
-    color: gray;
+    font-family: Verdana, Geneva, Thoma, sans-serif !important;
+    color: gray !important;
 }
 
 .font-form {
-    font-family: Verdana, Geneva, Thoma, sans-serif;
-    color: #005db2;
-    text-decoration: none;
+    font-family: Verdana, Geneva, Thoma, sans-serif !important;
+    color: #005db2 !important;
+    text-decoration: none !important;
 }
 
 .vh-60 {
@@ -46,4 +46,21 @@
 
 .vh-15 {
     height: 15vh !important;
+}
+
+@keyframes animacao_botao {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.botao:hover {
+    animation-name: animacao_botao;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
