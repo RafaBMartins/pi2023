@@ -14,9 +14,10 @@ class BuscaCest
     // tests
     public function buscarResultadosNaPaginaTest(AcceptanceTester $I)
     {
-		$I->amOnPage('/');
-		$I->fillField('searchword', 'edital');
-		$I->click('Buscar');
-		$I->see('resultados encontdos');
+      $I = new AcceptanceTester($scenario);
+      $I->amOnPage('web/html/mapa.html');
+      $I->fillField('pesquisa', 'ifes');
+      $I->click('Horários');
+      $I->click('Ver Mais');
     }
 }
