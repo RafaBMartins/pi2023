@@ -40,10 +40,10 @@
     text-decoration: none;
 }
 
-.h-60 {
-    height: 60% !important;
+.vh-60 {
+    height: 60vh !important;
 }
 
-.h-15 {
-    height: 15% !important;
+.vh-15 {
+    height: 15vh !important;
 }
