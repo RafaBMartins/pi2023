@@ -9,6 +9,17 @@ document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
 
 })
 
+document.getElementById("setaPerfAbre").addEventListener('click', (e) => {
+    document.getElementById("dadosPerfMobile").classList.remove("d-flex");
+    document.getElementById("dadosPerfMobile").classList.add("d-none");
+    document.getElementById("dadosPerf").classList.remove("d-none");
+})
+
+document.getElementById("setaPerfFecha").addEventListener('click', (e) => {
+    document.getElementById("dadosPerfMobile").classList.add("d-flex");
+    document.getElementById("dadosPerfMobile").classList.remove("d-none");
+    document.getElementById("dadosPerf").classList.add("d-none");
+})
 
 
 /*funcao que calcula o tamanho do mapa com base no tamanho da tela*/
