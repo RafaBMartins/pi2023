@@ -13,12 +13,14 @@ document.getElementById("setaPerfAbre").addEventListener('click', (e) => {
     document.getElementById("dadosPerfMobile").classList.remove("d-flex");
     document.getElementById("dadosPerfMobile").classList.add("d-none");
     document.getElementById("dadosPerf").classList.remove("d-none");
+    document.getElementById("mapa").style.display = "none"
 })
 
 document.getElementById("setaPerfFecha").addEventListener('click', (e) => {
     document.getElementById("dadosPerfMobile").classList.add("d-flex");
     document.getElementById("dadosPerfMobile").classList.remove("d-none");
     document.getElementById("dadosPerf").classList.add("d-none");
+    document.getElementById("mapa").style.display = "block"
 })
 
 
