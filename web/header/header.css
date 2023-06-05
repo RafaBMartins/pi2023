@@ -40,12 +40,7 @@
 
 .tituloConfig{
     font-size: 20px;
-    width: 100%;
     border-bottom: 1px solid lightgray;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .opConfigNav{

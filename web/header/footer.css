@@ -1,0 +1,20 @@
+footer{
+    background-color: red;
+    height: 15% !important;
+}
+
+footer div{
+    color: white;
+    font-family: 'Lemon/Milk', sans-serif;
+    font-family: 'Lemon/Milk light', sans-serif;
+    font-size: 36px
+}
+
+img{
+    height: 100%;
+}
+
+#contato div{
+    font-size: 18px;
+}
+
