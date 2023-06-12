@@ -1,20 +1,22 @@
 footer{
-    background-color: red;
-    height: 15% !important;
+    background-color: #4DA9FF;
 }
 
-footer div{
-    color: white;
-    font-family: 'Lemon/Milk', sans-serif;
-    font-family: 'Lemon/Milk light', sans-serif;
-    font-size: 36px
+.texto-footer{
+    color: #00427F;
 }
 
-img{
-    height: 100%;
+.topico-footer{
+    font-size: 20px;
 }
 
-#contato div{
-    font-size: 18px;
+.logo-footer{
+    height: 100px;
+    width: 100px;
 }
 
+
+.rd-social-logo{
+    width: 40px;
+    height: 40px;
+}
