@@ -143,6 +143,7 @@ function loadMapScenario() {
         "pushpin": ifes,
         "imagem": "../img/ifesPerfil.jpg"
     };
+    
     locaisProprios[2] = {
         "nome": "Jayme dos Santos Neves",
         "pushpin": jaymeDosSantosNeves,
