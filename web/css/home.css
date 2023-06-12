@@ -1,0 +1,9 @@
+.img-size {
+    width: 100px;
+    height: 100px;
+}
+
+ol, li {
+    list-style-type: none;
+    padding-left: 0;
+}
