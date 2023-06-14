@@ -93,8 +93,18 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     [objeto]: [descrição do objeto]
     
     EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    USUARIO: Tabela que armazena as informações relativas ao usuário.<br>
+    ID: Campo que armazena o número que identifica cada usuário da empresa.<br>
+    NOME: Campo que armazena o nome do usuário.<br>
+    EMAIL: Campo que armazena o email do usuário.<br>
+    FOTO_PERFIL: Campo que armazena o link da foto de perfil do usuário.<br>
+    SENHA: Campo que armazena a senha do usuário<br>.
+    
+    TIPO_CONTATO: Tabela que armazena as informações relativas ao tipo de contato do usuário.<br>
+    ID: Campo que armazena o número que identifica cada tipo de contato.<br>
+    DESCRICAO: Campo que armazena a descrição definindo qual é o tipo de contato.<br>
+    
+    ESTABELECIMENTO: Tabela que armazena as informações relativas ao estabelecimento.<br>
 
 ### 8	RASTREABILIDADE DOS ARTEFATOS<br>
         a) Historia de usuários vs protótipo (Histórias de Usuário e em qual tela do protótipo aquela HU está sendo realizada).
