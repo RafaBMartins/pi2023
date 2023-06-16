@@ -37,7 +37,9 @@ Descrição textual das regras de negócio definidas como um subconjunto do mund
 
 #### 3.3 Validação da Ideia.
 a) Link do formulário desenvolvido
+>https://docs.google.com/presentation/d/1qrSYh5bpCSe50ds1G_YrqRBXrvAJAaLTO2YMUFZ8IF4/edit?usp=sharing<
 b) Link para Relatório/Apresentação de resultados obtidos
+>https://docs.google.com/forms/d/e/1FAIpQLSeIjW1dLSWuLkgC4TJp6YfD5qHpMWzX4Fn65itIjeFbh9xYrg/viewform<
 
 ### 4.Personas e Histórias de usuário<br>
 <img src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" Personas src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" width="500" height="500" /> <br>
