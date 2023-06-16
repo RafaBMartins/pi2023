@@ -44,7 +44,7 @@ b) Link para Relatório/Apresentação de resultados obtidos
 
 ### 4.Personas e Histórias de usuário<br>
 a) inclusão dos Persons desenvolvidos pelo grupo<br>
-<img src="https://github.com/RafaBMartins/pi2023/blob/bef88beda8af26123b2eca8d24d51f149fe0582e/imagensReadme/Persona.jpg" width="500" height="500"/>
+<img src="https://github.com/RafaBMartins/pi2023/blob/bef88beda8af26123b2eca8d24d51f149fe0582e/imagensReadme/Persona.jpg" width="889" height="500"/>
 <br>
 <img src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" UserStory src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" width="889" height="300" /> <br>
 b) inclusão das Histórias de usuário desenvolvidas pelo grupo
