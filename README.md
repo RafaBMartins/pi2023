@@ -37,13 +37,16 @@ Descrição textual das regras de negócio definidas como um subconjunto do mund
 
 #### 3.3 Validação da Ideia.
 a) Link do formulário desenvolvido
+>https://docs.google.com/presentation/d/1qrSYh5bpCSe50ds1G_YrqRBXrvAJAaLTO2YMUFZ8IF4/edit?usp=sharing
+
 b) Link para Relatório/Apresentação de resultados obtidos
+>https://docs.google.com/forms/d/e/1FAIpQLSeIjW1dLSWuLkgC4TJp6YfD5qHpMWzX4Fn65itIjeFbh9xYrg/viewform
 
 ### 4.Personas e Histórias de usuário<br>
-<img src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" Personas src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" width="500" height="500" /> <br>
 a) inclusão dos Persons desenvolvidos pelo grupo<br>
+<img src="https://github.com/RafaBMartins/pi2023/blob/bef88beda8af26123b2eca8d24d51f149fe0582e/imagensReadme/Persona.jpg" width="889" height="500"/>
 <br>
-<img src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" UserStory src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" width="500" height="300" /> <br>
+<br>
 b) inclusão das Histórias de usuário desenvolvidas pelo grupo
 <br>
 
@@ -94,7 +97,7 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     
     EXEMPLO:
     USUARIO: Tabela que armazena as informações relativas ao usuário.<br>
-    ID: Campo que armazena o número que identifica cada usuário da empresa.<br>
+    ID: Campo que armazena o número que identifica cada usuário.<br>
     NOME: Campo que armazena o nome do usuário.<br>
     EMAIL: Campo que armazena o email do usuário.<br>
     FOTO_PERFIL: Campo que armazena o link da foto de perfil do usuário.<br>
@@ -105,6 +108,25 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     DESCRICAO: Campo que armazena a descrição definindo qual é o tipo de contato.<br>
     
     ESTABELECIMENTO: Tabela que armazena as informações relativas ao estabelecimento.<br>
+    ID: Campo que armazena o número que identifica cada estabelecimento.<br>
+    NOME: Cmapo que armazena o nome do estabelecimento.<br>
+    LATITUDE: Campo que armazena qual será a latitude a fim de ter a localização.<br>
+    LONGITUDE: Campo que armazena qual será a longitude a fim de ter a localização.<br>
+    FOTO_BANNER: Campo que armazena o link que conterá a foto de banner do estabelecimento.<br>
+    
+    SELO: Campo multivalorado que armazena as informações relativas ao selo do estabelecimento.<br>
+    TIPO_ESTABELECIMENTO: Campo multivalorado que armazena as informações relativas ao tipo do estbaelecimento.<br>
+    
+    AVALIACAO: Tabela que armazena as informações relativas à avaliação de um sobre um estabelecimento.<br>
+    DT_AVALIACAO: Campo que armazena a data em que foi feita a avaliação.<br>
+    NOTA: Campo que armazena a nota da avaliação feita pelo usuário sobre um estabelecimento.<br>
+    
+    COMENTARIOS: Tabela que armazena as informações relativas aos comentáris de um usuário sobre um estabelecimento.<br>
+    DESCRICAO: Campo que armazena a descrição do usuário sobre o estabelecimento.<br>
+    DT_COMENTARIO: Campo que armazena a data em que o cometário foi feito.<br>
+    
+    VISITAS: Tabela que armazena as informações relativas à visita de um usário a um estabelecimento.<br>
+    DT_VISITA: Campo que armazena a data em que a visita do usuário foi feita.<br>
 
 ### 8	RASTREABILIDADE DOS ARTEFATOS<br>
         a) Historia de usuários vs protótipo (Histórias de Usuário e em qual tela do protótipo aquela HU está sendo realizada).
