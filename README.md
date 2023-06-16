@@ -43,8 +43,8 @@ b) Link para Relatório/Apresentação de resultados obtidos
 >https://docs.google.com/forms/d/e/1FAIpQLSeIjW1dLSWuLkgC4TJp6YfD5qHpMWzX4Fn65itIjeFbh9xYrg/viewform
 
 ### 4.Personas e Histórias de usuário<br>
-<img src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" Personas src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" width="500" height="500" /> <br>
 a) inclusão dos Persons desenvolvidos pelo grupo<br>
+<img src="https://github.com/RafaBMartins/pi2023/blob/bef88beda8af26123b2eca8d24d51f149fe0582e/imagensReadme/Persona.jpg" width="500" height="500"/>
 <br>
 <img src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" UserStory src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" width="500" height="300" /> <br>
 b) inclusão das Histórias de usuário desenvolvidas pelo grupo
