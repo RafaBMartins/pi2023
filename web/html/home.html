@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="vh-100">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,8 @@
     <script src="../header/footer.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../header/footer.css">
 </head>
-<body>
+
+<body class="vh-100">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand textoMarca" href="#">
@@ -72,14 +74,37 @@
     <div class="container-fluid">
         <div class="row d-flex flex-column justify-content-center align-items-center">
 
-            <div class="col-sm-4 mt-4">
-                <form class="w-100">
-                    <input type="search" class="w-100">
-                </form>
+            <div class="col-sm-5">
+                <div class="input-group input-group-lg mt-5">
+                <span class="input-group-text border-0 px-1"><img src="../img/Icones/search.svg" class="mx-1"></span>
+                <input type="text" class="form-control form-control-lg rounded" placeholder="Estabelecimento" aria-label="Search" aria-describedby="basic-addon2" />
+                <img src="../img/Icones/filter.svg" class="mx-2">
+                </div>
             </div>
 
-            <div class="col-sm-5 mt-5">
+            <div class="col-sm-4 mt-5">
                 <ol>
+                    <li>
+                        <div class="card mb-4">
+                            <div class="d-flex align-items-top p-2">
+                                <img class="card-img-start img-fluid img-size rounded border blue-border" src="../img/perfil/grelhazeze.jpg">
+                                <div class="w-100">
+                                    <h4 class="card-title ms-2">Grelha do Zêzere<img class="img-fluid m-1" src="../img/Icones/restauranteIcon.svg"></h4>
+                                    <h6 class="card-subtitle ms-2">2,5 km</h6>
+                                    <div class="m-2">
+                                        <span class="fa fa-star blue"></span>
+                                        <span class="fa fa-star blue"></span>
+                                        <span class="fa fa-star blue"></span>
+                                        <span class="fa fa-star-half-o blue"></span>
+                                        <span class="fa fa-star-o blue"></span>
+                                        <img src="../img/selos/seloPrata.svg" class="img-fluid ms-2">
+                                        <labe class="blue ms-2">Ver Mais</labe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
                     <li>
                         <div class="card mb-4">
                             <div class="d-flex align-items-top p-2">
@@ -93,6 +118,29 @@
                                         <span class="fa fa-star blue"></span>
                                         <span class="fa fa-star-half-o blue"></span>
                                         <span class="fa fa-star-o blue"></span>
+                                        <img src="../img/selos/seloPrata.svg" class="img-fluid ms-2">
+                                        <labe class="blue ms-2">Ver Mais</labe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="card mb-4">
+                            <div class="d-flex align-items-top p-2">
+                                <img class="card-img-start img-fluid img-size rounded border blue-border" src="../img/perfil/grelhazeze.jpg">
+                                <div>
+                                    <h4 class="card-title ms-2">Grelha do Zêzere<img class="img-fluid m-1" src="../img/Icones/restauranteIcon.svg"></h4>
+                                    <h6 class="card-subtitle ms-2">2,5 km</h6>
+                                    <div class="m-2">
+                                        <span class="fa fa-star blue"></span>
+                                        <span class="fa fa-star blue"></span>
+                                        <span class="fa fa-star blue"></span>
+                                        <span class="fa fa-star-half-o blue"></span>
+                                        <span class="fa fa-star-o blue"></span>
+                                        <img src="../img/selos/seloPrata.svg" class="img-fluid ms-2">
+                                        <labe class="blue ms-2">Ver Mais</labe>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +153,7 @@
 
     </div>
 
-    <footer class="d-flex w-100 sticky-bottom p-1 align-items-center justify-content-md-between justify-content-center flex-md-row flex-wrap flex-column">
+    <footer class="d-flex w-100 fixed-bottom p-1 align-items-center justify-content-md-between justify-content-center flex-md-row flex-wrap flex-column d-none d-sm-flex">
         
         <div class="p-3 logo-footer d-flex justify-content-center flex-column my-1 my-md-0">
             <img class="" src="../img/logos/logoBranco.svg" alt="">

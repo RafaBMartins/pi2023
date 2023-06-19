@@ -15,3 +15,7 @@ ol, li {
 .blue-border {
     border-color: #00427f !important;
 }
+
+.form-control {
+    box-shadow: none !important;
+  }
