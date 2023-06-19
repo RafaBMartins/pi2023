@@ -1,26 +1,30 @@
+/* dimensoes da logo */
 .logo{
     width: 50px;
     height: 50px;
 }
 
-
-
+/* cor do texto de nome da marca */
 .textoMarca{
     color: #397FBF;
 }
 
+/* cor dos itens de menu */
 .itemMenu{
     color:#397FBF;
 }
 
+/* escurece o item caso passe o mouse por cima */
 .itemMenu:hover{
     color:#005CB3;
 }
+
 
 .active{
     color: #005CB3;
 }
 
+/* define o estilo do menu onde estao as opcoes do menu de configuracoes */
 .containerOpcoes{
     display: none;
     flex-direction: column;
@@ -34,19 +38,23 @@
     padding: 10px;
 }
 
+/* define que as divs dentro do container de opcoes terao o cursor pointer */
 .containerOpcoes div{
     cursor: pointer;
 }
 
+/* classe do titulo "configuracoes" */
 .tituloConfig{
     font-size: 20px;
     border-bottom: 1px solid lightgray;
 }
 
+/* esconde o item do navbar que contem as configuracoes, este item aparece dentro do menu hamburger */
 .opConfigNav{
     display: none;
 }
 
+/* personalizando a cor do icone do menu hamburger */
 .navbar .navbar-toggler[aria-expanded="true"] {
     color: #397FBF!important;
     }
@@ -55,16 +63,21 @@
         color: #397FBF;
 }
 
+/* importando um icone para o menu hamburger */
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(57, 127, 191, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
   }
 
 
-
+/* define os estilos especificos para telas menores que 991px */
 @media only screen and (max-width: 991px) {
+    
+    /* desabilita o menu de configuracoes padrao */
     .menuConfig{
         display: none;
     }
+
+    /* mostra o item do hamburger com as configuracoes */
     .opConfigNav{
         border: 0 !important; 
         color: #397FBF; 

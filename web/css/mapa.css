@@ -1,4 +1,4 @@
-/*importando a fonte lemonmilk*/
+ /*importando a fonte lemonmilk*/
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
 /*definindo a formatacao padrao dos elementos*/
@@ -46,8 +46,7 @@
     transition: width 0.3s ease-in-out;
 }
 
-
-
+/* estilos do container onde as sugestoes de pesquisa */
 #sugestoes{
     background-color: white;
     padding: 10px;
@@ -57,11 +56,13 @@
     display: none;
 }
 
+/* adiciona padding e cursor de pointer para divs dentro do container de sugestoes */
 #sugestoes div{
     padding: 5px;
     cursor: pointer;
 }
 
+/* muda a cor de fundo das divs que estao dentro do container de sugestoes quando o mouse esta em cima */
 #sugestoes div:hover{
     background-color: grey;
 }
@@ -89,8 +90,7 @@
     position: absolute;
 }
 
-
-
+/* muda os estilos para telas menores que 470px */
 @media only screen and (max-width: 470px) {
     .menuConfig{
         display: none;
