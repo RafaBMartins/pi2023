@@ -18,7 +18,7 @@ Entrevista com o usuário e identificação dos requisitos.(quando for o caso de
 Descrição textual das regras de negócio definidas como um subconjunto do mundo real cujos elementos são propriedades que desejamos incluir, processar, armazenar, gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 <br>
 
-> O sistema proposto para a "Devcom Projetos conterá as informacões aqui detalhadas. Dos Projetos serão armazenados o número, nome e cidade. Dos Departamentos serão armazenados o número e nome. O cliente destacou que cada projeto pode ter vários departamentos auxiliando no seu desenvolvimento, e cada departamento pode estar envolvido em vários projetos. Os dados relativos aos empregados que serão armazenados são: rg, nome, cpf, salário, data inicial do salario e supervisor de cada empregado. É importante destacar que cada empregado pode ser supervisionado por outro empregado, e obrigatoriamente deve estar alocado a um único departamento, mas pode gerenciar vários departamentos ou não gerenciar nenhum. Um empregado também pode participar de vários projetos, caso seja necessário, mas não precisa obrigatoriamente estar alocado em algum projeto. Com relação aos dependentes serão armazenadas as informações de nome do dependente, data de nascimento, sexo e grau de parentesco. Cada empregado pode ter vários dependentes, mas um dependente esta associado apenas a um único empregado. Com relação ao histórico de salário devemos armazenar as informações de valor do salário, data de início do salário no período e data final do salário no período. É importante lembrar que cada funcionario pode ter diversos eventos de histórico de salário associados a ele visto que este dado pode ser alterado várias vezes..
+> O sistema proposto para a "Wheelie Way" conterá as informacões aqui detalhadas. Dos Usuarios serão armazenados o id, nome, email, senha, bio e foto_perfil. De Tipo_Contato será armazenado id e descricao. O Usuário pode ter nenhum ou vários tipos de contato e um Tipo_contato pode pertencer a nenhum ou vários usuarios. De Estabelecimento será armazenado id, nome, selo, latitude, tipo_estabelecimento, longitude e foto_banner. De Avaliacao, será armazenado dt_avaliacao e nota. Um Usuario pode fazer nenhuma ou várias avaliações enquanto uma Avaliacao pode ser feita por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias qualificações feitas por uma avaliação enquanto uama Avaliacao pode qualificar um e apenas um estabelecimento. De Visitas será armazenado dt_visita. Um Usuario pode realizar nenhuma ou várias visitas enquanto uma Visita pode ser realizada por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias visitas feitas enquanto uma Visita pode ser feita a um e apenas um estabelecimento. De Comentarios será armazenado descricao e dt_comentario. Um Usuario pode escrever nenhum ou vários comentários enquanto uma Comentario pode ser escrito por um e por apenas um usuário. Um Estabelecimento pode ter nenhum ou várias comentários escritos enquanto um Comentario pode ser escrito sobre um e apenas um estabelecimento.
  
  
 ### 3.PMC<br>
@@ -37,13 +37,16 @@ Descrição textual das regras de negócio definidas como um subconjunto do mund
 
 #### 3.3 Validação da Ideia.
 a) Link do formulário desenvolvido
+>https://docs.google.com/presentation/d/1qrSYh5bpCSe50ds1G_YrqRBXrvAJAaLTO2YMUFZ8IF4/edit?usp=sharing
+
 b) Link para Relatório/Apresentação de resultados obtidos
+>https://docs.google.com/forms/d/e/1FAIpQLSeIjW1dLSWuLkgC4TJp6YfD5qHpMWzX4Fn65itIjeFbh9xYrg/viewform
 
 ### 4.Personas e Histórias de usuário<br>
-<img src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" Personas src="https://neilpatel.com/wp-content/uploads/2019/07/exemplo-carlos.png" width="500" height="500" /> <br>
 a) inclusão dos Persons desenvolvidos pelo grupo<br>
+<img src="https://github.com/RafaBMartins/pi2023/blob/bef88beda8af26123b2eca8d24d51f149fe0582e/imagensReadme/Persona.jpg" width="889" height="500"/>
 <br>
-<img src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" UserStory src="https://miro.medium.com/max/1400/1*r5GVnOvqpMdxnGUYNRXqbg.png" width="500" height="300" /> <br>
+<br>
 b) inclusão das Histórias de usuário desenvolvidas pelo grupo
 <br>
 
@@ -53,23 +56,27 @@ Neste ponto a codificação não e necessária, somente as ideias de telas devem
 
 Sugestão: https://balsamiq.com/products/mockups/<br>
 
-![Alt text](https://github.com/discproint/template_projeto_integrador/blob/main/arquivos/balsamiq.png?raw=true "Title")
+![Alt text](imagensReadme/prototipo.png)
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discproint/template_projeto_integrador/blob/main/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
 
 #### 5.1 PROTÓTIPO DO SISTEMA MOBILE
+Teste: https://quant-ux.com/#/test.html?h=a2aa10a35CHHhwHEySoH5G6qam0ce65GzUhN7BYFadNt0uannX6yJyutiZSO&ln=en
+
+Telas: https://quant-ux.com/#/apps/641aeb7d05d7232656948d45/design/s10183_68866.html
 
 #### 5.2 PROTÓTIPO DO SISTEMA WEB
+https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac586e8/web
 
 #### 5.3 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM OS SISTEMA WEB/MOBILE PROPOSTOS?
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
 > A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que informe quais são os gerentes de cada departamento incluindo as seguintes informações: número do departamento,  nome do departamento, e nome do gerente.
-* Relatório de empregados por projeto incluindo as seguintes informações: número do projeto, nome do projeto, rg do empregado, nome do empregado e quantidade de horas de trabalho do empregado alocadas ao projeto.
-* Relatório de empregados com dependentes incluindo as seguintes informações: rg do empregado, nome do empregado, nome do dependente, tipo de relação, data de nascimento do dependente e sexo do dependente.
-* Relatório com a quantidade de empregados por cada departamento incluindo as seguintes informações: nome do departamento, supervisor e quantidade de empregados alocados no departamento.
-* Relatório de supervisores e supervisionados incluindo as seguintes informações: nome do supervisor e nome do supervisionado.
+* Relatório que mostre quais estabelecimentos foram avaliados e sua nota média de estrelas de classificação quanto à acessibilidade(máximo de 5)
+* Relatório que agrupe os selos pelos seus tipos, mostrando somente o atributo selo e a quantidade de selos com o referido tipo.
+* Relatório que mostre quais são os tipos de estabelecimento e qual a sua quantidade do tipo.
+* Relatório que mostre quaal é a quantidade de visitas do tipos de estabelecimentos.
+* Relatório  que mostre os usuários e suas contribuições.
  
  ### 6.MODELO CONCEITUAL<br>
     A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
@@ -89,8 +96,37 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     [objeto]: [descrição do objeto]
     
     EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    USUARIO: Tabela que armazena as informações relativas ao usuário.<br>
+    ID: Campo que armazena o número que identifica cada usuário.<br>
+    NOME: Campo que armazena o nome do usuário.<br>
+    EMAIL: Campo que armazena o email do usuário.<br>
+    FOTO_PERFIL: Campo que armazena o link da foto de perfil do usuário.<br>
+    SENHA: Campo que armazena a senha do usuário<br>.
+    
+    TIPO_CONTATO: Tabela que armazena as informações relativas ao tipo de contato do usuário.<br>
+    ID: Campo que armazena o número que identifica cada tipo de contato.<br>
+    DESCRICAO: Campo que armazena a descrição definindo qual é o tipo de contato.<br>
+    
+    ESTABELECIMENTO: Tabela que armazena as informações relativas ao estabelecimento.<br>
+    ID: Campo que armazena o número que identifica cada estabelecimento.<br>
+    NOME: Cmapo que armazena o nome do estabelecimento.<br>
+    LATITUDE: Campo que armazena qual será a latitude a fim de ter a localização.<br>
+    LONGITUDE: Campo que armazena qual será a longitude a fim de ter a localização.<br>
+    FOTO_BANNER: Campo que armazena o link que conterá a foto de banner do estabelecimento.<br>
+    
+    SELO: Campo multivalorado que armazena as informações relativas ao selo do estabelecimento.<br>
+    TIPO_ESTABELECIMENTO: Campo multivalorado que armazena as informações relativas ao tipo do estbaelecimento.<br>
+    
+    AVALIACAO: Tabela que armazena as informações relativas à avaliação de um sobre um estabelecimento.<br>
+    DT_AVALIACAO: Campo que armazena a data em que foi feita a avaliação.<br>
+    NOTA: Campo que armazena a nota da avaliação feita pelo usuário sobre um estabelecimento.<br>
+    
+    COMENTARIOS: Tabela que armazena as informações relativas aos comentáris de um usuário sobre um estabelecimento.<br>
+    DESCRICAO: Campo que armazena a descrição do usuário sobre o estabelecimento.<br>
+    DT_COMENTARIO: Campo que armazena a data em que o cometário foi feito.<br>
+    
+    VISITAS: Tabela que armazena as informações relativas à visita de um usário a um estabelecimento.<br>
+    DT_VISITA: Campo que armazena a data em que a visita do usuário foi feita.<br>
 
 ### 8	RASTREABILIDADE DOS ARTEFATOS<br>
         a) Historia de usuários vs protótipo (Histórias de Usuário e em qual tela do protótipo aquela HU está sendo realizada).
@@ -283,6 +319,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
  ### 13 Gráficos, relatórios, integração com Linguagem de programação e outras solicitações.<br>
      https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  #### 13.1	Integração com Linguagem de programação; <br>
+     https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  #### 13.2	Desenvolvimento de gráficos/relatórios pertinentes, juntamente com demais <br>
  #### solicitações feitas pelo professor. <br>
  
