@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="../header/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../header/header.js" defer></script>
+    <script src="../header/footer.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../header/footer.css">
 
   <style>
     
@@ -29,7 +31,7 @@
   <nav class="navbar d-flex navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between">
       <a class="navbar-brand textoMarca" href="#">
-        <img src="../img/logo.svg" class="logo">
+        <img src="../img/logos/logo.svg" class="logo">
         WheelieWay
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,9 +126,9 @@
                   </div>
 
                 </div>
-                <!--distância entre as linhas-->
+                <!--distância horizontal entre as linhas-->
                 <div class="row gy-4">
-                  <!--cebtraliza o texto-->
+                  <!--tabas que mudam o que está visível com texto centralizado-->
                   <div id="tabas" class="col-sm-12 d-flex justify-content-center">
                     <p class="taba" id="tavaliacoes" onclick="mudarTab('avaliacoes', 'visitas')">Avaliações</p>
                     <p class="taba" id="tvisitas" onclick="mudarTab('visitas', 'avaliacoes')">Lugares visitados</p>
@@ -135,9 +137,10 @@
             </div>
           </div>
         </div>
-        <!--div com avaliações-->
+        <!--espaço das avaliações/visitas-->
         <div class="row">
           <div class="col-sm-12">
+            <!--div com avaliações do usuário-->
             <div id="avaliacoes">
               <!--primeira avaliação-->
               <div class="row">
@@ -264,9 +267,33 @@
 
   </div>
 </div>
-<div class="h-15 col-12 azul d-flex justify-content-center align-items-center">
-  <span class="font">WHEELIEWAY</span>
-</div>
+
+<!--footer-->
+<footer class="d-flex w-100 sticky-bottom p-1 align-items-center justify-content-md-between justify-content-center flex-md-row flex-wrap flex-column">
+        
+  <div class="p-3 logo-footer d-flex justify-content-center flex-column my-1 my-md-0">
+      <img class="" src="../img/logos/logoBranco.svg" alt="">
+  </div>
+
+  <div class="d-flex flex-column flex-wrap justify-content-center text-center my-1 my-md-0">
+      <div class="texto-footer topico-footer">Meios de Contato:</div>
+      <div class="texto-footer">Telefone: 27 99780-3226</div>
+      <div class="texto-footer">E-mail: rafaelmartinscouto@gmail.com</div>
+  </div>
+
+  <div class="justify-content-center text-center my-1 my-md-0">
+      <div class="texto-footer">Políticas de privacidades</div>
+      <div class="texto-footer">Documentação dos selos</div>
+      <div class="texto-footer">Ajuda</div>
+  </div>
+
+  <div class="justify-content-center text-center mt-2 my-md-0">
+      <img src="../img/facebook-logo.png" class="rd-social-logo mx-1" alt="">
+      <img src="../img/instagram-logo.png" class="rd-social-logo mx-1" alt="">
+      <img src="../img/twitter-logo.png" class="rd-social-logo mx-1" alt="">
+  </div>
+
+</footer>
 </body>
 
 

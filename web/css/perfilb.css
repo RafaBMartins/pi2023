@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
+/*margem, proporção e tamanho máximo e mínimo da imagem de perfil*/
 .lpo {
       margin-top: -25px;
       min-width: 100px;
@@ -7,6 +8,7 @@
       aspect-ratio: 1/1;
     }
     
+    /*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
     .taba{
       text-align: center;
       padding:0px 16px;
@@ -14,29 +16,22 @@
       margin-bottom: 0px;
     }
 
+    /*faz com que as tabas mudem de cor quando o cursor passar por cima*/
     #tabas :hover{
     background-color: #9acff8;
     }
 
+    /*cor da taba de avaliação*/
     #tavaliacoes {
       border-bottom: 3px solid #397FBF;
     }
 
+    /*deixa a cor da taba de visita invisível a principio*/
     #visitas {
       display: none;
     }
 
-    .azul {
-      background-color: #397fbf !important;
-  }
-  
-  .font {
-      font-size: 5vh !important;
-      color: white !important;
-      font-family: 'Lemon/Milk', sans-serif !important;
-      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25) !important;
-  }
-
+    /*muda o tamanho da foto de perfil quando em 575px (igual ao tamanho de tela sm do bootstrap)*/
     @media (max-width: 575px) {
       .lpo {
         margin-left: auto;
