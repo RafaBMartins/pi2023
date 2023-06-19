@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="../header/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../header/header.js" defer></script>
+    <script src="../header/footer.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../header/footer.css">
 
   <style>
     
@@ -25,11 +27,11 @@
 </head>
 <body>
 
-  
+  <!--header-->
   <nav class="navbar d-flex navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between">
       <a class="navbar-brand textoMarca" href="#">
-        <img src="../img/logo.svg" class="logo">
+        <img src="../img/logos/logo.svg" class="logo">
         WheelieWay
       </a>
       <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,45 +83,55 @@
   
 
 
-  
+<!--container que centraliza texto com todo conteúdo-->
 <div class="container text-center">    
   <div class="row">
 
+    <!--ocupa apenas uma parte da página e colaca borda em tudo menos no topo-->
     <div class="col-sm-12">
       <div class="border border-top-0">
         <div class="row">
           <div class="col-sm-12">
+            <!--cola borda e espaçamento na parte de cima do perfil-->
             <div class="panel mb-3 mt-0 border"> 
 
+              <!--carrosel-->
               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
+                  <!--elementos do carrosel com número do botão associado a eles-->
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
                 </div>
+                <!--item do carrosel inicial-->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
+                    <!--imagem do carrosel com altura de 1/4 da largura e imagem que ocupa o espaço disponível-->
                     <div class="ratio w-100" style="--bs-aspect-ratio: 25%;">
                       <img src="../img/perfilestabelecimento/1006771.png" class="object-fit-cover">
                     </div>                    
                   </div>
+                  <!--item do carrosel-->
                   <div class="carousel-item">
                     <div class="ratio w-100" style="--bs-aspect-ratio: 25%;">
                       <img src="../img/perfilestabelecimento/6ec80cc0-196c-11ed-bacf-6fad6e8c2d0e--minified.png" class="object-fit-cover">
                     </div>                    
                   </div>
+                  <!--item do carrosel-->
                   <div class="carousel-item">
                     <div class="ratio w-100" style="--bs-aspect-ratio: 25%;">
                       <img src="../img/perfilestabelecimento/caixaca-813072.jpg" class="object-fit-cover">
                     </div>                    
                   </div>
+                  <!--item do ccarrosel-->
                   <div class="carousel-item">
                     <div class="ratio w-100" style="--bs-aspect-ratio: 25%;">
                       <img src="../img/perfil/img1.png" class="object-fit-cover">
                     </div>                    
                   </div>
                 </div>
+                <!--botões nas laterais do carrosel que mudam o item ativo-->
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
@@ -130,44 +142,50 @@
                 </button>
               </div>
 
-                <div class="row mb-2 d-flex justify-content-center">
-                  <div class="col-sm-12 d-flex justify-content-center">
-                      <p class="h1 mt-4 mb-2 d-inline text-center">Caixaça Econômica</p>
-                  </div>
+              <!--linha com nome do estabelecimento centralizada-->
+              <div class="row mb-2 d-flex justify-content-center">
+                <div class="col-sm-12 d-flex justify-content-center">
+                    <p class="h1 mt-4 mb-2 d-inline text-center">Caixaça Econômica</p>
                 </div>
-                <div class="row gy-3 mb-4 d-flex justify-content-center">
-                  <div class="col-sm-4 col-9 d-flex flex-wrap align-items-center">
-                    <img src="../img/perfil/5estrela.png" class="m-auto" height="auto" width="80%">
-                  </div>
-                  <div class="col-sm-4 col-6 d-flex flex-wrap align-items-center">
-                    <img src="../img/seloBronze.svg" class="mw m-auto" height="auto" width="50%" alt="Selo">
-                  </div>
-                  <div class="col-sm-4 col-6 d-flex justify-content-center">
-                    <img src="../img/seloBronze.svg" class="mw m-auto" width="50%" alt="Selo">
-                  </div>
+              </div>
+              <!--linha com classificação em estrelas do lugar, em acessibilidade e em tipo de estabelecimento; seus itens estão centralizados; possui margem em baixo e entre suas linhas-->
+              <div class="row gy-3 mb-4 d-flex justify-content-center">
+                <!--imagem alinhada dentro da div com determinado tamanho máximo-->
+                <div class="col-sm-4 col-9 d-flex flex-wrap align-items-center">
+                  <img src="../img/perfil/5estrela.png" class="m-auto" height="auto" width="80%">
                 </div>
-                <div class="row mb-4">
-                  <div class="col-sm-12 d-flex justify-content-center">
-                    <p class="h6 p-2">Descrição se tiver alguma</p> 
-                  </div>
+                <div class="col-sm-4 col-6 d-flex flex-wrap align-items-center">
+                  <img src="../img/selos/seloBronze.svg" class="mw m-auto" height="auto" width="50%" alt="Selo">
                 </div>
-                <div class="row gy-2">
-                  <div class="col-4">
-                    <i class="fa-solid fa-location-dot"></i>
-                  </div>
+                <div class="col-sm-4 col-6 d-flex justify-content-center">
+                  <img src="../img/selos/seloBronze.svg" class="mw m-auto" width="50%" alt="Selo">
                 </div>
-                <div class="row gy-4">
-                  <div id="beto" class="col-sm-12 d-flex justify-content-center">
-                    <p class="taba" id="tavaliacoes" onclick="mudarTab('avaliacoes', 'visitas')">Avaliações</p>
-                    <p class="taba" id="tvisitas" onclick="mudarTab('visitas', 'avaliacoes')">Informações básicas</p>
-                  </div>
+              </div>
+              <!--linha com margem em baixo-->
+              <div class="row mb-4">
+                <!--descrição centralizada, determinado tamanho de fonte e espaçamento interno-->
+                <div class="col-sm-12 d-flex justify-content-center">
+                  <p class="h6 p-2">Descrição se tiver alguma</p> 
                 </div>
+              </div>  
+              
+              <!--distância horizontal entre as linhas-->
+              <div class="row gy-4">
+                <!--tabas que mudam o que está visível com texto centralizado-->
+                <div id="tabas" class="col-sm-12 d-flex justify-content-center">
+                  <p class="taba" id="tavaliacoes" onclick="mudarTab('avaliacoes', 'visitas')">Avaliações</p>
+                  <p class="taba" id="tvisitas" onclick="mudarTab('visitas', 'avaliacoes')">Informações básicas</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <!--espaço das avaliações/informações-->
         <div class="row">
           <div class="col-sm-12">
+            <!--div das avaliações sobre o estabelecimento-->
             <div id="avaliacoes">
+              <!--estrutura das avaliações idêntica às do perfil-->
               <div class="row">
                 <div class="col-sm-6">
                   <p>Paulo</p>
@@ -210,47 +228,63 @@
               </div>
             </div>
           
+            <!--div das informações do estabelecimento-->
             <div id="visitas">
               <div class="row mb-2">
+                <!--coluna da localização, telefone/celular e contato do estabelecimento, quebra quando chega a 575 pixel (tamanho de tela sm)-->
                 <div class="col-sm-6">
+                  <!--linha com itens centralizados e margem em baixo-->
                   <div class="row mb-2 align-items-center">
+                    <!--centraliza a imagem-->
                     <div class="col-sm-4 mr-3 d-flex align-items-center justify-content-center">
                       <div class="">
                         <img src="../img/perfilestabelecimento/2838912.png" class="rounded-circle ms-sm-3" height="60" width="60" alt="Avatar">
                       </div>   
                     </div>
+                    <!--informação que ocupa a maior parte da linha-->
                     <div class="col-sm-8">
                       <p class="px-2">Av. dos Sabiás, 330 - Morada de Laranjeiras, Serra - ES, 29166-630</p>
                     </div>
                   </div>
+                  <!--linha com itens centralizados e margem em baixo-->
                   <div class="row mb-2 align-items-center">
+                    <!--centraliza a imagem-->
                     <div class="col-sm-4 mr-3 d-flex align-items-center justify-content-center">
                       <div class="">
                         <img src="../img/perfilestabelecimento/pngtree-phone-icon-png-image_506.png" class="rounded-circle ms-sm-3" height="60" width="60" alt="Avatar">
                       </div>   
                     </div>
+                    <!--informação que ocupa a maior parte da linha-->
                     <div class="col-sm-8">
                       <div class="me-2">3331-7500</div>
                     </div>
                   </div>
+                  <!--linha com itens centralizados e margem em baixo-->
                   <div class="row mb-2 align-items-center">
+                    <!--centraliza a imagem-->
                     <div class="col-sm-4 mr-3 d-flex align-items-center justify-content-center">
                       <div class="">
                         <img src="../img/perfilestabelecimento/1006771.png" class="rounded-circle ms-sm-3" height="60" width="60" alt="Avatar">
                       </div>   
                     </div>
+                    <!--informação que ocupa a maior parte da linha-->
                     <div class="col-sm-8">
                       <a href="https://www.ifes.edu.br/" class="me-2">caixacaeconomica.net</a>
                     </div>
                   </div>
                 </div>
+                <!--horários que ocupam metade do espaço de informações-->
                 <div class="col-sm-6">
+                  <!--linha com itens centralizados e margem em baixo-->
                   <div class="row mb-2 align-items-center">
+                    <!--imagem que ocupa metade do espaço do horário-->
                     <div class="col-sm-6">
                       <img src="../img/perfilestabelecimento/clock-icon-transparent-free-icon.png" class="rounded-circle ms-sm-3" height="60" width="60" alt="Avatar">
                     </div>
+                    <!--coluna com os horários, cada um fica em uma linha e possui espaçamento vertical que some quando chega em 767px (tamanho de tela md no bootstrap)-->
                     <div class="col-sm-6">
                       <div class="row gy-md-2">
+                        <!--colunas que quebram quando a tela chega em tamanho de tela sm-->
                         <div class="col-sm-12">
                           <div class="me-2">Domingo: 13:00-5:00</div>
                         </div>
@@ -285,6 +319,32 @@
   </div>
 </div>
 
+<!--footer-->
+<footer class="d-flex w-100 sticky-bottom p-1 align-items-center justify-content-md-between justify-content-center flex-md-row flex-wrap flex-column">
+        
+  <div class="p-3 logo-footer d-flex justify-content-center flex-column my-1 my-md-0">
+      <img class="" src="../img/logos/logoBranco.svg" alt="">
+  </div>
+
+  <div class="d-flex flex-column flex-wrap justify-content-center text-center my-1 my-md-0">
+      <div class="texto-footer topico-footer">Meios de Contato:</div>
+      <div class="texto-footer">Telefone: 27 99780-3226</div>
+      <div class="texto-footer">E-mail: rafaelmartinscouto@gmail.com</div>
+  </div>
+
+  <div class="justify-content-center text-center my-1 my-md-0">
+      <div class="texto-footer">Políticas de privacidades</div>
+      <div class="texto-footer">Documentação dos selos</div>
+      <div class="texto-footer">Ajuda</div>
+  </div>
+
+  <div class="justify-content-center text-center mt-2 my-md-0">
+      <img src="../img/facebook-logo.png" class="rd-social-logo mx-1" alt="">
+      <img src="../img/instagram-logo.png" class="rd-social-logo mx-1" alt="">
+      <img src="../img/twitter-logo.png" class="rd-social-logo mx-1" alt="">
+  </div>
+
+</footer>
 </body>
 
 

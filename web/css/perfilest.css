@@ -1,12 +1,11 @@
-.lpp {
-  margin-top: -2rem;
-  min-width: 100px;
-}
+@import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
+/*tamanho máximo de 130px*/
 .mw {
   max-width: 130px;
 }
 
+/*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
 .taba{
   text-align: center;
   padding:0px 16px;
@@ -14,22 +13,17 @@
   margin-bottom: 0px;
 }
 
-#beto :hover{
+/*faz com que as tabas mudem de cor quando o cursor passar por cima*/
+#tabas :hover{
 background-color: #9acff8;
 }
 
+/*cor da taba de avaliação*/
 #tavaliacoes {
   border-bottom: 3px solid #397FBF;
 }
 
+/*deixa a cor da taba de visita invisível a principio*/
 #visitas {
   display: none;
-}
-
-
-@media (max-width: 575px) {
-  .meio-sm {
-    margin-left: auto;
-    margin-right: auto;
-  }      
 }
