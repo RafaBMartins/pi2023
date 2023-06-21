@@ -110,6 +110,7 @@ function loadMapScenario() {
                 if(suggestionResult.length > 0){
                 document.getElementById("sugestoes").style.display = "block";
                 var quatroSugestoes = suggestionResult.slice(0,4);
+                console.log(suggestionResult)
                 var quantidade = correspondentes.length;
                 for(let i = 0; i < quatroSugestoes.length-quantidade; i++){
                     let local = {
@@ -134,15 +135,17 @@ function loadMapScenario() {
                         let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
                         let sugestoes = Array.from(divSugestoes);
                         let clicada = correspondentes[sugestoes.indexOf(e.target)];
-                        document.getElementById("botFechaPerfil").classList.remove("d-none")
-                        document.getElementById("perfilEstabelecimento").style.display = "block"
                         document.getElementById("sugestoes").style.display = "none";
                         document.getElementById("inpPesquisa").value = "";
                         map.setView({
                             center: clicada["pushpin"].getLocation(),
                             zoom: 16
                         });
-                        carregaPerfil(clicada)
+                        if(clicada["imagem"] != null){
+                            document.getElementById("botFechaPerfil").classList.remove("d-none")
+                            document.getElementById("perfilEstabelecimento").style.display = "block"
+                            carregaPerfil(clicada)
+                        }
                     })
                     containerSugestoes.appendChild(div);
                 }

@@ -43,6 +43,7 @@ i{
     padding: 10px;
     box-shadow: -1px -1px 5px lightblue;
     border-radius: 5px;
+    z-index: 99999
 }
 
 /* define que as divs dentro do container de opcoes terao o cursor pointer */
