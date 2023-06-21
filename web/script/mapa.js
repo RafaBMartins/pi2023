@@ -92,7 +92,7 @@ function loadMapScenario() {
         document.getElementById("inpPesquisa").addEventListener('keyup', (e) => {
             var pesquisa = document.getElementById("inpPesquisa").value.toLowerCase()
             document.getElementById("perfilEstabelecimento").style.display = "none";
-            document.getElementById("botFechaPerfil").style.display = "none";
+            document.getElementById("botFechaPerfil").classList.add("d-none")
             if(pesquisa.length == 0){
                 document.getElementById("sugestoes").style.display = "none";
                 var divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
@@ -134,7 +134,7 @@ function loadMapScenario() {
                         let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
                         let sugestoes = Array.from(divSugestoes);
                         let clicada = correspondentes[sugestoes.indexOf(e.target)];
-                        document.getElementById("botFechaPerfil").style.display = "block";
+                        document.getElementById("botFechaPerfil").classList.remove("d-none")
                         document.getElementById("perfilEstabelecimento").style.display = "block"
                         document.getElementById("sugestoes").style.display = "none";
                         document.getElementById("inpPesquisa").value = "";
@@ -194,12 +194,17 @@ function loadMapScenario() {
             document.getElementById("sugestoes").style.display = "none";
             if(ultimoPushpinClicado == e.target){
                perfilEstabelecimento.style.display = perfilEstabelecimento.style.display === "flex" ? "none" :"flex";
-               document.getElementById("botFechaPerfil").style.display = document.getElementById("botFechaPerfil").style.display === "block" ? "none" : "block"; 
+               if(document.getElementById("botFechaPerfil").classList.contains("d-none")){
+                document.getElementById("botFechaPerfil").classList.remove("d-none");
+               }
+               else{
+                document.getElementById("botFechaPerfil").classList.add("d-none");
+               }
             }
             else{
                 ultimoPushpinClicado = e.target;
                 perfilEstabelecimento.style.display = "flex";
-                document.getElementById("botFechaPerfil").style.display = "block";
+                document.getElementById("botFechaPerfil").classList.remove("d-none");
                 perfilEstabelecimento.classList.remove("desaparecer");
                 for(let local in locaisProprios){
                     if(locaisProprios[local]["pushpin"] == e.target){
