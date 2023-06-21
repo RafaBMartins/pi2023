@@ -147,71 +147,71 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     senha VARCHAR(30),
     nome VARCHAR(75),
     foto_perfil VARCHAR(500)
-);
+    );
 
-CREATE TABLE ESTABELECIMENTO (
-    FK_selo_selo_PK SERIAL,
-    foto_banner VARCHAR(500),
-    longitude VARCHAR(30),
-    FK_tipo_estabelecimento_tipo_estabelecimento_PK SERIAL,
-    id SERIAL PRIMARY KEY,
-    latitude VARCHAR(30),
-    nome VARCHAR(75)
-);
-
-CREATE TABLE AVALIACAO (
-    nota FLOAT,
-    dt_avaliacao DATE,
-    FK_USUARIO_id SERIAL,
-    FK_ESTABELECIMENTO_id SERIAL
-);
-
-CREATE TABLE COMENTARIOS (
-    descricao VARCHAR(300),
-    dt_comentario DATE,
-    FK_USUARIO_id SERIAL,
-    FK_ESTABELECIMENTO_id SERIAL
-);
-
-CREATE TABLE selo (
-    selo_PK SERIAL NOT NULL PRIMARY KEY,
-    selo VARCHAR(30)
-);
-
-CREATE TABLE tipo_estabelecimento (
-    tipo_estabelecimento_PK SERIAL NOT NULL PRIMARY KEY,
-    tipo_estabelecimento VARCHAR(30)
-);
- 
-ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_2
-    FOREIGN KEY (FK_selo_selo_PK)
-    REFERENCES selo (selo_PK)
-    ON DELETE NO ACTION;
- 
-ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_3
-    FOREIGN KEY (FK_tipo_estabelecimento_tipo_estabelecimento_PK)
-    REFERENCES tipo_estabelecimento (tipo_estabelecimento_PK)
-    ON DELETE NO ACTION;
- 
-ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_1
-    FOREIGN KEY (FK_USUARIO_id)
-    REFERENCES USUARIO (id)
-    ON DELETE CASCADE;
- 
-ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_2
-    FOREIGN KEY (FK_ESTABELECIMENTO_id)
-    REFERENCES ESTABELECIMENTO (id)
-    ON DELETE CASCADE;
- 
-ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_1
-    FOREIGN KEY (FK_USUARIO_id)
-    REFERENCES USUARIO (id)
-    ON DELETE CASCADE;
- 
-ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_2
-    FOREIGN KEY (FK_ESTABELECIMENTO_id)
-    REFERENCES ESTABELECIMENTO (id)
-    ON DELETE CASCADE;
+   CREATE TABLE ESTABELECIMENTO (
+       FK_selo_selo_PK SERIAL,
+       foto_banner VARCHAR(500),
+       longitude VARCHAR(30),
+       FK_tipo_estabelecimento_tipo_estabelecimento_PK SERIAL,
+       id SERIAL PRIMARY KEY,
+       latitude VARCHAR(30),
+       nome VARCHAR(75)
+   );
+   
+   CREATE TABLE AVALIACAO (
+       nota FLOAT,
+       dt_avaliacao DATE,
+       FK_USUARIO_id SERIAL,
+       FK_ESTABELECIMENTO_id SERIAL
+   );
+   
+   CREATE TABLE COMENTARIOS (
+       descricao VARCHAR(300),
+       dt_comentario DATE,
+       FK_USUARIO_id SERIAL,
+       FK_ESTABELECIMENTO_id SERIAL
+   );
+   
+   CREATE TABLE selo (
+       selo_PK SERIAL NOT NULL PRIMARY KEY,
+       selo VARCHAR(30)
+   );
+   
+   CREATE TABLE tipo_estabelecimento (
+       tipo_estabelecimento_PK SERIAL NOT NULL PRIMARY KEY,
+       tipo_estabelecimento VARCHAR(30)
+   );
+    
+   ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_2
+       FOREIGN KEY (FK_selo_selo_PK)
+       REFERENCES selo (selo_PK)
+       ON DELETE NO ACTION;
+    
+   ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_3
+       FOREIGN KEY (FK_tipo_estabelecimento_tipo_estabelecimento_PK)
+       REFERENCES tipo_estabelecimento (tipo_estabelecimento_PK)
+       ON DELETE NO ACTION;
+    
+   ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_1
+       FOREIGN KEY (FK_USUARIO_id)
+       REFERENCES USUARIO (id)
+       ON DELETE CASCADE;
+    
+   ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_2
+       FOREIGN KEY (FK_ESTABELECIMENTO_id)
+       REFERENCES ESTABELECIMENTO (id)
+       ON DELETE CASCADE;
+    
+   ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_1
+       FOREIGN KEY (FK_USUARIO_id)
+       REFERENCES USUARIO (id)
+       ON DELETE CASCADE;
+    
+   ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_2
+       FOREIGN KEY (FK_ESTABELECIMENTO_id)
+       REFERENCES ESTABELECIMENTO (id)
+       ON DELETE CASCADE;
        
 ### 11	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
