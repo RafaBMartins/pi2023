@@ -20,66 +20,60 @@
  
 </head>
 <body>
-  
-  <!-- inicio navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <!-- container com a logo e nome da empresa -->
-      <div class="container-fluid">
-        <a class="navbar-brand textoMarca" href="#">
-          <img src="../img//logos/logo.svg" class="logo">
-          WheelieWay
-        </a>
-        <!-- botao do menu hamburger -->
-        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- itens do menu hamburger -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link itemMenu" aria-current="page" href="#">Busca</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link itemMenu" href="#">Mapa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link itemMenu" href="#">Favoritos</a>
-            </li>
-            <li>
-              <div class="btn-group dropend">
-                  <button type="button" style="vertical-align: center;" class="opConfigNav btn btn-tertiary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
-                    Configurações
-                  </button>
-                  <ul style="padding-left: 10px;"class="bg-tetiary dropdown-menu">
-                    <li>Notificações</li>
-                    <li>Sobre Nós</li>
-                    <li>Documentação</li>
-                    <li>Sair</li>
-                  </ul>
-                </div>
-            </li>
-          </ul>
-          <!-- fim do menu hamburger -->
-      </div>
-          
-      <!-- menu de configuracoes, so fica ativo em telas grandes -->
-      <div class="menuConfig">
-          <i style="font-size:36px; color: #397FBF;" class="fa fa-gear"></i>
-          <!-- container onde esta os titulos e o itens da configuracao -->
-          <div class="containerOpcoes">
-              <div class="p-2 mb-2 d-flex justify-content-between flex-row w100 tituloConfig">Configurações
-                  <div>
-                      <img style="width: 16px; height: 16px;" src="../img/close.png" id="closeConfig">
+    
+    <!-- Header é a parte de cima do site, que acompanha quando voccê faz a rolagem -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand textoMarca" href="#">
+            <img src="../img/logos/logo.svg" class="logo">
+            WheelieWay
+          </a>
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link itemMenu" aria-current="page" href="home.html">Busca</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link itemMenu" href="mapa.html">Mapa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link itemMenu" href="#">Favoritos</a>
+              </li>
+              <li>
+                <div class="btn-group dropend">
+                    <button type="button" style="vertical-align: center;" class="opConfigNav btn btn-tertiary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+                      Configurações
+                    </button>
+                    <ul style="padding-left: 10px;"class="bg-tetiary dropdown-menu">
+                      <li>Notificações</li>
+                      <li>Sobre Nós</li>
+                      <li>Documentação</li>
+                      <li>Sair</li>
+                    </ul>
                   </div>
-              </div>
-              <div>Notificações</div>
-              <div>Sobre nós</div>
-              <div>Documentação</div>
-              <div>Sair</div>
-          </div>
-    </div>
+              </li>
+            </ul>
+        </div>
+            
+        <div class="menuConfig">
+            <i style="font-size:36px; color: #397FBF;" class="fa fa-gear"></i>
+            <div class="containerOpcoes">
+                <div class="tituloConfig">Configurações
+                    <div>
+                        <img style="width: 16px; height: 16px;" src="../img/close.png" id="closeConfig">
+                    </div>
+                </div>
+                <div>Notificações</div>
+                <div>Sobre nós</div>
+                <div>Documentação</div>
+                <div>Sair</div>
+            </div>
       </div>
-    </nav>
+        </div>
+      </nav>
 
     <!--section onde o mapa e o menu de pesquisa lateral ficara posicionado-->
     <section id="containerMapa">
@@ -88,10 +82,10 @@
             <!--container onde fica os itens do menu referentes a pesquisa-->
             <div id="containerPesquisa">
                 <input type="text" id="inpPesquisa" name="pesquisa" placeholder="Pesquisa">
-                  <i class="fa-solid fa-rectangle-xmark" style="color: #ff0000; font-size: 36px; display: none; margin-left: 10px; cursor: pointer;"  id="botFechaPerfil" onclick="fechaPerfil()"></i>
+                  <i class="fa-solid fa-rectangle-xmark d-none" style="color: #ff0000; font-size: 36px; margin-left: 10px; cursor: pointer;"  id="botFechaPerfil" onclick="fechaPerfil()"></i>
             </div>
             <div id="sugestoes"></div>
-            
+            <!--container onde a seta que minimiza o menu esta-->
         </div>
 
         <div id="perfilEstabelecimento" style="display: none; " class="card bg-light perfil-estabelecimento">
@@ -114,7 +108,7 @@
             <p id="nomeEstabelecimento" class="card-title" style="text-align: center; font-size: 24px;"></p>
               <div class="row align-items-center">
                 <img src="../img/perfil/5estrela.png" alt="" class="img-fluid col-12 mb-0">
-                <img src="../img/seloOuro.svg" alt="" class="img-fluid col-8 mt-0" style="transform: scale(0.4);">
+                <img src="../img//selos/seloOuro.svg" alt="" class="img-fluid col-8 mt-0" style="transform: scale(0.4);">
                 <i class="fa-solid fa-hospital col-4" style="font-size: 42px;"></i>
               </div>
               <p class="card-text" style="font-size: 20px;"><span style="color: #00427F">Telefone:</span> 3331-7500</p>
@@ -134,7 +128,7 @@
                 </ul>
               </div>
 
-              <a href="#" class="card-link col-12">Ver Mais</a>
+              <a href="perfilestabelecimento.html" class="card-link col-12">Ver Mais</a>
           </div> 
         </div>
 
@@ -143,6 +137,8 @@
         <div id="mapa"></div>
     <!--Fim da section-->
     </section>
+
+    
 
     
 
