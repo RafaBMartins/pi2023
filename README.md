@@ -207,7 +207,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
          ON DELETE CASCADE;
        
 ### 11	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) INSERT INTO USUARIO(email, senha, nome, foto_perfil)
+        a) INSERT INTO USUARIO (email, senha, nome, foto_perfil)
            VALUES
                ('john.doe@example.com', 'pass123', 'John Doe', 'https://example.com/johndoe.jpg'),
                ('jane.smith@example.com', 'password456', 'Jane Smith', 'https://example.com/janesmith.jpg'),
@@ -240,6 +240,11 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
                ('ethan.hill@example.com', 'testpass5678', 'Ethan Hill', 'https://example.com/ethanhill.jpg'),
                ('olivia.russell@example.com', 'password4321', 'Olivia Russell', 'https://example.com/oliviarussell.jpg');
 
+           INSERT INTO SELO (selo) 
+           VALUES 
+             ('Ouro'),
+           		('Prata'),
+           		('Bronze');
                
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
