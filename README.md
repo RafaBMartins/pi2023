@@ -50,8 +50,9 @@ a) inclusão dos Persons desenvolvidos pelo grupo<br>
 b) inclusão das Histórias de usuário desenvolvidas pelo grupo
 <br>
 #### Template:
- Saulo Borges: Eu, Saulo Borges, quero uma plataforma que atenda as minhas necessidades físicas, para me ajudar com meu problema de acesso a locais que me acolham e respeitem as minhas dificuldades.  
-
+ Saulo Borges, <br>
+#### Exemplo:
+ Saulo Borges: Eu quero uma plataforma que atenda as minhas necessidades físicas, para me ajudar com meu problema de acesso a locais que me acolham e respeitem as minhas dificuldades.<br>
 
 ### 5. PROTÓTIPOS DO SISTEMA<br>
 Neste ponto a codificação não e necessária, somente as ideias de telas devem ser desenvolvidas. O princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas e/ou descartadas <br>
