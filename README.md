@@ -50,7 +50,7 @@ a) inclusão dos Persons desenvolvidos pelo grupo<br>
 b) inclusão das Histórias de usuário desenvolvidas pelo grupo
 <br>
 #### Template:
- Saulo Borges, <br>
+ Saulo Borges, animador de festa, quer localização de estabelecimentos com informações corretas quanto à acessibilidade deles.<br>
 #### Exemplo:
  Saulo Borges: Eu quero uma plataforma que atenda as minhas necessidades físicas, para me ajudar com meu problema de acesso a locais que me acolham e respeitem as minhas dificuldades.<br>
 
