@@ -63,12 +63,12 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discproint/template_projeto_integrador/blob/main/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
 
 #### 5.1 PROTÓTIPO DO SISTEMA MOBILE
-Teste: https://quant-ux.com/#/test.html?h=a2aa10a35CHHhwHEySoH5G6qam0ce65GzUhN7BYFadNt0uannX6yJyutiZSO&ln=en
+>Teste: https://quant-ux.com/#/test.html?h=a2aa10a35CHHhwHEySoH5G6qam0ce65GzUhN7BYFadNt0uannX6yJyutiZSO&ln=en<br>
 
-Telas: https://quant-ux.com/#/apps/641aeb7d05d7232656948d45/design/s10183_68866.html
+>Telas: https://quant-ux.com/#/apps/641aeb7d05d7232656948d45/design/s10183_68866.html<br>
 
 #### 5.2 PROTÓTIPO DO SISTEMA WEB
-https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac586e8/web
+>Protótipo: https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac586e8/web<br>
 
 #### 5.3 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM OS SISTEMA WEB/MOBILE PROPOSTOS?
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
