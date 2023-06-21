@@ -1,7 +1,7 @@
-//guarda o ultimo pin do mapa clicado
+const menuLateral = document.getElementById("menuLateral");
 var ultimoPushpinClicado = null
 
-//roda a pesquisa quando o usuario aperta enter no input
+
 document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
     if(e.key == 'Enter'){
         pesquisaMapa()
@@ -46,7 +46,6 @@ function calculaTamanhoMapa(mapa){
 
 var map = null;
 
-//carrega o perfil do estabelecimento quando um pin no mapa é clicado
 function carregaPerfil(clicada){
     document.getElementById("nomeEstabelecimento").textContent = clicada["pushpin"].getTitle();
     console.log(document.getElementById("nomeEstabelecimento").textContent)
@@ -64,8 +63,6 @@ function loadMapScenario() {
     calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
-
-    //define difentes elementos de mapa para telas maiores que 540px
     if(window.innerWidth <= 540){
         map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
             center: locIfes,
@@ -85,27 +82,19 @@ function loadMapScenario() {
         });
     }
 
-    //dicionario que contem os lugares cadastrados por nos
     var locaisProprios = {}
 
-    //adiciona o modulo de auto-sugestao para o mapa
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
-        //configuracoes do modulo de auto sugestao
         var options = {
             maxResults: 4,
             map: map,
         };
-        //inicializando a auto-sugestao
         var manager = new Microsoft.Maps.AutosuggestManager(options);
-        
-        //adiona um eventListener para rodar a funcao toda vez que uma tecla e solta
+        // manager.attachAutosuggest(document.getElementById("inpPesquisa"), document.getElementById("containerPesquisa"), selectedSuggestion);
         document.getElementById("inpPesquisa").addEventListener('keyup', (e) => {
-            //captura o valor do input de pesquisa
-            var pesquisa = document.getElementById("inpPesquisa").value.toLowerCase();
-            //fecha possiveis perfis de estabelecimentos que estejam aberti
+            var pesquisa = document.getElementById("inpPesquisa").value.toLowerCase()
             document.getElementById("perfilEstabelecimento").style.display = "none";
             document.getElementById("botFechaPerfil").style.display = "none";
-            //caso nao tenha nada digitado no campo de pesquisa, nao exibe o container das sugestoes
             if(pesquisa.length == 0){
                 document.getElementById("sugestoes").style.display = "none";
                 var divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
@@ -113,17 +102,13 @@ function loadMapScenario() {
                     item.remove();
                 }
             }
-            //lista de locais correspondentes a pesquisa
             var correspondentes = []
-            //procura primeiro por correspondencias com os nossos locais
             for(let item in locaisProprios){
                     if(locaisProprios[item]["nome"].toLowerCase().match(pesquisa)){
                         correspondentes.push(locaisProprios[item]);
                     }
             }
-            //pega as sugestoes da api do bing
             manager.getSuggestions(pesquisa, function (suggestionResult){
-                //se ha sugestoes, preenche o restante do array de correspondentes com sugestoes do bing
                 if(suggestionResult.length > 0){
                 document.getElementById("sugestoes").style.display = "block";
                 var quatroSugestoes = suggestionResult.slice(0,4);
@@ -138,7 +123,6 @@ function loadMapScenario() {
                     }
                     correspondentes.push(local);
             }
-            //esvazia as sugestoes anteriores
             var containerSugestoes = document.getElementById("sugestoes");
             var divSugestoes = containerSugestoes.querySelectorAll("div");
             for(let item of divSugestoes){
@@ -170,7 +154,6 @@ function loadMapScenario() {
         })
     });
 
-    //inicializacao dos pins do mapa
     var ifes = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
         title: "Ifes Campus Serra",
@@ -188,15 +171,11 @@ function loadMapScenario() {
         title: "Café Arrumado"
     })
 
-    //fim da inicializacao
-
-    //adicionando no dicionario de locais proprios
     locaisProprios[1] = {
         "nome": "Ifes campus Serra",
         "pushpin": ifes,
         "imagem": "../img/ifesPerfil.jpg"
     };
-    
     locaisProprios[2] = {
         "nome": "Jayme dos Santos Neves",
         "pushpin": jaymeDosSantosNeves,
@@ -208,15 +187,10 @@ function loadMapScenario() {
         "pushpin": cafeArrumado,
         "imagem": "../img/cafeArrumadoPerfil.jpg"
     }
-    //fim da adicao
 
-    //percorres os pins criados, exibindo eles no mapa e adicionando um evento de clique para ele
     for(let item in locaisProprios){
         map.entities.push(locaisProprios[item]["pushpin"]);
 
-        //evento de clique
-        //abre o perfil referente ao pin clicado, fecha caso o mesmo pin seja clicado novamente
-        //se um pin diferente do anterior for clicado, abre o perfil referente ao novo pin clicado
         Microsoft.Maps.Events.addHandler(locaisProprios[item]["pushpin"], 'click', function (e) { 
             var perfilEstabelecimento = document.getElementById("perfilEstabelecimento");
             document.getElementById("sugestoes").style.display = "none";
@@ -239,9 +213,6 @@ function loadMapScenario() {
         });
     }
 
-    //adiciona um evento de mudanca de visao no mapa
-    //caso o zoom fique muito pequeno, faz com que os pins sumam
-    //se zoom voltar a ser grande, reaparecem
     Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function (e){
             if(map.getZoom() < 16){
                 for(let item in locaisProprios){
@@ -264,9 +235,8 @@ function fechaPerfil(){
     }
 }
 
-//funcao de pesquisa para as sugestoes da bing
-//pega o texto digitado no input e centraliza na localizacao
 function pesquisaMapa(){
+
     Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
         var searchManager = new Microsoft.Maps.Search.SearchManager(map);
         var lugar = document.getElementById("inpPesquisa").value;
