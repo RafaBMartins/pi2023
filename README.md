@@ -132,14 +132,12 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     DT_VISITA: Campo que armazena a data em que a visita do usuário foi feita.<br>
 
 ### 8	RASTREABILIDADE DOS ARTEFATOS<br>
-        a) Historia de usuários vs protótipo (Histórias de Usuário e em qual tela do protótipo aquela HU está sendo realizada).
-        b) Protótipo vs Modelo conceitual (Histórias de Usuário e em quais tabelas aquele dado está sendo registrado).
-        (modelos devem obrigatoriamente estar em conformidade de rastreabilidade)
-
+        a) Para que Saulo Borges acesse os locais que ele busca, ele pode acessar a tela de pesquisa ou de mapa e buscá-los.
+        b) As informações da tabela Estabalecimento estão sendo usadas na tela de pesquisa, mapa, favoritos e no perfil do estabelecimento. 
 ### 9	MODELO LÓGICO<br>
         a) inclusão do esquema lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+  ![Alt text](imagensReadme/logico.png)
+        b) O modelo lógico está conforme o modelo conceitual 
 
 ### 10	MODELO FÍSICO<br>
         
@@ -315,8 +313,10 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
 #### 12 PRINCIPAIS CONSULTAS DO SISTEMA 
  Inserir as principais consultas (relativas aos 5 principais relatórios) definidas previamente no iten 3.1 deste template.
  <br>
-  a) Você deve apresentar as consultas em formato SQL para cad um dos relatórios.
+  a) Você deve apresentar as consultas em formato SQL para cada um dos relatórios.
  <br>
+  >https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing<br>
+  
   b) Além da consulta deve ser apresentada uma imagem com o resultado obtido para cada consulta.<br>
 
  ### 13 Gráficos, relatórios, integração com Linguagem de programação e outras solicitações.<br>
@@ -325,10 +325,12 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
      https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  #### 13.2	Desenvolvimento de gráficos/relatórios pertinentes, juntamente com demais <br>
  #### solicitações feitas pelo professor. <br>
+     https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  
  ### 14 Slides e Apresentação em vídeo. <br>
      OBS: Observe as instruções relacionadas a cada uma das atividades abaixo.<br>
  #### 14.1 Slides; <br>
+      https://docs.google.com/presentation/d/12mgWCjj-BLKJKBnLzH_zaactm2NOxkr1l9vnqcVXkp4/edit
  #### 14.2 Apresentação em vídeo <br>
 
     
