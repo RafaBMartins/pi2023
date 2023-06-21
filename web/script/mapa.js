@@ -9,6 +9,31 @@ document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
 
 })
 
+document.getElementById("setaPerfAbre").addEventListener('click', (e) => {
+    document.getElementById("dadosPerfMobile").classList.remove("d-flex");
+    document.getElementById("dadosPerfMobile").classList.add("d-none");
+    document.getElementById("dadosPerf").classList.remove("d-none");
+    document.getElementById("mapa").style.display = "none";
+    document.getElementById("imgPerfilEstabelecimento").classList.remove("d-none");
+    document.getElementById("imgPerfilEstabelecimento").classList.remove("d-md-block");
+    document.getElementById("inpPesquisa").style.display = "none";
+    if(window.innerWidth <= 470){
+        document.getElementById("botFechaPerfilMobile").classList.remove("d-none");
+    }
+})
+
+document.getElementById("setaPerfFecha").addEventListener('click', (e) => {
+    document.getElementById("dadosPerfMobile").classList.add("d-flex");
+    document.getElementById("dadosPerfMobile").classList.remove("d-none");
+    document.getElementById("dadosPerf").classList.add("d-none");
+    document.getElementById("mapa").style.display = "block"
+    document.getElementById("imgPerfilEstabelecimento").classList.add("d-none");
+    document.getElementById("imgPerfilEstabelecimento").classList.add("d-md-block");
+    document.getElementById("inpPesquisa").style.display = "block";
+    if(window.innerWidth <= 470){
+        document.getElementById("botFechaPerfilMobile").classList.add("d-none");
+    }
+})
 
 
 /*funcao que calcula o tamanho do mapa com base no tamanho da tela*/
@@ -24,7 +49,13 @@ var map = null;
 //carrega o perfil do estabelecimento quando um pin no mapa é clicado
 function carregaPerfil(clicada){
     document.getElementById("nomeEstabelecimento").textContent = clicada["pushpin"].getTitle();
+    console.log(document.getElementById("nomeEstabelecimento").textContent)
     document.getElementById("imgPerfilEstabelecimento").setAttribute('src', clicada["imagem"]);
+    if(window.innerWidth < 470){
+        document.getElementById("nomeEstabelecimentoMobile").textContent = clicada["pushpin"].getTitle();
+        document.getElementById("imgPerfilEstabelecimentoMobile").setAttribute('src', clicada["imagem"]);
+        console.log(document.getElementById("imgPerfilEstabelecimentoMobile").getAttribute("src"))
+    }
 }
 
 /*esta funcao carrega o mapa*/
@@ -45,7 +76,7 @@ function loadMapScenario() {
             showLocateMeButton: true,
         });
     }
-    else{
+    else{      
          map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
             center: locIfes,
             zoom: 16,
@@ -113,29 +144,25 @@ function loadMapScenario() {
             for(let item of divSugestoes){
                     item.remove();
             }
-            //se houver correspondencias, as exibe no containe de sugestoes
             if(correspondentes.length > 0){
                 for(item of correspondentes){
-                        div = document.createElement("div");
-                        div.textContent = item["nome"];
-                        //caso a sugestao seja clicado centraliza o mapa na localizaco da sugestao e abre seu perfil
-                        div.addEventListener('click', (e) =>{
-                            let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
-                            let sugestoes = Array.from(divSugestoes);
-                            let clicada = correspondentes[sugestoes.indexOf(e.target)];
-                            document.getElementById("inpPesquisa").value = "";
-                            map.setView({
-                                center: clicada["pushpin"].getLocation(),
-                                zoom: 16
-                            });
-                            if(clicada["icon"] != null){
-                                document.getElementById("botFechaPerfil").style.display = "block";
-                                document.getElementById("perfilEstabelecimento").style.display = "block"
-                                carregaPerfil(clicada);
-                            }
-                            document.getElementById("sugestoes").style.display = "none";
-                        })
-                        containerSugestoes.appendChild(div);
+                    div = document.createElement("div");
+                    div.textContent = item["nome"];
+                    div.addEventListener('click', (e) =>{
+                        let divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
+                        let sugestoes = Array.from(divSugestoes);
+                        let clicada = correspondentes[sugestoes.indexOf(e.target)];
+                        document.getElementById("botFechaPerfil").style.display = "block";
+                        document.getElementById("perfilEstabelecimento").style.display = "block"
+                        document.getElementById("sugestoes").style.display = "none";
+                        document.getElementById("inpPesquisa").value = "";
+                        map.setView({
+                            center: clicada["pushpin"].getLocation(),
+                            zoom: 16
+                        });
+                        carregaPerfil(clicada)
+                    })
+                    containerSugestoes.appendChild(div);
                 }
             }
         }
@@ -192,6 +219,7 @@ function loadMapScenario() {
         //se um pin diferente do anterior for clicado, abre o perfil referente ao novo pin clicado
         Microsoft.Maps.Events.addHandler(locaisProprios[item]["pushpin"], 'click', function (e) { 
             var perfilEstabelecimento = document.getElementById("perfilEstabelecimento");
+            document.getElementById("sugestoes").style.display = "none";
             if(ultimoPushpinClicado == e.target){
                perfilEstabelecimento.style.display = perfilEstabelecimento.style.display === "flex" ? "none" :"flex";
                document.getElementById("botFechaPerfil").style.display = document.getElementById("botFechaPerfil").style.display === "block" ? "none" : "block"; 
@@ -206,8 +234,7 @@ function loadMapScenario() {
                         var itemClicado = locaisProprios[local];
                     }
                 }
-                document.getElementById("nomeEstabelecimento").textContent = itemClicado["nome"];
-                document.getElementById("imgPerfilEstabelecimento").setAttribute("src", itemClicado["imagem"]);
+                carregaPerfil(itemClicado)
             }
         });
     }
@@ -232,6 +259,9 @@ function loadMapScenario() {
 function fechaPerfil(){
     document.getElementById("perfilEstabelecimento").style.display = "none";
     document.getElementById("botFechaPerfil").style.display = "none";
+    if(document.getElementById("mapa").style.display == "none"){
+        document.getElementById("mapa").style.display = "block"
+    }
 }
 
 //funcao de pesquisa para as sugestoes da bing

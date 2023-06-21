@@ -25,7 +25,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     overflow: visible;
-    z-index: 9997;
+    z-index: 2;
     position: absolute;
     margin-top: 20px;
     margin-left: 20px;
@@ -39,7 +39,7 @@
     width: 90%;
     padding-left: 10px;
     padding-right: 10px;
-    z-index: 999999;
+    z-index: 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,7 +90,15 @@
     position: absolute;
 }
 
-/* muda os estilos para telas menores que 470px */
+.perfil-estabelecimento{
+    width: 20rem; 
+    z-index: 5; 
+    position: absolute !important; 
+    margin-top: 5rem; 
+    margin-left: 2rem; 
+    background-color: red;
+}
+
 @media only screen and (max-width: 470px) {
     .menuConfig{
         display: none;
@@ -117,7 +125,7 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         overflow: visible;
-        z-index: 9997;
+        z-index: 2;
         position: absolute;
         display: flex !important;
         width:calc(100vw - 50px) !important;
@@ -125,22 +133,36 @@
         margin-top: 10px;
         margin-left: 0;
         padding: 0 10px
-}
-
-#containerPesquisa{
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    z-index: 999999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: width 0.3s ease-in-out;
-}
-
-
-
-    #setaMenuLateral{
-        display: none;
     }
+
+    #containerPesquisa{
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .perfil-estabelecimento{
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0;
+        margin: 0;
+        width: 100vw !important;
+        z-index: 5;
+    }
+    
+    #dadosPerfMobile{
+        width: 100vw;
+    }
+
+
+    #dadosPerf{
+        width: 100vw;
+    }
+    
+
 }
