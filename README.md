@@ -207,9 +207,40 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
          ON DELETE CASCADE;
        
 ### 11	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados 
- <br> + insert para dados a serem inseridos)
+        a) INSERT INTO USUARIO(email, senha, nome, foto_perfil)
+           VALUES
+               ('john.doe@example.com', 'pass123', 'John Doe', 'https://example.com/johndoe.jpg'),
+               ('jane.smith@example.com', 'password456', 'Jane Smith', 'https://example.com/janesmith.jpg'),
+               ('alex.wilson@example.com', 'qwerty789', 'Alex Wilson', 'https://example.com/alexwilson.jpg'),
+               ('emily.jones@example.com', 'abc123xyz', 'Emily Jones', 'https://example.com/emilyjones.jpg'),
+               ('michael.brown@example.com', 'letmein987', 'Michael Brown', 'https://example.com/michaelbrown.jpg'),
+               ('sarah.williams@example.com', 'pass987', 'Sarah Williams', 'https://example.com/sarahwilliams.jpg'),
+               ('david.johnson@example.com', 'securepass12', 'David Johnson', 'https://example.com/davidjohnson.jpg'),
+               ('lisa.anderson@example.com', 'password1234', 'Lisa Anderson', 'https://example.com/lisaanderson.jpg'),
+               ('robert.wilson@example.com', 'test12345', 'Robert Wilson', 'https://example.com/robertwilson.jpg'),
+               ('jessica.brown@example.com', 'pass45678', 'Jessica Brown', 'https://example.com/jessicabrown.jpg'),
+               ('jennifer.miller@example.com', 'password123', 'Jennifer Miller', 'https://example.com/jennifermiller.jpg'),
+               ('kevin.thompson@example.com', 'pass9876', 'Kevin Thompson', 'https://example.com/kevinthompson.jpg'),
+               ('natalie.white@example.com', 'securepass345', 'Natalie White', 'https://example.com/nataliewhite.jpg'),
+               ('adam.green@example.com', 'testpass567', 'Adam Green', 'https://example.com/adamgreen.jpg'),
+               ('samantha.harris@example.com', 'password890', 'Samantha Harris', 'https://example.com/samanthaharris.jpg'),
+               ('stephanie.wright@example.com', 'pass4321', 'Stephanie Wright', 'https://example.com/stephaniewright.jpg'),
+               ('matthew.davis@example.com', 'password098', 'Matthew Davis', 'https://example.com/matthewdavis.jpg'),
+               ('olivia.andrews@example.com', 'securepass789', 'Olivia Andrews', 'https://example.com/oliviaandrews.jpg'),
+               ('ryan.thomas@example.com', 'testpass234', 'Ryan Thomas', 'https://example.com/ryanthomas.jpg'),
+               ('laura.roberts@example.com', 'password5678', 'Laura Roberts', 'https://example.com/lauraroberts.jpg'),
+               ('alexandra.carter@example.com', 'pass321', 'Alexandra Carter', 'https://example.com/alexandracarter.jpg'),
+               ('brandon.jenkins@example.com', 'password789', 'Brandon Jenkins', 'https://example.com/brandonjenkins.jpg'),
+               ('natalia.harrison@example.com', 'securepass567', 'Natalia Harrison', 'https://example.com/nataliaharrison.jpg'),
+               ('eric.murphy@example.com', 'testpass890', 'Eric Murphy', 'https://example.com/ericmurphy.jpg'),
+               ('isabella.stewart@example.com', 'password1234', 'Isabella Stewart', 'https://example.com/isabellastewart.jpg'),
+               ('hannah.watson@example.com', 'pass9876', 'Hannah Watson', 'https://example.com/hannahwatson.jpg'),
+               ('michael.rodriguez@example.com', 'password2345', 'Michael Rodriguez', 'https://example.com/michaelrodriguez.jpg'),
+               ('ava.lopez@example.com', 'securepass6789', 'Ava Lopez', 'https://example.com/avalopez.jpg'),
+               ('ethan.hill@example.com', 'testpass5678', 'Ethan Hill', 'https://example.com/ethanhill.jpg'),
+               ('olivia.russell@example.com', 'password4321', 'Olivia Russell', 'https://example.com/oliviarussell.jpg');
+
+               
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
