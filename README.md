@@ -316,6 +316,7 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
   a) Você deve apresentar as consultas em formato SQL para cada um dos relatórios.
  <br>
   >https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing<br>
+  
   b) Além da consulta deve ser apresentada uma imagem com o resultado obtido para cada consulta.<br>
 
  ### 13 Gráficos, relatórios, integração com Linguagem de programação e outras solicitações.<br>
