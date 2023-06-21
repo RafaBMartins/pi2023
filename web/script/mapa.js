@@ -13,7 +13,6 @@ document.getElementById("setaPerfAbre").addEventListener('click', (e) => {
     document.getElementById("dadosPerfMobile").classList.remove("d-flex");
     document.getElementById("dadosPerfMobile").classList.add("d-none");
     document.getElementById("dadosPerf").classList.remove("d-none");
-    document.getElementById("mapa").style.display = "none";
     document.getElementById("imgPerfilEstabelecimento").classList.remove("d-none");
     document.getElementById("imgPerfilEstabelecimento").classList.remove("d-md-block");
     document.getElementById("inpPesquisa").style.display = "none";
@@ -26,7 +25,6 @@ document.getElementById("setaPerfFecha").addEventListener('click', (e) => {
     document.getElementById("dadosPerfMobile").classList.add("d-flex");
     document.getElementById("dadosPerfMobile").classList.remove("d-none");
     document.getElementById("dadosPerf").classList.add("d-none");
-    document.getElementById("mapa").style.display = "block"
     document.getElementById("imgPerfilEstabelecimento").classList.add("d-none");
     document.getElementById("imgPerfilEstabelecimento").classList.add("d-md-block");
     document.getElementById("inpPesquisa").style.display = "block";
@@ -157,13 +155,13 @@ function loadMapScenario() {
     var ifes = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
         title: "Ifes Campus Serra",
-        icon: "../img/pinoEscola.svg"
+        icon: "../img/pinos/pinoEscola.svg"
     });
 
     var jaymeDosSantosNeves = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.199232504534884, -40.227077110956316), {
         color: "red",
         title: "Hospital Jayme dos Santos Neves",
-        icon: "../img/pinoHospital.svg"
+        icon: "../img/pinos/pinoHospital.svg"
     });
 
     var cafeArrumado = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.19826402415827, -40.224856532079116), {
