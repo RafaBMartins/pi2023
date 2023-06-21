@@ -142,165 +142,76 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
 ### 10	MODELO FÍSICO<br>
         
       CREATE TABLE USUARIO (
-          id SERIAL PRIMARY KEY,
-          foto_perfil VARCHAR (500),
-          nome VARCHAR (50),
-          email VARCHAR (50),
-          senha VARCHAR (50),
-          bio VARCHAR (500),
-          FK_TIPO_id SERIAL
-      );
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(75),
+    senha VARCHAR(30),
+    nome VARCHAR(75),
+    foto_perfil VARCHAR(500)
+);
 
-      CREATE TABLE PESSOA (
-          FK_deficiencia_deficiencia_PK SERIAL,
-          FK_USUARIO_id SERIAL PRIMARY KEY
-      );
+CREATE TABLE ESTABELECIMENTO (
+    FK_selo_selo_PK SERIAL,
+    foto_banner VARCHAR(500),
+    longitude VARCHAR(30),
+    FK_tipo_estabelecimento_tipo_estabelecimento_PK SERIAL,
+    id SERIAL PRIMARY KEY,
+    latitude VARCHAR(30),
+    nome VARCHAR(75)
+);
 
-      CREATE TABLE ESTABELECIMENTO (
-          FK_selo_selo_PK SERIAL,
-          horario_inicial DATE,
-          FK_tipo_estabelecimento_tipo_estabelecimento_PK SERIAL,
-          foto_banner VARCHAR (500),
-          latitude VARCHAR (50),
-          longitude VARCHAR (50),
-          FK_USUARIO_id SERIAL PRIMARY KEY
-      );
+CREATE TABLE AVALIACAO (
+    nota FLOAT,
+    dt_avaliacao DATE,
+    FK_USUARIO_id SERIAL,
+    FK_ESTABELECIMENTO_id SERIAL
+);
 
-      CREATE TABLE TIPO_CONTATO (
-          id SERIAL PRIMARY KEY,
-          descricao VARCHAR (50)
-      );
+CREATE TABLE COMENTARIOS (
+    descricao VARCHAR(300),
+    dt_comentario DATE,
+    FK_USUARIO_id SERIAL,
+    FK_ESTABELECIMENTO_id SERIAL
+);
 
-      CREATE TABLE TIPO (
-          id SERIAL PRIMARY KEY,
-          tipo VARCHAR (50)
-      );
+CREATE TABLE selo (
+    selo_PK SERIAL NOT NULL PRIMARY KEY,
+    selo VARCHAR(30)
+);
 
-      CREATE TABLE AVALIACAO (
-          nota FLOAT,
-          dt_avaliacao DATE,
-          FK_PESSOA_FK_USUARIO_id SERIAL,
-          FK_ESTABELECIMENTO_FK_USUARIO_id SERIAL
-      );
-
-      CREATE TABLE VISITAS (
-          dt_visita DATE,
-          FK_PESSOA_FK_USUARIO_id SERIAL,
-          FK_ESTABELECIMENTO_FK_USUARIO_id SERIAL
-      );
-
-      CREATE TABLE COMENTARIOS (
-          descricao VARCHAR (500),
-          dt_comentario DATE,
-          FK_PESSOA_FK_USUARIO_id SERIAL,
-          FK_ESTABELECIMENTO_FK_USUARIO_id SERIAL
-      );
-
-      CREATE TABLE deficiencia (
-          deficiencia_PK SERIAL NOT NULL PRIMARY KEY,
-          deficiencia VARCHAR (50)
-      );
-
-      CREATE TABLE selo (
-          selo_PK SERIAL NOT NULL PRIMARY KEY,
-          selo VARCHAR (50)
-      );
-
-      CREATE TABLE tipo_estabelecimento (
-          tipo_estabelecimento_PK SERIAL NOT NULL PRIMARY KEY,
-          tipo_estabelecimento SERIAL
-      );
-
-      CREATE TABLE Seguidor (
-          fk_USUARIO_id SERIAL,
-          fk_USUARIO_id_ SERIAL
-      );
-
-      CREATE TABLE Pertence (
-          fk_TIPO_CONTATO_id SERIAL,
-          fk_USUARIO_id SERIAL,
-          descricao VARCHAR (50)
-      );
-
-      ALTER TABLE USUARIO ADD CONSTRAINT FK_USUARIO_2
-          FOREIGN KEY (FK_TIPO_id)
-          REFERENCES TIPO (id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE PESSOA ADD CONSTRAINT FK_PESSOA_2
-          FOREIGN KEY (FK_deficiencia_deficiencia_PK)
-          REFERENCES deficiencia (deficiencia_PK)
-          ON DELETE NO ACTION;
-
-      ALTER TABLE PESSOA ADD CONSTRAINT FK_PESSOA_3
-          FOREIGN KEY (FK_USUARIO_id)
-          REFERENCES USUARIO (id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_2
-          FOREIGN KEY (FK_selo_selo_PK)
-          REFERENCES selo (selo_PK)
-          ON DELETE NO ACTION;
-
-      ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_3
-          FOREIGN KEY (FK_tipo_estabelecimento_tipo_estabelecimento_PK)
-          REFERENCES tipo_estabelecimento (tipo_estabelecimento_PK)
-          ON DELETE NO ACTION;
-
-      ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_4
-          FOREIGN KEY (FK_USUARIO_id)
-          REFERENCES USUARIO (id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_1
-          FOREIGN KEY (FK_PESSOA_FK_USUARIO_id)
-          REFERENCES PESSOA (FK_USUARIO_id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_2
-          FOREIGN KEY (FK_ESTABELECIMENTO_FK_USUARIO_id)
-          REFERENCES ESTABELECIMENTO (FK_USUARIO_id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE VISITAS ADD CONSTRAINT FK_VISITAS_1
-          FOREIGN KEY (FK_PESSOA_FK_USUARIO_id)
-          REFERENCES PESSOA (FK_USUARIO_id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE VISITAS ADD CONSTRAINT FK_VISITAS_2
-          FOREIGN KEY (FK_ESTABELECIMENTO_FK_USUARIO_id)
-          REFERENCES ESTABELECIMENTO (FK_USUARIO_id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_1
-          FOREIGN KEY (FK_PESSOA_FK_USUARIO_id)
-          REFERENCES PESSOA (FK_USUARIO_id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_2
-          FOREIGN KEY (FK_ESTABELECIMENTO_FK_USUARIO_id)
-          REFERENCES ESTABELECIMENTO (FK_USUARIO_id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE Seguidor ADD CONSTRAINT FK_Seguidor_1
-          FOREIGN KEY (fk_USUARIO_id)
-          REFERENCES USUARIO (id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE Seguidor ADD CONSTRAINT FK_Seguidor_2
-          FOREIGN KEY (fk_USUARIO_id_)
-          REFERENCES USUARIO (id)
-          ON DELETE CASCADE;
-
-      ALTER TABLE Pertence ADD CONSTRAINT FK_Pertence_1
-          FOREIGN KEY (fk_TIPO_CONTATO_id)
-          REFERENCES TIPO_CONTATO (id)
-          ON DELETE SET NULL;
-
-      ALTER TABLE Pertence ADD CONSTRAINT FK_Pertence_2
-          FOREIGN KEY (fk_USUARIO_id)
-          REFERENCES USUARIO (id)
-          ON DELETE SET NULL;
+CREATE TABLE tipo_estabelecimento (
+    tipo_estabelecimento_PK SERIAL NOT NULL PRIMARY KEY,
+    tipo_estabelecimento VARCHAR(30)
+);
+ 
+ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_2
+    FOREIGN KEY (FK_selo_selo_PK)
+    REFERENCES selo (selo_PK)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE ESTABELECIMENTO ADD CONSTRAINT FK_ESTABELECIMENTO_3
+    FOREIGN KEY (FK_tipo_estabelecimento_tipo_estabelecimento_PK)
+    REFERENCES tipo_estabelecimento (tipo_estabelecimento_PK)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_1
+    FOREIGN KEY (FK_USUARIO_id)
+    REFERENCES USUARIO (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE AVALIACAO ADD CONSTRAINT FK_AVALIACAO_2
+    FOREIGN KEY (FK_ESTABELECIMENTO_id)
+    REFERENCES ESTABELECIMENTO (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_1
+    FOREIGN KEY (FK_USUARIO_id)
+    REFERENCES USUARIO (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE COMENTARIOS ADD CONSTRAINT FK_COMENTARIOS_2
+    FOREIGN KEY (FK_ESTABELECIMENTO_id)
+    REFERENCES ESTABELECIMENTO (id)
+    ON DELETE CASCADE;
        
 ### 11	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
