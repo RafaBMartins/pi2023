@@ -14,39 +14,50 @@
 
 <body class="h-100">
 
+    <!--contariner principal do página-->
     <div class="container-fluid h-100">
 
+        <!--começo de uma row que tera 3 col-->
         <div class="row h-100">
 
+            <!--parte de cima do página ocupa 25% da tela e tem a logo do site-->
             <div class="col-12 h-25 d-flex justify-content-center align-items-center">
                 <img src="../img/logos/logo.svg" class="img-fluid h-75">  
             </div>
 
+            <!--parte do meio da página coluna do formulario de login-->
             <div class="col-12 h-60 d-flex justify-content-center align-items-xl-start">
 
+                <!--formulario de login-->
                 <form class="w-100">
 
+                    <!--uma row para o formulario para posicionar melhor os componentes-->
                     <div class="row justify-content-center align-items-center d-flex flex-column">
 
+                        <!--container da caixa de email-->
                         <div class="col-xl-3 form-floating">
                             <input type="email" class="form-control w-100 custom-border pb-1 mb-md-5" id="email-input" placeholder="name@example.com">
                             <label for="email-input" class="myplace">E-mail</label>
                         </div>
 
+                        <!--container da caixa de senha-->
                         <div class="col-xl-3 mt-3 form-floating">
                             <input type="password" class="form-control w-100 custom-border pb-1" id="senha-input" placeholder="Password">
                             <label for="senha-input" class="myplace">Senha</label>
                         </div>
 
+                        <!--botão para o envio do formulario chama a função btnEntrar-->
                         <div class="col-xl-3 text-center mt-5 mb-2 d-flex justify-content-center align-items-center">
                             <button class="btn btn-primary botao w-50" onclick="btnEntrar(); return false;" id="entrar-btn">ENTRAR</button>
                         </div>
 
+                        <!--checkbox para ativar a opção de gravar o usario que usou-->
                         <div class="col-xl-3 form-check mt-3 mt-md-5 d-flex justify-content-center px-0">
                             <input type="checkbox" class="form-check-input" id="checkbox1">
                             <label for="checkbox1" class="form-check-label ps-2 pb-2 font-form">Lembre de mim</label>
                         </div>
 
+                        <!--textos clicaveis para ir para as páginas de registrar e de recuperar a senha-->
                         <div class="col-xl-3 mt-3 mb-2 mt-md-5 d-flex justify-content-between flex-column flex-xl-row">
                             <a href="registrar.html" class="text-nowrap text-center mb-4 font-form">Não tem uma conta?</a>
                             <a href="esqueciSenha.html" class="text-nowrap text-center font-form">Esqueci minha senha</a>
@@ -58,7 +69,7 @@
 
             </div>
 
-
+            <!--parte mais de baixo do site faixa azul com o nome do nosso site-->
             <div class="h-15 col-12 azul d-flex justify-content-center align-items-center">
                 <span class="font">WHEELIEWAY</span>
             </div>
