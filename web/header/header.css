@@ -4,14 +4,20 @@
     height: 50px;
 }
 
+i{
+    color:#005CB3
+}
+
 /* cor do texto de nome da marca */
 .textoMarca{
     color: #397FBF;
+    font-size: 24px !important;
 }
 
 /* cor dos itens de menu */
 .itemMenu{
     color:#397FBF;
+    font-size: 18px;
 }
 
 /* escurece o item caso passe o mouse por cima */
@@ -30,29 +36,33 @@
     flex-direction: column;
     background-color: white;
     width: 300px;
-    height: 100vh;
     position: fixed;
     right: 0;
     top: 0;
     font-size: 18px;
     padding: 10px;
+    box-shadow: -1px -1px 5px lightblue;
+    border-radius: 5px;
 }
 
 /* define que as divs dentro do container de opcoes terao o cursor pointer */
 .containerOpcoes div{
     cursor: pointer;
+    margin-top: 0.5rem;
 }
 
 /* classe do titulo "configuracoes" */
 .tituloConfig{
     font-size: 20px;
     border-bottom: 1px solid lightgray;
+    color:#00427F;
 }
 
 /* esconde o item do navbar que contem as configuracoes, este item aparece dentro do menu hamburger */
 .opConfigNav{
     display: none;
 }
+
 
 /* personalizando a cor do icone do menu hamburger */
 .navbar .navbar-toggler[aria-expanded="true"] {
