@@ -318,6 +318,17 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
   >https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing<br>
   
   b) Além da consulta deve ser apresentada uma imagem com o resultado obtido para cada consulta.<br>
+  ![Alt text](imagensReadme/Relatorio1.png)<br>
+
+  ![Alt text](imagensReadme/Relatorio2.png)<br>
+
+  ![Alt text](imagensReadme/Relatorio3.png)<br>
+
+  ![Alt text](imagensReadme/Relatorio4.png)<br>
+
+  ![Alt text](imagensReadme/Relatorio5.png)<br>
+
+  ![Alt text](imagensReadme/Relatorio6.png)<br>
 
  ### 13 Gráficos, relatórios, integração com Linguagem de programação e outras solicitações.<br>
      https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
