@@ -1,0 +1,32 @@
+/* cor de fundo do footer */
+footer{
+    background-color: #00427F;
+}
+
+/* cor dos elementos de texto do footer */
+.texto-footer{
+    color: #85c4ff;
+    text-shadow: 1px 1px 2px grey;
+}
+
+/* cor dos elementos de texto do container de contato */
+.texto-contato{
+    color:white;
+}
+
+/* tamanho de fonte dos titulos dos topicos do footr */
+.topico-footer{
+    font-size: 20px;
+}
+
+/* dimensoes da logo da empresa*/
+.logo-footer{
+    height: 100px;
+    width: 100px;
+}
+
+/* dimensoes das logos das redes sociais */
+.rd-social-logo{
+    width: 40px;
+    height: 40px;
+}
