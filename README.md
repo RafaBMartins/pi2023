@@ -137,8 +137,7 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
 ### 9	MODELO LÓGICO<br>
         a) inclusão do esquema lógico do banco de dados
   ![Alt text](imagensReadme/logico.png)
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+        b) O modelo lógico está conforme o modelo conceitual 
 
 ### 10	MODELO FÍSICO<br>
         
