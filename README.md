@@ -18,7 +18,7 @@ Entrevista com o usuário e identificação dos requisitos.(quando for o caso de
 Descrição textual das regras de negócio definidas como um subconjunto do mundo real cujos elementos são propriedades que desejamos incluir, processar, armazenar, gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 <br>
 
-> O sistema proposto para a "Wheelie Way" conterá as informacões aqui detalhadas. Dos Usuarios serão armazenados o id, nome, email, senha, bio e foto_perfil. De Tipo_Contato será armazenado id e descricao. O Usuário pode ter nenhum ou vários tipos de contato e um Tipo_contato pode pertencer a nenhum ou vários usuarios. De Estabelecimento será armazenado id, nome, selo, latitude, tipo_estabelecimento, longitude e foto_banner. De Avaliacao, será armazenado dt_avaliacao e nota. Um Usuario pode fazer nenhuma ou várias avaliações enquanto uma Avaliacao pode ser feita por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias qualificações feitas por uma avaliação enquanto uama Avaliacao pode qualificar um e apenas um estabelecimento. De Visitas será armazenado dt_visita. Um Usuario pode realizar nenhuma ou várias visitas enquanto uma Visita pode ser realizada por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias visitas feitas enquanto uma Visita pode ser feita a um e apenas um estabelecimento. De Comentarios será armazenado descricao e dt_comentario. Um Usuario pode escrever nenhum ou vários comentários enquanto uma Comentario pode ser escrito por um e por apenas um usuário. Um Estabelecimento pode ter nenhum ou várias comentários escritos enquanto um Comentario pode ser escrito sobre um e apenas um estabelecimento.
+> O sistema proposto para a "Wheelie Way" conterá as informacões aqui detalhadas. Dos Usuarios serão armazenados o id, nome, email, senha, bio e foto_perfil. De Estabelecimento será armazenado id, nome, selo, latitude, tipo_estabelecimento, longitude e foto_banner. De Avaliacao, será armazenado dt_avaliacao e nota. Um Usuario pode fazer nenhuma ou várias avaliações enquanto uma Avaliacao pode ser feita por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias qualificações feitas por uma avaliação enquanto uama Avaliacao pode qualificar um e apenas um estabelecimento. De Comentarios será armazenado descricao e dt_comentario. Um Usuario pode escrever nenhum ou vários comentários enquanto uma Comentario pode ser escrito por um e por apenas um usuário. Um Estabelecimento pode ter nenhum ou várias comentários escritos enquanto um Comentario pode ser escrito sobre um e apenas um estabelecimento.
  
  
 ### 3.PMC<br>
@@ -106,10 +106,6 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     FOTO_PERFIL: Campo que armazena o link da foto de perfil do usuário.<br>
     SENHA: Campo que armazena a senha do usuário<br>.
     
-    TIPO_CONTATO: Tabela que armazena as informações relativas ao tipo de contato do usuário.<br>
-    ID: Campo que armazena o número que identifica cada tipo de contato.<br>
-    DESCRICAO: Campo que armazena a descrição definindo qual é o tipo de contato.<br>
-    
     ESTABELECIMENTO: Tabela que armazena as informações relativas ao estabelecimento.<br>
     ID: Campo que armazena o número que identifica cada estabelecimento.<br>
     NOME: Cmapo que armazena o nome do estabelecimento.<br>
@@ -128,9 +124,6 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     DESCRICAO: Campo que armazena a descrição do usuário sobre o estabelecimento.<br>
     DT_COMENTARIO: Campo que armazena a data em que o cometário foi feito.<br>
     
-    VISITAS: Tabela que armazena as informações relativas à visita de um usário a um estabelecimento.<br>
-    DT_VISITA: Campo que armazena a data em que a visita do usuário foi feita.<br>
-
 ### 8	RASTREABILIDADE DOS ARTEFATOS<br>
         a) Para que Saulo Borges acesse os locais que ele busca, ele pode acessar a tela de pesquisa ou de mapa e buscá-los.
         b) As informações da tabela Estabalecimento estão sendo usadas na tela de pesquisa, mapa, favoritos e no perfil do estabelecimento. 
