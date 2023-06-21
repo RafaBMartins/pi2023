@@ -323,6 +323,7 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
      https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  #### 13.2	Desenvolvimento de gráficos/relatórios pertinentes, juntamente com demais <br>
  #### solicitações feitas pelo professor. <br>
+     https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  
  ### 14 Slides e Apresentação em vídeo. <br>
      OBS: Observe as instruções relacionadas a cada uma das atividades abaixo.<br>
