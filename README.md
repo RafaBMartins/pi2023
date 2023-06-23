@@ -256,7 +256,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
             ('Shopping'),
             ('Padarias'),
             ('Cabelereiro'),
-            ('Farmácia');
+            ('Farmácia'),
+            ('Hotéis');
                
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
