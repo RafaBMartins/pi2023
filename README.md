@@ -284,7 +284,65 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
               (3, 'https://example.com/photo12.jpg', '34.567', 2, '89.012', 'The Sunset Grill'),
               (1, 'https://example.com/photo13.jpg', '45.678', 3, '90.123', 'The Fireside Lounge'),
               (2, 'https://example.com/photo14.jpg', '56.789', 6, '12.345', 'The Fresh Market'),
-              (3, 'https://example.com/photo15.jpg', '67.890', 9, '23.456', 'The Serene Tea House');
+              (3, 'https://example.com/photo15.jpg', '67.890', 9, '23.456', 'The Serene Tea House'),
+              (1, 'https://example.com/establishment20.jpg', '-79.0059', 8, '41.7128', 'Beautiful Hair'),
+			           (3, 'https://example.com/establishment21.jpg', '3.3522', 6, '49.8566', 'Main Mall'),
+              (1, 'https://example.com/establishment22.jpg', '-10.1276', 4, '15.5074', 'Square Garden'),
+              (2, 'https://example.com/establishment23.jpg', '39.6917', 2, '5.6895', 'Tokyo Foods'),
+              (1, 'https://example.com/establishment24.jpg', '2.3456', 9, '87.9012', 'Pharma Pharmacy'),
+              (2, 'https://example.com/establishment25.jpg', '8.7654', 10, '56.3210', 'The Lazy Retreat'),
+              (1, 'https://example.com/establishment25.jpg', '-19.0059', 6, '45.7128', 'Mallace Mall');
+
+          INSERT INTO avaliacao (nota, dt_avaliacao, fk_usuario_id, fk_estabelecimento_id)
+          VALUES
+              (2.12, '2023-01-01', 15, 12),
+              (3.45, '2023-02-05', 10, 16),
+              (4.67, '2023-03-10', 25, 15),
+              (2.89, '2023-04-15', 5, 14),
+              (3.21, '2023-05-20', 20, 17),
+              (4.54, '2023-06-25', 1, 18),
+              (2.76, '2023-07-01', 30, 13),
+              (3.98, '2023-08-06', 12, 16),
+              (4.30, '2023-09-11', 28, 15),
+              (2.62, '2023-10-16', 3, 14),
+              (3.84, '2023-11-21', 17, 17),
+              (4.16, '2023-12-26', 8, 18),
+              (2.48, '2024-01-02', 22, 12),
+              (3.70, '2024-02-07', 13, 16),
+              (4.02, '2024-03-12', 26, 15),
+              (2.34, '2023-01-10', 7, 17),
+              (3.78, '2023-02-15', 16, 18),
+              (4.12, '2023-03-20', 24, 19),
+              (2.56, '2023-04-25', 9, 20),
+              (3.90, '2023-05-30', 23, 21),
+              (4.24, '2023-06-05', 14, 15),
+              (2.68, '2023-07-10', 2, 16),
+              (4.02, '2023-08-15', 27, 17),
+              (2.46, '2023-09-20', 6, 18),
+              (3.80, '2023-10-25', 18, 19),
+              (4.14, '2023-11-30', 29, 20),
+              (2.58, '2023-12-05', 11, 21),
+              (3.92, '2024-01-10', 21, 15),
+              (4.26, '2024-02-15', 4, 16),
+              (2.70, '2024-03-20', 13, 17);
+
+	INSERT INTO comentarios (descricao, dt_comentario, fk_usuario_id, fk_estabelecimento_id)
+	VALUES
+	    ('Great atmosphere and friendly staff.', '2023-01-10', 15, 20),
+	    ('The food was delicious. Highly recommended!', '2023-02-15', 5, 21),
+	    ('Excellent service and top-notch quality.', '2023-03-20', 28, 22),
+	    ('The establishment exceeded my expectations.', '2023-04-25', 7, 23),
+	    ('A hidden gem. Don''t miss out on this place!', '2023-05-30', 19, 24),
+	    ('The ambiance was fantastic.', '2023-06-05', 30, 25),
+	    ('The staff was attentive and knowledgeable.', '2023-07-10', 9, 20),
+	    ('Delightful experience. Will definitely return.', '2023-08-15', 24, 21),
+	    ('The menu had a wide variety of options.', '2023-09-20', 13, 22),
+	    ('Great value for the price.', '2023-10-25', 2, 23),
+	    ('The establishment had a cozy and welcoming atmosphere.', '2023-11-30', 17, 24),
+	    ('Impeccable presentation and flavors.', '2023-12-05', 26, 25),
+	    ('The service was prompt and efficient.', '2024-01-10', 8, 20),
+	    ('The establishment had a beautiful decor.', '2024-02-15', 21, 21),
+	    ('An unforgettable dining experience.', '2024-03-20', 12, 22);
                
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
