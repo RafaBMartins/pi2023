@@ -247,16 +247,17 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
              ('Bronze');
 
           INSERT INTO TIPO_ESTABELECIMENTO (tipo_estabelecimento) 
-          VALUES 
+          VALUES
             ('Loja'),
-          		('Restaurante'),
-          		('Academia'),
-          		('Parque'),
-          		('Supermercado'),
-          		('Shopping'),
-          		('Padarias'),
-          		('Cabelereiro'),
-          		('Farmácia');
+            ('Restaurante'),
+            ('Academia'),
+            ('Parque'),
+            ('Supermercado'),
+            ('Shopping'),
+            ('Padarias'),
+            ('Cabelereiro'),
+            ('Farmácia'),
+            ('Hotéis');
                
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
