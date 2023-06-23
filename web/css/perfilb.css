@@ -2,42 +2,42 @@
 
 /*margem, proporção e tamanho máximo e mínimo da imagem de perfil*/
 .lpo {
-      margin-top: -25px;
-      min-width: 100px;
-      max-width: 160px;
-      aspect-ratio: 1/1;
-    }
-    
-    /*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
-    .taba{
-      text-align: center;
-      padding:0px 16px;
-      cursor: pointer;
-      margin-bottom: 0px;
-    }
+  margin-top: -25px;
+  min-width: 100px;
+  max-width: 160px;
+  aspect-ratio: 1/1;
+}
 
-    /*faz com que as tabas mudem de cor quando o cursor passar por cima*/
-    #tabas :hover{
-    background-color: #9acff8;
-    }
+/*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
+.taba {
+  text-align: center;
+  padding: 0px 16px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
 
-    /*cor da taba de avaliação*/
-    #tavaliacoes {
-      border-bottom: 3px solid #397FBF;
-    }
+/*faz com que as tabas mudem de cor quando o cursor passar por cima*/
+#tabas :hover {
+  background-color: #9acff8;
+}
 
-    /*deixa a cor da taba de visita invisível a principio*/
-    #visitas {
-      display: none;
-    }
+/*cor da taba de avaliação*/
+#tavaliacoes {
+  border-bottom: 3px solid #397FBF;
+}
 
-    /*muda o tamanho da foto de perfil quando em 575px (igual ao tamanho de tela sm do bootstrap)*/
-    @media (max-width: 575px) {
-      .lpo {
-        margin-left: auto;
-        margin-right: auto;
-        min-width: 75px;
-        height: auto;
-        width: 50%;
-      }      
-    }
+/*deixa a cor da taba de visita invisível a principio*/
+#visitas {
+  display: none;
+}
+
+/*muda o tamanho da foto de perfil quando em 575px (igual ao tamanho de tela sm do bootstrap)*/
+@media (max-width: 575px) {
+  .lpo {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 75px;
+    height: auto;
+    width: 50%;
+  }
+}

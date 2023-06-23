@@ -10,7 +10,7 @@ function btnEntrar() {
     res2 = validarSenha(senha);
 
     /*confirmando as respostas e indo para home*/
-    if(res1 && res2) {
+    if (res1 && res2) {
         window.location.pathname = '../web/html/home.html'
     }
 }
@@ -18,21 +18,19 @@ function btnEntrar() {
 /*função que valida email*/
 function ValidarEmail(email) {
 
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-    {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
         return (true)
     }
-        alert("Você digitou um email inválido!")
-        return (false)
+    alert("Você digitou um email inválido!")
+    return (false)
 }
 
 /*função que valida senha*/
 function validarSenha(senha) {
 
-    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(senha)) 
-    {
+    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(senha)) {
         return (true)
     }
-        alert("Você digitou uma senha inválida!")
-        return (false)
+    alert("Você digitou uma senha inválida!")
+    return (false)
 }

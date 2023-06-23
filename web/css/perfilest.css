@@ -6,16 +6,16 @@
 }
 
 /*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
-.taba{
+.taba {
   text-align: center;
-  padding:0px 16px;
+  padding: 0px 16px;
   cursor: pointer;
   margin-bottom: 0px;
 }
 
 /*faz com que as tabas mudem de cor quando o cursor passar por cima*/
-#tabas :hover{
-background-color: #9acff8;
+#tabas :hover {
+  background-color: #9acff8;
 }
 
 /*cor da taba de avaliação*/

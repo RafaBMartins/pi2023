@@ -5,7 +5,8 @@
 }
 
 /*tirando os números da lista(1. 2. 3.)*/
-ol, li {
+ol,
+li {
     list-style-type: none;
     padding-left: 0;
 }
@@ -23,4 +24,4 @@ ol, li {
 /*tirando a shadow da barra de pesquisa*/
 .form-control {
     box-shadow: none !important;
-  }
+}

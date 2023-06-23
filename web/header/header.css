@@ -1,37 +1,37 @@
 /* dimensoes da logo */
-.logo{
+.logo {
     width: 50px;
     height: 50px;
 }
 
-i{
-    color:#005CB3
+i {
+    color: #005CB3
 }
 
 /* cor do texto de nome da marca */
-.textoMarca{
+.textoMarca {
     color: #397FBF;
     font-size: 24px !important;
 }
 
 /* cor dos itens de menu */
-.itemMenu{
-    color:#397FBF;
+.itemMenu {
+    color: #397FBF;
     font-size: 18px;
 }
 
 /* escurece o item caso passe o mouse por cima */
-.itemMenu:hover{
-    color:#005CB3;
+.itemMenu:hover {
+    color: #005CB3;
 }
 
 
-.active{
+.active {
     color: #005CB3;
 }
 
 /* define o estilo do menu onde estao as opcoes do menu de configuracoes */
-.containerOpcoes{
+.containerOpcoes {
     display: none;
     flex-direction: column;
     background-color: white;
@@ -47,7 +47,7 @@ i{
 }
 
 /* define que as divs dentro do container de opcoes terao o cursor pointer */
-.containerOpcoes div{
+.containerOpcoes div {
     cursor: pointer;
     margin-top: 0.5rem;
 }
@@ -55,45 +55,45 @@ i{
 
 
 /* classe do titulo "configuracoes" */
-.tituloConfig{
+.tituloConfig {
     font-size: 20px;
     border-bottom: 1px solid lightgray;
-    color:#00427F;
+    color: #00427F;
 }
 
 /* esconde o item do navbar que contem as configuracoes, este item aparece dentro do menu hamburger */
-.opConfigNav{
+.opConfigNav {
     display: none;
 }
 
 
 /* personalizando a cor do icone do menu hamburger */
 .navbar .navbar-toggler[aria-expanded="true"] {
-    color: #397FBF!important;
-    }
+    color: #397FBF !important;
+}
 
-.navbar .navbar-toggler:focus{
-        color: #397FBF;
+.navbar .navbar-toggler:focus {
+    color: #397FBF;
 }
 
 /* importando um icone para o menu hamburger */
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(57, 127, 191, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
-  }
+}
 
 
 /* define os estilos especificos para telas menores que 991px */
 @media only screen and (max-width: 991px) {
-    
+
     /* desabilita o menu de configuracoes padrao */
-    .menuConfig{
+    .menuConfig {
         display: none;
     }
 
     /* mostra o item do hamburger com as configuracoes */
-    .opConfigNav{
-        border: 0 !important; 
-        color: #397FBF; 
+    .opConfigNav {
+        border: 0 !important;
+        color: #397FBF;
         display: block;
     }
-  }
+}
