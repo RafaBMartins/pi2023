@@ -14,9 +14,10 @@ class BuscaCest
     // tests
     public function buscarResultadosNaPaginaTest(AcceptanceTester $I)
     {
-      $I->amOnPage('web/html/mapa.html');
-      $I->fillField('pesquisa', 'ifes');
-      $I->click('Horários');
-      $I->click('Ver Mais');
+        $I->amOnPage('/pi2023/web/html/index.html');
+        $I->fillField('email', 'rafaelmartinscouto@gmail.com');
+        $I->fillField('senha', 'Gabriel123gabriel!');
+        $I->click('ENTRAR');
+        $I->seeCurrentURLEquals('/web/html/home.html');
     }
 }
