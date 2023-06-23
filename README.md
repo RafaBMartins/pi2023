@@ -258,6 +258,33 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
             ('Cabelereiro'),
             ('Farmácia'),
             ('Hotéis');
+
+          INSERT INTO ESTABELECIMENTO (fk_selo_selo_pk, foto_banner, longitude, fk_tipo_estabelecimento_tipo_estabelecimento_pk, latitude, nome)
+          VALUES
+              (1, 'https://example.com/establishment1.jpg', '-74.0059', 7, '40.7128', 'Café Fusion'),
+              (2, 'https://example.com/establishment2.jpg', '-118.2437', 2, '34.0522', 'The Rustic Tavern'),
+              (3, 'https://example.com/establishment3.jpg', '2.3522', 7, '48.8566', 'Le Petit Bistro'),
+              (1, 'https://example.com/establishment4.jpg', '-0.1276', 4, '51.5074', 'The Garden Terrace'),
+              (2, 'https://example.com/establishment5.jpg', '139.6917', 2, '35.6895', 'Tokyo Delights'),
+              (1, 'https://example.com/establishment1.jpg', '12.3456', 7, '78.9012', 'The Coffee House'),
+              (2, 'https://example.com/establishment2.jpg', '98.7654', 10, '54.3210', 'The Cozy Retreat'),
+              (3, 'https://example.com/establishment3.jpg', '45.6789', 10, '23.4567', 'The Rustic Inn'),
+              (1, 'https://example.com/establishment4.jpg', '67.8901', 10, '89.0123', 'The Green Oasis'),
+              (2, 'https://example.com/establishment5.jpg', '34.5678', 7, '90.1234', 'The Gourmet Bistro'),
+              (1, 'https://example.com/establishment1.jpg', '12.3456', 7, '78.9012', 'The Coffee House'),
+              (2, 'https://example.com/establishment2.jpg', '98.7654', 10, '54.3210', 'The Cozy Retreat'),
+              (3, 'https://example.com/establishment3.jpg', '45.6789', 10, '23.4567', 'The Rustic Inn'),
+              (1, 'https://example.com/establishment4.jpg', '67.8901', 10, '89.0123', 'The Green Oasis'),
+              (2, 'https://example.com/establishment5.jpg', '34.5678', 7, '90.1234', 'The Gourmet Bistro'),
+          	   (3, 'https://example.com/photo6.jpg', '67.890', 4, '23.456', 'The Blue Lagoon'),
+              (2, 'https://example.com/photo8.jpg', '89.012', 8, '45.678', 'The Hidden Gem'),
+              (3, 'https://example.com/photo9.jpg', '90.123', 2, '56.789', 'The Elegant Diner'),
+              (1, 'https://example.com/photo10.jpg', '12.345', 7, '67.890', 'The Urban Cafe'),
+              (2, 'https://example.com/photo11.jpg', '23.456', 2, '78.901', 'The Wholesome Kitchen'),
+              (3, 'https://example.com/photo12.jpg', '34.567', 2, '89.012', 'The Sunset Grill'),
+              (1, 'https://example.com/photo13.jpg', '45.678', 3, '90.123', 'The Fireside Lounge'),
+              (2, 'https://example.com/photo14.jpg', '56.789', 6, '12.345', 'The Fresh Market'),
+              (3, 'https://example.com/photo15.jpg', '67.890', 9, '23.456', 'The Serene Tea House');
                
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
