@@ -18,7 +18,7 @@ Entrevista com o usuário e identificação dos requisitos.(quando for o caso de
 Descrição textual das regras de negócio definidas como um subconjunto do mundo real cujos elementos são propriedades que desejamos incluir, processar, armazenar, gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 <br>
 
-> O sistema proposto para a "Wheelie Way" conterá as informacões aqui detalhadas. Dos Usuarios serão armazenados o id, nome, email, senha, bio e foto_perfil. De Tipo_Contato será armazenado id e descricao. O Usuário pode ter nenhum ou vários tipos de contato e um Tipo_contato pode pertencer a nenhum ou vários usuarios. De Estabelecimento será armazenado id, nome, selo, latitude, tipo_estabelecimento, longitude e foto_banner. De Avaliacao, será armazenado dt_avaliacao e nota. Um Usuario pode fazer nenhuma ou várias avaliações enquanto uma Avaliacao pode ser feita por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias qualificações feitas por uma avaliação enquanto uama Avaliacao pode qualificar um e apenas um estabelecimento. De Visitas será armazenado dt_visita. Um Usuario pode realizar nenhuma ou várias visitas enquanto uma Visita pode ser realizada por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias visitas feitas enquanto uma Visita pode ser feita a um e apenas um estabelecimento. De Comentarios será armazenado descricao e dt_comentario. Um Usuario pode escrever nenhum ou vários comentários enquanto uma Comentario pode ser escrito por um e por apenas um usuário. Um Estabelecimento pode ter nenhum ou várias comentários escritos enquanto um Comentario pode ser escrito sobre um e apenas um estabelecimento.
+> O sistema proposto para a "Wheelie Way" conterá as informacões aqui detalhadas. Dos Usuarios serão armazenados o id, nome, email, senha, bio e foto_perfil. De Estabelecimento será armazenado id, nome, selo, latitude, tipo_estabelecimento, longitude e foto_banner. De Avaliacao, será armazenado dt_avaliacao e nota. Um Usuario pode fazer nenhuma ou várias avaliações enquanto uma Avaliacao pode ser feita por um e por apenas um usuário. Um Estabelecimento pode ter nenhuma ou várias qualificações feitas por uma avaliação enquanto uama Avaliacao pode qualificar um e apenas um estabelecimento. De Comentarios será armazenado descricao e dt_comentario. Um Usuario pode escrever nenhum ou vários comentários enquanto uma Comentario pode ser escrito por um e por apenas um usuário. Um Estabelecimento pode ter nenhum ou várias comentários escritos enquanto um Comentario pode ser escrito sobre um e apenas um estabelecimento.
  
  
 ### 3.PMC<br>
@@ -63,12 +63,12 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discproint/template_projeto_integrador/blob/main/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
 
 #### 5.1 PROTÓTIPO DO SISTEMA MOBILE
-Teste: https://quant-ux.com/#/test.html?h=a2aa10a35CHHhwHEySoH5G6qam0ce65GzUhN7BYFadNt0uannX6yJyutiZSO&ln=en
+>Teste: https://quant-ux.com/#/test.html?h=a2aa10a35CHHhwHEySoH5G6qam0ce65GzUhN7BYFadNt0uannX6yJyutiZSO&ln=en<br>
 
-Telas: https://quant-ux.com/#/apps/641aeb7d05d7232656948d45/design/s10183_68866.html
+>Telas: https://quant-ux.com/#/apps/641aeb7d05d7232656948d45/design/s10183_68866.html<br>
 
 #### 5.2 PROTÓTIPO DO SISTEMA WEB
-https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac586e8/web
+>Protótipo: https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac586e8/web<br>
 
 #### 5.3 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM OS SISTEMA WEB/MOBILE PROPOSTOS?
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
@@ -106,10 +106,6 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     FOTO_PERFIL: Campo que armazena o link da foto de perfil do usuário.<br>
     SENHA: Campo que armazena a senha do usuário<br>.
     
-    TIPO_CONTATO: Tabela que armazena as informações relativas ao tipo de contato do usuário.<br>
-    ID: Campo que armazena o número que identifica cada tipo de contato.<br>
-    DESCRICAO: Campo que armazena a descrição definindo qual é o tipo de contato.<br>
-    
     ESTABELECIMENTO: Tabela que armazena as informações relativas ao estabelecimento.<br>
     ID: Campo que armazena o número que identifica cada estabelecimento.<br>
     NOME: Cmapo que armazena o nome do estabelecimento.<br>
@@ -128,9 +124,6 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
     DESCRICAO: Campo que armazena a descrição do usuário sobre o estabelecimento.<br>
     DT_COMENTARIO: Campo que armazena a data em que o cometário foi feito.<br>
     
-    VISITAS: Tabela que armazena as informações relativas à visita de um usário a um estabelecimento.<br>
-    DT_VISITA: Campo que armazena a data em que a visita do usuário foi feita.<br>
-
 ### 8	RASTREABILIDADE DOS ARTEFATOS<br>
         a) Para que Saulo Borges acesse os locais que ele busca, ele pode acessar a tela de pesquisa ou de mapa e buscá-los.
         b) As informações da tabela Estabalecimento estão sendo usadas na tela de pesquisa, mapa, favoritos e no perfil do estabelecimento. 
@@ -214,9 +207,85 @@ https://github.com/RafaBMartins/pi2023/tree/3cbca575d3772ea636ad87d6046196004ac5
          ON DELETE CASCADE;
        
 ### 11	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
-        (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados 
- <br> + insert para dados a serem inseridos)
+        a) INSERT INTO USUARIO (email, senha, nome, foto_perfil)
+           VALUES
+               ('john.doe@example.com', 'pass123', 'John Doe', 'https://example.com/johndoe.jpg'),
+               ('jane.smith@example.com', 'password456', 'Jane Smith', 'https://example.com/janesmith.jpg'),
+               ('alex.wilson@example.com', 'qwerty789', 'Alex Wilson', 'https://example.com/alexwilson.jpg'),
+               ('emily.jones@example.com', 'abc123xyz', 'Emily Jones', 'https://example.com/emilyjones.jpg'),
+               ('michael.brown@example.com', 'letmein987', 'Michael Brown', 'https://example.com/michaelbrown.jpg'),
+               ('sarah.williams@example.com', 'pass987', 'Sarah Williams', 'https://example.com/sarahwilliams.jpg'),
+               ('david.johnson@example.com', 'securepass12', 'David Johnson', 'https://example.com/davidjohnson.jpg'),
+               ('lisa.anderson@example.com', 'password1234', 'Lisa Anderson', 'https://example.com/lisaanderson.jpg'),
+               ('robert.wilson@example.com', 'test12345', 'Robert Wilson', 'https://example.com/robertwilson.jpg'),
+               ('jessica.brown@example.com', 'pass45678', 'Jessica Brown', 'https://example.com/jessicabrown.jpg'),
+               ('jennifer.miller@example.com', 'password123', 'Jennifer Miller', 'https://example.com/jennifermiller.jpg'),
+               ('kevin.thompson@example.com', 'pass9876', 'Kevin Thompson', 'https://example.com/kevinthompson.jpg'),
+               ('natalie.white@example.com', 'securepass345', 'Natalie White', 'https://example.com/nataliewhite.jpg'),
+               ('adam.green@example.com', 'testpass567', 'Adam Green', 'https://example.com/adamgreen.jpg'),
+               ('samantha.harris@example.com', 'password890', 'Samantha Harris', 'https://example.com/samanthaharris.jpg'),
+               ('stephanie.wright@example.com', 'pass4321', 'Stephanie Wright', 'https://example.com/stephaniewright.jpg'),
+               ('matthew.davis@example.com', 'password098', 'Matthew Davis', 'https://example.com/matthewdavis.jpg'),
+               ('olivia.andrews@example.com', 'securepass789', 'Olivia Andrews', 'https://example.com/oliviaandrews.jpg'),
+               ('ryan.thomas@example.com', 'testpass234', 'Ryan Thomas', 'https://example.com/ryanthomas.jpg'),
+               ('laura.roberts@example.com', 'password5678', 'Laura Roberts', 'https://example.com/lauraroberts.jpg'),
+               ('alexandra.carter@example.com', 'pass321', 'Alexandra Carter', 'https://example.com/alexandracarter.jpg'),
+               ('brandon.jenkins@example.com', 'password789', 'Brandon Jenkins', 'https://example.com/brandonjenkins.jpg'),
+               ('natalia.harrison@example.com', 'securepass567', 'Natalia Harrison', 'https://example.com/nataliaharrison.jpg'),
+               ('eric.murphy@example.com', 'testpass890', 'Eric Murphy', 'https://example.com/ericmurphy.jpg'),
+               ('isabella.stewart@example.com', 'password1234', 'Isabella Stewart', 'https://example.com/isabellastewart.jpg'),
+               ('hannah.watson@example.com', 'pass9876', 'Hannah Watson', 'https://example.com/hannahwatson.jpg'),
+               ('michael.rodriguez@example.com', 'password2345', 'Michael Rodriguez', 'https://example.com/michaelrodriguez.jpg'),
+               ('ava.lopez@example.com', 'securepass6789', 'Ava Lopez', 'https://example.com/avalopez.jpg'),
+               ('ethan.hill@example.com', 'testpass5678', 'Ethan Hill', 'https://example.com/ethanhill.jpg'),
+               ('olivia.russell@example.com', 'password4321', 'Olivia Russell', 'https://example.com/oliviarussell.jpg');
+
+           INSERT INTO SELO (selo) 
+           VALUES 
+             ('Ouro'),
+             ('Prata'),
+             ('Bronze');
+
+          INSERT INTO TIPO_ESTABELECIMENTO (tipo_estabelecimento) 
+          VALUES
+            ('Loja'),
+            ('Restaurante'),
+            ('Academia'),
+            ('Parque'),
+            ('Supermercado'),
+            ('Shopping'),
+            ('Padarias'),
+            ('Cabelereiro'),
+            ('Farmácia'),
+            ('Hotéis');
+
+          INSERT INTO ESTABELECIMENTO (fk_selo_selo_pk, foto_banner, longitude, fk_tipo_estabelecimento_tipo_estabelecimento_pk, latitude, nome)
+          VALUES
+              (1, 'https://example.com/establishment1.jpg', '-74.0059', 7, '40.7128', 'Café Fusion'),
+              (2, 'https://example.com/establishment2.jpg', '-118.2437', 2, '34.0522', 'The Rustic Tavern'),
+              (3, 'https://example.com/establishment3.jpg', '2.3522', 7, '48.8566', 'Le Petit Bistro'),
+              (1, 'https://example.com/establishment4.jpg', '-0.1276', 4, '51.5074', 'The Garden Terrace'),
+              (2, 'https://example.com/establishment5.jpg', '139.6917', 2, '35.6895', 'Tokyo Delights'),
+              (1, 'https://example.com/establishment1.jpg', '12.3456', 7, '78.9012', 'The Coffee House'),
+              (2, 'https://example.com/establishment2.jpg', '98.7654', 10, '54.3210', 'The Cozy Retreat'),
+              (3, 'https://example.com/establishment3.jpg', '45.6789', 10, '23.4567', 'The Rustic Inn'),
+              (1, 'https://example.com/establishment4.jpg', '67.8901', 10, '89.0123', 'The Green Oasis'),
+              (2, 'https://example.com/establishment5.jpg', '34.5678', 7, '90.1234', 'The Gourmet Bistro'),
+              (1, 'https://example.com/establishment1.jpg', '12.3456', 7, '78.9012', 'The Coffee House'),
+              (2, 'https://example.com/establishment2.jpg', '98.7654', 10, '54.3210', 'The Cozy Retreat'),
+              (3, 'https://example.com/establishment3.jpg', '45.6789', 10, '23.4567', 'The Rustic Inn'),
+              (1, 'https://example.com/establishment4.jpg', '67.8901', 10, '89.0123', 'The Green Oasis'),
+              (2, 'https://example.com/establishment5.jpg', '34.5678', 7, '90.1234', 'The Gourmet Bistro'),
+          	   (3, 'https://example.com/photo6.jpg', '67.890', 4, '23.456', 'The Blue Lagoon'),
+              (2, 'https://example.com/photo8.jpg', '89.012', 8, '45.678', 'The Hidden Gem'),
+              (3, 'https://example.com/photo9.jpg', '90.123', 2, '56.789', 'The Elegant Diner'),
+              (1, 'https://example.com/photo10.jpg', '12.345', 7, '67.890', 'The Urban Cafe'),
+              (2, 'https://example.com/photo11.jpg', '23.456', 2, '78.901', 'The Wholesome Kitchen'),
+              (3, 'https://example.com/photo12.jpg', '34.567', 2, '89.012', 'The Sunset Grill'),
+              (1, 'https://example.com/photo13.jpg', '45.678', 3, '90.123', 'The Fireside Lounge'),
+              (2, 'https://example.com/photo14.jpg', '56.789', 6, '12.345', 'The Fresh Market'),
+              (3, 'https://example.com/photo15.jpg', '67.890', 9, '23.456', 'The Serene Tea House');
+               
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
