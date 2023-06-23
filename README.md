@@ -324,7 +324,25 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
               (2.58, '2023-12-05', 11, 21),
               (3.92, '2024-01-10', 21, 15),
               (4.26, '2024-02-15', 4, 16),
-              (2.70, '2024-03-20', 13, 17);  
+              (2.70, '2024-03-20', 13, 17);
+
+	INSERT INTO comentarios (descricao, dt_comentario, fk_usuario_id, fk_estabelecimento_id)
+	VALUES
+	    ('Great atmosphere and friendly staff.', '2023-01-10', 15, 20),
+	    ('The food was delicious. Highly recommended!', '2023-02-15', 5, 21),
+	    ('Excellent service and top-notch quality.', '2023-03-20', 28, 22),
+	    ('The establishment exceeded my expectations.', '2023-04-25', 7, 23),
+	    ('A hidden gem. Don''t miss out on this place!', '2023-05-30', 19, 24),
+	    ('The ambiance was fantastic.', '2023-06-05', 30, 25),
+	    ('The staff was attentive and knowledgeable.', '2023-07-10', 9, 20),
+	    ('Delightful experience. Will definitely return.', '2023-08-15', 24, 21),
+	    ('The menu had a wide variety of options.', '2023-09-20', 13, 22),
+	    ('Great value for the price.', '2023-10-25', 2, 23),
+	    ('The establishment had a cozy and welcoming atmosphere.', '2023-11-30', 17, 24),
+	    ('Impeccable presentation and flavors.', '2023-12-05', 26, 25),
+	    ('The service was prompt and efficient.', '2024-01-10', 8, 20),
+	    ('The establishment had a beautiful decor.', '2024-02-15', 21, 21),
+	    ('An unforgettable dining experience.', '2024-03-20', 12, 22);
                
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
