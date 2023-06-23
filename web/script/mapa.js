@@ -71,6 +71,7 @@ function loadMapScenario() {
             showLocateMeButton: true,
         });
     }
+    //se a tela for maior que 540px inicializa o mapa com outras configuracoes
     else{      
          map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
             center: locIfes,
@@ -80,19 +81,25 @@ function loadMapScenario() {
         });
     }
 
+    //inicializa um objeto que ira armazenar os locais que nos cadastramos
     var locaisProprios = {}
 
+    //carrega o modulo de autosugestao do bing maps
     Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
         var options = {
             maxResults: 4,
             map: map,
         };
+        //inicializa o manager de auto sugestao
         var manager = new Microsoft.Maps.AutosuggestManager(options);
-        // manager.attachAutosuggest(document.getElementById("inpPesquisa"), document.getElementById("containerPesquisa"), selectedSuggestion);
+        //este evento faz com que toda vez que o usuario solte um tecla o algoritmo de pesquisa rode novamente
         document.getElementById("inpPesquisa").addEventListener('keyup', (e) => {
+            //captura o valor do input
             var pesquisa = document.getElementById("inpPesquisa").value.toLowerCase()
+            //fecha o perfil aberto
             document.getElementById("perfilEstabelecimento").style.display = "none";
             document.getElementById("botFechaPerfil").classList.add("d-none")
+            //caso nao tenha nada digitado remove as sugestoes
             if(pesquisa.length == 0){
                 document.getElementById("sugestoes").style.display = "none";
                 var divSugestoes = document.getElementById("sugestoes").querySelectorAll("div");
@@ -100,12 +107,15 @@ function loadMapScenario() {
                     item.remove();
                 }
             }
+            //inicializa o array de correspondencias
             var correspondentes = []
+            //procura por correspondencias com os nossos locais cadastrados
             for(let item in locaisProprios){
                     if(locaisProprios[item]["nome"].toLowerCase().match(pesquisa)){
                         correspondentes.push(locaisProprios[item]);
                     }
             }
+            //caso sobre espaco nas sugestoes (maximo quatro), preenche com sugestoes do bing
             manager.getSuggestions(pesquisa, function (suggestionResult){
                 if(suggestionResult.length > 0){
                 document.getElementById("sugestoes").style.display = "block";
@@ -122,11 +132,13 @@ function loadMapScenario() {
                     }
                     correspondentes.push(local);
             }
+            //esvazia o container de sugestoes
             var containerSugestoes = document.getElementById("sugestoes");
             var divSugestoes = containerSugestoes.querySelectorAll("div");
             for(let item of divSugestoes){
                     item.remove();
             }
+            //se houver correspondencias, as exibe nas divs e adiciona um evento de clique que abre o perfil referente a div clicada
             if(correspondentes.length > 0){
                 for(item of correspondentes){
                     div = document.createElement("div");
@@ -154,7 +166,8 @@ function loadMapScenario() {
     })
         })
     });
-
+    
+    //criando os pins do mapa 
     var ifes = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
         title: "Ifes Campus Serra",
@@ -171,7 +184,9 @@ function loadMapScenario() {
         color: "blue",
         title: "Café Arrumado"
     })
+    //fim dos pins
 
+    //adiconando os pins no objeto de locais proprios
     locaisProprios[1] = {
         "nome": "Ifes campus Serra",
         "pushpin": ifes,
@@ -189,9 +204,11 @@ function loadMapScenario() {
         "imagem": "../img/cafeArrumadoPerfil.jpg"
     }
 
+    //adicionano evento de mapa nos pins
     for(let item in locaisProprios){
         map.entities.push(locaisProprios[item]["pushpin"]);
-
+        
+        //se o pin for clicado, abre o perfil do estabelecimento, caso o mesmo pin seja clicado novamente fecha o perfil
         Microsoft.Maps.Events.addHandler(locaisProprios[item]["pushpin"], 'click', function (e) { 
             var perfilEstabelecimento = document.getElementById("perfilEstabelecimento");
             document.getElementById("sugestoes").style.display = "none";
@@ -219,6 +236,7 @@ function loadMapScenario() {
         });
     }
 
+    //adiciona um evento que faz os pins sumirem quando o zoom ficar muito pequeno
     Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function (e){
             if(map.getZoom() < 16){
                 for(let item in locaisProprios){
@@ -233,6 +251,7 @@ function loadMapScenario() {
     });
 }
 
+//funcao que fecha o perfil do estabelecimento
 function fechaPerfil(){
     document.getElementById("perfilEstabelecimento").style.display = "none";
     document.getElementById("botFechaPerfil").style.display = "none";
@@ -241,6 +260,7 @@ function fechaPerfil(){
     }
 }
 
+//funcao que roda quando o usuario clica enter no input sem escolher uma sugestao
 function pesquisaMapa(){
 
     Microsoft.Maps.loadModule('Microsoft.Maps.Search', function () {
