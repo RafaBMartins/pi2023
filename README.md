@@ -247,7 +247,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
              ('Bronze');
 
           INSERT INTO TIPO_ESTABELECIMENTO (tipo_estabelecimento) 
-          VALUES 	
+          VALUES 
             ('Loja'),
           		('Restaurante'),
           		('Academia'),
