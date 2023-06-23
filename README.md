@@ -342,7 +342,24 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 	    ('Impeccable presentation and flavors.', '2023-12-05', 26, 25),
 	    ('The service was prompt and efficient.', '2024-01-10', 8, 20),
 	    ('The establishment had a beautiful decor.', '2024-02-15', 21, 21),
-	    ('An unforgettable dining experience.', '2024-03-20', 12, 22);
+	    ('An unforgettable dining experience.', '2024-03-20', 12, 22),
+     	    ('The service was excellent and the food was delicious.', '2023-01-10', 3, 23),
+	    ('Cozy atmosphere with friendly staff.', '2023-02-15', 5, 24),
+	    ('The establishment had a great selection of drinks.', '2023-03-20', 2, 25),
+	    ('Impressive presentation and flavors.', '2023-04-25', 1, 26),
+	    ('The ambiance was perfect for a relaxing evening.', '2023-05-30', 6, 27),
+	    ('Attentive service and a wide variety of menu options.', '2023-06-05', 4, 23),
+	    ('The establishment lived up to its reputation.', '2023-07-10', 3, 24),
+	    ('Delicious food and great value for money.', '2023-08-15', 2, 25),
+	    ('The staff went above and beyond to ensure a pleasant experience.', '2023-09-20', 1, 26),
+	    ('A hidden gem worth discovering.', '2023-10-25', 6, 27),
+	    ('The establishment had a welcoming and cozy atmosphere.', '2023-11-30', 4, 23),
+	    ('The flavors were unique and memorable.', '2023-12-05', 3, 24),
+	    ('Prompt service and attention to detail.', '2024-01-10', 5, 25),
+	    ('The establishment had a stylish and modern decor.', '2024-02-15', 2, 26),
+	    ('An exceptional dining experience.', '2024-03-20', 1, 27);
+
+     	
                
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
