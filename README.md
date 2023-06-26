@@ -387,7 +387,27 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 	    ('The dishes were beautifully presented and bursting with flavors.', '2024-05-17', 3, 24),
 	    ('Exceptional service and a wide range of menu options.', '2024-06-18', 8, 25),
 	    ('A delightful culinary journey.', '2024-07-19', 2, 26),
-	    ('The establishment provided a memorable evening.', '2024-08-20', 17, 27);
+	    ('The establishment provided a memorable evening.', '2024-08-20', 17, 27),
+     	    ('The food and the service were impeccable.', '2023-01-01', 2, 23),
+	    ('Cozy ambiance with friendly people.', '2023-02-02', 3, 24),
+	    ('The establishment offered a vast menu with unique flavors.', '2023-03-03', 2, 25),
+	    ('Crazy presentation and mouthwatering dishes.', '2023-04-04', 3, 26),
+	    ('The staff went above and beyond to ensure a memorable experience.', '2023-05-05', 1, 27),
+	    ('Delicious food served in a charming atmosphere.', '2023-06-06', 1, 23),
+	    ('The establishment exceeded all expectations.', '2023-07-07', 1, 24),
+	    ('Great value for money and exceptional service.', '2023-08-08', 2, 25),
+	    ('A hidden gem with an extensive wine selection.', '2023-09-09', 5, 26),
+	    ('An unforgettable culinary experience.', '2023-10-10', 5, 27),
+	    ('The establishment had a warm and inviting ambiance.', '2023-11-11', 2, 23),
+	    ('The flavors were bold and tantalizing.', '2023-12-12', 3, 24),
+	    ('Attentive staff and top-notch service.', '2024-01-13', 1, 25),
+	    ('Exquisite decor and attention to detail.', '2024-02-14', 5,26),
+	    ('An outstanding dining experience.', '2024-03-15', 1, 27),
+	    ('The establishment had a cozy and intimate setting.', '2024-04-16', 21, 23),
+	    ('The dishes were beautifully presented and bursting with flavors.', '2024-05-17', 17, 24),
+	    ('Exceptional service and a wide range of menu options.', '2024-06-18', 4, 25),
+	    ('A delightful culinary journey.', '2024-07-19', 4, 26),
+	    ('The establishment provided a memorable evening.', '2024-08-20', 6, 27);
 
      	
                
