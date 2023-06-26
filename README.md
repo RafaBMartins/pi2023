@@ -300,7 +300,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 	      (3, 'https://example.com/hotel2.jpg', '24.4567', 10, '47.6789', 'Cozy Inn'),
        	      (1, 'https://example.com/shopping1.jpg', '12.3456', 6, '34.5678', 'Fashion Paradise'),
 	      (2, 'https://example.com/shopping2.jpg', '23.4567', 6, '45.6789', 'The Trendy Mall'),
-       	      (1, 'https://example.com/park1.jpg', '12.3456', 4, '34.5678', 'Serenity Park');
+       	      (1, 'https://example.com/park1.jpg', '12.3456', 4, '34.5678', 'Serenity Park'),
+	      (1, 'https://example.com/pharma.jpg', '15.3456', 9, '33.5678', 'Cleber Pharmacy');
 	
           INSERT INTO avaliacao (nota, dt_avaliacao, fk_usuario_id, fk_estabelecimento_id)
           VALUES
