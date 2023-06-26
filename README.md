@@ -367,7 +367,27 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 	    ('The flavors were unique and memorable.', '2023-12-05', 3, 24),
 	    ('Prompt service and attention to detail.', '2024-01-10', 5, 25),
 	    ('The establishment had a stylish and modern decor.', '2024-02-15', 2, 26),
-	    ('An exceptional dining experience.', '2024-03-20', 1, 27);
+	    ('An exceptional dining experience.', '2024-03-20', 1, 27),
+     	    ('The food was exquisite and the service was impeccable.', '2023-01-01', 3, 23),
+	    ('Cozy ambiance with friendly staff.', '2023-02-02', 5, 24),
+	    ('The establishment offered a diverse menu with unique flavors.', '2023-03-03', 2, 25),
+	    ('Impeccable presentation and mouthwatering dishes.', '2023-04-04', 28, 26),
+	    ('The staff went above and beyond to ensure a memorable experience.', '2023-05-05', 17, 27),
+	    ('Delicious food served in a charming atmosphere.', '2023-06-06', 4, 23),
+	    ('The establishment exceeded all expectations.', '2023-07-07', 3, 24),
+	    ('Great value for money and exceptional service.', '2023-08-08', 2, 25),
+	    ('A hidden gem with an extensive wine selection.', '2023-09-09', 13, 26),
+	    ('An unforgettable culinary experience.', '2023-10-10', 6 ,27),
+	    ('The establishment had a warm and inviting ambiance.', '2023-11-11', 30, 23),
+	    ('The flavors were bold and tantalizing.', '2023-12-12', 21, 24),
+	    ('Attentive staff and top-notch service.', '2024-01-13', 21, 25),
+	    ('Exquisite decor and attention to detail.', '2024-02-14', 9,26),
+	    ('An outstanding dining experience.', '2024-03-15', 1, 27),
+	    ('The establishment had a cozy and intimate setting.', '2024-04-16', 7, 23),
+	    ('The dishes were beautifully presented and bursting with flavors.', '2024-05-17', 3, 24),
+	    ('Exceptional service and a wide range of menu options.', '2024-06-18', 8, 25),
+	    ('A delightful culinary journey.', '2024-07-19', 2, 26),
+	    ('The establishment provided a memorable evening.', '2024-08-20', 17, 27);
 
      	
                
