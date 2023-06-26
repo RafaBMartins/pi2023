@@ -293,8 +293,10 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
               (2, 'https://example.com/establishment25.jpg', '8.7654', 10, '56.3210', 'The Lazy Retreat'),
               (1, 'https://example.com/establishment25.jpg', '-19.0059', 6, '45.7128', 'Mallace Mall'),
 	      (1, 'https://example.com/restaurant1.jpg', '12.3456', 2,  '34.5678', 'Delicious Delights'),
-       	      (2, 'https://example.com/restaurant2.jpg', '23.4567', 2,  '45.6789', 'Tasty Treats');
-
+       	      (2, 'https://example.com/restaurant2.jpg', '23.4567', 2,  '45.6789', 'Tasty Treats'),
+	      (1, 'https://example.com/cafeteria1.jpg', '13.3456', 7,  '34.5678', 'Café Mornings'),
+	      (2, 'https://example.com/cafeteria2.jpg', '22.4567', 7, '45.6789', 'Brewed Bliss');
+    
           INSERT INTO avaliacao (nota, dt_avaliacao, fk_usuario_id, fk_estabelecimento_id)
           VALUES
               (2.12, '2023-01-01', 15, 12),
