@@ -448,8 +448,6 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
   ![Alt text](imagensReadme/Relatório5.png)<br>
 
-  ![Alt text](imagensReadme/Relatório6.png)<br>
-
  ### 13 Gráficos, relatórios, integração com Linguagem de programação e outras solicitações.<br>
      https://colab.research.google.com/drive/1aXXBjg6vr5BMXA1oWspFaLYMA0AUu7Rq?usp=sharing
  #### 13.1	Integração com Linguagem de programação; <br>
