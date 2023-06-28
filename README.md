@@ -78,8 +78,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 * Relatório que mostre quais estabelecimentos foram avaliados e sua nota média de estrelas de classificação quanto à acessibilidade(máximo de 5)
 * Relatório que agrupe os selos pelos seus tipos, mostrando somente o atributo selo e a quantidade de selos com o referido tipo.
 * Relatório que mostre quais são os tipos de estabelecimento e qual a sua quantidade do tipo.
-* Relatório que mostre quaal é a quantidade de visitas do tipos de estabelecimentos.
-* Relatório  que mostre os usuários e suas contribuições.
+* Relatório que mostre quaal é a quantidade de avaliações aos estabelecimentos.
+* Relatório que mostre os quais são os estabelecimentos mais comentados.
  
  ### 6.MODELO CONCEITUAL<br>
     A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
