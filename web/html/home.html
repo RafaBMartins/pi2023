@@ -18,19 +18,18 @@
     defer></script>
 
   <!--importando style do header-->
-  <link rel="stylesheet" type="text/css" href="/web/header/header.css">
-
-  <!--importando style da biblioteca de icones-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/web/headerFooter/header.css">
 
   <!--importando script do header-->
-  <script src="/web/header/header.js" defer></script>
+  <script src="/web/headerFooter/header.js" defer></script>
 
   <!--importando style da página-->
   <link href="../css/home.css" rel="stylesheet">
 
   <!--importando style do footer-->
-  <link rel="stylesheet" type="text/css" href="../header/footer.css">
+  <link rel="stylesheet" href="../headerFooter/footer.css">
+  <link rel="stylesheet" href="../css/fontsAndColors.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -56,7 +55,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link itemMenu" aria-current="page" href="home.html">Busca</a>
+          <a class="nav-link itemMenu" aria-current="page" href="home.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link itemMenu" href="mapa.html">Mapa</a>
@@ -178,7 +177,7 @@
                   src="../img/perfil/grelhazeze.jpg">
                 <div class="w-100">
                   <!--titulo-->
-                  <h4 class="card-title ms-2">Grelha do Zêzere<img class="img-fluid m-1"
+                  <h4 href="perfilestabelecimento.html" class="card-title ms-2">Grelha do Zêzere<img class="img-fluid m-1"
                       src="../img/Icones/restauranteIcon.svg"></h4>
                   <!--distancia-->
                   <h6 class="card-subtitle ms-2">2,5 km</h6>
@@ -192,7 +191,31 @@
                     <!--selo-->
                     <img src="../img/selos/seloPrata.svg" class="img-fluid ms-2">
                     <!--texto clicavel para acessar o perfil completo do estabelecimento-->
-                    <labe class="blue ms-2">Ver Mais</labe>
+                    <a href="perfilestabelecimento.html" class="blue ms-2">Ver Mais</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+
+          <li>
+            <div class="card mb-4">
+              <div class="d-flex align-items-top p-2">
+                <img class="card-img-start img-fluid img-size rounded border blue-border"
+                  src="../img/perfil/grelhazeze.jpg">
+                <div>
+                  <h4 href="perfilestabelecimento.html" class="card-title ms-2">Grelha do Zêzere<img class="img-fluid m-1"
+                      src="../img/Icones/restauranteIcon.svg"></h4>
+                  <h6 class="card-subtitle ms-2">2,5 km</h6>
+                  <div class="m-2">
+                    <span class="fa fa-star blue"></span>
+                    <span class="fa fa-star blue"></span>
+                    <span class="fa fa-star blue"></span>
+                    <span class="fa fa-star-half-o blue"></span>
+                    <span class="fa fa-star-o blue"></span>
+                    <img src="../img/selos/seloPrata.svg" class="img-fluid ms-2">
+                    <a href="perfilestabelecimento.html" class="blue ms-2">Ver Mais</a>
                   </div>
                 </div>
               </div>
@@ -216,31 +239,7 @@
                     <span class="fa fa-star-half-o blue"></span>
                     <span class="fa fa-star-o blue"></span>
                     <img src="../img/selos/seloPrata.svg" class="img-fluid ms-2">
-                    <labe class="blue ms-2">Ver Mais</labe>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-
-          <li>
-            <div class="card mb-4">
-              <div class="d-flex align-items-top p-2">
-                <img class="card-img-start img-fluid img-size rounded border blue-border"
-                  src="../img/perfil/grelhazeze.jpg">
-                <div>
-                  <h4 class="card-title ms-2">Grelha do Zêzere<img class="img-fluid m-1"
-                      src="../img/Icones/restauranteIcon.svg"></h4>
-                  <h6 class="card-subtitle ms-2">2,5 km</h6>
-                  <div class="m-2">
-                    <span class="fa fa-star blue"></span>
-                    <span class="fa fa-star blue"></span>
-                    <span class="fa fa-star blue"></span>
-                    <span class="fa fa-star-half-o blue"></span>
-                    <span class="fa fa-star-o blue"></span>
-                    <img src="../img/selos/seloPrata.svg" class="img-fluid ms-2">
-                    <labe class="blue ms-2">Ver Mais</labe>
+                    <a href="perfilestabelecimento.html" class="blue ms-2">Ver Mais</a>
                   </div>
                 </div>
               </div>
@@ -256,41 +255,71 @@
 
   </div>
 
-  <footer
-        class="d-flex w-100 p-1 align-items-center justify-content-md-between justify-content-center flex-md-row flex-wrap flex-column">
+  <footer>
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <img src="../img/logos/logoBranco.svg">
+            <div id="footer_social_media">
+                <a href="#" class="footer-link" id="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
 
+                <a href="#" class="footer-link" id="twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
 
-        <!-- container onde esta os meios de contato -->
-        <div class="d-flex flex-column flex-wrap justify-content-center text-center my-2 my-md-0">
-            <div class="texto-footer texto-contato">Meios de Contato:</div>
-            <div class="texto-footer texto-contato">Telefone: 27 99780-3226</div>
-            <div class="texto-footer texto-contato">E-mail: rafaelmartinscouto@gmail.com</div>
+                <a href="#" class="footer-link" id="whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
         </div>
 
+        <ul class="footer-list">
+            <li>
+                <h3>Meios de contato</h3>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Ouvidoria: (27)99780-3226</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Email: wheeliewayltda@gmail.com</a>
+            </li>
+        </ul>
 
-        <!-- container com informaçõe gerais e ajuda-->
-        <div class="justify-content-center text-center my-2 my-md-0">
-            <div class="texto-footer">Políticas de privacidades</div>
-            <div class="texto-footer">Documentação dos selos</div>
-            <div class="texto-footer">Ajuda</div>
+        <ul class="footer-list">
+            <li>
+                <h3>Plataformas</h3>
+            </li>
+            <li>
+                <a href="#" class="footer-link">App</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Desktop</a>
+            </li>
+        </ul>
+
+        <div id="footer_subscribe">
+            <h3>Inscreva-se</h3>
+            
+            <p>
+                Informe seu e-mail para ser notificado sobre
+                nossas noticias e atualizações
+            </p>
+
+            <div id="input_group">
+                <input type="email" id="email">
+                <button>
+                    <i class="fa-regular fa-envelope"></i>
+                </button>
+            </div>
         </div>
+    </div>
 
-
-        <!-- container onde esta as logos as redes socias da empresa -->
-        <div class="justify-content-center text-center mt-2 my-md-0">
-            <img src="../img/facebook-logo.png" class="rd-social-logo mx-1" alt="">
-            <img src="../img/instagram-logo.png" class="rd-social-logo mx-1" alt="">
-            <img src="../img/twitter-logo.png" class="rd-social-logo mx-1" alt="">
-        </div>
-
-
-        <!-- logo da empresa -->
-        <div class="p-3 logo-footer d-flex justify-content-center flex-column my-2 my-md-0">
-            <img class="" src="../img/logos/logoBranco.svg" alt="">
-        </div>
-
-        
-    </footer>
+    <div id="footer_copyright">
+        &#169
+        2023 todos os direitos reservados
+    </div>
+</footer>
 
 </body>
 

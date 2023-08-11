@@ -18,10 +18,11 @@
   <script src="../script/javaperfil.js"></script>
 
 
-  <link rel="stylesheet" type="text/css" href="../header/header.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="../header/header.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="../header/footer.css">
+  <link rel="stylesheet" type="text/css" href="../headerFooter/header.css">
+  <link rel="stylesheet" href="../css/fontsAndColors.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="../headerFooter/header.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="../headerFooter/footer.css">
 
   <style>
 
@@ -48,7 +49,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link itemMenu" aria-current="page" href="home.html">Busca</a>
+            <a class="nav-link itemMenu" aria-current="page" href="home.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link itemMenu" href="mapa.html">Mapa</a>
@@ -241,7 +242,7 @@
                 <!--estrutura das avaliações idêntica às do perfil, porém sem a foto do estabelecimento-->
                 <div class="row">
                   <div class="col-sm-12">
-                    <p>Paulo</p>
+                    <a href="perfilusuario.html">Paulo</a>
                     <img src="../img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
                   </div>
                   <div class="col-sm-12">
@@ -257,7 +258,7 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
-                    <p>Homem</p>
+                    <a href="perfilusuario.html">Homem</a>
                     <img src="../img/perfilestabelecimento/1601677114568.jfif" class="rounded-circle" height="70"
                       width="70" alt="Avatar">
                   </div>
@@ -371,31 +372,71 @@
   </div>
 
   <!-- footer terá toda a largura da janela e ficara na parte de baixo da pagina -->
-  <footer
-    class="d-flex w-100 p-1 align-items-center justify-content-md-between justify-content-center flex-md-row flex-wrap flex-column">
-    <!-- container onde esta os meios de contato -->
-    <div class="d-flex flex-column flex-wrap justify-content-center text-center my-2 my-md-0">
-      <div class="texto-footer texto-contato">Meios de Contato:</div>
-      <div class="texto-footer texto-contato">Telefone: 27 99780-3226</div>
-      <div class="texto-footer texto-contato">E-mail: rafaelmartinscouto@gmail.com</div>
+  <footer>
+    <div id="footer_content">
+        <div id="footer_contacts">
+            <img src="../img/logos/logoBranco.svg">
+            <div id="footer_social_media">
+                <a href="#" class="footer-link" id="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#" class="footer-link" id="whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <ul class="footer-list">
+            <li>
+                <h3>Meios de contato</h3>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Ouvidoria: (27)99780-3226</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Email: wheeliewayltda@gmail.com</a>
+            </li>
+        </ul>
+
+        <ul class="footer-list">
+            <li>
+                <h3>Plataformas</h3>
+            </li>
+            <li>
+                <a href="#" class="footer-link">App</a>
+            </li>
+            <li>
+                <a href="#" class="footer-link">Desktop</a>
+            </li>
+        </ul>
+
+        <div id="footer_subscribe">
+            <h3>Inscreva-se</h3>
+            
+            <p>
+                Informe seu e-mail para ser notificado sobre
+                nossas noticias e atualizações
+            </p>
+
+            <div id="input_group">
+                <input type="email" id="email">
+                <button>
+                    <i class="fa-regular fa-envelope"></i>
+                </button>
+            </div>
+        </div>
     </div>
-    <!-- container com informaçõe gerais e ajuda-->
-    <div class="justify-content-center text-center my-2 my-md-0">
-      <div class="texto-footer">Políticas de privacidades</div>
-      <div class="texto-footer">Documentação dos selos</div>
-      <div class="texto-footer">Ajuda</div>
+
+    <div id="footer_copyright">
+        &#169
+        2023 todos os direitos reservados
     </div>
-    <!-- container onde esta as logos as redes socias da empresa -->
-    <div class="justify-content-center text-center mt-2 my-md-0">
-      <img src="../img/facebook-logo.png" class="rd-social-logo mx-1" alt="">
-      <img src="../img/instagram-logo.png" class="rd-social-logo mx-1" alt="">
-      <img src="../img/twitter-logo.png" class="rd-social-logo mx-1" alt="">
-    </div>
-    <!-- logo da empresa -->
-    <div class="p-3 logo-footer d-flex justify-content-center flex-column my-2 my-md-0">
-      <img class="" src="../img/logos/logoBranco.svg" alt="">
-    </div>
-  </footer>
+</footer>
 </body>
 
 
