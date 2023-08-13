@@ -1,3 +1,4 @@
+/*full header design*/
 * {
     font-family: var(--font-inter);
     margin: 0;
@@ -10,25 +11,28 @@ header {
     color: var(--color-white);
 }
 
-.mobile-menu {
-    text-decoration: none;
-    display: none;
-    align-items: center;
-    font-size: 2.5rem;
-    color: var(--color-blue3);
-}
-
 #header_content {
     background-color: var(--color-white);
     display: flex;
     justify-content: space-between;
     padding: 2rem 10rem;
 }
+/*------------------*/
 
-#header_name .logo {
-    display: flex;
-    gap: 0.5rem;
+/*removing text decoration from all <a> tags*/
+.header-link, .header-link-mobile, .header-btnRegister, .header-btnLogin, .mobile-menu, #header_name .logo {
     text-decoration: none;
+}
+
+/*removing display from all mobile tags*/
+.mobile-menu, #header_options .header-link-mobile {
+    display: none;
+}
+
+/*logo and name design*/
+#header_name ,#header_name .logo {
+    display: flex;
+    gap: 1rem;
 }
 
 #header_name img {
@@ -37,112 +41,101 @@ header {
 }
 
 #header_name h1 {
+    display: flex;
+    align-items: center;
     font-family: var(--font-lemonmilk);
     color: var(--color-blue3);
 }
+/*------------------*/
 
-.header-link {
-    text-decoration: none;
-}
-
-.header-link-mobile {
-    text-decoration: none;
-}
-
-.header-btnRegister {
-    text-decoration: none;
-}
-
-.header-btnLogin {
-    text-decoration: none;
-}
-
-#header_options .header-link-mobile {
-    display: none;
-}
-
+/*header options design*/
 #header_options {
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
+    /*text links design*/
+    #header_options .header-link {
+        color: var(--color-gray);
+        transition: all 0.4s;
+    }
 
-#header_options .header-link {
-    color: var(--color-gray);
-    transition: all 0.4s;
-}
+    #header_options .header-link:hover {
+        color: var(--color-blue1);
+    }
+    /*------------------*/
 
-#header_options .header-link:hover {
-    color: var(--color-blue1);
-}
+    /*button links design*/
+    #header_options .header-btnRegister, #header_options .header-btnLogin {
+        background-color: var(--color-blue2);
+        color: var(--color-white);
+        border: solid 2px var(--color-blue2);
+        width: 9rem;
+        padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+        text-align: center;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.4s;
+    }
 
-#header_options .header-link-mobile {
-    color: var(--color-white);
-    transition: all 0.4s;
-}
+    #header_options .header-btnRegister:hover {
+        background-color: var(--color-white);
+        color: var(--color-blue2);
+    }
 
-#header_options .header-link-mobile:hover {
-    color: var(--color-blue1);
-}
+    #header_options .header-btnLogin {
+        background-color: var(--color-white);
+        color: var(--color-blue2);
+    }
 
-#header_options .header-btnRegister {
-    background-color: var(--color-blue2);
-    color: var(--color-white);
-    border: solid 2px;
-    border-color: var(--color-blue2);
-    width: 9rem;
-    padding: 0.8rem 0.5rem 0.8rem 0.5rem;
-    text-align: center;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: all 0.4s;
-}
+    #header_options .header-btnLogin:hover {
+        background-color: var(--color-blue2);
+        color: var(--color-white);
+    }
+    /*------------------*/
 
-#header_options .header-btnRegister:hover {
-    background-color: var(--color-white);
-    color: var(--color-blue2);
-}
+    /*icon link design*/
+    #header_options .header-iconLink {
+        font-size: 2.5rem;
+        color: var(--color-blue2);
+        transition: all 0.4s;
+    }
 
-#header_options .header-btnLogin {
-    background-color: var(--color-white);
-    color: var(--color-blue2);
-    border: solid 2px;
-    border-color: var(--color-blue2);
-    width: 9rem;
-    padding: 0.8rem 0.5rem 0.8rem 0.5rem;
-    text-align: center;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: all 0.4s;
-}
+    #header_options .header-iconLink:hover {
+        opacity: 0.8;
+    }
+    /*------------------*/
+/*------------------*/
 
-#header_options .header-btnLogin:hover {
-    background-color: var(--color-blue2);
-    color: var(--color-white);
-}
-
-#header_options .header-iconLink {
-    font-size: 2.5rem;
-    color: var(--color-blue2);
-    transition: all 0.4s;
-}
-
-#header_options .header-iconLink:hover {
-    opacity: 0.8;
-}
-
+/*mobile responsiveness*/
 @media screen and (max-width: 768px) {
+    /*removing display from all desktop tags*/
+    #header_options .header-btnRegister, #header_options .header-btnLogin, #header_options .header-iconLink, #header_options {
+        display: none;
+    }
 
+    /*display all mobile tags*/
+    #header_options .header-link-mobile, .mobile-menu {
+        display: flex;
+    }
+
+    /*full header design for mobile*/
     #header_content {
         padding: 1rem 1rem;
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: center;
     }
 
+    /*mobile menu button design*/
+    .mobile-menu {
+        align-items: center;
+        font-size: 2.5rem;
+        color: var(--color-blue3);
+    }
+
+    /*mobile menu design*/
     #header_options {
-        display: none;
         flex-direction: column;
         align-self: flex-end;
         padding: 1rem;
@@ -150,33 +143,17 @@ header {
         background-color: var(--color-blue5);
     }
 
-    #header_options .header-link {
+    /*mobile menu links design*/
+    #header_options .header-link-mobile, #header_options .header-link {
         color: var(--color-white);
         text-transform: uppercase;
     }
+}
 
-    #header_options .header-btnRegister {
+/*mobile responsiveness for small screens*/
+@media screen and (max-width: 370px) {
+    /*hidding logo image*/
+    #header_name img {
         display: none;
-    }
-
-    #header_options .header-btnLogin {
-        display: none;
-    }
-
-    #header_options .header-iconLink {
-        display: none;
-    }
-
-    #header_options .header-link-mobile {
-        display: flex;
-    }
-
-    #header_name {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .mobile-menu {
-        display: flex;
     }
 }
