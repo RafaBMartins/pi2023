@@ -23,7 +23,7 @@
 </head>
 <body class="vh-100">
   <?php 
-  include("../html/header.php");
+  include("header.php");
   ?>
   <!--container principal da página-->
   <div class="container-fluid">
@@ -132,7 +132,7 @@
 
   </div>
   <?php 
-  include("../html/footer.php");
+  include("footer.php");
   ?>
 </body>
 

@@ -37,7 +37,7 @@
 
 <body>
   <?php 
-  include("../html/header.php");
+  include("header.php");
   ?>
 
   <!--section onde o mapa e o menu de pesquisa lateral ficara posicionado-->

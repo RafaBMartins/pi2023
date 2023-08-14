@@ -24,7 +24,7 @@
 
 <body>
   <?php 
-  include("../html/header.php");
+  include("header.php");
   ?>
   <!--container que centraliza texto com todo conteúdo-->
   <div class="container text-center">
@@ -222,7 +222,7 @@
   </div>
 
   <?php 
-  include("../html/footer.php");
+  include("footer.php");
   ?>
 </body>
 
