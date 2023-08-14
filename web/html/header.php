@@ -18,7 +18,7 @@
         <div id="header_content">
             <!--name + logo-->
             <div id="header_name">
-                <a href="../html/home.html" class="logo">
+                <a href="index.php" class="logo">
                     <img src="../img/logos/logo.svg">
                     <h1>Wheelieway</h1>
                 </a>
