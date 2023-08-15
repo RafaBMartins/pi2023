@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="vh-100">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WheelieWay</title>
+  <link href="../css/index.css" rel="stylesheet">
+
+</head>
+<body>
+  <?php 
+  include("header.php");
+  ?>
+  <div id="home_content">
+    <div id="nearby_establishments">
+      <div class="main-text">
+        <p>
+          Conheça os estabelecimentos mais proximos de sua casa
+        </p>
+      </div>
+
+      <div class="slideshow-container">
+        <div class="slideModel">
+          <h3 class="numberText">1 / 1</h3>
+          <img src="https://picsum.photos/200/300">
+          <h3 class="text">Caption Two</h3>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10094;</a>
+      </div>
+    </div>
+  </div>
+  <?php 
+  include("footer.php");
+  ?>
+</body>
+
+</html>
