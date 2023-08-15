@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <script src="../script/cadastro.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <form id="container">
+        <i class="fa-solid fa-file-image" id="selectImg">
+            <input type="file" id="imgPerfil" name="img_perfil" accept="image/*" style="display: none;">
+        </i>
+        <input type="text" id="nomeEstabelecimento">
+        <select id="tipoEstab">
+            <option value="restaurante">Restaurante</option>
+            <option value="escolar">Instituição de ensino</option>
+        </select>
+        <div id="containerEstrelas">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+        <textarea id="avalicao"></textarea>
+        <i class="fa-solid fa-images" id="selectImgAval">
+            <input type="file" id="imgAval" name="img_perfil" accept="image/*" style="display: none;">
+        </i>
+    </form>
+</body>
+</html>
