@@ -1,1 +1,9 @@
 @import "fontsAndColors.css";
+
+.slide{
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}

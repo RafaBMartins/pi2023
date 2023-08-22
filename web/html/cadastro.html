@@ -8,27 +8,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
-<body>
+<body class="alinhar">
     <form id="container">
-        <i class="fa-solid fa-file-image" id="selectImg">
+        <div id="containerSelectImg" class="alinhar">
+            <i class="fa-solid fa-file-image" id="selectImg"></i>
+            <div>Escolha uma imagem para ser a foto do perfil</div>
             <input type="file" id="imgPerfil" name="img_perfil" accept="image/*" style="display: none;">
-        </i>
-        <input type="text" id="nomeEstabelecimento">
-        <select id="tipoEstab">
-            <option value="restaurante">Restaurante</option>
-            <option value="escolar">Instituição de ensino</option>
-        </select>
-        <div id="containerEstrelas">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
         </div>
-        <textarea id="avalicao"></textarea>
-        <i class="fa-solid fa-images" id="selectImgAval">
+        <div id="containerNomeEstabelecimento" class="alinhar">
+            <label for="nomeEstabelecimento">Digite aqui o nome do estabelecimento</label>
+            <input type="text" id="nomeEstabelecimento">
+        </div>
+        <div id="containerTipoEstab" class="alinhar">
+            <div>Selecione o tipo do estabelecimento</div>
+            <select id="tipoEstab">
+                <option value="restaurante">Restaurante</option>
+                <option value="escolar">Instituição de ensino</option>
+            </select>
+        </div>
+        <div id="containerEstrelas">
+            <div>Avalie o restaurante</div>
+            <div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+        <div id="containerAvalicao" class="alinhar">
+            <label for="avalicao">Escreva o que achou do estabelecimento</label>
+            <textarea id="avalicao" cols="70" rows="12"></textarea>
+        </div> 
+        <div id="containerSelectImgAval" class="alinhar">
+            <div>Adicione fotos a sua avalicao</div>
+            <i class="fa-solid fa-images" id="selectImgAval"></i>
             <input type="file" id="imgAval" name="img_perfil" accept="image/*" style="display: none;">
-        </i>
+        </div>
     </form>
 </body>
 </html>
