@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <?php 
+  <?php
   include("header.php");
   ?>
   <!--container que centraliza texto com todo conteúdo-->

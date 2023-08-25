@@ -1,8 +1,12 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
-/*tamanho máximo de 130px*/
+.fundo {
+  background-color: #d0e4fc;
+}
+
+/*tamanho máximo de 80px*/
 .mw {
-  max-width: 130px;
+  max-width: 80px;
 }
 
 /*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/

@@ -21,9 +21,9 @@
 </head>
 
 <body>
-  <?php 
+  <!--<?php 
   include("header.php");
-  ?>
+  ?>-->
   <!--container que centraliza texto com todo conteúdo-->
   <div class="container text-center">
     <div class="row">
@@ -103,10 +103,10 @@
                     <img src="../img/perfil/5estrela.png" class="m-auto" height="auto" width="80%">
                   </div>
                   <div class="col-sm-4 col-6 d-flex flex-wrap align-items-center">
-                    <img src="../img/selos/seloBronze.svg" class="mw m-auto" height="auto" width="50%" alt="Selo">
+                    <img src="../img/selos/seloBronze.svg" class="mw m-auto selo" height="auto" width="50%" alt="Selo">
                   </div>
                   <div class="col-sm-4 col-6 d-flex justify-content-center">
-                    <img src="../img/selos/seloBronze.svg" class="mw m-auto" width="50%" alt="Selo">
+                    <img src="../img/selos/seloBronze.svg" class="mw m-auto selo" width="50%" alt="Selo">
                   </div>
                 </div>
                 <!--linha com margem em baixo-->
@@ -140,8 +140,9 @@
                 <!--estrutura das avaliações idêntica às do perfil, porém sem a foto do estabelecimento-->
                 <div class="row">
                   <div class="col-sm-12">
-                    <a href="perfilusuario.html">Paulo</a>
                     <img src="../img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+                    <a class="link-body-emphasis link-offset-2 link-underline-opacity-0" href="perfilusuario.php">Paulo</a>
+                    
                   </div>
                   <div class="col-sm-12">
                     <div class="p-1">
@@ -156,9 +157,10 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12">
-                    <a href="perfilusuario.html">Homem</a>
                     <img src="../img/perfilestabelecimento/1601677114568.jfif" class="rounded-circle" height="70"
                       width="70" alt="Avatar">
+                    <a class="link-body-emphasis link-offset-2 link-underline-opacity-0" href="perfilusuario.php">Homem</a>
+                    
                   </div>
                   <div class="col-sm-12">
                     <div class="p-1">
@@ -269,9 +271,9 @@
     </div>
   </div>
 
-  <?php 
+  <!--<?php 
   include("footer.php");
-  ?>
+  ?>-->
 </body>
 
 
