@@ -12,16 +12,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
+    gap: 20px
 }
 
 #container{
     width: 90vw;
-    height: 50vh;
     opacity: 1;
     border-radius: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
     gap: 10px;
@@ -34,12 +35,14 @@ body{
     width: 100%;
     height: 100%;
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     border-radius: 1px;
     gap: 10px;
     box-shadow: 1px 1px 1px rgba(240, 248, 255, 0.8);;
     background-color: rgba(240, 248, 255, 0.7);
+
 }
 
 #selectImg{
@@ -75,10 +78,17 @@ body{
     padding: 5px;
 }
 
-#tipoEstab{
+select{
     width: 100%;
-    height: 40px;
+    height: 30px;
     border-radius: 15px;
+    outline: 0;
+    padding: 5px;
+}
+
+
+option{
+    font-size: 14px
 }
 
 
@@ -118,4 +128,57 @@ body{
 
 #containerSelectImgAval i{
     font-size: 24px;
+}
+
+#containerEndereco{
+    display: grid;
+    grid-row: 4 / 5;
+    grid-column: 1 / 5;
+    grid-template-columns: 20% 30% 40% 10%;
+    width: 100%;
+}
+
+#containerEndereco input{
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid var(--color-blue5);
+    outline: none;
+}
+
+#containerEstado{
+    grid-column: 1 / 2;
+    padding: 10px;
+}
+
+#containerCidade{
+    grid-column: 2 / 3;
+    padding: 10px;
+}
+
+#containerRua{
+    grid-column: 3 / 4;
+    width: 100%;
+    padding: 10px;
+}
+
+#containerNumero{
+    grid-column: 4 / 5;
+    padding: 10px;
+}
+
+#rua{
+    width: 70%;
+}
+
+#botCad{
+    min-width: 150px;
+    min-height: 45px;
+    border-radius: 15px;
+    background-color: var(--color-blue3);
+    color:white;
+    border: none;
+    font-size: 16px;
+    box-shadow: 1px 1px 1px lightgrey;
+    cursor: pointer;
+    grid-column: 1 / 5;
 }
