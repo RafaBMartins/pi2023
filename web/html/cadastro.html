@@ -9,65 +9,75 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="gett" id="container">
-        <div id="containerSelectImg" class="estilo-container">
-            <i class="fa-solid fa-file-image" id="selectImg"></i>
-            <div>Foto de perfil do estabelecimento*</div>
-            <input type="file" id="imgPerfil" name="img_perfil" accept="image/*" style="display: none;">
-        </div>
-        <div id="containerNomeEstabelecimento" class="estilo-container">
-            <label for="nomeEstabelecimento">Nome do estabelecimento*</label>
-            <input required type="text" id="nomeEstabelecimento">
-        </div>
-        <div id="containerTipoEstab" class="estilo-container">
-            <div>Tipo do estabelecimento*</div>
-            <select id="tipoEstab">
-                <option value="restaurante">Restaurante</option>
-                <option value="escolar">Instituição de ensino</option>
-            </select>
-        </div>
-        <div id="containerEstrelas" class="estilo-container">
-            <div>Avalie o restaurante*</div>
-            <div>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+    <form action="" method="get">
+        <fieldset id="infoBasic">
+            <legend>informações básicas</legend>
+            <div class="estilo-foto-perfil">
+                <i class="fa-solid fa-file-image" id="selectImg"></i>
+                <div>Foto de perfil do estabelecimento</div>
+                <input type="file" id="imgPerfil" name="img_perfil" accept="image/*" style="display: none;">
             </div>
-        </div>
-        <div id="containerAvalicao" class="estilo-container">
-            <label for="avalicao">O que achou do estabelecimento?</label>
-            <textarea id="avalicao" cols="50" rows="2"></textarea>
-        </div> 
-        <div id="containerSelectImgAval" class="estilo-container">
-            <label for="selectImgAval">Adicione fotos a sua avalicao</label>
-            <i class="fa-solid fa-images" id="selectImgAval"></i>
-            <input type="file" id="imgAval" name="img_perfil" accept="image/*" style="display: none;">
-        </div>
-        <div id="containerEndereco">
-            <div id="containerEstado" class="estilo-container">
-                <label for="estado">Estado*</label>
-                <select>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="RJ">Rio de Janeiro</option>
+            <div>
+                <label for="nomeEstabelecimento">Nome do estabelecimento</label>
+                <input required type="text" id="nomeEstabelecimento">
+            </div>
+            <div>
+                <div>Tipo do estabelecimento</div>
+                <select id="tipoEstab">
+                    <option value="restaurante">Restaurante</option>
+                    <option value="escolar">Instituição de ensino</option>
                 </select>
             </div>
-            <div id="containerCidade" class="estilo-container">
-                <label for="cidade">Cidade*</label>
-                <input required type="text" name="cidade" id="cidade">
-            </div>
-            <div id="containerRua" class="estilo-container">
-                    <label for="rua">Endereço*</label>
-                    <input required type="text" name="rua" id="rua">
+        </fieldset>
+        <!--
+        <fieldset>
+        
+            <legend>Avaliação</legend>
+            <div id="containerEstrelas" class="estilo-container">
+                <div>Avalie o restaurante*</div>
+                <div>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                 </div>
-            <div id="containerNumero" class="estilo-container">
-                <label for="numero">Numero</label>
-                <input required size="4" type="text" id="numero" name="numero">
             </div>
+            <div id="containerAvalicao" class="estilo-container">
+                <label for="avalicao">O que achou do estabelecimento?</label>
+                <textarea id="avalicao" cols="50" rows="2"></textarea>
+            </div> 
+            <div id="containerSelectImgAval" class="estilo-container">
+                <label for="selectImgAval">Adicione fotos a sua avalicao</label>
+                <i class="fa-solid fa-images" id="selectImgAval"></i>
+                <input type="file" id="imgAval" name="img_perfil" accept="image/*" style="display: none;">
             </div>
+        </fieldset>
+    -->
+        <fieldset id="adress">
+            <legend>Endereço</legend>
+                <div>
+                    <label for="estado">Estado</label>
+                    <select>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="cidade">Cidade</label>
+                    <input required type="text" name="cidade" id="cidade">
+                </div>
+                <div>
+                        <label for="rua">Endereço</label>
+                        <input required type="text" name="rua" id="rua">
+                    </div>
+                <div>
+                    <label for="numero">Numero</label>
+                    <input required size="4" type="text" id="numero" name="numero">
+                </div>
+        </fieldset>
         </div>
         <input type="submit" value="Cadastrar" id="botCad">
     </form>
