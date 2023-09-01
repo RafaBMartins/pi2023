@@ -27,7 +27,7 @@
   include("header.php");
   ?>
   <!--container que centraliza texto com todo conteúdo-->
-  <div class="container text-center">
+  <div class="caixa text-center">
     <div class="row">
 
       <!--ocupa apenas uma parte da página e colaca borda em tudo menos no topo-->
@@ -54,23 +54,7 @@
                   </div>
                   <!--descrição com texto no centro-->
                 </div>
-                <div class="row mb-4">
-                  <div class="col-sm-12 d-flex justify-content-center">
-                    <p class="h6 p-2">A conta Oficial do Rei do Glu Glu, Sérgio Mallandro! A conta Oficial do Rei do Glu
-                      Glu, Sérgio Mallandro!</p>
-                  </div>
-                </div>
-                <!--margem vertical entre as linhas e na parte de baixo da div-->
-                <div class="row gy-4 mb-4">
-                  <!--centraliza o texto-->
-                  <div class="col-sm-6 d-flex justify-content-center">
-                    <span class="">Contribuições: 20</span>
-                  </div>
-                  <div class="col-sm-6 d-flex justify-content-center">
-                    <span class="">Deficiência: Cadeirante</span>
-                  </div>
-
-                </div>
+              
                 <!--distância horizontal entre as linhas-->
                 <div class="row gy-4">
                   <!--tabas que mudam o que está visível com texto centralizado-->
@@ -90,14 +74,14 @@
                 <!--primeira avaliação-->
                 <div class="row">
                   <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-                  <div class="col-sm-6">
-                    <p>Sergio Malandro</p>
+                  <div class="col-sm-6 d-flex align-items-center">
                     <img src="../img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+                    <p>Sergio Malandro</p>
                   </div>
                   <!--nome e imagem de quem está recebendo o comentário no canto superior direito da avaliação-->
                   <div class="col-sm-6">
-                    <p>Severino Boteco Porreta</p>
                     <img src="../img/perfil/porreta.jpg" class="rounded-circle" height="70" width="70" alt="Avatar">
+                    <p>Severino Boteco Porreta</p>
                   </div>
                   <!--comentário e espaçamento do texto da avaliação-->
                   <div class="col-sm-12">
