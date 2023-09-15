@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Footer</title>
 </head>
-<body>
     <footer>
         <!--all footer content-->
         <div id="footer_content">
             <!--social medias column-->
             <div id="footer_contacts">
-                <img src="../img/logos/logoBranco.svg">
+                <img src="img/logos/logoBranco.svg">
                 <div id="footer_social_media">
                     <a href="#" class="footer-link" id="instagram">
                         <i class="fa-brands fa-instagram"></i>
