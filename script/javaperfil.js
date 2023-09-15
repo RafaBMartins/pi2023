@@ -17,3 +17,8 @@ function mudarTab(colocar, tirar) {
     borda_tirado.style.borderBottom = "none";
     borda_colocado.style.borderBottom = "3px solid #397FBF";
 }
+
+function texto() {
+    let coment = document.getElementsByClassName("comentario");
+    
+}
