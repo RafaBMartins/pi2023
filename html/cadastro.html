@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <script src="../script/cadastro.js" defer></script>
+    <script src="../script/coordenadasTeste.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <fieldset id="infoBasic">
+            <legend>informações básicas</legend>
+            <div class="estilo-foto-perfil">
+                <i class="fa-solid fa-file-image" id="selectImg"></i>
+                <div>Foto de perfil do estabelecimento</div>
+                <input type="file" id="imgPerfil" name="img_perfil" accept="image/*" style="display: none;">
+            </div>
+            <div>
+                <label for="nomeEstabelecimento">Nome do estabelecimento</label>
+                <input required type="text" id="nomeEstabelecimento">
+            </div>
+            <div>
+                <div>Tipo do estabelecimento</div>
+                <select id="tipoEstab">
+                    <option value="restaurante">Restaurante</option>
+                    <option value="escolar">Instituição de ensino</option>
+                </select>
+            </div>
+        </fieldset>
+        <!--
+        <fieldset>
+        
+            <legend>Avaliação</legend>
+            <div id="containerEstrelas" class="estilo-container">
+                <div>Avalie o restaurante*</div>
+                <div>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+            <div id="containerAvalicao" class="estilo-container">
+                <label for="avalicao">O que achou do estabelecimento?</label>
+                <textarea id="avalicao" cols="50" rows="2"></textarea>
+            </div> 
+            <div id="containerSelectImgAval" class="estilo-container">
+                <label for="selectImgAval">Adicione fotos a sua avalicao</label>
+                <i class="fa-solid fa-images" id="selectImgAval"></i>
+                <input type="file" id="imgAval" name="img_perfil" accept="image/*" style="display: none;">
+            </div>
+        </fieldset>
+    -->
+        <fieldset id="adress">
+            <legend>Endereço</legend>
+                <div>
+                    <label for="estado">Estado</label>
+                    <select>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="cidade">Cidade</label>
+                    <input required type="text" name="cidade" id="cidade">
+                </div>
+                <div>
+                        <label for="rua">Endereço</label>
+                        <input required type="text" name="rua" id="rua">
+                    </div>
+                <div>
+                    <label for="numero">Numero</label>
+                    <input required size="4" type="text" id="numero" name="numero">
+                </div>
+        </fieldset>
+        </div>
+        <input type="submit" value="Cadastrar" id="botCad">
+    </form>
+</body>
+</html>
