@@ -9,6 +9,7 @@ document.getElementById("selectImgAval").addEventListener('click', (e) => {
     document.getElementById("imgAval").click();
 })
 
+/*
 var estrelas = [...document.getElementById("containerEstrelas").querySelectorAll("i")];
 estrelas.forEach(estrela => {
     estrela.addEventListener('mouseenter', (e) => {
@@ -54,3 +55,4 @@ estrelas.forEach(estrela => {
     })
     })
 });
+*/
