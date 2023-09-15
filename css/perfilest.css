@@ -31,3 +31,8 @@
 #visitas {
   display: none;
 }
+
+.comentario {
+  max-height: 150px;
+  overflow: hidden;
+}
