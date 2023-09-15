@@ -8,7 +8,7 @@
   <title>Mapa</title>
 
   <!--importando style da página-->
-  <link rel="stylesheet" type="text/css" href="../css/mapa.css">
+  <link rel="stylesheet" type="text/css" href="css/mapa.css">
 
   <!--importando style do icones do bootstrap-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -19,7 +19,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!--importando script da página-->
-  <script src="../script/mapa.js" defer></script>
+  <script src="script/mapa.js" defer></script>
 
   <!--importando script dos mapas do bing-->
   <script type='text/javascript'
