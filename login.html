@@ -12,9 +12,9 @@
 </head>
 <body>
     <div id="login_content">
-        <form id="login_form">
+        <form id="login_form" method="post" action="php/login.php">
             <div id="form_header">
-                <h1>Registrar</h1>
+                <h1>Entrar</h1>
             </div>
 
             <div id="inputs">
@@ -37,20 +37,10 @@
                         </div>
                     </label>
                 </div>
-
-                <div class="input-box">
-                    <label for="password">
-                        Confirmar senha
-                        <div class="input-field">
-                            <i class="fa-solid fa-key"></i>
-                            <input type="password" id="passwordAgain" name="passwordAgain">
-                        </div>
-                    </label>
-                </div>
             </div>
 
             <button type="submit" id="login_button">
-                Registrar
+                Entrar
             </button>
         </form>
     </div>
