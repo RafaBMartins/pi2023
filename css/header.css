@@ -52,7 +52,7 @@
     }
 /*------------------*/
 
-/*design das opções do header*/
+/*design das opções*/
     /*posicionamento das opções*/
     #header_options {
         display: flex;
@@ -127,21 +127,21 @@
         display: flex;
     }
 
-    /*full header design for mobile*/
+    /*reposicionando o header*/
     #header_content {
         padding: 1rem 1rem;
         flex-direction: column;
         align-items: center;
     }
 
-    /*mobile menu button design*/
+    /*design do botão do menu mobile*/
     .mobile-menu {
         align-items: center;
         font-size: 2.5rem;
         color: var(--color-blue3);
     }
 
-    /*mobile menu design*/
+    /*design do menu mobile*/
     #header_options {
         flex-direction: column;
         align-self: flex-end;
@@ -150,7 +150,7 @@
         background-color: var(--color-blue5);
     }
 
-    /*mobile menu links design*/
+    /*design dos links do menu mobile*/
     #header_options .header-link-mobile, #header_options .header-link {
         color: var(--color-white);
         text-transform: uppercase;
@@ -159,7 +159,7 @@
 
 /*responsividade para mobile em telas muito pequenas*/
 @media screen and (max-width: 370px) {
-    /*hidding logo image*/
+    /*escondendo a logo*/
     #header_name img {
         display: none;
     }
