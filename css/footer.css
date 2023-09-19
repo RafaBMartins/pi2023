@@ -1,6 +1,6 @@
 @import "fontsAndColors.css";
 
-/*full footer design*/
+/*posicionamento geral e design geral*/
 * {
     font-family: var(--font-inter);
     margin: 0;
@@ -22,7 +22,7 @@ footer {
 }
 /*------------------*/
 
-/*removing text decoration from all <a> tags*/
+/*removendo o text decoration de todas <a> tags*/
 .footer-link {
     text-decoration: none;
 }

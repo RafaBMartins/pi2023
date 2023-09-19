@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <footer>
-    <!--all footer content-->
+    <!--todo conteúdo do footer-->
     <div id="footer_content">
-        <!--social medias column-->
+        <!--coluna de redes sociais-->
         <div id="footer_contacts">
             <img src="img/logos/logoBranco.svg">
             <div id="footer_social_media">
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <!--contacts column-->
+        <!--coluna de meios de contato-->
         <ul class="footer-list">
             <li>
                 <h3>Meios de contato</h3>
@@ -35,7 +35,7 @@
             </li>
         </ul>
 
-        <!--plataforms column-->
+        <!--coluna de plataformas-->
         <ul class="footer-list">
             <li>
                 <h3>Plataformas</h3>
@@ -48,7 +48,7 @@
             </li>
         </ul>
 
-        <!--subscribe column-->
+        <!--coluna de inscrição-->
         <div id="footer_subscribe">
             <h3>Inscreva-se</h3>
             
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <!--copyright line-->
+    <!--linha com o copyright-->
     <div id="footer_copyright">
         &#169
         2023 todos os direitos reservados
