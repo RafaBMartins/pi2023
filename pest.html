@@ -23,11 +23,16 @@
   <!--<?php 
   include("header.php");
   ?>-->
-    
+  
+  <div id="myModal" class="modal">
+    <span class="close" onclick="fechaImg()">&times;</span>
+    <img class="modal-content" id="img01">
+  </div>
+
   <div class="container text-center p-0">    
     <div class="row"> 
-        <div class="col-md-6">
-          <div class="card p-0 position-sticky sticky-top">
+        <div class="col-md-5">
+          <div class="card p-0 grude">
             <p class="h1">
               Caixaça Econômica
             </p>
@@ -105,7 +110,6 @@
         </div>
         </div>
       </div>
-      <div class="col-md-1"></div>
             <div class="col-md-5">
               <!--div com avaliações do usuário-->
               <div id="avaliacoes">
@@ -115,7 +119,14 @@
                   <div class="col-sm-12 d-flex align-items-center">
                     <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
                     <p class="m-2">Sergio Malandro</p>
-                    <img src="img/perfil/5estrela.png" height="35" width="229" alt="Avaliação">
+                    <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+                  </div>
+                  <div class="col-sm-12">
+                    <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="10%" class="imagemAbre rounded">
+                    <img src="img/perfil/pcamigos.jfif" width="10%" class="imagemAbre rounded">
+                    <img src="img/perfil/pcamigos.jfif" width="10%" class="imagemAbre rounded">
+                    <img src="img/perfil/pcamigos.jfif" width="10%" class="imagemAbre rounded">
+                    <img src="img/perfil/pcamigos.jfif" width="10%" class="imagemAbre rounded">
                   </div>
                   <!--comentário e espaçamento do texto da avaliação-->
                   <div class="col-sm-12">
@@ -134,12 +145,13 @@
                   <div class="col-sm-12 d-flex align-items-center">
                     <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
                     <p class="m-2">Sergio Malandro</p>
-                    <img src="img/perfil/5estrela.png" height="35" width="229" alt="Avaliação">
+                    <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
                   </div>
+                  
                   <!--comentário e espaçamento do texto da avaliação-->
                   <div class="col-sm-12">
-                    <div class="p-1">
-                      <p class="text-start border-bottom pb-2">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
+                    <div class="p-1 border-bottom">
+                      <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
                         eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
                         A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
                         momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
@@ -148,68 +160,60 @@
                   </div>
                 </div>
 
-                <!--segunda avaliação-->
-                <div class="row">
-                  <div class="col-sm-4">
-                    <p>Sergio Malandro</p>
+                <div class="row m-1">
+                  <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
+                  <div class="col-sm-12 d-flex align-items-center">
                     <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
-                    <img src="img/perfil/5estrela.png" height="35" width="229" alt="Avaliação">
+                    <p class="m-2">Sergio Malandro</p>
+                    <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+                  </div>
+                  <!--comentário e espaçamento do texto da avaliação-->
+                  <div class="col-sm-12">
+                    <div class="p-1 border-bottom">
+                      <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
+                        eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
+                        A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
+                        momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
+                        possível aglomeração e tempo de espera.</p>
+                    </div>
+                  </div>
+                </div>
 
+                <div class="row m-1">
+                  <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
+                  <div class="col-sm-12 d-flex align-items-center">
+                    <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+                    <p class="m-2">Sergio Malandro</p>
+                    <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
                   </div>
-                
-                  <div class="col-sm-8 align-items-center d-flex">
-                    <div class="p-1 ">
-                      <p class=" m-auto">om bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar
-                        uma dose</p>
-                    </div>
-                  </div>
+                  <!--comentário e espaçamento do texto da avaliação-->
                   <div class="col-sm-12">
-                    <div class="border-bottom pb-2">
+                    <div class="p-1 border-bottom">
+                      <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
+                        eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
+                        A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
+                        momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
+                        possível aglomeração e tempo de espera.</p>
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p>Sergio Malandro</p>
+
+                <div class="row m-1">
+                  <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
+                  <div class="col-sm-12 d-flex align-items-center">
                     <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+                    <p class="m-2">Sergio Malandro</p>
+                    <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
                   </div>
-                  <div class="col-sm-6">
-                    <p>Severion Boteco Porreta</p>
-                    <img src="img/perfil/potente.jpg" class="rounded-circle" height="70" width="70" alt="Avatar">
-                  </div>
+                  <!--comentário e espaçamento do texto da avaliação-->
                   <div class="col-sm-12">
-                    <div class="p-1">
-                      <p class="text-start">om bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar
-                        uma dose</p>
-                    </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="border-bottom pb-2">
-                      <img src="img/perfil/5estrela.png" height="35" width="229" alt="Avaliação">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <p>Sergio Malandro</p>
-                    <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
-                  </div>
-                  <div class="col-sm-6">
-                    <p>Severion Boteco Porreta</p>
-                    <img src="img/perfil/potente.jpg" class="rounded-circle" height="70" width="70" alt="Avatar">
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="p-1">
+                    <div class="p-1 border-bottom">
                       <p class="text-start comentario">om bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar
                         uma dose</p>
                     </div>
                   </div>
-                  <div class="col-sm-12">
-                    <div class="border-bottom pb-2">
-                      <img src="img/perfil/5estrela.png" height="35" width="229" alt="Avaliação">
-                    </div>
-                  </div>
                 </div>
+
               </div>
 
               <!--div com visitas-->

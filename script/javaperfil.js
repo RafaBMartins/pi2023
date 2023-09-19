@@ -1,3 +1,16 @@
+function abreImg(imge){
+    let modal = document.getElementById("myModal");
+    let modalImg = document.getElementById("img01");
+    modal.style.display = "block";
+    modalImg.src = imge.src;
+}
+
+// When the user clicks on <span> (x), close the modal
+function fechaImg() { 
+    let modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
 /*Função para mudar de aba*/
 function mudarTab(colocar, tirar) {
 
