@@ -15,6 +15,10 @@
   ?>
 
   <?php 
+    include("php/teste.php");
+  ?>
+
+  <?php 
   include("footer.php");
   ?>
 </html>
