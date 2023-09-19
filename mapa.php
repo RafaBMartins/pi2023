@@ -78,8 +78,8 @@
         </div>
         <p id="nomeEstabelecimento" class="card-title" style="text-align: center; font-size: 24px;"></p>
         <div class="row align-items-center">
-          <img src="../img/perfil/5estrela.png" alt="" class="img-fluid col-12 mb-0">
-          <img src="../img//selos/seloOuro.svg" alt="" class="img-fluid col-8 mt-0" style="transform: scale(0.4);">
+          <img src="img/perfil/5estrela.png" alt="" class="img-fluid col-12 mb-0">
+          <img src="img//selos/seloOuro.svg" alt="" class="img-fluid col-8 mt-0" style="transform: scale(0.4);">
           <i class="fa-solid fa-hospital col-4" style="font-size: 42px;"></i>
         </div>
         <p class="card-text" style="font-size: 20px;"><span style="color: #00427F">Telefone:</span> 3331-7500</p>
