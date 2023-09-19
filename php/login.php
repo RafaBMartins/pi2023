@@ -1,7 +1,6 @@
 <?php
 $validos = array();
 $email = $_POST["email"];
-var_dump($email);
 $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo("$email e um email valido");
@@ -23,6 +22,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     session_start();
     $_SESSION["email"] = $email;
     $_SESSION["senha"] = $password;
-    header('location: C:\Users\20211tiimi0168\Desktop\server\root\index.php');
+    header('location: http://localhost:8080/pi2023/index.php');
+    exit;
   }
 ?>
