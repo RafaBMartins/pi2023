@@ -155,6 +155,10 @@
         color: var(--color-white);
         text-transform: uppercase;
     }
+
+    label[for="userIcon"]{
+        display: none;
+    }
 }
 
 /*responsividade para mobile em telas muito pequenas*/

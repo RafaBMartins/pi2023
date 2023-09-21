@@ -7,4 +7,3 @@ function mobileMenu() {
       options.style.display = "flex";
     }
   }
-  

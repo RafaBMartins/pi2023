@@ -1,28 +1,56 @@
 <?php
-$validos = array();
-$email = $_POST["email"];
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo("$email e um email valido");
-    array_push($validos, true);
-  } else {
-    echo("$email nao e um email valido");
-  }
+$usuarios = array();
 
-  $password = $_POST["password"];
+
+function defaultSanitize($email, $senha){
+  $sanitizados = array()
+  if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      array_push($sanitizados, filter_var($email, FILTER_SANITIZE_EMAIL));
+  }
+  else{
+    break;
+  }
   $regex = "/^(.{8,16})$/";
-  if (preg_match($regex,$password)) {
-    echo("$password e uma senha valida");
-    array_push($validos, true);
-  } else {
-    echo("$password não e uma senha valida");
+  if (preg_match($regex,$senha)) {
+    array_push($sanitizados, $senha);
   }
+  else{
+    break;
+  }
+  return $sanitizados
+}
 
-  if(sizeof($validos) == 2){
-    session_start();
-    $_SESSION["email"] = $email;
-    $_SESSION["senha"] = $password;
-    header('location: http://localhost:8080/pi2023/index.php');
-    exit;
-  }
+
+if($_POST["type"] == "login"){
+  $dadosSanitizados = defaultSanitize($_POST["email"], $_POST["password"]);
+    if(in_array($dadosSanitizados[0], $usuarios)){
+      session_start();
+      header('location: http://localhost/pi2023/index.php');
+      exit;
+    }
+    else{
+      header('location: http://localhost/pi2023/login.php');
+      exit;
+    }
+}
+
+  else{
+    $dadosSanitizados = defaultSanitize($_POST["email"], $_POST["password"]);
+    if(!(in_array($dadosSanitizados[0], $usuarios))){
+    $nome = filter_var($nome, FILTER_SANITIZE_SPECIAL_CHARS);
+      $passwordAgain = $_POST["passwordAgain"];
+
+      if($password == $passwordAgain) {
+        echo("$password é igual a $passwordAgain");
+        array_push($validos, true);
+      } else {
+        echo("$password não é igual a $passwordAgain");
+      }
+
+      if(sizeof($validos) == 3){
+        session_start();
+        $_SESSION[$email] = array("nome" => $nome, "password" => $password);
+        header("location: http://localhost/pi2023/index.php");
+      }
+    }
 ?>
