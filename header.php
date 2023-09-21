@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <header>
-    <!--todo conteúdo do header-->
+    <!--conteúdo do header-->
     <div id="header_content">
         <!--nome e logo-->
         <div id="header_name">
@@ -17,7 +17,7 @@
             </a>
         </div>
 
-        <!--opções do header-->
+        <!--opções-->
         <div id="header_options">
             <a href="mapa.php" class="header-link">Mapa</a>
             <a href="" class="header-link">Sobre nós</a>

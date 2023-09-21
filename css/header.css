@@ -115,7 +115,7 @@
     /*------------------*/
 /*------------------*/
 
-/*responsividade para mobile*/
+/*responsividade*/
 @media screen and (max-width: 768px) {
     /*removendo o display de todas tags exclusivas de desktop*/
     #header_options .header-btnRegister, #header_options .header-btnLogin, #header_options .header-iconLink, #header_options {
@@ -127,7 +127,7 @@
         display: flex;
     }
 
-    /*reposicionando o header*/
+    /*reposicionando*/
     #header_content {
         padding: 1rem 1rem;
         flex-direction: column;
