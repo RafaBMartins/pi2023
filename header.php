@@ -5,7 +5,7 @@
 <?php session_start(); ?> 
 
 <header>
-    <!--todo conteúdo do header-->
+    <!--conteúdo do header-->
     <div id="header_content">
         <!--nome e logo-->
         <div id="header_name">
@@ -19,7 +19,7 @@
             </a>
         </div>
 
-        <!--opções do header-->
+        <!--opções-->
         <div id="header_options">
             <a href="mapa.php" class="header-link">Mapa</a>
             <a href="" class="header-link">Sobre nós</a>

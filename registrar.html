@@ -11,13 +11,26 @@
     <title>Wheelieway</title>
 </head>
 <body>
+    <!--conteúdo do registro-->
     <div id="login_content">
         <form id="login_form" method="post" action="php/registrar.php">
+            <!--header-->
             <div id="form_header">
                 <h1>Registrar</h1>
             </div>
 
+            <!--inputs-->
             <div id="inputs">
+                <div class="input-box">
+                    <label for="name">
+                        Nome
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" name="name">
+                        </div>
+                    </label>
+                </div>
+
                 <div class="input-box">
                     <label for="email">
                         Email
@@ -49,11 +62,16 @@
                 </div>
             </div>
 
+            <!--botão-->
             <button type="submit" id="login_button">
                 Registrar
             </button>
 
+            <!--input hidden para saber se o envio foi feito pelo login ou pelo registro-->
             <input type="hidden" name="type" value="register">
         </form>
+
+        <!--logo-->
+        <img src="img/logos/logoBranco.svg" class="logo">
     </div>
 </body>

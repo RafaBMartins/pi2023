@@ -11,12 +11,15 @@
     <title>Wheelieway</title>
 </head>
 <body>
+    <!--conteúdo do login-->
     <div id="login_content">
         <form id="login_form" method="post" action="php\login.php">
+            <!--header-->
             <div id="form_header">
                 <h1>Entrar</h1>
             </div>
 
+            <!--inputs-->
             <div id="inputs">
                 <div class="input-box">
                     <label for="email">
@@ -39,11 +42,16 @@
                 </div>
             </div>
 
+            <!--botão-->
             <button type="submit" id="login_button">
                 Entrar
             </button>
 
+            <!--input hidden para saber se o envio foi feito pelo login ou pelo registro-->
             <input type="hidden" name="type" value="login">
         </form>
+
+        <!--logo-->
+        <img src="img/logos/logoBranco.svg" class="logo">
     </div>
 </body>
