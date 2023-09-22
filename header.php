@@ -18,19 +18,24 @@
                 <i class="fa fa-bars"></i>
             </a>
         </div>
-
+        <div style="color: black;">
+        </div>
         <!--opções-->
         <div id="header_options">
             <a href="mapa.php" class="header-link">Mapa</a>
             <a href="" class="header-link">Sobre nós</a>
+            <?php if(!(isset($_SESSION["email"]))): ?>
                 <a href="registrar.html" class="header-btnRegister">CRIAR CONTA</a>
                 <a href="registrar.html" class="header-link-mobile">CRIAR CONTA</a><!--mobile-->
                 <a href="login.html" class="header-btnLogin">ENTRAR</a>
                 <a href="login.html" class="header-link-mobile">ENTRAR</a><!--mobile-->
+            <?php else: ?>
+                <label style="color: black;" for="userIcon"><?php echo $_SESSION["email"];?></label>
                 <a href="perfilusuario.php" class="header-link-mobile">CONTA</a><!--mobile-->
                 <a id="userIcon" href="perfilusuario.php" class="header-iconLink">
                     <i class="fa-solid fa-address-card"></i>
                 </a>
+            <?php endif; ?>
         </div>
     </div>
 </header>
