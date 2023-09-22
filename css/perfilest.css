@@ -5,6 +5,7 @@
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
+  padding-top: 10px;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -80,6 +81,19 @@
 }
 
 .comentario {
-  max-height: 150px;
+  margin-bottom: 0;
   overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 96px;
+  /*
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show s
+  -webkit-box-orient: vertical;*/
 }
+
+.escondetexto {
+  color: #666666;
+  cursor: pointer;
+}
+
+.escondetexto:hover {color: #a8a8a8;}

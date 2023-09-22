@@ -32,6 +32,18 @@ function mudarTab(colocar, tirar) {
 }
 
 function texto() {
-    let coment = document.getElementsByClassName("comentario");
-    
+    let coments = document.getElementsByClassName("comentario");
+    for (let i = 0; i < coments.length; i++) {
+        let text = coments.item(i);
+        if (text.offsetHeight > 96) {
+            text.style.cssText = "overflow:hidden; max-height:96px";
+            let p = document.createElement('div');
+            p.innerText = "Ler mais";
+            p.classList.add('escondetexto');
+            p.addEventListener("click", isso(this));
+            text.after(p);
+        }
+    } 
 }
+
+function isso(x) {}
