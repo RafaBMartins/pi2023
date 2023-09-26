@@ -84,7 +84,6 @@
   margin-bottom: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 96px;
   /*
   display: -webkit-box;
   -webkit-line-clamp: 4; /* number of lines to show s
@@ -92,8 +91,9 @@
 }
 
 .escondetexto {
-  color: #666666;
+  text-align: left;
+  color: #808080;
   cursor: pointer;
 }
 
-.escondetexto:hover {color: #a8a8a8;}
+.escondetexto:hover {color: #c4c4c4;}

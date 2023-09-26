@@ -40,10 +40,29 @@ function texto() {
             let p = document.createElement('div');
             p.innerText = "Ler mais";
             p.classList.add('escondetexto');
-            p.addEventListener("click", isso(this));
+            p.addEventListener('click', ()=> aumentar(text, p));
             text.after(p);
         }
     } 
 }
 
-function isso(x) {}
+function diminuir(text, p) {
+    p.remove();
+    text.style.cssText = "overflow:hidden; max-height:96px";
+    let x = document.createElement('div');
+    x.innerText = "Ler mais";
+    x.classList.add('escondetexto');
+    x.addEventListener('click', ()=> aumentar(text, x));
+    text.after(x);
+}
+
+function aumentar(text, p) {
+    p.remove();
+    text.style.cssText = "max-height:none";
+    let x = document.createElement('div');
+    x.innerText = "Ler menos";
+    x.classList.add('escondetexto');
+    x.addEventListener('click', ()=> diminuir(text, x));
+    text.after(x);
+}
+
