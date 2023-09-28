@@ -8,6 +8,8 @@
   <link href="/css/index.css" rel="stylesheet">
   <script src="/script/index.js" defer></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <title>WheelieWay</title>
 </head>
 <body>
@@ -18,15 +20,77 @@
 
   <div id="search_content">
     <div id="searchBar_content">
-      
+      <input type="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
     </div>
 
     <div id="filter_content">
+      <div class="category-filter">
+        <ul>
+          <li>Restaurantes</li>
+          <li>Hoteis</li>
+          <li>Centros Educativos</li>
+          <li>Hospitais</li>
+          <li>Lojas</li>
+          <li>Lazer e Esporte</li>
+          <li>Eventos e Festas</li>
+        </ul>
+      </div>
 
+      <div class="distance-filter">
+      </div>
+
+      <div class="rating-filter">
+        <ul>
+          <li>
+            <input type="radio" id="1star" name="starRadio">
+            <label for="1star">1 Estrela</label>
+            <i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <input type="radio" id="2star" name="starRadio">
+            <label for="2star">2 Estrela</label>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <input type="radio" id="3star" name="starRadio">
+            <label for="3star">3 Estrela</label>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <input type="radio" id="4star" name="starRadio">
+            <label for="4star">4 Estrela</label>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </li>
+          <li>
+            <input type="radio" id="5star" name="starRadio">
+            <label for="5star">5 Estrela</label>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div class="seal-filter">
+        <img src="img/selos/seloOuro.svg">
+        <img src="img/selos/seloPrata.svg">
+        <img src="img/selos/seloBronze.svg">
+      </div>
     </div>
 
     <div id="stores_content">
-
+      <div class="store-card">
+        <img src="img/index/storeimg1">
+        <div class="store-header">
+          <label class="store-name"></label>
+          <a class="store-rating">
+          <i class="fa-solid fa-star"></i>
+          5
+          </a>
+        </div>
+        <label class="store-category">Restaurante</label>
+        <label class="store-distance">12km</label>
+        <img src="img/selos/seloOuro.svg">
+      </div>
     </div>
   </div>
 
