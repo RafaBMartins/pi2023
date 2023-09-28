@@ -39,7 +39,7 @@ function calculaTamanhoMapa(mapa) {
     const posicaoYMapa = mapa.offsetTop;
     var alturaPagina = window.innerHeight;
     mapa.style.height = `${alturaPagina - posicaoYMapa}px`;
-    mapa.style.width = `${document.querySelector("nav").clientWidth}px`
+    mapa.style.width = `${document.querySelector("header").clientWidth}px`
 }
 
 var map = null;

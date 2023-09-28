@@ -20,9 +20,9 @@
 </head>
 
 <body onload="texto()">
-  <!--<?php 
+  <?php 
   include("header.php");
-  ?>-->
+  ?>
   
 
   <div id="myModal" class="modal">
@@ -295,9 +295,9 @@
     </div>
   </div>
 
-  <!--<?php 
+  <?php 
   include("footer.php");
-  ?>-->
+  ?>
 </body>
 
 </html>
