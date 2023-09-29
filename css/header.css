@@ -1,16 +1,14 @@
 @import "fontsAndColors.css";
 
 /*posicionamento geral e design geral*/
-    * {
-        font-family: var(--font-inter);
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     header {
         width: 100%;
         color: var(--color-white);
+        font-family: var(--font-inter);
+        letter-spacing: 1px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     #header_content {

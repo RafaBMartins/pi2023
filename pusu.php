@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Perfil Estabelecimento</title>
+  <title>Perfil usuário</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,11 +19,12 @@
 
 </head>
 
-<body>
-  <!--<?php 
+<body onload="texto()">
+  <?php 
   include("header.php");
-  ?>-->
+  ?>
   
+
   <div id="myModal" class="modal">
     <span class="close" onclick="fechaImg()">&times;</span>
     <img class="modal-content" id="img01">
@@ -31,86 +32,17 @@
 
   <div class="container text-center p-0">    
     <div class="row"> 
-        <div class="col-md-5">
-          <div class="card p-0 grude">
-            <p class="h1">
-              Caixaça Econômica
-            </p>
-            <!--carrosel-->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators ">
-                  <!--elementos do carrosel com número do botão associado a eles-->
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    aria-label="Slide 3"></button>
-                </div>
-                <!--item do carrosel inicial-->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <!--imagem do carrosel com altura de 1/4 da largura e imagem que ocupa o espaço disponível-->
-                    <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfilestabelecimento/1006771.png" class="object-fit-cover">
-                    </div>
-                  </div>
-                  <!--item do carrosel-->
-                  <div class="carousel-item">
-                    <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfilestabelecimento/6ec80cc0-196c-11ed-bacf-6fad6e8c2d0e--minified.png"
-                        class="object-fit-cover">
-                    </div>
-                  </div>
-                  <!--item do carrosel-->
-                  <div class="carousel-item">
-                    <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfilestabelecimento/caixaca-813072.jpg" class="object-fit-cover">
-                    </div>
-                  </div>
-                  <!--item do carrosel-->
-                  <div class="carousel-item">
-                    <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfil/img1.png" class="object-fit-cover">
-                    </div>
-                  </div>
-                </div>
-                <!--botões nas laterais do carrosel que mudam o item ativo-->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-            <div class="well">
-                <p class="m-1">
-                  <img src="img/perfil/5estrela.png" class="m-auto" height="auto" width="80%">
-                </p>
-            </div>
-            <div class="well">
-              <p class="m-1">
-                <img src="img/selos/seloBronze.svg" class="m-auto" height="auto" width="20%">
-              </p>
-          </div>
-          <div class="well">
+      <div class="col-md-5">
+        <div class="card p-0 grude">
+          <p class="h1">Sergio Malandro</p>
+          <div>
             <p class="m-1">
-              <img src="img/selos/seloBronze.svg" class="m-auto" height="auto" width="20%">
-            </p>
-        </div>
-        <div class="well">
-          <img src="img/perfilestabelecimento/2838912.png" class="rounded-circle" height="auto" width="10%">
-          <span class="px-2">Av. dos Sabiás, 330 - Morada de Laranjeiras, Serra - ES, 29166-630</span>
-        </div>
+              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="auto" width="70%" alt="Avatar">
+            </p>  
+          </div>
         </div>
       </div>
-            <div class="col-md-5">
+            <div class="col-lg-5 col-md-7">
               <!--div com avaliações do usuário-->
               <div id="avaliacoes">
                 <!--primeira avaliação-->
@@ -172,9 +104,7 @@
                     <div class="p-1 border-bottom">
                       <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
                         eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                        A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
-                        momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
-                        possível aglomeração e tempo de espera.</p>
+                        A organização do Tilápia espaço pode ser confusa e o Traíra tempo de.</p>
                     </div>
                   </div>
                 </div>
@@ -189,7 +119,7 @@
                   <!--comentário e espaçamento do texto da avaliação-->
                   <div class="col-sm-12">
                     <div class="p-1 border-bottom">
-                      <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
+                      <p class="text-start mb-0 comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
                         eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
                         A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
                         momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
@@ -209,7 +139,8 @@
                   <div class="col-sm-12">
                     <div class="p-1 border-bottom">
                       <p class="text-start comentario">om bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar
-                        uma dose</p>
+                        uma dose sjakdhasjkdashdajkshdo wdjka whdjawhd jwahdjhad jhsjk hhas dhsajdkhsajhd kjashdawyhd uawhy udauiwyh uwyd uyuwy duiy uiwy y
+                      dhasjhd ahd adk jashdjk haskjdhkj hdsjkadiwo uqoeiu ue qwiou</p>
                     </div>
                   </div>
                 </div>
@@ -295,9 +226,9 @@
     </div>
   </div>
 
-  <!--<?php 
+  <?php 
   include("footer.php");
-  ?>-->
+  ?>
 </body>
 
 </html>
