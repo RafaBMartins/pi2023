@@ -8,6 +8,11 @@
     letter-spacing: 1px;
 }
 
+d-flex{
+    display: flex;
+    justify-content: center;
+}
+
 .fundoEscuro{
     background-color: var(--color-blue5);
     height: 100vh;
@@ -15,7 +20,6 @@
     position: absolute;
     left: 0;
     box-shadow: 5px 0px 5px lightgray;
-    z-index: -1 ;
 }
 
 .fundo{
@@ -30,35 +34,49 @@
     justify-content: center;
 }
 
+#selectImg{
+    font-size: 36px;
+    color: var(--color-blue4)
+}
+
 body{
-    display: grid;
-    grid-template-columns: 50vw 50vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
+}
+
+label[for="containerFieldSet"]{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+label[for="containerFieldSet"]::after{
+    content: "";
+    display: block;
+    width: 15%;
+    height: 3px;
+    background-color: var(--color-blue5);
 }
 
 form{   
-    display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly !important;
     flex-direction: row;
-    min-width: 100vw;
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px 40px;
+    box-shadow: 1px 1px 5px black;
 }
 
 
 fieldset{
-    background-color: white;
     display: flex;
     flex-flow: column;
     gap: 30px;
-    border-radius: 10px;
     border: none;
-    padding: 10px;
+    margin-top: 20px;
+    min-width: 25vw !important;
 }
 
 #infoBasic{
     margin-bottom: 20px;
-    grid-column: 1 / 2;
 }
 
 #fieldAval{
@@ -103,7 +121,10 @@ input[type="text"], textarea{
 
 .estilo-foto-perfil{
     flex-direction: row !important;
-    gap: 5px;   
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+
 }
 
 .fieldAval{
