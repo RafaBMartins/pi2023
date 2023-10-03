@@ -23,12 +23,10 @@ d-flex{
 }
 
 .fundo{
-    background-color: var(--color-blue4);
     height: 100vh;
     width: 45vw;
     position: absolute;
     left: 0;
-    box-shadow: 3px 0 3px var(--color-blue5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,8 +37,24 @@ d-flex{
     color: var(--color-blue4)
 }
 
+.container-field-icon{
+    margin-bottom: 20px;
+}
+
 body{
     height: 100vh;
+}
+
+.bg-img{
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top:0
+}
+
+#img-fundo{
+    height: 100vh;
+    width: 100vw;
 }
 
 label[for="containerFieldSet"]{
@@ -54,6 +68,7 @@ label[for="containerFieldSet"]::after{
     width: 15%;
     height: 3px;
     background-color: var(--color-blue5);
+    margin-bottom: 10px;
 }
 
 form{   
@@ -71,13 +86,13 @@ fieldset{
     flex-flow: column;
     gap: 30px;
     border: none;
-    margin-top: 20px;
-    min-width: 25vw !important;
+    width: 100%;
 }
 
 #infoBasic{
     margin-bottom: 20px;
 }
+
 
 #fieldAval{
     background-color: red;
@@ -114,8 +129,8 @@ input[type="text"], textarea{
 .estilo-select{
     display: flex !important;
     flex-direction: row !important;
-    flex-flow: row !important;
     align-items: baseline;
+    justify-content: space-around;
     gap: 5px;
 }
 

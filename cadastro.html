@@ -10,10 +10,13 @@
     <title>Document</title>
 </head>
 <body class="d-flex">
-    <div class="fundoEscuro"><div class="fundo">
-        <form class="d-flex" action="" method="get">
+    <div class="bg-img">
+        <img src="../img/cadastro/arteTelaCadastro.png" id="img-fundo" alt="">
+        </div>
+        <div class="fundo">
+            <form class="d-flex" action="" method="get">
             <label for="containerFieldSet">Cadastro</label>
-            <div id="containerFieldSet">
+            <div class="container-field-set">
                 <div class="container-field-icon">
                     <i class="fa-solid fa-address-card"></i>
                     <label for="infoBasic">Informações básicas</label>
@@ -35,18 +38,35 @@
                             <option value="escolar">Instituição de ensino</option>
                         </select>
                     </div>
+                </fieldset>
+                    <div class="container-field-icon">
+                        <i class="fa-solid fa-address-card"></i>
+                        <label for="infoBasic">Informações básicas</label>
+                    </div>
+                <fieldset>
                     <div class="estilo-select">
-                        <label for="estado">Estado</label>
-                        <select>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                        </select>
+                        <div>
+                            <label for="estado">Estado</label>
+                            <select>
+                                <option value="ES">ES</option>
+                                <option value="MG">MG</option>
+                                <option value="SP">SP</option>
+                                <option value="RJ">RJ</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="cidade">Cidade</label>
+                            <select name="cidade" id="cidade">
+                                <option value="cidade">cidade</option>
+                            </select>
+                        </div>
                     </div>
                     <div>
-                        <!-- <label for="cidade">Cidade</label> -->
-                        <input required type="text" name="cidade" id="cidade" placeholder="Cidade">
+                        <select name="tipoLogradouro" id="tipoLogradouro">
+                            <option value="rua">Rua</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="alameda">Alameda</option>
+                        </select>
                     </div>
                     <div>
                         <!-- <label for="cidade">Cidade</label> -->
