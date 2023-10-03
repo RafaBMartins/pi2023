@@ -1,5 +1,8 @@
 @import "fontsAndColors.css";
 
-.slide{
-    display: none;
+* {
+    font-family: var(--font-inter);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
