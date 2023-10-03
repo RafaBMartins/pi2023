@@ -40,8 +40,8 @@
                     </div>
                 </fieldset>
                     <div class="container-field-icon">
-                        <i class="fa-solid fa-address-card"></i>
-                        <label for="infoBasic">Informações básicas</label>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <label for="infoBasic">Endereço</label>
                     </div>
                 <fieldset>
                     <div class="estilo-select">
@@ -62,13 +62,6 @@
                         </div>
                     </div>
                     <div>
-                        <select name="tipoLogradouro" id="tipoLogradouro">
-                            <option value="rua">Rua</option>
-                            <option value="avenida">Avenida</option>
-                            <option value="alameda">Alameda</option>
-                        </select>
-                    </div>
-                    <div>
                         <!-- <label for="cidade">Cidade</label> -->
                         <input required type="text" name="bairro" id="bairro" placeholder="Bairro">
                     </div>
@@ -76,6 +69,14 @@
                             <!-- <label for="rua">Endereço</label> -->
                             <input required type="text" name="rua" id="rua" placeholder="Endereço">
                         </div>
+                    <div class="estilo-select">
+                        <select name="tipoLogradouro" id="tipoLogradouro">
+                            <option value="rua">Rua</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="alameda">Alameda</option>
+                        </select>
+                        <input type="text" name="endereco" id="endereco" placeholder="Endereço">
+                    </div>
                     <div>
                         <!-- <label for="numero">Numero</label> -->
                         <input required size="4" type="text" id="numero" name="numero" placeholder="Número">

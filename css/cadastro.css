@@ -43,6 +43,7 @@ d-flex{
 
 body{
     height: 100vh;
+    overflow: hidden;
 }
 
 .bg-img{
@@ -72,7 +73,7 @@ label[for="containerFieldSet"]::after{
 }
 
 form{   
-    justify-content: space-evenly !important;
+    justify-content: center !important;
     flex-direction: row;
     background-color: white;
     border-radius: 5px;
