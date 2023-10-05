@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if(!(isset($_SESSION["nome"]))){
+<?php
+  session_start();
+
+  if(!(isset($_SESSION["nome"]))){
   die("Sessao nao encontrada");
 } ?>
 
