@@ -4,7 +4,7 @@
 <?php
   session_start();
 
-  if(!(isset($_SESSION["nome"]))){
+  if(!(isset($_SESSION["userName"]))){
   die("Sessao nao encontrada");
 } ?>
 
@@ -58,7 +58,7 @@
                   </div>
                   <!--nome de perfil no centro-->
                   <div class="col-sm-6 d-flex justify-content-center">
-                    <p class="h2 mt-4 mb-2 d-inline text-center"><?php echo $_SESSION["nome"]; ?> </p>
+                    <p class="h2 mt-4 mb-2 d-inline text-center"><?php echo $_SESSION["userName"]; ?> </p>
                   </div>
                   <!--descrição com texto no centro-->
                 </div>
@@ -84,7 +84,7 @@
                   <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
                   <div class="col-sm-6 d-flex align-items-center">
                     <img src="../img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
-                    <p><?php echo $_SESSION["nome"]; ?></p>
+                    <p><?php echo $_SESSION["userName"]; ?></p>
                   </div>
                   <!--nome e imagem de quem está recebendo o comentário no canto superior direito da avaliação-->
                   <div class="col-sm-6">
@@ -111,7 +111,7 @@
                 <!--segunda avaliação-->
                 <div class="row">
                   <div class="col-sm-6">
-                    <p><?php echo $_SESSION["nome"]; ?></p>
+                    <p><?php echo $_SESSION["userName"]; ?></p>
                     <img src="../img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
                   </div>
                   <div class="col-sm-6">
