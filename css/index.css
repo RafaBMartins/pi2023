@@ -6,3 +6,73 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#search_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    padding: 25px;
+    margin: 50px;
+    gap: 20px;
+}
+
+#searchBar_content {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+#search_content input {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid;
+    border-color: var(--color-blue3);
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+}
+
+#searchButton {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-blue3);
+    color: var(--color-white);
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    transition: all 0.4s;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-color: var(--color-blue3);
+    transition: all 0.4s;
+    border-radius: 0 10px 10px 0;
+}
+
+#searchButton:hover {
+    background-color: var(--color-white);
+    color: var(--color-blue3);
+}
+
+#searchBar_content input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 15px;
+    background-image: url(../img/index/cleanButton.svg);
+
+}
+
+#searchBar_content input::-webkit-search-cancel-button:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+    transition: all 0.4s;
+}
