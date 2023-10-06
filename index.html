@@ -23,19 +23,18 @@
   <?php 
     include("header.php");
   ?>
-  <img src="img/index/CadastreEstabelecimento.png">
+  <img src="img/index/CadastreEstabelecimento.png" style="width: 100%;">
 
   <div id="search_content">
     <div id="searchBar_content">
-      <input type="search">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <i class="fa-solid fa-sliders"></i>
+      <input type="search" spellcheck="false">
+      <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
     </div>
 
     <div id="filter_content">
       <div class="category-filter">
         <ul>
-          <li>Restaurantes</li>
+          <li><input type="checkbox" name="restaurante" id="restaurante"><label for="restaurante">Restaurantes</label></li>
           <li>Hoteis</li>
           <li>Centros Educativos</li>
           <li>Hospitais</li>
@@ -79,9 +78,9 @@
       </div>
 
       <div class="seal-filter">
-        <img src="img/selos/seloOuro.svg">
-        <img src="img/selos/seloPrata.svg">
-        <img src="img/selos/seloBronze.svg">
+        <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+        <img src="img/selos/seloPrata.svg" style="height: 50px; width: 50px;">
+        <img src="img/selos/seloBronze.svg" style="height: 50px; width: 50px;">
       </div>
     </div>
 
@@ -97,7 +96,7 @@
         </div>
         <label class="store-category">Restaurante</label>
         <label class="store-distance">12km</label>
-        <img src="img/selos/seloOuro.svg">
+        <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
       </div>
     </div>
   </div>

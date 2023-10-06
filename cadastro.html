@@ -10,10 +10,8 @@
     <title>Document</title>
 </head>
 <body class="d-flex">
-    <div class="bg-img">
-        <img src="../img/cadastro/arteTelaCadastro.png" id="img-fundo" alt="">
-        </div>
         <div class="fundo">
+            <img src="../img/cadastro/arteTelaCadastro.png" id="imgFundo" alt="">
             <form class="d-flex" action="" method="get">
             <label for="containerFieldSet">Cadastro</label>
             <div class="container-field-set">
@@ -24,7 +22,7 @@
                 <fieldset id="infoBasic">
                     <div class="estilo-foto-perfil">
                         <i class="fa-solid fa-file-image" id="selectImg"></i>
-                        <div>Foto de perfil do estabelecimento</div>
+                        <div id="selectImgAval">Foto de perfil do estabelecimento</div>
                         <input type="file" id="imgPerfil" name="img_perfil" accept="image/*" style="display: none;">
                     </div>
                     <div>
@@ -95,8 +93,8 @@
                     </div>
                 </fieldset> -->
             </div>
-            <!-- <input type="submit" value="Cadastrar" id="botCad"> -->
         </form>
-    </div></div>
+        <input type="submit" value="Cadastrar" id="botCad">
+    </div>
 </body>
 </html>
