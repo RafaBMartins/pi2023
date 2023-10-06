@@ -1,16 +1,28 @@
-initSlideShow();
+const checkBoxCategory = [...document.getElementsByClassName("checkbox-category")];
+checkBoxCategory.forEach(check => {
+    check.addEventListener("change", (e) => {
+        if(e.target.checked){
+            e.target.parentElement.classList.add("category-checked");
+            console.log(e.target.parentElement);
+        }
+        else{
+            e.target.parentElement.classList.remove("category-checked");
+        }
+    })
+});
 
-function initSlideShow() {
-    var slides = document.getElementsByClassName("slide");
-    var index = 0;
-    var time = 5000;
-    slides.item(index).style.display = "flex";
-
-    setInterval( () =>{
-        slides.item(index).style.display = "none";
-        index++;
-
-        if(index == slides.length) index = 0;
-        slides.item(index).style.display = "flex";
-    }, time);
-}
+const ulCategory = document.getElementById("ul-category");
+const liArray = [...ulCategory.querySelectorAll("li")];
+liArray.forEach(li => {
+    li.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if(e.target.childNodes[1].checked){
+            e.target.childNodes[1].checked = false;
+            e.target.classList.add("category-checked");
+        }
+        else{
+            e.target.childNodes[1].checked = true;
+            e.target.childNodes[1].classList.remove("category-checked");
+        }
+    })
+});
