@@ -48,6 +48,7 @@
 
 .imagemAbre {
   cursor: pointer;
+  object-fit: cover;
 }
 
 .imagemAbre:hover {opacity: 0.8;}
