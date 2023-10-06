@@ -2,7 +2,7 @@
 try{
 $db_host="host = silly.db.elephantsql.com;";
 $db_port="port = 5432;";
-$db_user="blaiyjfo";
+$db_user="blaiyjfo;";
 $db_password="ZgOq9WxpaZvURWA8BtY4XqE4jPUGN5tJ";
 $db_name="dbname = PI2023;";
 
@@ -10,7 +10,7 @@ $db_name="dbname = PI2023;";
 
 //$db= new PDO('mysql:host=localhost;dbname='. $db_name . ';charset=utf8', $db_user,$db_password);
 
-$db= new PDO('pgsql:' . $db_host . $db_port . $db_name . $db_user . $db_password);
+$db= new PDO('pgsql:host=silly.db.elephantsql.com;port=5432;dbname=blaiyjfo', $db_user, $db_password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 if($db){
     echo "Sucesso";
