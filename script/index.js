@@ -10,3 +10,7 @@ checkBoxCategory.forEach(check => {
         }
     })
 });
+
+function rangeSlider(value) {
+    document.getElementById("range_value").innerHTML = value + "km";
+};
