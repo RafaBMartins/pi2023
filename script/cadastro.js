@@ -9,6 +9,10 @@ document.getElementById("selectImgAval").addEventListener('click', (e) => {
     document.getElementById("imgAval").click();
 })
 
+document.getElementById("botCad").addEventListener('click', (e) => {
+    document.getElementById("form_estab").submit();
+})
+
 // const imgFundo = document.getElementById("imgFundo");
 // imgFundo.style.width = `${window.innerWidth}px`;
 // imgFundo.style.height = `${window.innerHeight}px`;

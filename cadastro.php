@@ -12,7 +12,7 @@
 <body class="d-flex">
         <div class="fundo">
             <img src="../img/cadastro/arteTelaCadastro.png" id="imgFundo" alt="">
-            <form class="d-flex" action="" method="get">
+            <form class="d-flex" id="form_estab" action="php/bdEstabelecimento.php" method="post">
             <label for="containerFieldSet">Cadastro</label>
             <div class="container-field-set">
                 <div class="container-field-icon">
@@ -31,9 +31,9 @@
                     </div>
                     <div class="estilo-select">
                         <div>Categoria</div>
-                        <select id="tipoEstab">
-                            <option value="restaurante">Restaurante</option>
-                            <option value="escolar">Instituição de ensino</option>
+                        <select name="tipo_estab" id="tipoEstab">
+                            <option value="0">Restaurante</option>
+                            <option value="1">Instituição de ensino</option>
                         </select>
                     </div>
                 </fieldset>
@@ -45,7 +45,7 @@
                     <div class="estilo-select">
                         <div>
                             <label for="estado">Estado</label>
-                            <select>
+                            <select name="estado">
                                 <option value="ES">ES</option>
                                 <option value="MG">MG</option>
                                 <option value="SP">SP</option>
@@ -63,12 +63,8 @@
                         <!-- <label for="cidade">Cidade</label> -->
                         <input required type="text" name="bairro" id="bairro" placeholder="Bairro">
                     </div>
-                    <div>
-                            <!-- <label for="rua">Endereço</label> -->
-                            <input required type="text" name="rua" id="rua" placeholder="Endereço">
-                        </div>
                     <div class="estilo-select">
-                        <select name="tipoLogradouro" id="tipoLogradouro">
+                        <select name="tipo_logradouro" id="tipoLogradouro">
                             <option value="rua">Rua</option>
                             <option value="avenida">Avenida</option>
                             <option value="alameda">Alameda</option>
