@@ -10,19 +10,3 @@ checkBoxCategory.forEach(check => {
         }
     })
 });
-
-const ulCategory = document.getElementById("ul-category");
-const liArray = [...ulCategory.querySelectorAll("li")];
-liArray.forEach(li => {
-    li.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if(e.target.childNodes[1].checked){
-            e.target.childNodes[1].checked = false;
-            e.target.classList.add("category-checked");
-        }
-        else{
-            e.target.childNodes[1].checked = true;
-            e.target.childNodes[1].classList.remove("category-checked");
-        }
-    })
-});
