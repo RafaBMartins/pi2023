@@ -33,54 +33,96 @@
 
     <div id="filter_content">
       <div class="category-filter">
-        <ul>
-          <li><input type="checkbox" name="restaurante" id="restaurante"><label for="restaurante">Restaurantes</label></li>
-          <li>Hoteis</li>
-          <li>Centros Educativos</li>
-          <li>Hospitais</li>
-          <li>Lojas</li>
-          <li>Lazer e Esporte</li>
-          <li>Eventos e Festas</li>
+        <ul id="ul-category">
+          <li><label for="restaurante">Restaurantes</label><input class="checkbox-category" type="checkbox" name="restaurante" id="restaurante"></li>
+          <li><label for="hoteis">Hoteis</label><input class="checkbox-category" type="checkbox" name="hoteis" id="hoteis"></li>
+          <li><label for="centros-educativos">Centros Educativos</label><input class="checkbox-category" type="checkbox" name="centros-educativos" id="centros-educativos"></li>
+          <li><label for="lazer-esporte">Lazer e Esporte</label><input class="checkbox-category" type="checkbox" name="lazer-esporte" id="lazer-esporte"></li>
+          <li><label for="lojas">Lojas</label><input class="checkbox-category" type="checkbox" name="lojas" id="lojas"></li>
+          <li><label for="hospitais">Hospitais</label><input class="checkbox-category" type="checkbox" name="hospitais" id="hospitais"></li>
+          <li><label for="academias">Academias</label><input class="checkbox-category" type="checkbox" name="academias" id="academias"></li>
+          <li><label for="eventos-festas">Eventos e Festas</label><input class="checkbox-category" type="checkbox" name="eventos-festas" id="eventos-festas"></li>
         </ul>
       </div>
 
       <div class="distance-filter">
+        <input type="range" value="0" min="0" max="100" onmousemove="rangeSlider(this.value)">
+        <span id="range_value">0km</span>
       </div>
 
       <div class="rating-filter">
         <ul>
           <li>
             <input type="radio" id="1star" name="starRadio">
-            <label for="1star">1 Estrela</label>
-            <i class="fa-solid fa-star"></i>
+            <label for="1star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              1+
+            </label>
           </li>
           <li>
             <input type="radio" id="2star" name="starRadio">
-            <label for="2star">2 Estrela</label>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <label for="2star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              2+
+            </label>
           </li>
           <li>
             <input type="radio" id="3star" name="starRadio">
-            <label for="3star">3 Estrela</label>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <label for="3star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              3+
+            </label>
           </li>
           <li>
             <input type="radio" id="4star" name="starRadio">
-            <label for="4star">4 Estrela</label>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <label for="4star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              4+
+            </label>
           </li>
           <li>
             <input type="radio" id="5star" name="starRadio">
-            <label for="5star">5 Estrela</label>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <label for="5star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              5+
+            </label>
           </li>
         </ul>
       </div>
 
       <div class="seal-filter">
-        <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-        <img src="img/selos/seloPrata.svg" style="height: 50px; width: 50px;">
-        <img src="img/selos/seloBronze.svg" style="height: 50px; width: 50px;">
+        <input type="radio" id="goldSeal" name="sealFilter">
+        <label for="goldSeal">
+          <img src="img/selos/seloOuro.svg">
+        </label>
+        <input type="radio" id="silverSeal" name="sealFilter">
+        <label for="silverSeal">
+          <img src="img/selos/seloPrata.svg">
+        </label>
+        <input type="radio" id="bronzeSeal" name="sealFilter">
+        <label for="bronzeSeal">
+          <img src="img/selos/seloBronze.svg">
+        </label>
       </div>
     </div>
 
