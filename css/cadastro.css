@@ -136,6 +136,7 @@ input[type="submit"]{
     border: 1px groove var(--color-blue5);
     outline: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .tituloForm{
