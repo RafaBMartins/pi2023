@@ -18,7 +18,7 @@
             $resposta["erro"] = "usuário já cadastrado";
         }
         else{
-            $db_registra_usuario = $db->prepare("INSERT INTO usuario (email, senha, nome, foto_perfil) VALUES ($email, $token, $nome, $foto_perfil");
+            $db_registra_usuario = $db->prepare("INSERT INTO usuario (email, senha, nome, foto_perfil) VALUES ($email, $token, $nome, $foto_perfil)");
             if($db_registra_usuario->prepare()){
                 $resposta["sucesso"] = 1;
             }
