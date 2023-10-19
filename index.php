@@ -12,8 +12,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="/css/index.css" rel="stylesheet">
-  <script src="/script/index.js" defer></script>
+  <link href="css/index.css" rel="stylesheet">
+  <script src="script/index.js" defer></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -128,17 +128,21 @@
 
     <div id="stores_content">
       <div class="store-card">
-        <img src="img/index/storeimg1">
-        <div class="store-header">
-          <label class="store-name"></label>
-          <a class="store-rating">
-          <i class="fa-solid fa-star"></i>
-          5
-          </a>
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <div class="store-footer">
+            <label class="store-distance">12km</label>
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+          </div>
         </div>
-        <label class="store-category">Restaurante</label>
-        <label class="store-distance">12km</label>
-        <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
       </div>
     </div>
   </div>
