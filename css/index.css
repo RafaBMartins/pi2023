@@ -260,19 +260,30 @@
     color: var(--color-black);
     display: flex;
     align-items: center;
-    width: fit-content;
-    justify-content: center;
-    gap: 1px;
+    justify-content: baseline;
 }
 
 .store-header .store-rating i {
     color: var(--color-blue5);
+    font-size: 15px;
 }
 
 .store-footer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-grow: 1;
+    justify-content: space-between;
+}
+
+.store-footer label {
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+.store-footer img {
+    align-self: flex-start;
+}
+
+.store-footer .endereco {
+    justify-self: flex-end;
 }
