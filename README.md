@@ -92,7 +92,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](imagensReadme/conceitual.png)
+![Alt text](imagensReadme/Apresentacao_conceitual.png)
       
     
 #### 7 Descrição dos dados 
@@ -129,7 +129,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         b) As informações da tabela Estabalecimento estão sendo usadas na tela de pesquisa, mapa, favoritos e no perfil do estabelecimento. 
 ### 9	MODELO LÓGICO<br>
         a) inclusão do esquema lógico do banco de dados
-  ![Alt text](imagensReadme/logico.png)
+  ![Alt text](imagensReadme/Apresentacao_logico.png)
         b) O modelo lógico está conforme o modelo conceitual 
 
 ### 10	MODELO FÍSICO<br>
