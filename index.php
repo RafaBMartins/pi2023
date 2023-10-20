@@ -36,10 +36,10 @@
         <ul id="ul-category">
           <li><label for="restaurante">Restaurantes</label><input class="checkbox-category" type="checkbox" name="restaurante" id="restaurante"></li>
           <li><label for="hoteis">Hoteis</label><input class="checkbox-category" type="checkbox" name="hoteis" id="hoteis"></li>
-          <li><label for="centros-educativos">Centros Educativos</label><input class="checkbox-category" type="checkbox" name="centros-educativos" id="centros-educativos"></li>
-          <li><label for="lazer-esporte">Lazer e Esporte</label><input class="checkbox-category" type="checkbox" name="lazer-esporte" id="lazer-esporte"></li>
           <li><label for="lojas">Lojas</label><input class="checkbox-category" type="checkbox" name="lojas" id="lojas"></li>
+          <li><label for="centros-educativos">Centros Educativos</label><input class="checkbox-category" type="checkbox" name="centros-educativos" id="centros-educativos"></li>
           <li><label for="hospitais">Hospitais</label><input class="checkbox-category" type="checkbox" name="hospitais" id="hospitais"></li>
+          <li><label for="lazer-esporte">Lazer e Esporte</label><input class="checkbox-category" type="checkbox" name="lazer-esporte" id="lazer-esporte"></li>
           <li><label for="academias">Academias</label><input class="checkbox-category" type="checkbox" name="academias" id="academias"></li>
           <li><label for="eventos-festas">Eventos e Festas</label><input class="checkbox-category" type="checkbox" name="eventos-festas" id="eventos-festas"></li>
         </ul>
