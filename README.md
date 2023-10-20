@@ -129,7 +129,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
         b) As informações da tabela Estabalecimento estão sendo usadas na tela de pesquisa, mapa, favoritos e no perfil do estabelecimento. 
 ### 9	MODELO LÓGICO<br>
         a) inclusão do esquema lógico do banco de dados
-  ![Alt text](imagensReadme/logico.png)
+  ![Alt text](imagensReadme/Apresentacao_logico.png)
         b) O modelo lógico está conforme o modelo conceitual 
 
 ### 10	MODELO FÍSICO<br>
