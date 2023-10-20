@@ -139,138 +139,14 @@
             </a>
           </div>
           <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
           <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
           </div>
         </div>
       </div>
-
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <div class="store-footer">
-            <label class="store-distance">à 12km</label>
-            <div><img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;"><label class="endereco"></label></div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 

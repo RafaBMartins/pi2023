@@ -233,15 +233,16 @@
     border-right: 1px solid var(--color-blue3);
 }
 
-.store-card label {
-    width: fit-content;
-}
-
 .store-infos {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 5px;
+}
+
+.store-infos .store-distance {
+    color: var(--color-gray);
+    font-size: 14px;
 }
 
 .store-header {
@@ -270,20 +271,13 @@
 
 .store-footer {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    flex-direction: row;
     justify-content: space-between;
-}
-
-.store-footer label {
-    color: var(--color-gray);
-    font-size: 14px;
-}
-
-.store-footer img {
-    align-self: flex-start;
+    align-items: flex-end;
+    flex-grow: 1;
 }
 
 .store-footer .endereco {
     justify-self: flex-end;
+    color: var(--color-gray);
 }
