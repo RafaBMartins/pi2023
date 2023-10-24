@@ -1,5 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
+.zz {
+  background-size: cover;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -25,7 +29,8 @@
 
 /* The Close Button */
 .close {
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   top: 15px;
   right: 35px;
   color: #f1f1f1;
