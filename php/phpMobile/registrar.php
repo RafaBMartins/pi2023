@@ -9,7 +9,6 @@
         $senha = trim($_POST["senha"]);
         $nome = filter_var($_POST["nome"], FILTER_SANITIZE_STRING);
         $token = password_hash($senha, PASSWORD_DEFAULT);
-        $foto_perfil = $_POST["foto_perfil"];
 
         $consulta_usuario_existente = $db->prepare("SELECT login FROM usuario WHERE login='$email'");
         $consulta_usuario_existente->execute();
@@ -18,8 +17,8 @@
             $resposta["erro"] = "usuário já cadastrado";
         }
         else{
-            $db_registra_usuario = $db->prepare("INSERT INTO usuario (email, senha, nome, foto_perfil) VALUES ($email, $token, $nome, $foto_perfil)");
-            if($db_registra_usuario->prepare()){
+            $db_registra_usuario = $db->prepare("INSERT INTO usuario (email, senha, nome, foto_perfil) VALUES ($email, $token, $nome, null)");
+            if($db_registra_usuario->execute()){
                 $resposta["sucesso"] = 1;
             }
             else{
