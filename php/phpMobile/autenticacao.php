@@ -28,11 +28,11 @@ elseif(isset( $_SERVER['HTTP_AUTHORIZATION'])) {
 // O método abaixo realiza o processo de autenticação. Ele retorna 
 // true caso os parametros de login e senha estejam corretos
 // false caso os parametros de login e senha estejam incorretos
-function autenticar($db_con) {
+function autenticar($db) {
 	
 	// Quando dentro de uma função, para acessar variáveis globais no php é
 	// necessário acessá-las via $GLOBALS.
-	$login = trim($GLOBALS['login']);
+	$email = trim($GLOBALS['email']);
 	$senha = trim($GLOBALS['senha']);
 	//$db_con = $GLOBALS['db_con'];
 	
@@ -40,14 +40,14 @@ function autenticar($db_con) {
 	if(!is_null($login)) {
 		
 		// realiza a consula no bd pelo usuário login
-		$consulta = $db_con->prepare("SELECT token FROM usuario WHERE email='$login'");
+		$consulta = $db->prepare("SELECT senha FROM usuario WHERE email='$email'");
 		$consulta->execute();
 
 		// caso o usuário exista, obtem-se o token de autenticação e 
 		// o verifica junto a senha enviada ao servidor
 		if($consulta->rowCount() > 0){
 			$linha = $consulta->fetch(PDO::FETCH_ASSOC);
-			if(password_verify($senha, $linha['token'])){
+			if(password_verify($senha, $linha['senha'])){
 				return true;
 			}
 		}
