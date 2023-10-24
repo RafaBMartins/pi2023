@@ -16,4 +16,5 @@
     --color-gray: #a8a29e;
 
     --color-mainGradient: linear-gradient(90deg, var(--color-blue5), var(--color-blue4), var(--color-blue3));
+    --color-mainGradientReverse: linear-gradient(90deg, var(--color-blue3), var(--color-blue4), var(--color-blue5));
 }

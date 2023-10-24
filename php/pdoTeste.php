@@ -16,10 +16,6 @@
         $dbuser 	 = "blaiyjfo";
         $dbpassword	 = "ZgOq9WxpaZvURWA8BtY4XqE4jPUGN5tJ";
 
-
-
-
-
         // para conectar ao mysql, substitua pgsql por mysql
         $db= new PDO('pgsql:' . $host . $port . $dbname, $dbuser, $dbpassword);
 
