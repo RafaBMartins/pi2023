@@ -19,7 +19,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!--importando script da página-->
-  <script src="script/mapa.js" defer></script>
+  <!-- <script src="script/mapa.js" defer></script> -->
 
   <!--importando script dos mapas do bing-->
   <script type='text/javascript'
@@ -110,7 +110,6 @@
     <div id="mapa"></div>
     <!--Fim da section-->
   </section>
-
 
 
 

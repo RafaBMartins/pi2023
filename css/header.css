@@ -52,11 +52,11 @@
 
 /*design das opções*/
     /*posicionamento das opções*/
-    #header_options {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-    }
+        #header_options {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
     /*------------------*/
 
     /*design dos links que são textos*/
