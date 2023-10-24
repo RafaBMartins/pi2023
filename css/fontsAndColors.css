@@ -11,10 +11,11 @@
     --color-blue4: #005CB3;
     --color-blue5: #00427F;
     --color-white: white;
-    --color-smoothWhite: #F8FAFC;
+    --color-smoothWhite: #D8CFC9;
     --color-black: black;
     --color-gray: #a8a29e;
+    --color-yellow: #F5EF52;
 
     --color-mainGradient: linear-gradient(90deg, var(--color-blue5), var(--color-blue4), var(--color-blue3));
-    --color-mainGradientReverse: linear-gradient(90deg, var(--color-blue3), var(--color-blue4), var(--color-blue5));
+    --color-mainGradientReverse: linear-gradient(180deg, var(--color-blue3), var(--color-blue4), var(--color-blue5));
 }
