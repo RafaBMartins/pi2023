@@ -33,6 +33,7 @@
         align-self: center;
         justify-self: flex-start;
         width: 80%;
+        margin: 10px;
     }
 
     #search_content input {
@@ -89,25 +90,38 @@
         display: flex;
         flex-direction: column;
         background: var(--color-blue5);
-        box-shadow: 2px 0 5px var(--color-blue5);
+        box-shadow: 2px 2px 5px var(--color-blue5);
+        border-radius: 0 0 5px 0;
         margin: 0;
         padding: 5px;
+        height: 70%;
     }
 
     /*design e posicionamento do filtro por categoria*/
+        .category-title {
+            align-self: center;
+            color: var(--color-white);
+            font-weight: bold;
+        }
+
         .category-filter {
             margin: 10px;
+            border: 1px solid var(--color-white);
+            border-radius: 5px;
         }
 
         .category-filter ul {
             list-style-type: none;
-            padding: 0;
+            padding: 5px;
             margin: 0;
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
         .category-filter ul li {
-            display: inline-block;
-            justify-content: center;
             margin: 5px;
             border: 1px solid var(--color-white);
             border-radius: 10px;
@@ -135,6 +149,12 @@
     /*------------------*/
 
     /*design e posicionamento do filtro por nota*/
+        .rating-title {
+            color: var(--color-white);
+            align-self: center;
+            font-weight: bold;
+        }
+
         .rating-filter {
             margin: 10px;
             width: fit-content;
@@ -173,6 +193,12 @@
     /*------------------*/
 
     /*design e posicionamento do filtro por selo*/
+    .seal-title {
+        color: var(--color-white);
+        align-self: center;
+        font-weight: bold;
+    }
+
     .seal-filter img {
         width: 50px;
         height: 50px;
@@ -203,6 +229,12 @@
     /*------------------*/
 
     /*design e posicionamento do filtro por distancia*/
+    .distance-title {
+        color: var(--color-white);
+        align-self: center;
+        font-weight: bold;
+    }
+
     .distance-filter {
         background-color: var(--color-white);
         display: flex;
@@ -251,6 +283,7 @@
     .clean-filters:hover {
         background-color: var(--color-white);
         color: var(--color-blue5);
+        border-color: var(--color-blue5);
     }
     /*------------------*/
 /*------------------*/
@@ -259,9 +292,10 @@
     #stores_content {
         display: flex;
         flex-wrap: wrap;
-        height: fit-content;
+        height: 100vh;
         justify-content: flex-start;
         gap: 20px;
+        overflow-y: scroll;
     }
 
     .store-card {

@@ -25,24 +25,41 @@
     </div>
 
     <div id="filter_content">
+      <label class="category-title">Categorias</label>
       <div class="category-filter">
         <ul id="ul-category">
           <li><label for="restaurante">Restaurantes</label><input class="checkbox-category" type="checkbox" name="restaurante" id="restaurante"></li>
-          <li><label for="hoteis">Hoteis</label><input class="checkbox-category" type="checkbox" name="hoteis" id="hoteis"></li>
-          <li><label for="lojas">Lojas</label><input class="checkbox-category" type="checkbox" name="lojas" id="lojas"></li>
-          <li><label for="centros-educativos">Centros Educativos</label><input class="checkbox-category" type="checkbox" name="centros-educativos" id="centros-educativos"></li>
-          <li><label for="hospitais">Hospitais</label><input class="checkbox-category" type="checkbox" name="hospitais" id="hospitais"></li>
-          <li><label for="lazer-esporte">Lazer e Esporte</label><input class="checkbox-category" type="checkbox" name="lazer-esporte" id="lazer-esporte"></li>
-          <li><label for="academias">Academias</label><input class="checkbox-category" type="checkbox" name="academias" id="academias"></li>
-          <li><label for="eventos-festas">Eventos e Festas</label><input class="checkbox-category" type="checkbox" name="eventos-festas" id="eventos-festas"></li>
+          <li><label for="padaria">Padarias</label><input class="checkbox-category" type="checkbox" name="padaria" id="padaria"></li>
+          <li><label for="cafeteria">Cafeterias</label><input class="checkbox-category" type="checkbox" name="cafeteria" id="cafeteria"></li>
+          <li><label for="bar">Bares</label><input class="checkbox-category" type="checkbox" name="bar" id="bar"></li>
+          <li><label for="hotel">Hotéis</label><input class="checkbox-category" type="checkbox" name="hotel" id="hotel"></li>
+          <li><label for="cinema">Cinemas</label><input class="checkbox-category" type="checkbox" name="cinema" id="cinema"></li>
+          <li><label for="shopping">Shoppings</label><input class="checkbox-category" type="checkbox" name="shopping" id="shopping"></li>
+          <li><label for="supermercado">Supermercados</label><input class="checkbox-category" type="checkbox" name="supermercado" id="supermercado"></li>
+          <li><label for="lojaderoupa">Lojas de roupas</label><input class="checkbox-category" type="checkbox" name="lojaderoupa" id="lojaderoupa"></li>
+          <li><label for="hospital">Hospitais</label><input class="checkbox-category" type="checkbox" name="hospital" id="hospital"></li>
+          <li><label for="farmácias">Farmácias</label><input class="checkbox-category" type="checkbox" name="farmácias" id="farmácias"></li>
+          <li><label for="academia">Academias</label><input class="checkbox-category" type="checkbox" name="academia" id="academia"></li>
+          <li><label for="escola">Escolas</label><input class="checkbox-category" type="checkbox" name="escola" id="escola"></li>
+          <li><label for="universidade">Universidades</label><input class="checkbox-category" type="checkbox" name="universidade" id="universidade"></li>
+          <li><label for="biblioteca">Bibliotecas</label><input class="checkbox-category" type="checkbox" name="biblioteca" id="biblioteca"></li>
+          <li><label for="saloesdebeleza">Salões de beleza</label><input class="checkbox-category" type="checkbox" name="saloesdebeleza" id="saloesdebeleza"></li>
+          <li><label for="parquespublicos">Parques públicos</label><input class="checkbox-category" type="checkbox" name="parquespublicos" id="parquespublicos"></li>
+          <li><label for="museus">Museus</label><input class="checkbox-category" type="checkbox" name="museus" id="museus"></li>
+          <li><label for="igreja">Igrejas</label><input class="checkbox-category" type="checkbox" name="igreja" id="igreja"></li>
+          <li><label for="lojasdeeletronicos">Lojas de eletrônicos</label><input class="checkbox-category" type="checkbox" name="lojasdeeletronicos" id="lojasdeeletronicos"></li>
+          <li><label for="lojasdeinformatica">Lojas de informática</label><input class="checkbox-category" type="checkbox" name="lojasdeinformatica" id="lojasdeinformatica"></li>
+          <li><label for="outros">Outros</label><input class="checkbox-category" type="checkbox" name="outros" id="outros"></li>
         </ul>
       </div>
 
+      <label class="distance-title">Distância</label>
       <div class="distance-filter">
         <input type="range" value="0" min="0" max="100" onmousemove="rangeSlider(this.value)">
-        <span id="range_value">0km</span>
+        <span id="range_value">0km-</span>
       </div>
 
+      <label class="rating-title">Nota</label>
       <div class="rating-filter">
         <ul>
           <li>
@@ -103,6 +120,7 @@
         </ul>
       </div>
 
+      <label class="seal-title">Selo</label>
       <div class="seal-filter">
         <input type="radio" id="goldSeal" name="sealFilter">
         <label for="goldSeal">
@@ -123,6 +141,258 @@
 
     <div id="stores_content">
 
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
+      <div class="store-card">
+        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <div class="store-infos">
+          <div class="store-header">
+            <label class="store-name">Chopp's Center</label>
+            <a class="store-rating">
+            <i class="fa-solid fa-star"></i>
+            5
+            </a>
+          </div>
+          <label class="store-category">Restaurante</label>
+          <label class="store-distance">à 12km</label>
+          <div class="store-footer">
+            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
+            <label class="endereco">Serra, Avenida dos sábias, 08</label>
+          </div>
+        </div>
+      </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
