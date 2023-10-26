@@ -1,5 +1,16 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
+.header-btnRegister {
+  background-color: var(--color-blue2);
+  color: var(--color-white);
+  border: solid 2px var(--color-blue2);
+  padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.4s;
+}
+
 .zz {
   background-size: cover;
 }
