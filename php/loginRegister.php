@@ -69,6 +69,8 @@ if($formType == "register") {
         exit;
     }
 }
+echo "Sucesso";
+
 
 //se o formulario for de login, procura pelo usuario em um arquivo txt
 if($formType == "login") {

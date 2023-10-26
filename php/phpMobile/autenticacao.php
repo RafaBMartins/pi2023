@@ -11,7 +11,7 @@
 // escopo global, para que possam ser acessadas sempre que este
 // arquivo for incluído
 
-$login = NULL;
+$email = NULL;
 $senha = NULL;
 
 // Método para extrair o login e senha via mod_php (Apache)
