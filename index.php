@@ -16,7 +16,10 @@
   <?php 
     include("header.php");
   ?>
-  <img src="img/index/CadastreEstabelecimento.png" style="width: 100%;">
+  <div class="banner-box">
+    <img src="img/index/CadastreEstabelecimento.png">
+    <a href="cadastro.html">CADASTRAR</a>
+  </div>
 
   <div id="search_content">
     <div id="searchBar_content">
@@ -25,42 +28,45 @@
     </div>
 
     <div id="filter_content">
-      <label class="category-title">Categorias</label>
       <div class="category-filter">
+        <label class="category-title">CATEGORIAS</label>
         <ul id="ul-category">
-          <li><label for="restaurante">Restaurantes</label><input class="checkbox-category" type="checkbox" name="restaurante" id="restaurante"></li>
-          <li><label for="padaria">Padarias</label><input class="checkbox-category" type="checkbox" name="padaria" id="padaria"></li>
-          <li><label for="cafeteria">Cafeterias</label><input class="checkbox-category" type="checkbox" name="cafeteria" id="cafeteria"></li>
-          <li><label for="bar">Bares</label><input class="checkbox-category" type="checkbox" name="bar" id="bar"></li>
-          <li><label for="hotel">Hotéis</label><input class="checkbox-category" type="checkbox" name="hotel" id="hotel"></li>
-          <li><label for="cinema">Cinemas</label><input class="checkbox-category" type="checkbox" name="cinema" id="cinema"></li>
-          <li><label for="shopping">Shoppings</label><input class="checkbox-category" type="checkbox" name="shopping" id="shopping"></li>
-          <li><label for="supermercado">Supermercados</label><input class="checkbox-category" type="checkbox" name="supermercado" id="supermercado"></li>
-          <li><label for="lojaderoupa">Lojas de roupas</label><input class="checkbox-category" type="checkbox" name="lojaderoupa" id="lojaderoupa"></li>
-          <li><label for="hospital">Hospitais</label><input class="checkbox-category" type="checkbox" name="hospital" id="hospital"></li>
-          <li><label for="farmácias">Farmácias</label><input class="checkbox-category" type="checkbox" name="farmácias" id="farmácias"></li>
-          <li><label for="academia">Academias</label><input class="checkbox-category" type="checkbox" name="academia" id="academia"></li>
-          <li><label for="escola">Escolas</label><input class="checkbox-category" type="checkbox" name="escola" id="escola"></li>
-          <li><label for="universidade">Universidades</label><input class="checkbox-category" type="checkbox" name="universidade" id="universidade"></li>
-          <li><label for="biblioteca">Bibliotecas</label><input class="checkbox-category" type="checkbox" name="biblioteca" id="biblioteca"></li>
-          <li><label for="saloesdebeleza">Salões de beleza</label><input class="checkbox-category" type="checkbox" name="saloesdebeleza" id="saloesdebeleza"></li>
-          <li><label for="parquespublicos">Parques públicos</label><input class="checkbox-category" type="checkbox" name="parquespublicos" id="parquespublicos"></li>
-          <li><label for="museus">Museus</label><input class="checkbox-category" type="checkbox" name="museus" id="museus"></li>
-          <li><label for="igreja">Igrejas</label><input class="checkbox-category" type="checkbox" name="igreja" id="igreja"></li>
-          <li><label for="lojasdeeletronicos">Lojas de eletrônicos</label><input class="checkbox-category" type="checkbox" name="lojasdeeletronicos" id="lojasdeeletronicos"></li>
-          <li><label for="lojasdeinformatica">Lojas de informática</label><input class="checkbox-category" type="checkbox" name="lojasdeinformatica" id="lojasdeinformatica"></li>
-          <li><label for="outros">Outros</label><input class="checkbox-category" type="checkbox" name="outros" id="outros"></li>
+          <li><i class="fa-solid fa-utensils"></i><label for="restaurante">RESTAURANTES</label><input class="checkbox-category" type="checkbox" name="restaurante" id="restaurante"></li>
+          <li><i class="fa-solid fa-bread-slice"></i><label for="padaria">PADARIAS</label><input class="checkbox-category" type="checkbox" name="padaria" id="padaria"></li>
+          <li><i class="fa-solid fa-mug-hot"></i><label for="cafeteria">CAFETERIAS</label><input class="checkbox-category" type="checkbox" name="cafeteria" id="cafeteria"></li>
+          <li><i class="fa-solid fa-wine-glass"></i><label for="bar">BARES</label><input class="checkbox-category" type="checkbox" name="bar" id="bar"></li>
+          <li><i class="fa-solid fa-bed"></i><label for="hotel">HOTÉIS</label><input class="checkbox-category" type="checkbox" name="hotel" id="hotel"></li>
+          <li><i class="fa-solid fa-film"></i><label for="cinema">CINEMAS</label><input class="checkbox-category" type="checkbox" name="cinema" id="cinema"></li>
+          <li><i class="fa-solid fa-bag-shopping"></i><label for="shopping">SHOPPINGS</label><input class="checkbox-category" type="checkbox" name="shopping" id="shopping"></li>
+          <li><i class="fa-solid fa-cart-shopping"></i><label for="supermercado">SUPERMERCADOS</label><input class="checkbox-category" type="checkbox" name="supermercado" id="supermercado"></li>
+          <li><i class="fa-solid fa-shirt"></i><label for="lojaderoupa">LOJAS DE ROUPA</label><input class="checkbox-category" type="checkbox" name="lojaderoupa" id="lojaderoupa"></li>
+          <li><i class="fa-solid fa-stethoscope"></i><label for="hospital">HOSPITAIS</label><input class="checkbox-category" type="checkbox" name="hospital" id="hospital"></li>
+          <li><i class="fa-solid fa-prescription-bottle-medical"></i><label for="farmácias">FARMÁCIAS</label><input class="checkbox-category" type="checkbox" name="farmácias" id="farmácias"></li>
+          <li><i class="fa-solid fa-dumbbell"></i><label for="academia">ACADEMIAS</label><input class="checkbox-category" type="checkbox" name="academia" id="academia"></li>
+          <li><i class="fa-solid fa-graduation-cap"></i><label for="escola">ESCOLAS</label><input class="checkbox-category" type="checkbox" name="escola" id="escola"></li>
+          <li><i class="fa-solid fa-book"></i><label for="biblioteca">BIBLIOTECAS</label><input class="checkbox-category" type="checkbox" name="biblioteca" id="biblioteca"></li>
+          <li><i class="fa-solid fa-landmark"></i><label for="museus">MUSEUS</label><input class="checkbox-category" type="checkbox" name="museus" id="museus"></li>
+          <li><i class="fa-solid fa-ellipsis"></i><label for="outros">OUTROS</label><input class="checkbox-category" type="checkbox" name="outros" id="outros"></li>
         </ul>
       </div>
-
-      <label class="distance-title">Distância</label>
-      <div class="distance-filter">
-        <input type="range" value="0" min="0" max="100" onmousemove="rangeSlider(this.value)">
-        <span id="range_value">0km-</span>
+      <div class="connect-lines">
+        <span class="connect-line"></span>
+        <span class="connect-line"></span>
       </div>
-
-      <label class="rating-title">Nota</label>
+      <div class="distance-filter">
+        <label class="distance-title">DISTÂNCIA</label>
+        <div class="input-box">
+          <label>ATÉ</label>
+          <input type="number">
+          <label>KILOMETROS</label>
+        </div>
+      </div>
+      <div class="connect-lines">
+        <span class="connect-line"></span>
+        <span class="connect-line"></span>
+      </div>
       <div class="rating-filter">
+        <label class="rating-title">NOTA</label>
         <ul>
           <li>
             <input type="radio" id="1star" name="starRadio">
@@ -119,23 +125,31 @@
           </li>
         </ul>
       </div>
-
-      <label class="seal-title">Selo</label>
-      <div class="seal-filter">
-        <input type="radio" id="goldSeal" name="sealFilter">
-        <label for="goldSeal">
-          <img src="img/selos/seloOuro.svg">
-        </label>
-        <input type="radio" id="silverSeal" name="sealFilter">
-        <label for="silverSeal">
-          <img src="img/selos/seloPrata.svg">
-        </label>
-        <input type="radio" id="bronzeSeal" name="sealFilter">
-        <label for="bronzeSeal">
-          <img src="img/selos/seloBronze.svg">
-        </label>
+      <div class="connect-lines">
+        <span class="connect-line"></span>
+        <span class="connect-line"></span>
       </div>
-
+      <div class="seal-filter">
+        <label class="seal-title">SELO</label>
+        <div class="seals">
+          <input type="radio" id="goldSeal" name="sealFilter">
+          <label for="goldSeal">
+            <img src="img/selos/seloOuro.svg">
+          </label>
+          <input type="radio" id="silverSeal" name="sealFilter">
+          <label for="silverSeal">
+            <img src="img/selos/seloPrata.svg">
+          </label>
+          <input type="radio" id="bronzeSeal" name="sealFilter">
+          <label for="bronzeSeal">
+            <img src="img/selos/seloBronze.svg">
+          </label>
+        </div>
+      </div>
+      <div class="connect-lines">
+        <span class="connect-line"></span>
+        <span class="connect-line"></span>
+      </div>
       <button class="clean-filters">LIMPAR FILTROS</button>
     </div>
 
@@ -144,274 +158,185 @@
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
         <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
           <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
+          <label class="store-name">Chopp's Center</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <div class="location-infos">
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <div class="store-header">
-            <label class="store-name">Chopp's Center</label>
-            <a class="store-rating">
-            <i class="fa-solid fa-star"></i>
-            5
-            </a>
-          </div>
-          <label class="store-category">Restaurante</label>
-          <label class="store-distance">à 12km</label>
-          <div class="store-footer">
-            <img src="img/selos/seloOuro.svg" style="height: 50px; width: 50px;">
-            <label class="endereco">Serra, Avenida dos sábias, 08</label>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
 

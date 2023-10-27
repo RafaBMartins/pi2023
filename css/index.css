@@ -12,17 +12,47 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        background-color: var(--color-smoothWhite);
     }
 
     #search_content {
         display: grid;
-        grid-template-columns: 0.4fr 1fr;
-        grid-template-rows: 0.1fr 1fr;
+        grid-template-columns: 0.35fr 1fr;
+        grid-template-rows: 60px;
         align-items: flex-start;
         justify-content: center;
         align-self: flex-start;
-        width: 80%;
+        width: 75%;
         gap: 20px;
+    }
+/*------------------*/
+
+/*design e posicionamento do banner*/
+    .banner-box img {
+        width: 100%;
+    }
+
+    .banner-box {
+        position: relative;
+    }
+
+    .banner-box a {
+        position: absolute;
+        left: 16%;
+        top: 50%;
+        font-size: 30px;
+        color: var(--color-white);
+        border: 5px solid var(--color-white);
+        border-radius: 10px;
+        padding: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.4s;
+    }
+
+    .banner-box a:hover {
+        transform: scale(1.2);
     }
 /*------------------*/
 
@@ -32,25 +62,25 @@
         flex-direction: row;
         align-self: center;
         justify-self: flex-start;
-        width: 80%;
+        width: 100%;
         margin: 10px;
     }
 
-    #search_content input {
+    #searchBar_content input {
         display: flex;
         flex-direction: row;
         border: 2px solid;
-        border-color: var(--color-blue3);
-        padding: 5px 10px 5px 10px;
+        border-color: var(--color-blue5);
         width: 100%;
         outline: none;
         border-radius: 10px 0 0 10px;
+        font-size: 35px;
     }
 
     #searchButton {
         display: flex;
         align-items: center;
-        background-color: var(--color-blue3);
+        background-color: var(--color-blue5);
         color: var(--color-white);
         padding: 0 10px 0 10px;
         cursor: pointer;
@@ -58,14 +88,14 @@
         border-top: 2px solid;
         border-right: 2px solid;
         border-bottom: 2px solid;
-        border-color: var(--color-blue3);
+        border-color: var(--color-blue5);
         transition: all 0.4s;
         border-radius: 0 10px 10px 0;
     }
 
     #searchButton:hover {
         background-color: var(--color-white);
-        color: var(--color-blue3);
+        color: var(--color-blue5);
     }
 
     #searchBar_content input::-webkit-search-cancel-button {
@@ -87,54 +117,77 @@
     #filter_content {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
-        display: flex;
-        flex-direction: column;
-        background: var(--color-blue5);
-        box-shadow: 2px 2px 5px var(--color-blue5);
-        border-radius: 0 0 5px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr;
         margin: 0;
-        padding: 5px;
-        height: 70%;
+        height: fit-content;
+        padding: 5px 5px 5px 0;
+    }
+
+    .connect-lines {
+        display: flex;
+        gap: 100px;
+        justify-content: center;
+    }
+
+    .connect-line {
+        height: 70px;
+        width: 10px;
+        background-color: var(--color-blue5);
+        box-shadow: 1px 1px 5px var(--color-gray);
     }
 
     /*design e posicionamento do filtro por categoria*/
-        .category-title {
-            align-self: center;
-            color: var(--color-white);
-            font-weight: bold;
+        .category-filter {
+            background-color: var(--color-blue5);
+            border-radius: 0 5px 5px 0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 5px var(--color-gray);
         }
 
-        .category-filter {
-            margin: 10px;
-            border: 1px solid var(--color-white);
-            border-radius: 5px;
+        .category-title {
+            font-family: var(--font-oswald);
+            font-size: 25px;
+            color: var(--color-white);
+            font-weight: bold;
+            margin: 15px 0 0 15px;
+            text-decoration: underline;
         }
 
         .category-filter ul {
             list-style-type: none;
-            padding: 5px;
-            margin: 0;
-            display: inline-flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 20px;
+            column-gap: 5px;
         }
 
         .category-filter ul li {
-            margin: 5px;
-            border: 1px solid var(--color-white);
-            border-radius: 10px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .category-filter ul li i {
+            display: flex;
+            align-items: center;
             color: var(--color-white);
-            background-color: var(--color-blue3);
-            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            font-size: 25px;
             transition: all 0.4s;
-            padding: 3px;
         }
 
         .category-filter ul li label {
+            color: var(--color-white);
+            font-family: var(--font-oswald);
+            font-weight: bold;
             cursor: pointer;
             user-select: none;
+            font-size: 18px;
+            text-shadow: 1px 1px var(--color-black);
         }
 
         .category-filter ul li input {
@@ -142,29 +195,35 @@
         }
 
         .category-checked {
-            background-color: var(--color-blue5) !important;
-            border-color: var(--color-yellow) !important;
-            color: var(--color-white) !important;
+            color: var(--color-green) !important;
         }
     /*------------------*/
 
     /*design e posicionamento do filtro por nota*/
-        .rating-title {
-            color: var(--color-white);
-            align-self: center;
-            font-weight: bold;
+        .rating-filter {
+            background-color: var(--color-blue5);
+            border-radius: 0 5px 5px 0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 5px var(--color-gray);
         }
 
-        .rating-filter {
-            margin: 10px;
-            width: fit-content;
-            align-self: center;
+        .rating-title {
+            font-family: var(--font-oswald);
+            font-size: 25px;
+            color: var(--color-white);
+            font-weight: bold;
+            margin: 15px 0 0 15px;
+            text-decoration: underline;
         }
 
         .rating-filter ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
 
         .rating-filter input {
@@ -172,18 +231,20 @@
         }
 
         .rating-filter i {
-            color: var(--color-smoothWhite);
+            color: var(--color-white);
             cursor: pointer;
+            font-size: 20px;
+            transition: all 0.4s;
         }
 
-        .rating-filter label {
-            color: var(--color-smoothWhite);
+        .rating-filter ul li label {
+            color: var(--color-white);
             transition: all 0.4s;
             cursor: pointer;
+            font-size: 20px;
         }
 
         .rating-filter input:checked + label {
-            font-weight: bold;
             color: var(--color-yellow)
         }
 
@@ -193,171 +254,209 @@
     /*------------------*/
 
     /*design e posicionamento do filtro por selo*/
-    .seal-title {
-        color: var(--color-white);
-        align-self: center;
-        font-weight: bold;
-    }
+        .seal-filter {
+            background-color: var(--color-blue5);
+            border-radius: 0 5px 5px 0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 5px var(--color-gray);
+        }
 
-    .seal-filter img {
-        width: 50px;
-        height: 50px;
-        margin: 5px;
-        transition: all 0.4s;
-        border: 1px solid var(--color-white);
-        border-radius: 50%;
-        cursor: pointer;
-    }
+        .seal-title {
+            font-family: var(--font-oswald);
+            font-size: 25px;
+            color: var(--color-white);
+            font-weight: bold;
+            margin: 15px 0 0 15px;
+            text-decoration: underline;
+        }
 
-    .seal-filter {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        margin: 10px;
-        align-self: center;
-    }
+        .seals {
+            margin: 15px;
+            display: flex;
+            gap: 40px;
+        }
 
-    .seal-filter input {
-        display: none !important;
-    }
+        .seal-filter img {
+            width: 70px;
+            height: 70px;
+            transition: all 0.4s;
+            border: 1px solid var(--color-white);
+            border-radius: 50%;
+            cursor: pointer;
+        }
 
-    .seal-filter input:checked + label img {
-        transform: scale(1.2);
-        border-color: var(--color-yellow)
-    }
+        .seal-filter input {
+            display: none !important;
+        }
+
+        .seal-filter input:checked + label img {
+            transform: scale(1.2);
+            border-color: var(--color-green)
+        }
     /*------------------*/
 
     /*design e posicionamento do filtro por distancia*/
-    .distance-title {
-        color: var(--color-white);
-        align-self: center;
-        font-weight: bold;
-    }
+        .distance-filter {
+            background-color: var(--color-blue5);
+            border-radius: 0 5px 5px 0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 5px var(--color-gray);
+        }
 
-    .distance-filter {
-        background-color: var(--color-white);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin: 10px;
-        border-radius: 40px;
-        border: 1px solid var(--color-blue3);
-        height: 30px;
-        box-shadow: 10px 10px 5px var(--color-blue5);
-    }
+        .distance-title {
+            font-family: var(--font-oswald);
+            font-size: 25px;
+            color: var(--color-white);
+            font-weight: bold;
+            margin: 15px 0 0 15px;
+            text-decoration: underline;
+        }
 
-    .distance-filter input {
-        padding: 0 !important;
-        margin: 5px;
-        width: 80% !important;
-    }
+        .distance-filter .input-box {
+            margin: 15px;
+            display: flex;
+            gap: 20px;
+        }
 
-    .distance-filter span {
-        display: flex;
-        align-items: center;
-        padding: 5px;
-        width: 20%;
-        color: var(--color-white);
-        background-color: var(--color-blue3);
-        border-radius: 0 40px 40px 0;
-        height: 30px;
-    }
+        .distance-filter .input-box input {
+            font-size: 25px;
+            border-radius: 5px;
+            outline: none;
+            border: var(--color-white);
+            width: 70px;
+            appearance: none;
+        }
+        
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+            appearance: none;
+        }
+
+        .distance-filter .input-box label {
+            font-family: var(--font-oswald);
+            color: var(--color-white);
+            font-size: 25px;
+            font-weight: bold;
+        }
     /*------------------*/
 
     /*botao limpar filtros*/
-    .clean-filters {
-        align-self: center;
-        background-color: var(--color-blue5);
-        color: var(--color-white);
-        border: solid 2px var(--color-white);
-        width: 9rem;
-        padding: 5px;
-        text-align: center;
-        border-radius: 30px;
-        font-size: 0.9rem;
-        transition: all 0.4s;
-        cursor: pointer;
-    }
+        .clean-filters {
+            align-self: center;
+            justify-self: center;
+            background-color: var(--color-blue5);
+            color: var(--color-white);
+            border: solid 2px var(--color-blue5);
+            width: fit-content;
+            padding: 15px;
+            text-align: center;
+            border-radius: 30px;
+            font-size: 20px;
+            transition: all 0.4s;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px var(--color-gray);
+        }
 
-    .clean-filters:hover {
-        background-color: var(--color-white);
-        color: var(--color-blue5);
-        border-color: var(--color-blue5);
-    }
+        .clean-filters:hover {
+            background-color: var(--color-white);
+            color: var(--color-blue5);
+            border-color: var(--color-blue5);
+        }
     /*------------------*/
 /*------------------*/
 
 /*design e posicionamento dos card de perfil*/
     #stores_content {
         display: flex;
-        flex-wrap: wrap;
-        height: 100vh;
+        flex-direction: column;
+        height: fit-content;
         justify-content: flex-start;
         gap: 20px;
-        overflow-y: scroll;
+        padding: 10px;
     }
-
     .store-card {
-        width: 45%;
-        height: fit-content;
-        border: 1px solid var(--color-blue3);
+        width: 100%;
+        box-shadow: 1px 5px 10px var(--color-gray);
+        border-radius: 10px;
         display: flex;
         flex-direction: row;
     }
 
     .store-card .store-photo {
         height: 150px;
-        width: 150px;
-        border-right: 1px solid var(--color-blue3);
+        width: 230px;
+        border-radius: 10px 0 0 10px;
     }
 
     .store-infos {
+        width: 50%;
+        padding: 5px;
+        padding: 16px;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        padding: 5px;
     }
 
-    .store-infos .store-distance {
-        color: var(--color-gray);
+    .location-infos {
+        width: 30%;
+    }
+
+    .store-infos .store-category {
         font-size: 14px;
+        margin-bottom: 5px;
     }
 
-    .store-header {
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    .store-header .store-name {
+    .store-infos .store-name {
+        font-size: 22px;
         font-weight: bold;
+        margin-bottom: 5px;
     }
 
-    .store-header .store-rating {
-        text-decoration: none;
-        color: var(--color-black);
-        display: flex;
-        align-items: center;
-        justify-content: baseline;
-    }
-
-    .store-header .store-rating i {
-        color: var(--color-blue5);
-        font-size: 15px;
-    }
-
-    .store-footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
+    .store-infos .store-rating {
+        font-size: 14px;
+        font-weight: bold;
         flex-grow: 1;
     }
 
-    .store-footer .endereco {
+    .store-infos .store-seal {
         justify-self: flex-end;
-        color: var(--color-gray);
+        height: 45px;
+        width: 45px;
+    }
+
+    .location-infos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        margin: 10px;
+        background-color: var(--color-blue0);
+    }
+
+    .location-infos .store-location {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .location-infos .store-map-button {
+        margin: 10px;
+        background-color: var(--color-blue5);
+        color: var(--color-white);
+        border: solid 2px var(--color-blue5);
+        padding: 5px;
+        text-align: center;
+        border-radius: 30px;
+        font-size: 14px;
+        transition: all 0.4s;
+        cursor: pointer;
+        box-shadow: 1px 1px 5px var(--color-gray);
+        font-weight: bold;
+    }
+
+    .location-infos .store-map-button:hover {
+        background-color: var(--color-smoothWhite);
+        color: var(--color-blue5);
     }
 /*------------------*/

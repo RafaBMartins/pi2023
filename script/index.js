@@ -2,15 +2,10 @@ const checkBoxCategory = [...document.getElementsByClassName("checkbox-category"
 checkBoxCategory.forEach(check => {
     check.addEventListener("change", (e) => {
         if(e.target.checked){
-            e.target.parentElement.classList.add("category-checked");
-            console.log(e.target.parentElement);
+            e.target.parentElement.children[0].classList.add("category-checked");
         }
         else{
-            e.target.parentElement.classList.remove("category-checked");
+            e.target.parentElement.children[0].classList.remove("category-checked");
         }
     })
 });
-
-function rangeSlider(value) {
-    document.getElementById("range_value").innerHTML = value + "km";
-};
