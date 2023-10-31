@@ -9,3 +9,4 @@ checkBoxCategory.forEach(check => {
         }
     })
 });
+
