@@ -370,6 +370,7 @@
         gap: 20px;
         padding: 10px;
     }
+
     .store-card {
         width: 100%;
         box-shadow: 1px 5px 10px var(--color-gray);
@@ -462,10 +463,19 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        align-items: center;
+    }
+
+    .store-card {
+        flex-direction: column;
+    }
+
+    .category-filter {
+        border-radius: 5px;
     }
 
     #stores_content {
-        height: 100%;
+        width: 100%;
     }
 
     .banner-box img {
