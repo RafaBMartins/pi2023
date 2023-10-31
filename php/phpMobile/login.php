@@ -14,7 +14,7 @@ if(autenticar($db)) {
 else {
 	// senha ou usuario nao confere
 	$resposta["sucesso"] = 0;
-	$resposta["erro"] = "usuario ou senha não confere";
+	$resposta["erro"] = "usuario ou senha nao confere";
 }
 
 // Fecha a conexao com o BD
