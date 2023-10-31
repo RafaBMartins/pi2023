@@ -1,6 +1,6 @@
 <?php
 
-require_once('../pdoTeste.php');
+require_once('../pdoConnect.php');
 require_once('autenticacao.php');
 
 // array de resposta
