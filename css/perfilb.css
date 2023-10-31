@@ -1,18 +1,90 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
-.caixa {
-  width: 100%;
-  max-width: 950px;
-  margin-left: auto;
-  margin-right: auto;
+.header-btnRegister {
+  background-color: var(--color-blue2);
+  color: var(--color-white);
+  border: solid 2px var(--color-blue2);
+  padding: 0.8rem 0.5rem 0.8rem 0.5rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.4s;
 }
 
-/*margem, proporção e tamanho máximo e mínimo da imagem de perfil*/
-.lpo {
-  margin-top: -25px;
-  min-width: 100px;
-  max-width: 140px;
-  aspect-ratio: 1/1;
+.zz {
+  background-size: cover;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* The Close Button */
+.close {
+  position: fixed;
+  z-index: 1;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.grude {
+  position: sticky;
+  top: 0px;
+
+}
+
+.fAzul {
+  background-color: #397FBF;
+  height: 10vw !important;
+  width: 100%;  
+  position: absolute;
+  border-radius: 0px 0px 0px 50000px;
+}
+
+.rCard {
+  z-index: 1;
+}
+
+.imagemAbre {
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.imagemAbre:hover {opacity: 0.8;}
+
+/*tamanho máximo de 80px*/
+.mw {
+  max-width: 80px;
 }
 
 /*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
@@ -38,13 +110,20 @@
   display: none;
 }
 
-/*muda o tamanho da foto de perfil quando em 575px (igual ao tamanho de tela sm do bootstrap)*/
-@media (max-width: 575px) {
-  .lpo {
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 75px;
-    height: auto;
-    width: 50%;
-  }
+.comentario {
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show s
+  -webkit-box-orient: vertical;*/
 }
+
+.escondetexto {
+  text-align: left;
+  color: #808080;
+  cursor: pointer;
+}
+
+.escondetexto:hover {color: #c4c4c4;}
