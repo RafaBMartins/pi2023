@@ -74,7 +74,8 @@
         width: 100%;
         outline: none;
         border-radius: 10px 0 0 10px;
-        font-size: 35px;
+        font-size: 18px;
+        padding: 10px;
     }
 
     #searchButton {
@@ -132,7 +133,7 @@
     }
 
     .connect-line {
-        height: 70px;
+        height: 10px;
         width: 10px;
         background-color: var(--color-blue5);
         box-shadow: 1px 1px 5px var(--color-gray);
@@ -151,7 +152,6 @@
             font-family: var(--font-oswald);
             font-size: 25px;
             color: var(--color-white);
-            font-weight: bold;
             margin: 15px 0 0 15px;
             text-decoration: underline;
         }
@@ -183,7 +183,6 @@
         .category-filter ul li label {
             color: var(--color-white);
             font-family: var(--font-oswald);
-            font-weight: bold;
             cursor: pointer;
             user-select: none;
             font-size: 18px;
@@ -212,7 +211,6 @@
             font-family: var(--font-oswald);
             font-size: 25px;
             color: var(--color-white);
-            font-weight: bold;
             margin: 15px 0 0 15px;
             text-decoration: underline;
         }
@@ -266,7 +264,6 @@
             font-family: var(--font-oswald);
             font-size: 25px;
             color: var(--color-white);
-            font-weight: bold;
             margin: 15px 0 0 15px;
             text-decoration: underline;
         }
@@ -309,7 +306,6 @@
             font-family: var(--font-oswald);
             font-size: 25px;
             color: var(--color-white);
-            font-weight: bold;
             margin: 15px 0 0 15px;
             text-decoration: underline;
         }
@@ -337,7 +333,6 @@
             font-family: var(--font-oswald);
             color: var(--color-white);
             font-size: 25px;
-            font-weight: bold;
         }
     /*------------------*/
 
@@ -459,4 +454,30 @@
         background-color: var(--color-smoothWhite);
         color: var(--color-blue5);
     }
+/*------------------*/
+
+/*responsividade*/
+@media only screen and (max-width: 768px) {
+    #search_content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #stores_content {
+        height: 100%;
+    }
+
+    .banner-box img {
+        display: none;
+    }
+
+    .banner-box a {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 290px) {
+
+}
 /*------------------*/
