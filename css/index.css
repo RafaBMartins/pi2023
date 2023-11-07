@@ -459,6 +459,10 @@
 
 /*responsividade*/
 @media only screen and (max-width: 768px) {
+    #filter_content {
+        padding: 5px;
+    }
+
     #search_content {
         display: flex;
         flex-direction: column;
@@ -466,11 +470,30 @@
         align-items: center;
     }
 
-    .store-card {
-        flex-direction: column;
+    #stores_content {
+        align-items: center;
     }
 
-    .category-filter {
+    .store-card {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .store-infos, .location-infos {
+        width: 90%;
+    }
+
+    .store-infos img {
+        margin-top: 5px;
+    }
+
+    .store-photo {
+        width: 100% !important;
+        border-radius: 5px 5px 0 0 !important;
+    }
+
+    .category-filter, .distance-filter, .seal-filter, .rating-filter {
         border-radius: 5px;
     }
 
@@ -487,7 +510,32 @@
     }
 }
 
-@media only screen and (max-width: 290px) {
+@media screen and (max-width: 280px) {
+    .category-filter ul {
+        grid-template-columns: 1fr;
+    }
 
+    .category-filter, .distance-filter, .rating-filter, .seal-filter {
+        width: 95vw;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .seals {
+        gap: 20px;
+        margin: 5px;
+    }
+
+    .store-card {
+        width: 100%;
+    }
+
+    .distance-filter .input-box {
+        margin: 10px;
+    }
+
+    .distance-filter .input-box label {
+        font-size: 20px;
+    }
 }
 /*------------------*/
