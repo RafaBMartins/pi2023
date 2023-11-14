@@ -12,10 +12,6 @@
         //alguns atributos de performance.
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
         $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        if($db){
-            echo "Sucesso";
-        }
-
     }
     catch(Exception $e){
         echo $e;

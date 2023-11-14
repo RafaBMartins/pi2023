@@ -153,10 +153,15 @@
 }
 
 /*responsividade para telas pequenas*/
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 430px) {
     /*configurando para uma coluna*/
     #footer_content {
         grid-template-columns: repeat(1, 1fr);
         padding: 3rem 2rem;
+    }
+
+    #footer_contacts {
+        width: fit-content;
+        justify-self: center;
     }
 }
