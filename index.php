@@ -13,21 +13,30 @@
   <title>WheelieWay</title>
 </head>
 <body>
+  <!--chamando o header-->
   <?php 
     include("header.php");
   ?>
+
+  <!--banner que redireciona para página de cadastro de estabelecimento-->
   <div class="banner-box">
     <img src="img/index/CadastreEstabelecimento.png">
     <a href="cadastro.html">CADASTRAR</a>
   </div>
 
+  <!--container de todos elementos referente a busca de estabelecimentos, organizado em grid 2x2
+  Barra de Pesquisa; Filtros; Cards de Estabelecimentos
+  -->
   <div id="search_content">
+    <!--container que armazena a barra de busca para os estabelecimentos-->
     <div id="searchBar_content">
       <input type="search" spellcheck="false">
       <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
     </div>
 
+    <!--container que armazena todos os tipos de filtros-->
     <div id="filter_content">
+      <!--container que armazena filtros por categoria, feito com inputs type checkbox-->
       <div class="category-filter">
         <label class="category-title">CATEGORIAS</label>
         <ul id="ul-category">
@@ -49,10 +58,12 @@
           <li><i class="fa-solid fa-ellipsis"></i><label for="outros">OUTROS</label><input class="checkbox-category" type="checkbox" name="outros" id="outros"></li>
         </ul>
       </div>
+      <!--divisoria que conecta os diferentes filtros-->
       <div class="connect-lines">
         <span class="connect-line"></span>
         <span class="connect-line"></span>
       </div>
+      <!--container que armazena o filtro por distancia, em km feito com input type number-->
       <div class="distance-filter">
         <label class="distance-title">DISTÂNCIA</label>
         <div class="input-box">
@@ -61,10 +72,12 @@
           <label>KILOMETROS</label>
         </div>
       </div>
+      <!--divisoria que conecta os diferentes filtros-->
       <div class="connect-lines">
         <span class="connect-line"></span>
         <span class="connect-line"></span>
       </div>
+      <!--container que armazena os filtros por notas do estabelecimento, dimensionado em estrelas e feito com inputs type radio-->
       <div class="rating-filter">
         <label class="rating-title">NOTA</label>
         <ul>
@@ -125,10 +138,12 @@
           </li>
         </ul>
       </div>
+      <!--divisoria que conecta os diferentes filtros-->
       <div class="connect-lines">
         <span class="connect-line"></span>
         <span class="connect-line"></span>
       </div>
+      <!--container que armazena os filtros por selos do estabalecimento, bronze prata e ouro feito com inputs type radio-->
       <div class="seal-filter">
         <label class="seal-title">SELO</label>
         <div class="seals">
@@ -146,200 +161,242 @@
           </label>
         </div>
       </div>
+      <!--divisoria que conecta os diferentes filtros-->
       <div class="connect-lines">
         <span class="connect-line"></span>
         <span class="connect-line"></span>
       </div>
+      <!--botão usado para desmarcar todos os filtros utilizados-->
       <button class="clean-filters">LIMPAR FILTROS</button>
     </div>
 
+    <!--container que armazena todos os cards de estabelecimentos-->
     <div id="stores_content">
-
+      <!--container do card do estabelecimentos-->
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
       <div class="store-card">
+        <!--imagem do estabelecimento-->
         <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
+          <!--categoria do estabelecimento-->
           <label class="store-category">Restaurante</label>
+          <!--nome do estabelecimento-->
           <label class="store-name">Chopp's Center</label>
+          <!--nota do estabelecimento-->
           <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
-          <button class="store-map-button">VER NO MAPA</button>
-        </div>
-      </div>
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <label class="store-category">Restaurante</label>
-          <label class="store-name">Chopp's Center</label>
-          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
-          <img src="img/selos/seloOuro.svg" class="store-seal">
-        </div>
-        <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
-          <button class="store-map-button">VER NO MAPA</button>
-        </div>
-      </div>
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <label class="store-category">Restaurante</label>
-          <label class="store-name">Chopp's Center</label>
-          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
-          <img src="img/selos/seloOuro.svg" class="store-seal">
-        </div>
-        <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
-          <button class="store-map-button">VER NO MAPA</button>
-        </div>
-      </div>
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <label class="store-category">Restaurante</label>
-          <label class="store-name">Chopp's Center</label>
-          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
-          <img src="img/selos/seloOuro.svg" class="store-seal">
-        </div>
-        <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
-          <button class="store-map-button">VER NO MAPA</button>
-        </div>
-      </div>
-      <div class="store-card">
-        <img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
-        <div class="store-infos">
-          <label class="store-category">Restaurante</label>
-          <label class="store-name">Chopp's Center</label>
-          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
-          <img src="img/selos/seloOuro.svg" class="store-seal">
-        </div>
-        <div class="location-infos">
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
       </div>
     </div>
   </div>
 
+  <!--chamando o footer-->
   <?php 
   include("footer.php");
   ?>
