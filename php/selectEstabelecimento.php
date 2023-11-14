@@ -15,7 +15,7 @@
     tipo_estabelecimento.tipo_estabelecimento, 
     endereco.logradouro,
     endereco.tipo_logradouro,
-    acos(sin(-20.197641833993103*PI()/180)*sin(-20.19996777646268*PI()/180)+cos(-20.197641833993103*PI()/180)*cos(-20.19996777646268*PI()/180)*cos(-40.22734791349096*PI()/180- -40.217799249634396*PI()/180)) * 6371 as distancia
+    acos(sin(endereco.latitude*PI()/180)*sin($objeto->userLatitude*PI()/180)+cos(endereco.latitude*PI()/180)*cos($objeto->userLatitude*PI()/180)*cos(endereco.longitude*PI()/180-$objeto->longitude*PI()/180)) * 6371 as distancia
     FROM ESTABELECIMENTO
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
