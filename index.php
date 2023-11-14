@@ -190,7 +190,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -212,7 +212,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -234,7 +234,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -256,7 +256,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -278,7 +278,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -300,7 +300,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -322,7 +322,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -344,7 +344,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -366,7 +366,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
@@ -388,7 +388,7 @@
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">Rua Germano Nauman, Serramar, Serra</label>
+          <label class="store-location">Rua Germano Nauman, Serramar, Serra<br>1km de distância</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>
