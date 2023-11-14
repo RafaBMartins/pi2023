@@ -10,6 +10,20 @@ checkBoxCategory.forEach(check => {
     })
 });
 
+function geraCards(estabJson){
+    let storeContent = document.getElementById("stores_content");
+    let estabelecimentos = estabJson["estabelecimentos"];
+    estabelecimentos.forEach((estabelecimento) => {
+        divStoreCard = document.createElement("div").classList.add("store-card");
+        imgEstab = document.createElement("img").setAttribute("src", estabelecimento["foto_estabelecimento"]).classList.add("store-photo");
+        divStoreCard.append(imgEstab);
+        divStoreInfo = document.createElement("div").classList.add("store-info");
+        divStoreCard.append(divStoreInfo);
+        storeContent.append(divStorecard);
+        
+    })
+}
+
 async function carregaEstabelecimento() {
         let posicao = await new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -22,8 +36,8 @@ async function carregaEstabelecimento() {
         body: json, 
         headers: { 'Content-Type': 'application/json' } 
         });
-        let estabJson = await resposta;
-        console.log(estabJson);
+        let estabJson = await resposta.json();
+        geraCards(estabJson);
     
   }
   
