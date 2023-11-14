@@ -6,6 +6,7 @@
 
     if(isset($_POST["img_perfil"]) && isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
+
         $logradouro = filter_var($_POST["logradouro"], FILTER_SANITIZE_STRING);
         $cidade = filter_var($_POST["cidade"], FILTER_SANITIZE_STRING);
         $bairro = filter_var($_POST["bairro"], FILTER_SANITIZE_STRING);
@@ -15,6 +16,9 @@
         $tipo_logradouro = $_POST["tipo_logradouro"];
         $numero = $_POST["numero"];
         $latitude = $_POST["latitude"];
+        var_dump($_POST["latitude"]);
+        var_dump($_POST["longitude"]);
+
         $longitude = $_POST["longitude"];
         $tipo_estab = $_POST["tipo_estab"];
         $query = trim("SELECT * FROM ENDERECO WHERE endereco.estado = '$estado' and endereco.cidade = '$cidade' and endereco.bairro = '$bairro' and endereco.tipo_logradouro = '$tipo_logradouro' and endereco.logradouro = '$logradouro' and endereco.numero = $numero");

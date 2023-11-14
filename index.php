@@ -12,7 +12,7 @@
 
   <title>WheelieWay</title>
 </head>
-<body>
+<body onload="carregaEstabelecimento()">
   <!--chamando o header-->
   <?php 
     include("header.php");

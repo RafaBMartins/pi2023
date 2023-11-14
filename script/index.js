@@ -11,7 +11,6 @@ checkBoxCategory.forEach(check => {
 });
 
 async function carregaEstabelecimento() {
-    try {
         let posicao = await new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(resolve, reject);
         });
@@ -23,11 +22,9 @@ async function carregaEstabelecimento() {
         body: json, 
         headers: { 'Content-Type': 'application/json' } 
         });
-        let estabJson = await resposta.json();
+        let estabJson = await resposta;
         console.log(estabJson);
-    } catch (erro) {
-      console.error(erro); // você pode tratar o erro aqui
-    }
+    
   }
   
 

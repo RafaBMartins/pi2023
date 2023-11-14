@@ -1,6 +1,11 @@
 <?php
     require("pdoConnect.php");
     $resposta = array();
+    //var_dump($_GET);
+
+    $dados = file_get_contents("php://input");
+    $objeto = json_decode($dados);
+
     // $user_latitude = $_POST["latitude"];
     // $user_longitude = $_POST["longitude"];
     $query = "SELECT estabelecimento.id,
@@ -10,7 +15,7 @@
     tipo_estabelecimento.tipo_estabelecimento, 
     endereco.logradouro,
     endereco.tipo_logradouro,
-acos(sin(endereco.latitude*PI()/180)*sin(20*PI()/180)+cos(endereco.latitude*PI()/180)*cos(20*PI()/180)*cos(20*PI()/180-endereco.longitude*PI()/180))*6371 as distancia
+    acos(sin(-20.197641833993103*PI()/180)*sin(-20.19996777646268*PI()/180)+cos(-20.197641833993103*PI()/180)*cos(-20.19996777646268*PI()/180)*cos(-40.22734791349096*PI()/180- -40.217799249634396*PI()/180)) * 6371 as distancia
     FROM ESTABELECIMENTO
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
@@ -21,15 +26,15 @@ acos(sin(endereco.latitude*PI()/180)*sin(20*PI()/180)+cos(endereco.latitude*PI()
     ORDER BY distancia DESC";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
-        $respostas["sucesso"] = 1
-        $resposta["estabelecimentos"] = array();
-        if($consulta->countRows() > 0){
+        $respostas["sucesso"] = 1;
+        $respostas["estabelecimentos"] = array();
+        if($consulta->rowCount() > 0){
             while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
                 $estabelecimento = array();
                 $estabelecimento["id"] = $linha["id"];
                 $estabelecimento["nome_estabelecimento"] = $linha["nome"];
                 $estabelecimento["nota_media"] = $linha["nota_media"];
-                $estabelecimento["foto_estabelecimento"] = $linha["foto_estabelecimento"];
+                $estabelecimento["foto_estabelecimento"] = $linha["uri_image"];
                 $estabelecimento["tipo_estabelecimento"] = $linha["tipo_estabelecimento"];
                 $estabelecimento["logradouro"] = $linha["logradouro"];
                 $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
@@ -37,7 +42,6 @@ acos(sin(endereco.latitude*PI()/180)*sin(20*PI()/180)+cos(endereco.latitude*PI()
                 array_push($respostas["estabelecimentos"], $estabelecimento);
             }
         }
-        var_dump($resposta));
     }
     else{
         $respostas["sucesso"] = 0;
