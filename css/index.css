@@ -168,7 +168,7 @@
         }
 
         .category-filter ul li input {
-            display: none !important;
+            display: none;
         }
 
         .category-checked {
@@ -179,7 +179,6 @@
     /*design e posicionamento do filtro por nota*/
         .rating-filter ul {
             list-style-type: none;
-            padding: 0;
             margin: 15px;
             display: flex;
             flex-direction: column;
@@ -187,7 +186,7 @@
         }
 
         .rating-filter input {
-            display: none !important;
+            display: none;
         }
 
         .rating-filter i {
@@ -230,12 +229,12 @@
         }
 
         .seal-filter input {
-            display: none !important;
+            display: none;
         }
 
         .seal-filter input:checked + label img {
             transform: scale(1.2);
-            border-color: var(--color-green)
+            border-color: var(--color-green);
         }
     /*------------------*/
 
@@ -268,14 +267,11 @@
 
     /*botao limpar filtros*/
         .clean-filters {
-            align-self: center;
             justify-self: center;
             background-color: var(--color-blue5);
             color: var(--color-white);
             border: solid 2px var(--color-blue5);
-            width: fit-content;
             padding: 15px;
-            text-align: center;
             border-radius: 30px;
             font-size: 20px;
             transition: all 0.4s;
@@ -295,18 +291,14 @@
     #stores_content {
         display: flex;
         flex-direction: column;
-        height: fit-content;
-        justify-content: flex-start;
         gap: 20px;
         padding: 10px;
     }
 
     .store-card {
-        width: 100%;
         box-shadow: 1px 5px 10px var(--color-gray);
         border-radius: 10px;
         display: flex;
-        flex-direction: row;
     }
 
     .store-card .store-photo {
@@ -317,14 +309,9 @@
 
     .store-infos {
         width: 50%;
-        padding: 5px;
         padding: 16px;
         display: flex;
         flex-direction: column;
-    }
-
-    .location-infos {
-        width: 30%;
     }
 
     .store-infos .store-category {
@@ -341,11 +328,10 @@
     .store-infos .store-rating {
         font-size: 14px;
         font-weight: bold;
-        flex-grow: 1;
+        margin-bottom: 5px;
     }
 
     .store-infos .store-seal {
-        justify-self: flex-end;
         height: 45px;
         width: 45px;
     }
@@ -353,26 +339,25 @@
     .location-infos {
         display: flex;
         flex-direction: column;
+        width: 30%;
+        background-color: var(--color-blue0);
         align-items: center;
         justify-content: space-between;
         border-radius: 10px;
         margin: 10px;
-        background-color: var(--color-blue0);
+        padding: 10px;
     }
 
-    .location-infos .store-location {
+    .location-infos label {
         font-size: 14px;
-        padding: 10px;
         text-align: center;
     }
 
     .location-infos .store-map-button {
-        margin: 10px;
         background-color: var(--color-blue5);
         color: var(--color-white);
         border: solid 2px var(--color-blue5);
-        padding: 5px;
-        text-align: center;
+        padding: 7px;
         border-radius: 30px;
         font-size: 14px;
         transition: all 0.4s;
@@ -388,11 +373,7 @@
 /*------------------*/
 
 /*responsividade*/
-@media only screen and (max-width: 768px) {
-    #filter_content {
-        padding: 5px;
-    }
-
+@media only screen and (max-width: 768px) { 
     #search_content {
         display: flex;
         flex-direction: column;
@@ -410,12 +391,12 @@
         width: 90%;
     }
 
-    .store-infos, .location-infos {
+    .store-infos{
         width: 90%;
     }
 
-    .store-infos img {
-        margin-top: 5px;
+    .location-infos {
+        width: 90%;
     }
 
     .store-photo {
