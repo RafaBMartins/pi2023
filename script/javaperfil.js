@@ -66,3 +66,35 @@ function aumentar(text, p) {
     text.after(x);
 }
 
+function altNomeUser(){
+    document.getElementById("altNomeUser").style.display = "block";
+    document.getElementById("nomeUser").style.display = "none";
+    document.getElementById("editIcon").style.display = "none";
+    document.getElementById("cancelIcon").style.display = "block";
+    document.getElementById("checkIcon").style.display = "block";
+    document.getElementById("altNomeUser").focus();
+}
+
+function cancelAltNome(){
+    document.getElementById("altNomeUser").style.display = "none";
+    document.getElementById("nomeUser").style.display = "block";
+    document.getElementById("editIcon").style.display = "block";
+    document.getElementById("cancelIcon").style.display = "none";
+    document.getElementById("checkIcon").style.display = "none";
+}
+
+function commitAltNome(){
+    document.getElementById("altNomeUser").style.display = "none";
+    document.getElementById("nomeUser").style.display = "block";
+    document.getElementById("editIcon").style.display = "block";
+    document.getElementById("cancelIcon").style.display = "none";
+    document.getElementById("checkIcon").style.display = "none";
+    document.getElementById("saveAlt").style.display = "block";
+}
+
+function selectNovaFoto(){
+    document.getElementById("novaFoto").click();
+}
+
+
+

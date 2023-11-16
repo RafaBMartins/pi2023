@@ -13,15 +13,16 @@
 }
 
 .store-map-button {
-  background-color: var(--color-blue5);
-  color: var(--color-white);
-  border: solid 2px var(--color-blue5);
+  background-color: white;
+  border: none;
+  color: var(--color-blue5);
   padding: 7px;
   border-radius: 30px;
-  font-size: 14px;
+  font-size:  11px;
   font-weight: bold;
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
 .store-map-button:hover {
@@ -90,6 +91,62 @@
 
 .rCard {
   z-index: 1;
+}
+
+#altNomeUser{
+  background-color: var(--color-4);
+  border: none;
+  border-bottom: 1px solid white;
+  display: none;
+  font-size: 2em;
+  margin-bottom: 5px;
+  color: white;
+  outline: none
+}
+
+.containerBotoes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.containerFotos{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#editFotoIcon{
+  position: absolute;
+  top: 50%;  /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+  color: lightgrey;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+#editFotoIcon:hover{
+  display: block;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#novaFoto{
+  display: none;
+}
+
+.nomeContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
 }
 
 .imagemAbre {

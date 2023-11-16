@@ -57,7 +57,7 @@
       <!--container onde a seta que minimiza o menu esta-->
     </div>
 
-    <<div id="perfilEstabelecimento" style="display: none; " class="card bg-light perfil-estabelecimento">
+    <div id="perfilEstabelecimento" style="display: none; " class="card bg-light perfil-estabelecimento">
       <div class="card-body d-flex d-md-none" id="dadosPerfMobile">
         <div class="row justify-content-center text-center align-items-center" id="abrePerfil">
           <i class="fa-solid fa-chevron-up col-12" style="font-size: 24px;" id="setaPerfAbre"></i>

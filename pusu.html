@@ -38,15 +38,27 @@
 
           </div>
           <div class="rCard">
-            <p class="h1 text-white">Sergio Malandro</p>
+            <div class="nomeContainer">
+              <p id="nomeUser" class="h1 text-white">Sergio Malandro</p>
+              <input type="text" name="altNomeUser" id="altNomeUser">
+              <i class="fa-solid fa-pen" id="editIcon" style="color: white;" onclick="altNomeUser()"></i>
+              <i class="fa-solid fa-xmark" id="cancelIcon" style="color: white; display: none;" onclick="cancelAltNome()"></i>
+              <i class="fa-solid fa-check" id="checkIcon" style="color: white; display: none;" onclick="commitAltNome()"></i>
+            </div>
             <div>
-              <p class="m-1">
-                <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="auto" width="70%" alt="Avatar">
-              </p>  
+              <div class="containerFotos">
+                <p class="m-1">
+                  <img src="img/perfil/pcamigos.jfif" class="foto-perfil rounded-circle" height="auto" width="70%" alt="Avatar">
+                  <i id="editFotoIcon" class="fa-solid fa-camera" onclick="selectNovaFoto()"></i>
+                  <input type="file" name="novaFoto" id="novaFoto">
+                </p> 
+              </div>
             </div>
           </div>
-          <button class="store-map-button w-50 m-1">ALTERAR FOTO</button>
-          <button class="store-map-button w-50 m-1">ALTERAR SENHA</button>
+          <div class="containerBotoes">
+            <button class="store-map-button w-50 m-1">ALTERAR SENHA</button>
+            <button class="store-map-button w-50 m-1" id="saveAlt" style="display: none;">SALVAR ALTERAÇÕES</button>
+          </div>
         </div>
       </div>
       <div class="col-lg-5 col-md-7">
@@ -58,8 +70,8 @@
             <div class="col-sm-12 d-flex align-items-center">
               <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
-              <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
-            </div>
+                <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+              </div>
             <div class="col-sm-12">
               <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
               <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
