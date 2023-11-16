@@ -10,6 +10,11 @@
         var_dump($consulta->rowCount());
         if($consulta->rowCount() > 0){
             $resposta["sucesso"] = 1;
+            session_start();
+            $linha = $consulta->fetch(PDO::FETCH_ASSOC);
+            $_SESSION["nome"] = $linha["nome"];
+            header('location: http://localhost:8080/pi2023/');
+            die();
         }
         else{
             $resposta["sucesso"] = 0;
