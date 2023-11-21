@@ -116,6 +116,21 @@
     margin: 3px;
 }
 
+.botao {
+    background-color: var(--color-blue5);
+    color: var(--color-white);
+    border: solid 2px var(--color-blue5);
+    padding: 4px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: all 0.4s;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px var(--color-gray);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
 @media only screen and (max-width: 470px) {
     .menuConfig {
         display: none;
