@@ -23,7 +23,6 @@
   <?php 
   include("header.php");
   ?>
-  
 
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
@@ -39,9 +38,8 @@
           </div>
           <div class="rCard">
             <div class="nomeContainer">
-              <p id="nomeUser" class="h1 text-white">Sergio Malandro</p>
+              <p id="nomeUser" class="h1 text-white">Sergio Malandro</p><i class="fa-solid fa-pen" id="editIcon" style="color: white; transform:scale(1.5);" onclick="altNomeUser()"></i>
               <input type="text" name="altNomeUser" id="altNomeUser">
-              <i class="fa-solid fa-pen" id="editIcon" style="color: white;" onclick="altNomeUser()"></i>
               <i class="fa-solid fa-xmark" id="cancelIcon" style="color: white; display: none;" onclick="cancelAltNome()"></i>
               <i class="fa-solid fa-check" id="checkIcon" style="color: white; display: none;" onclick="commitAltNome()"></i>
             </div>
@@ -70,9 +68,13 @@
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
-                <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
               </div>
             <div class="col-sm-12">
               <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
@@ -96,9 +98,13 @@
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
-              <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
             
             <!--comentário e espaçamento do texto da avaliação-->
@@ -116,9 +122,13 @@
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
-              <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
@@ -133,9 +143,13 @@
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
-              <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
@@ -152,9 +166,13 @@
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
+              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
-              <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">

@@ -1,6 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 @import "fontsAndColors.css";
 
+#nomeUser {
+  margin-top: 5px;
+}
+
 .header-btnRegister {
   background-color: var(--color-blue2);
   color: var(--color-white);
@@ -83,7 +87,7 @@
 }
 
 .fAzul {
-  background-color: #145999;
+  background-color: var(--color-blue5);
   height: 10vw !important;
   width: 100%;  
   position: absolute;
@@ -142,7 +146,7 @@
 .nomeContainer{
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   width: 100%;
   justify-content: center;
   gap: 15px;
