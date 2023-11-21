@@ -1,7 +1,7 @@
 const menuLateral = document.getElementById("menuLateral");
 var ultimoPushpinClicado = null
 var icones = {
-    1:	"<i class='fa-solid fa-utensils'></i>",
+    1:	"fa-solid fa-utensils",
     2:	"Hoteis",
     3:	"Centros Educativos",
     4:	"Lazer e Esporte",
