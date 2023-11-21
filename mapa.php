@@ -78,32 +78,15 @@
           <i class="fa-solid fa-chevron-up text-center mb-3 d-md-none"
             style="font-size: 24px; transform: rotate(180deg);" id="setaPerfFecha"></i>
         </div>
-        <p id="nomeEstabelecimento" class="card-title" style="text-align: center; font-size: 24px;"></p>
-        <div class="row align-items-center">
-          <img src="img/perfil/5estrela.png" alt="" class="img-fluid col-12 mb-0">
-          <img src="img//selos/seloOuro.svg" alt="" class="img-fluid col-8 mt-0" style="transform: scale(0.4);">
-          <i class="fa-solid fa-hospital col-4" style="font-size: 42px;"></i>
+        <div class="d-flex flex-direction-column justify-content-between">
+          <p id="nomeEstabelecimento" class="card-title" style="text-align: center; font-size: 24px;"></p>
+          <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue5);"></i>
         </div>
-        <p class="card-text" style="font-size: 20px;"><span style="color: #00427F">Telefone:</span> 3331-7500</p>
-
-        <div class="btn-group dropend col-12 mb-2">
-          <button type="button" class="dropdown-toggle bg-light"
-            style="color:#00427F; outline: 0; border: 0; font-size: 20px;" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Horários
-          </button>
-          <ul class="dropdown-menu ps-3" style="width: 15rem;">
-            <li class="my-1"><span style="color:#00427F">Domingo: </span>24 Horas</li>
-            <li class="my-1"><span style="color:#00427F">Segunda feira: </span>24 Horas</li>
-            <li class="my-1"><span style="color:#00427F">Terça feira: </span>24 Horas</li>
-            <li class="my-1"><span style="color:#00427F">Quarta feira: </span>24 Horas</li>
-            <li class="my-1"><span style="color:#00427F">Quinta feira: </span>24 Horas</li>
-            <li class="my-1"><span style="color:#00427F">Sexta: </span>24 Horas</li>
-            <li class="my-1"><span style="color:#00427F">Sábado: </span>24 Horas</li>
-          </ul>
+        <div class="row align-items-start justify-content-start">
+        <label class="col-12 mb-0">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <img src="img//selos/seloOuro.svg" alt="" class="img-fluid col-12 mt-0" style="width: 80px; height: 80px;">
+          <a href="perfilestabelecimento.html" class="card-link col-1">Ver Mais</a>
         </div>
-
-        <a href="perfilestabelecimento.html" class="card-link col-12">Ver Mais</a>
       </div>
     </div>
 
