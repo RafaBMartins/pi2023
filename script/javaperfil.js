@@ -80,4 +80,5 @@ function read(val) {
   }
 
   reader.readAsDataURL(val.files[0]);
+  document.getElementById("saveAlt").style.display = "block";
 }
