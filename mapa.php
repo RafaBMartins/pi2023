@@ -80,7 +80,7 @@
         </div>
         <div class="d-flex flex-direction-column justify-content-between">
           <p id="nomeEstabelecimento" class="card-title" style="text-align: center; font-size: 24px;"></p>
-          <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue5);"></i>
+          <i class="fa-solid fa-graduation-cap" id="estabIcon" style="font-size: 42px; color: var(--color-blue5);"></i>
         </div>
         <div class="row align-items-start justify-content-start">
           <label class="col-12">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>

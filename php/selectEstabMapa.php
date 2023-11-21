@@ -4,7 +4,7 @@
     $resposta = array();
 
     $query = "SELECT estabelecimento.nome,
-    tipo_estabelecimento.tipo_estabelecimento,
+    tipo_estabelecimento.tipo_estabelecimento_pk,
     endereco.latitude,
     endereco.longitude
     FROM ESTABELECIMENTO INNER JOIN tipo_estabelecimento
@@ -19,7 +19,7 @@
             while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
                 $estabelecimento = array();
                 $estabelecimento["nome"] = $linha["nome"];
-                $estabelecimento["tipo_estabelecimento"] = $linha["tipo_estabelecimento"];
+                $estabelecimento["tipo_estabelecimento_pk"] = $linha["tipo_estabelecimento"];
                 $estabelecimento["latitude"] = $linha["latitude"];
                 $estabelecimento["longitude"] = $linha["longitude"];
                 array_push($resposta["estabelecimentos"], $estabelecimento);

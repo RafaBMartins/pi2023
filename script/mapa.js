@@ -1,5 +1,26 @@
 const menuLateral = document.getElementById("menuLateral");
 var ultimoPushpinClicado = null
+var icones = {
+    1:	"<i class='fa-solid fa-utensils'></i>",
+    2:	"Hoteis",
+    3:	"Centros Educativos",
+    4:	"Lazer e Esporte",
+    5:	"Lojas",
+    6:	"Hospitais",
+    7:	"Academias",
+    8:	"Eventos e Festas",
+    11:	"Cafeterias",
+    12:	"Bares",
+    13:	"Farmácias",
+    14:	"Shoppings",
+    15: "Museus",
+    16:	"Padarias",
+    17:	"Cinemas",
+    18:	"Supermercados",
+    19:	"Academias",
+    20:	"Bibliotecas",
+    21:	"Outros"
+};
 
 
 document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
@@ -48,6 +69,7 @@ function carregaPerfil(clicada) {
     document.getElementById("nomeEstabelecimento").textContent = clicada["pushpin"].getTitle();
     console.log(document.getElementById("nomeEstabelecimento").textContent)
     document.getElementById("imgPerfilEstabelecimento").setAttribute('src', clicada["imagem"]);
+    document.getElementById("estabIcon").setAttribute("class", icones[clicada["icone"]]);
     if (window.innerWidth < 470) {
         document.getElementById("nomeEstabelecimentoMobile").textContent = clicada["pushpin"].getTitle();
         document.getElementById("imgPerfilEstabelecimentoMobile").setAttribute('src', clicada["imagem"]);
@@ -189,6 +211,7 @@ async function loadMapScenario(estabJson) {
             "nome": estabelecimento["nome"],
             "pushpin": pushpin,
             "imagem": null,
+            "icone": estabelecimento["tipo_estabelecimento"],
         }
 
         locaisProprios.push(estabelecimento);
