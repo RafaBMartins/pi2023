@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
+@import "fontsAndColors.css";
 
 .header-btnRegister {
   background-color: var(--color-blue2);
@@ -9,6 +10,24 @@
   font-size: 0.9rem;
   font-weight: bold;
   transition: all 0.4s;
+}
+
+.store-map-button {
+  background-color: white;
+  border: none;
+  color: var(--color-blue5);
+  padding: 7px;
+  border-radius: 30px;
+  font-size:  11px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.store-map-button:hover {
+  background-color: var(--color-smoothWhite);
+  color: var(--color-blue5);
 }
 
 .zz {
@@ -44,7 +63,7 @@
   z-index: 1;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
+  color: #ffffff;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
@@ -64,15 +83,70 @@
 }
 
 .fAzul {
-  background-color: #397FBF;
+  background-color: #145999;
   height: 10vw !important;
   width: 100%;  
   position: absolute;
-  border-radius: 0px 0px 0px 50000px;
 }
 
 .rCard {
   z-index: 1;
+}
+
+#altNomeUser{
+  background-color: var(--color-4);
+  border: none;
+  border-bottom: 1px solid white;
+  display: none;
+  font-size: 2em;
+  margin-bottom: 5px;
+  color: white;
+  outline: none
+}
+
+.containerBotoes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.containerFotos{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#editFotoIcon{
+  position: absolute;
+  top: 50%;  /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+  color: lightgrey;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+#editFotoIcon:hover{
+  display: block;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#novaFoto{
+  display: none;
+}
+
+.nomeContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
 }
 
 .imagemAbre {
@@ -105,19 +179,10 @@
   border-bottom: 3px solid #397FBF;
 }
 
-/*deixa a cor da taba de visita invisível a principio*/
-#visitas {
-  display: none;
-}
-
 .comentario {
   margin-bottom: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  /*
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show s
-  -webkit-box-orient: vertical;*/
 }
 
 .escondetexto {

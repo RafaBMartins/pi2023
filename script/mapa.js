@@ -171,13 +171,11 @@ function loadMapScenario() {
     var ifes = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
         title: "Ifes Campus Serra",
-        icon: "../img/pinos/pinoEscola.svg"
     });
 
     var jaymeDosSantosNeves = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.199232504534884, -40.227077110956316), {
         color: "red",
         title: "Hospital Jayme dos Santos Neves",
-        icon: "../img/pinos/pinoHospital.svg"
     });
 
     var cafeArrumado = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.19826402415827, -40.224856532079116), {

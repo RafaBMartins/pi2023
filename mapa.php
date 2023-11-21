@@ -33,6 +33,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"
     defer></script> 
+
+  <script src="script/mapa.js"></script>
 </head>
 
 <body>
@@ -55,7 +57,7 @@
       <!--container onde a seta que minimiza o menu esta-->
     </div>
 
-    <!-- <div id="perfilEstabelecimento" style="display: none; " class="card bg-light perfil-estabelecimento">
+    <div id="perfilEstabelecimento" style="display: none; " class="card bg-light perfil-estabelecimento">
       <div class="card-body d-flex d-md-none" id="dadosPerfMobile">
         <div class="row justify-content-center text-center align-items-center" id="abrePerfil">
           <i class="fa-solid fa-chevron-up col-12" style="font-size: 24px;" id="setaPerfAbre"></i>
@@ -103,7 +105,7 @@
 
         <a href="perfilestabelecimento.html" class="card-link col-12">Ver Mais</a>
       </div>
-    </div> -->
+    </div>
 
 
     <!--div onde o mapa sera renderizado-->

@@ -38,12 +38,26 @@
 
           </div>
           <div class="rCard">
-            <p class="h1">Sergio Malandro</p>
-            <div>
-              <p class="m-1">
-                <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="auto" width="70%" alt="Avatar">
-              </p>  
+            <div class="nomeContainer">
+              <p id="nomeUser" class="h1 text-white">Sergio Malandro</p>
+              <input type="text" name="altNomeUser" id="altNomeUser">
+              <i class="fa-solid fa-pen" id="editIcon" style="color: white;" onclick="altNomeUser()"></i>
+              <i class="fa-solid fa-xmark" id="cancelIcon" style="color: white; display: none;" onclick="cancelAltNome()"></i>
+              <i class="fa-solid fa-check" id="checkIcon" style="color: white; display: none;" onclick="commitAltNome()"></i>
             </div>
+            <div>
+              <div class="containerFotos">
+                <p class="m-1">
+                  <img src="img/perfil/pcamigos.jfif" class="foto-perfil rounded-circle" height="auto" width="70%" alt="Avatar">
+                  <i id="editFotoIcon" class="fa-solid fa-camera" onclick="selectNovaFoto()"></i>
+                  <input type="file" name="novaFoto" id="novaFoto">
+                </p> 
+              </div>
+            </div>
+          </div>
+          <div class="containerBotoes">
+            <button class="store-map-button w-50 m-1">ALTERAR SENHA</button>
+            <button class="store-map-button w-50 m-1" id="saveAlt" style="display: none;">SALVAR ALTERAÇÕES</button>
           </div>
         </div>
       </div>
@@ -56,8 +70,8 @@
             <div class="col-sm-12 d-flex align-items-center">
               <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="70" width="70" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
-              <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
-            </div>
+                <img src="img/perfil/5estrela.png" height="15" width="100" alt="Avaliação">
+              </div>
             <div class="col-sm-12">
               <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
               <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
@@ -152,80 +166,6 @@
 
         </div>
 
-        <!--div com visitas-->
-        <div id="visitas">
-          <!--último registro de visita-->
-          <div class="row mb-4">
-            <!--foto do lugar da visita-->
-            <div class="col-sm-2 mr-3">
-              <div class="mr-2">
-                <img src="img/perfil/potente.jpg" class="rounded-circle ms-sm-3" height="60" width="60"
-                  alt="Avatar">
-              </div>
-            </div>
-            <!--nome centralizado horizontalmente-->
-            <div class="col-sm-2 d-flex align-items-center justify-content-center">
-              <div class="">
-                <p>BAR POTENTE</p>
-              </div>
-            </div>
-            <!--classificação de acessibilidade-->
-            <div class="col-sm-2">
-              <img src="img/selos/seloBronze.svg" class="rounded-circle" height="60" width="60" alt="Selo">
-            </div>
-            <!--classificação de usuário em estrelas-->
-            <div class="col-sm-6 d-flex align-items-center justify-content-center">
-              <div class="">
-                <img src="img/perfil/4estrela.png" height="35" width="229" alt="Avaliação">
-              </div>
-            </div>
-          </div>
-          <!--penúltimo registro de visita-->
-          <div class="row mb-4">
-            <div class="col-sm-2 mr-3">
-              <div class="mr-2">
-                <img src="img/perfil/img1.png" class="rounded-circle ms-sm-3" height="60" width="60"
-                  alt="Avatar">
-              </div>
-            </div>
-            <div class="col-sm-2 d-flex align-items-center justify-content-center">
-              <div class="">
-                <p>Lugar</p>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <img src="img/selos/seloOuro.svg" class="rounded-circle" height="60" width="60" alt="Selo">
-            </div>
-            <div class="col-sm-6 d-flex align-items-center justify-content-center">
-              <div class="">
-                <img src="img/perfil/5estrela.png" height="35" width="229" alt="Avaliação">
-              </div>
-            </div>
-          </div>
-          <!--primeiro registro de visita-->
-          <div class="row mb-4">
-            <div class="col-sm-2 mr-3">
-              <div class="mr-2">
-                <img src="img/perfil/porreta.jpg" class="rounded-circle ms-sm-3" height="60" width="60  "
-                  alt="Avatar">
-              </div>
-            </div>
-            <div class="col-sm-2 d-flex align-items-center justify-content-center">
-              <div class="">
-                <p>Severino Boteco porreta</p>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <img src="img/selos/seloPrata.svg" class="rounded-circle" height="60" width="60" alt="Selo">
-            </div>
-            <div class="col-sm-6 d-flex align-items-center justify-content-center">
-              <div class="">
-                <img src="img/perfil/5estrela.png" height="35" width="229" alt="Avaliação">
-              </div>
-            </div>
-          </div>
-          
-        </div>
       </div>    
           
     </div>
