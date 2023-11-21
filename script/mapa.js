@@ -1,5 +1,26 @@
 const menuLateral = document.getElementById("menuLateral");
 var ultimoPushpinClicado = null
+var icones = {
+    1:	"fa-solid fa-utensils",
+    2:	"Hoteis",
+    3:	"Centros Educativos",
+    4:	"Lazer e Esporte",
+    5:	"Lojas",
+    6:	"Hospitais",
+    7:	"Academias",
+    8:	"Eventos e Festas",
+    11:	"Cafeterias",
+    12:	"Bares",
+    13:	"Farmácias",
+    14:	"Shoppings",
+    15: "Museus",
+    16:	"Padarias",
+    17:	"Cinemas",
+    18:	"Supermercados",
+    19:	"Academias",
+    20:	"Bibliotecas",
+    21:	"Outros"
+};
 
 
 document.getElementById("inpPesquisa").addEventListener('keydown', (e) => {
@@ -48,6 +69,7 @@ function carregaPerfil(clicada) {
     document.getElementById("nomeEstabelecimento").textContent = clicada["pushpin"].getTitle();
     console.log(document.getElementById("nomeEstabelecimento").textContent)
     document.getElementById("imgPerfilEstabelecimento").setAttribute('src', clicada["imagem"]);
+    document.getElementById("estabIcon").setAttribute("class", icones[clicada["icone"]]);
     if (window.innerWidth < 470) {
         document.getElementById("nomeEstabelecimentoMobile").textContent = clicada["pushpin"].getTitle();
         document.getElementById("imgPerfilEstabelecimentoMobile").setAttribute('src', clicada["imagem"]);
@@ -55,8 +77,19 @@ function carregaPerfil(clicada) {
     }
 }
 
+async function carregaEstabelecimento(){
+    let resposta = await fetch('http://localhost:8080/pi2023/php/selectEstabMapa.php', {
+        method: 'POST',  
+        headers: { 'Content-Type': 'application/json' } 
+        });
+        let estabJson = await resposta.json();
+        return estabJson;
+}
+
 /*esta funcao carrega o mapa*/
-function loadMapScenario() {
+async function loadMapScenario(estabJson) {
+    estabJson = await carregaEstabelecimento();
+    console.log(estabJson);
     const mapa = document.getElementById("mapa");
     calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
@@ -167,6 +200,23 @@ function loadMapScenario() {
         })
     });
 
+    locaisProprios = Array();
+
+    estabJson["estabelecimentos"].forEach((estabelecimento) => {
+        let pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(estabelecimento["latitude"], estabelecimento["longitude"]), {
+            color: "blue",
+            title: estabelecimento["nome"],
+        });
+        estabelecimento = {
+            "nome": estabelecimento["nome"],
+            "pushpin": pushpin,
+            "imagem": null,
+            "icone": estabelecimento["tipo_estabelecimento"],
+        }
+
+        locaisProprios.push(estabelecimento);
+    })
+
     //criando os pins do mapa 
     var ifes = new Microsoft.Maps.Pushpin(locIfes, {
         color: "green",
@@ -185,22 +235,27 @@ function loadMapScenario() {
     //fim dos pins
 
     //adiconando os pins no objeto de locais proprios
-    locaisProprios[1] = {
+    ifes = {
         "nome": "Ifes campus Serra",
         "pushpin": ifes,
         "imagem": "../img/ifesPerfil.jpg"
     };
-    locaisProprios[2] = {
+
+    hospitalJayme = {
         "nome": "Jayme dos Santos Neves",
         "pushpin": jaymeDosSantosNeves,
         "imagem": "../img/jaymePerfil.jpg"
     };
 
-    locaisProprios[3] = {
+    cafeArrumado = {
         "nome": "Café Arrumado",
         "pushpin": cafeArrumado,
         "imagem": "../img/cafeArrumadoPerfil.jpg"
     }
+
+    locaisProprios.push(ifes);
+    locaisProprios.push(hospitalJayme);
+    locaisProprios.push(cafeArrumado);
 
     //adicionano evento de mapa nos pins
     for (let item in locaisProprios) {

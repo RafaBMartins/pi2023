@@ -12,7 +12,8 @@
     estabelecimento.nome, 
     estabelecimento.nota_media, 
     foto_estabelecimento.uri_image, 
-    tipo_estabelecimento.tipo_estabelecimento, 
+    tipo_estabelecimento.tipo_estabelecimento,
+    endereco.cidade, 
     endereco.logradouro,
     endereco.tipo_logradouro,
     acos(sin(endereco.latitude*PI()/180)*sin($objeto->userLatitude*PI()/180)+cos(endereco.latitude*PI()/180)*cos($objeto->userLatitude*PI()/180)*cos(endereco.longitude*PI()/180 - $objeto->userLongitude*PI()/180))*6371 as distancia
@@ -36,6 +37,7 @@
                 $estabelecimento["nota_media"] = $linha["nota_media"];
                 $estabelecimento["foto_estabelecimento"] = $linha["uri_image"];
                 $estabelecimento["tipo_estabelecimento"] = $linha["tipo_estabelecimento"];
+                $estabelecimento["cidade"] = $linha["cidade"];
                 $estabelecimento["logradouro"] = $linha["logradouro"];
                 $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
                 $estabelecimento["distancia"] = $linha["distancia"];
