@@ -1,12 +1,12 @@
 /*importando a fonte lemonmilk*/
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
+@import "fontsAndColors.css";
 
 /*definindo a formatacao padrao dos elementos*/
 
 .desaparecer {
     display: none;
 }
-
 
 /*classe que faz o menu crescer quando ativado*/
 .menuSelecionado {
@@ -91,6 +91,29 @@
     margin-top: 5rem;
     margin-left: 2rem;
     background-color: red;
+}
+
+/*container do miniperfil do estabelecimento*/
+#dadosPerf {
+    border: 1px solid var(--color-gray);
+    border-radius: 5px;
+}
+
+/*nome do estabelecimento*/
+#dadosPerf #nomeEstabelecimento {
+    font-weight: bold;
+    font-family: var(--font-oswald);
+    font-size: 28px !important;
+}
+
+/*nota do estabelecimento*/
+#dadosPerf label {
+    width: fit-content;
+}
+
+#dadosPerf label i {
+    color: var(--color-blue5);
+    margin: 3px;
 }
 
 @media only screen and (max-width: 470px) {
