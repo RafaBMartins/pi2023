@@ -3,14 +3,14 @@
 
     $resposta = array();
     var_dump($_FILES);
-    
-    if(isset($_POST["img_perfil"]) && isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"])){
+
+    if(isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"]) && isset($_FILES["img_perfil"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
 
-        $file= base64_decode($_POST["img_perfil"]);
-		$client_id="488371ea46cb4a3";
-		$handle = fopen($file, "r");
-		$data = fread($handle, filesize($file));
+        $filename = $_FILES['img_perfil']['tmp_name'];
+		$client_id= "488371ea46cb4a3";
+		$handle = fopen($filename, "r");
+		$data = fread($handle, filesize($filename));
 		$pvars   = array('image' => base64_encode($data));
 		$timeout = 30;
 		$curl = curl_init();
@@ -24,6 +24,8 @@
 		curl_close ($curl);
 		$pms = json_decode($out,true);
 		$img_url=$pms['data']['link'];
+        var_dump($pms);
+
 
         $logradouro = filter_var($_POST["logradouro"], FILTER_SANITIZE_STRING);
         $cidade = filter_var($_POST["cidade"], FILTER_SANITIZE_STRING);
