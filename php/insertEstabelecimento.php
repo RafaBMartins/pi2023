@@ -2,14 +2,15 @@
     require("pdoConnect.php");
 
     $resposta = array();
+    var_dump($_FILES);
     
     if(isset($_POST["img_perfil"]) && isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
 
-        $filename = $_POST['img_perfil'];
+        $file= base64_decode($_POST["img_perfil"]);
 		$client_id="488371ea46cb4a3";
-		$handle = fopen($filename, "r");
-		$data = fread($handle, filesize($filename));
+		$handle = fopen($file, "r");
+		$data = fread($handle, filesize($file));
 		$pvars   = array('image' => base64_encode($data));
 		$timeout = 30;
 		$curl = curl_init();
