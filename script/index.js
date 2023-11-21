@@ -13,14 +13,31 @@ checkBoxCategory.forEach(check => {
 function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
     let estabelecimentos = estabJson["estabelecimentos"];
+    console.log(estabelecimentos);
     estabelecimentos.forEach((estabelecimento) => {
-        divStoreCard = document.createElement("div").classList.add("store-card");
-        imgEstab = document.createElement("img").setAttribute("src", estabelecimento["foto_estabelecimento"]).classList.add("store-photo");
-        divStoreCard.append(imgEstab);
-        divStoreInfo = document.createElement("div").classList.add("store-info");
-        divStoreCard.append(divStoreInfo);
-        storeContent.append(divStorecard);
-        
+        divStoreCard = document.createElement("div")
+        divStoreCard.classList.add("store-card");
+        divStoreCard.innerHTML = `<img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        <!--container com as informações gerais do estabelecimento-->
+        <div class="store-infos">
+          <!--categoria do estabelecimento-->
+          <label class="store-category">${estabelecimento["tipo_estabelecimento"]}</label>
+          <!--nome do estabelecimento-->
+          <label class="store-name">${estabelecimento["nome_estabelecimento"]}</label>
+          <!--nota do estabelecimento-->
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <!--selo do estabelecimento-->
+          <img src="img/selos/seloOuro.svg" class="store-seal">
+        </div>
+        <!--container com as informações referentes a endereço do estabelecimento-->
+        <div class="location-infos">
+          <!--endereço em extenso do estabelecimento-->
+          <label class="store-location">${estabelecimento["tipo_logradouro"]}  ${estabelecimento["logradouro"]}, ${estabelecimento["cidade"]}<br>${Math.round(estabelecimento["distancia"]/1000)}km de distância</label>
+          <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
+          <button class="store-map-button">VER NO MAPA</button>
+        </div>`
+        console.log(divStoreCard);
+        document.getElementById("stores_content").append(divStoreCard);
     })
 }
 
@@ -38,7 +55,7 @@ async function carregaEstabelecimento() {
         });
         let estabJson = await resposta.json();
         geraCards(estabJson);
-    
+
   }
   
 

@@ -37,7 +37,7 @@
   <script src="script/mapa.js"></script>
 </head>
 
-<body>
+<body onload="carregaEstabelecimento()">
   <?php 
   include("header.php");
   ?>
