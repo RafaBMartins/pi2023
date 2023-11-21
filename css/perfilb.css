@@ -149,6 +149,10 @@
   cursor: pointer;
 }
 
+#fotoPerfil{
+  object-fit: cover;
+}
+
 .imagemAbre {
   cursor: pointer;
   object-fit: cover;
@@ -159,24 +163,6 @@
 /*tamanho máximo de 80px*/
 .mw {
   max-width: 80px;
-}
-
-/*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
-.taba {
-  text-align: center;
-  padding: 0px 16px;
-  cursor: pointer;
-  margin-bottom: 0px;
-}
-
-/*faz com que as tabas mudem de cor quando o cursor passar por cima*/
-#tabas :hover {
-  background-color: #9acff8;
-}
-
-/*cor da taba de avaliação*/
-#tavaliacoes {
-  border-bottom: 3px solid #397FBF;
 }
 
 .comentario {

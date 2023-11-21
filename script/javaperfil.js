@@ -72,9 +72,12 @@ function commitAltNome(){
     document.getElementById("saveAlt").style.display = "block";
 }
 
-function selectNovaFoto(){
-    document.getElementById("novaFoto").click();
+function read(val) {
+  const reader = new FileReader();
+
+  reader.onload = (event) => {
+    document.getElementById("fotoPerfil").src = event.target.result;
+  }
+
+  reader.readAsDataURL(val.files[0]);
 }
-
-
-
