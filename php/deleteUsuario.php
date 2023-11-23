@@ -8,7 +8,9 @@
         $consulta->bindParam(':senhaAtual', $senha);
         if($consulta->execute()){
             $resposta["sucesso"] = 1;
-            header('location: ')
+            session_destroy();
+            header("location: http://localhost:8080/pi2023/");
+            die();
         }
         else{
             $resposta["sucesso"] = 0;
@@ -19,4 +21,6 @@
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "faltam parâmetros";
     }
+    header("location: http://localhost:8080/pi2023/pusu.php");
+    die();
 ?>

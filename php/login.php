@@ -3,9 +3,10 @@
     
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $senha = $_POST["password"];
+    $token = password_hash($senha, PASSWORD_DEFAULT);
     $respota = array();
 
-    $consulta = $db->prepare("SELECT email, nome FROM USUARIO WHERE email = '$email' and senha = '$senha'");
+    $consulta = $db->prepare("SELECT email, nome FROM USUARIO WHERE email = '$email' and senha = '$token'");
     if($consulta->execute()){
         var_dump($consulta->rowCount());
         if($consulta->rowCount() > 0){

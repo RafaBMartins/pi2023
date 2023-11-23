@@ -9,7 +9,7 @@
         $senha = trim($_POST["password"]);
         //$token = password_hash($senha, PASSWORD_DEFAULT);
         $nome = filter_var($_POST["userName"], FILTER_SANITIZE_STRING);
-        //$token = password_hash($senha, PASSWORD_DEFAULT, array());
+        $token = password_hash($senha, PASSWORD_DEFAULT, array());
 
         $consulta_usuario_existente = $db->prepare("SELECT email FROM usuario WHERE email='$email'");
         $consulta_usuario_existente->execute();
