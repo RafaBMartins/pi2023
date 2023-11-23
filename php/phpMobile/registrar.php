@@ -22,7 +22,7 @@
                 $resposta["sucesso"] = 1;
                 session_start();
                 $_SESSION["nome"] = $_POST["userName"];
-                header('location: https://pi2023-u7xly6uh.b4a.run/pusu.php');
+                header('location: http://localhost/pi2023/pusu.php');
                 die();
             }
             else{

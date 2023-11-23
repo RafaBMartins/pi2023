@@ -10,7 +10,7 @@
         if($consulta->execute()){
             $resposta["sucesso"] = 1;
             session_destroy();
-            header("location: https://pi2023-u7xly6uh.b4a.run/");
+            header("location: http://localhost/pi2023/");
             die();
         }
         else{
@@ -22,6 +22,6 @@
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "faltam parâmetros";
     }
-    header("location: https://pi2023-u7xly6uh.b4a.run/pusu.php");
+    header("location: http://localhost/pi2023/pusu.php");
     die();
 ?>

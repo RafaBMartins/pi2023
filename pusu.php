@@ -25,7 +25,7 @@
   ?>
 
   <?php if(!isset($_SESSION["email"])){
-    header("location: http://localhost:8080/pi2023/login.html");
+    header("location: http://localhost/pi2023/login.html");
     die();
   }?>
   <div id="myModal" class="modal" onclick="fechaImg()">
