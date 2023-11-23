@@ -3,19 +3,28 @@
     
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $senha = $_POST["password"];
+    $token = password_hash($senha, PASSWORD_DEFAULT);
     $respota = array();
 
-    $consulta = $db->prepare("SELECT email, nome FROM USUARIO WHERE email = '$email' and senha = '$senha'");
+    $consulta = $db->prepare("SELECT email, nome, senha FROM USUARIO WHERE email = '$email'");
     if($consulta->execute()){
         var_dump($consulta->rowCount());
         if($consulta->rowCount() > 0){
-            $resposta["sucesso"] = 1;
-            session_start();
-            $linha = $consulta->fetch(PDO::FETCH_ASSOC);
-            $_SESSION["nome"] = $linha["nome"];
-            $_SESSION["email"] = $linha["email"];
-            header('location: http://localhost:8080/pi2023/');
-            die();
+            while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
+                    if(password_verify($senha, $linha["senha"])){
+                        $resposta["sucesso"] = 1;
+                        session_start();
+                        $linha = $consulta->fetch(PDO::FETCH_ASSOC);
+                        $_SESSION["nome"] = $linha["nome"];
+                        $_SESSION["email"] = $linha["email"];
+                        header('location: http://localhost/pi2023/pusu.php');
+                        die();
+                    }
+                    else{
+                        $resposta["sucesso"] = 0;
+                        $resposta["erro"] = "senhas não conferem";
+                    }
+            }
         }
         else{
             $resposta["sucesso"] = 0;
@@ -26,4 +35,6 @@
         $resposta["sucesso"] = 0;
         $respota["erro"] = $consulta->error;
     }
+
+    var_dump($resposta);
 ?>
