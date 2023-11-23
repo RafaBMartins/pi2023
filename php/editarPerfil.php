@@ -2,7 +2,7 @@
     require("pdoConnect.php");
     session_start();
     if(!(isset($_POST["novoNome"]) && isset($_SESSION["email"]))){
-        header("location: http://localhost:8080/pi2023/pusu.php");
+        header("location:https://pi2023-u7xly6uh.b4a.run/pusu.php");
         die();
     }
     $resposta = array();
@@ -21,6 +21,6 @@
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "erro: " . $consulta->error;
     }
-    header("location: http://localhost/pi2023/pusu.php");
+    header("location: https://pi2023-u7xly6uh.b4a.run/pusu.php");
     die();
 ?>

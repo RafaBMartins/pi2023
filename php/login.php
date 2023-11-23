@@ -17,7 +17,7 @@
                         $linha = $consulta->fetch(PDO::FETCH_ASSOC);
                         $_SESSION["nome"] = $linha["nome"];
                         $_SESSION["email"] = $linha["email"];
-                        header('location: http://localhost/pi2023/pusu.php');
+                        header('location: https://pi2023-u7xly6uh.b4a.run/pusu.php');
                         die();
                     }
                     else{

@@ -33,6 +33,6 @@
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "faltam parametros";
     }
-    header("location: http://localhost:8080/pi2023/pusu.php");
+    header("location: https://pi2023-u7xly6uh.b4a.run/pusu.php");
     die();
 ?>
