@@ -73,8 +73,28 @@
   transition: 0.3s;
 }
 
+.seta {
+  position: fixed;
+  z-index: 1;
+  top: 100px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#seta1 {
+  left: 1rem;
+}
+
+#seta2 {
+  right: 1rem;
+}
+
 .close:hover,
-.close:focus {
+.close:focus,
+.seta.hover,
+.seta.focus{
   color: #bbb;
   text-decoration: none;
   cursor: pointer;

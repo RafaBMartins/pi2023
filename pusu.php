@@ -19,17 +19,19 @@
 
 </head>
 
-<body onload="texto()" onload="imagem()">
+<body onload="função()">
   <?php 
   include("header.php");
   ?>
 
-  <div id="myModal" class="modal" onclick="fechaImg()">
+  <div id="myModal" class="modal">
     <span class="close" onclick="fechaImg()">&times;</span>
+    <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>
+    <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
     <img class="modal-content" onclick="event.stopPropagation()" id="img01">
 
-    <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form id="alterarSenha" action="" method="POST" style="display:none;">
+    <div class="container-editaperfil">
+      <form id="alterarSenha" action="" method="POST" style="display:none;" onclick="event.stopPropagation()">
         <div id="form_header">
             <h1>Alterar Senha</h1>
         </div>
@@ -68,7 +70,7 @@
         </button>
       </form>
 
-      <form id="editarPerfil" action="php/editarPerfil.php" method="POST" style="display:none;">
+      <form id="editarPerfil" action="" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Editar Perfil</h1>
         </div>
@@ -141,10 +143,12 @@
           </div>
         </div>
       </div>
+      
       <div class="col-lg-5 col-md-7">
         <!--div com avaliações do usuário-->
         <div id="avaliacoes">
           <!--primeira avaliação-->
+
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
@@ -155,18 +159,21 @@
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-              </div>
+            </div>
             <div class="col-sm-12 imagens">
-              <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
               <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
               <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-              <img src="img/perfilestabelecimento/propaganda2.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfil/5estrela.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
               <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
               <div class="p-1 border-bottom">
-                <p class="text-start">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
+                <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
                   eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
                   A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
                   momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
@@ -212,6 +219,7 @@
               <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
             <div class="col-sm-12 imagens">
+              <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
@@ -235,6 +243,7 @@
               <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
             <div class="col-sm-12 imagens">
+              <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">

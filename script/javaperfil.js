@@ -1,8 +1,20 @@
+let imagemDentro;
+
+function função(){
+    texto();
+    imagem();
+}
+
 function abreImg(imge){
     let modal = document.getElementById("myModal");
     let modalImg = document.getElementById("img01");
+    let seta1 = document.getElementById("seta1");
+    let seta2 = document.getElementById("seta2");
+    seta1.style.display = "block";
+    seta2.style.display = "block";
     modal.style.display = "block";
     modalImg.src = imge.src;
+    imagemDentro = imge;
 }
 
 function fechaImg() { 
@@ -14,19 +26,15 @@ function fechaImg() {
     selecionado[0].classList.remove("modalSelecionado");
 }
 
-function texto() {
-    let coments = document.getElementsByClassName("comentario");
-    for (let i = 0; i < coments.length; i++) {
-        let text = coments.item(i);
-        if (text.offsetHeight > 96) {
-            text.style.cssText = "overflow:hidden; max-height:96px";
-            let p = document.createElement('div');
-            p.innerText = "Ler mais";
-            p.classList.add('escondetexto');
-            p.addEventListener('click', ()=> aumentar(text, p));
-            text.after(p);
-        }
-    } 
+function mudaImg(x){
+    
+    let modalImg = document.getElementById("img01");
+    let listaPai = imagemDentro.parentNode;
+    let pos = Array.from(listaPai.children).indexOf(imagemDentro);
+    if (!(x == -1 && pos == 0) && !(x == 1 && pos == Array.from(listaPai.children).length-1)) {
+        imagemDentro = listaPai.children[pos+x];
+        modalImg.src = imagemDentro.src;
+    }
 }
 
 function texto() {
@@ -47,20 +55,19 @@ function texto() {
 function imagem() {
     let coments = document.getElementsByClassName("imagens");
     for (let i = 0; i < coments.length; i++) {
-        let galeria = coments.item(i);
-        let listaImagens = galeria.childNodes;
-        if (listaImagens.lenght > 5) {
-            for (let j = 5; j < listaImagens.length; i++) {
-                
+        let listaImagens = coments[i].childNodes;
+        let oculto=0;
+        if (listaImagens.length > 10) {
+            for (let j = 13; j < listaImagens.length; j+=2){
+                listaImagens[j].style.display = "none";
+                oculto++;
             }
-
-            text.style.cssText = "overflow:hidden; max-height:96px";
-            let p = document.createElement('div');
-            p.innerText = "Ler mais";
-            p.classList.add('escondetexto');
-            p.addEventListener('click', ()=> aumentar(text, p));
-            text.after(p);
         }
+        let txt = document.createElement('h1');
+        txt.innerText = "+" + oculto;
+        txt.style.position = "absolute";
+        listaImagens[11].style.filter = "brightness(30%)";
+        txt.append(coments);
     } 
 }
 
