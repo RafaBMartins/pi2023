@@ -1,7 +1,10 @@
 <?php 
+    //recebe um email e uma senha pelo form e procura por uma correspondencia no banco
+    //salva na sessao
     require("pdoConnect.php");
     
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+ 
     $senha = $_POST["password"];
     $token = password_hash($senha, PASSWORD_DEFAULT);
     $respota = array();
@@ -14,10 +17,10 @@
                     if(password_verify($senha, $linha["senha"])){
                         $resposta["sucesso"] = 1;
                         session_start();
-                        $linha = $consulta->fetch(PDO::FETCH_ASSOC);
-                        $_SESSION["nome"] = $linha["nome"];
-                        $_SESSION["email"] = $linha["email"];
-                        header('location: https://pi2023-u7xly6uh.b4a.run/pusu.php');
+                         $_SESSION["nome"] = $linha["nome"];
+                         $_SESSION["email"] = $linha["email"];
+                        var_dump($_SESSION);
+                        header('location: http://localhost/pi2023/pusu.php');
                         die();
                     }
                     else{
@@ -36,5 +39,4 @@
         $respota["erro"] = $consulta->error;
     }
 
-    var_dump($resposta);
 ?>

@@ -1,38 +1,29 @@
 <?php
+    //ainda, nao funcional
     require("pdoConnect.php");
     session_start();
-    var_dump($_SESSION);
-    var_dump($_POST);
     if(isset($_SESSION["email"]) && isset($_POST["senhaAtual"]) && isset($_POST["newPassword"]) && isset($_POST["confirmNewPassword"])){
         $resposta = array();
         $senhaAtual = $_POST["senhaAtual"];
-        $tokenAtual = password_hash($senhaAtual, PASSWORD_DEFAULT);
-        $novaSenha = $_POST["newPassword"];
-        $tokenNova = password_hash($novaSenha, PASSWORD_DEFAULT);
-        $confNovaSenha = $_POST["confirmNewPassword"];
+        var_dump($_POST["senhaAtual"]);
         $email = $_SESSION["email"];
-        if(($novaSenha === $confNovaSenha) && ($novaSenha != $senhaAtual)){
-            $consulta = $db->prepare("UPDATE usuario SET senha = :senhaNova WHERE email = :email AND senha = :senhaAtual");
-            $consulta->bindParam(':senhaNova', $tokenNova);
-            $consulta->bindParam(':email', $email);
-            $consulta->bindParam(':senhaAtual', $tokenAtual);
-            if($consulta->execute()){
-                $resposta["sucesso"] = 1;
-            }
-            else{
-                $resposta["sucesso"] = 0;
-                $resposta["erro"] = "erro: " . $consulta->error;
-            }
+        $consultaToken = $db->prepare("SELECT senha FROM usuario WHERE email = '$email'");
+        $consultaToken->execute();
+        $linha = $consultaToken->fetch(PDO::FETCH_ASSOC);
+        var_dump($linha);
+        if(password_verify($senhaAtual, $linha["senha"])){
+            echo "teste";
         }
         else{
-            $resposta["sucesso"] = 0;
-            $resposta["erro"] = "as senhas não conferem, ou a senha atual é igual a antiga";
+            echo "não";
         }
+        
+
     }
     else{
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "faltam parametros";
     }
-    header("location: https://pi2023-u7xly6uh.b4a.run/pusu.php");
-    die();
+    //header("location: http://localhost:8080/pi2023/pusu.php");
+    //die();
 ?>

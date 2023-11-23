@@ -24,6 +24,10 @@
     include("header.php");
   ?>
 
+  <?php if(!isset($_SESSION["email"])){
+    header("location: http://localhost:8080/pi2023/login.html");
+    die();
+  }?>
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
     <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>

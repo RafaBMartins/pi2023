@@ -1,6 +1,9 @@
 <?php 
     require("../pdoConnect.php");
-
+    //recebe os dados do form
+    //criptografa a senha com o hash padrao
+    //salva no banco
+    //inicia e define a sessao
     $resposta = array();
 
     if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["userName"])){
@@ -22,7 +25,7 @@
                 $resposta["sucesso"] = 1;
                 session_start();
                 $_SESSION["nome"] = $_POST["userName"];
-                header('location: https://pi2023-u7xly6uh.b4a.run/pusu.php');
+                header('location: http://localhost/pi2023/pusu.php');
                 die();
             }
             else{
