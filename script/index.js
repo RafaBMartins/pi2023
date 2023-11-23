@@ -19,7 +19,6 @@ for (let i = 0; i < checkBoxCategory.length; i++) {
 function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
     let estabelecimentos = estabJson["estabelecimentos"];
-    console.log(estabelecimentos);
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div")
         divStoreCard.classList.add("store-card");
@@ -31,7 +30,7 @@ function geraCards(estabJson){
           <!--nome do estabelecimento-->
           <label class="store-name">${estabelecimento["nome_estabelecimento"]}</label>
           <!--nota do estabelecimento-->
-          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70 Avaliações)</label>
           <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
@@ -42,7 +41,6 @@ function geraCards(estabJson){
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>`
-        console.log(divStoreCard);
         document.getElementById("stores_content").append(divStoreCard);
     })
 }
