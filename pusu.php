@@ -21,17 +21,17 @@
 
 <body onload="função()">
   <?php 
-  include("header.php");
+    include("header.php");
   ?>
 
-  <div id="myModal" class="modal">
+  <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
     <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>
     <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
     <img class="modal-content" onclick="event.stopPropagation()" id="img01">
 
-    <div class="container-editaperfil">
-      <form id="alterarSenha" action="" method="POST" style="display:none;" onclick="event.stopPropagation()">
+    <div class="container-editaperfil" onclick="event.stopPropagation()">
+      <form id="alterarSenha" action="" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Alterar Senha</h1>
         </div>
@@ -95,7 +95,7 @@
         </button>
       </form>
 
-      <form id="excluirConta" action="" method="POST" style="display:none;">
+      <form id="excluirConta" action="php/deleteUsuario.php" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Excluir Perfil</h1>
         </div>
@@ -126,7 +126,7 @@
           </div>
           <div class="rCard">
             <div class="nomeContainer">
-              <p id="nomeUser" class="h1 text-white">Sergio Malandro</p>
+              <p id="nomeUser" class="h1 text-white"><?php echo ucfirst($_SESSION["nome"]);?></p>
             </div>
             <div>
               <div class="containerFotos">

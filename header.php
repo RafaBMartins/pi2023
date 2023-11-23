@@ -34,9 +34,9 @@
                 <a href="login.html" class="header-link-mobile">ENTRAR</a><!--mobile-->
             <?php else: ?>
                 <!-- carrega o nome do usuario e um icone que linka ao perfil -->
-                <label style="color: black;" for="userIcon"><?php echo $_SESSION["nome"];?></label>
+                <label style="color: black;" for="userIcon"><?php echo ucfirst($_SESSION["nome"]);?></label>
                 <a href="perfilusuario.php" class="header-link-mobile">CONTA</a><!--mobile-->
-                <a id="userIcon" href="perfilusuario.php" class="header-iconLink">
+                <a id="userIcon" href="pusu.php" class="header-iconLink">
                     <i class="fa-solid fa-address-card"></i>
                 </a>
             <?php endif; ?>
