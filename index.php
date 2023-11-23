@@ -180,7 +180,6 @@
 
     <!--container que armazena todos os cards de estabelecimentos-->
     <div id="stores_content">
-      </div>
     </div>
   </div>
 
