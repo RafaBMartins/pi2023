@@ -5,16 +5,49 @@ function abreImg(imge){
     modalImg.src = imge.src;
 }
 
-// When the user clicks on <span> (x), close the modal
 function fechaImg() { 
     let modal = document.getElementById("myModal");
+    let modalImg = document.getElementById("img01");
     modal.style.display = "none";
+    modalImg.src = "";
+    let selecionado = document.getElementsByClassName("modalSelecionado");
+    selecionado[0].classList.remove("modalSelecionado");
 }
 
 function texto() {
     let coments = document.getElementsByClassName("comentario");
     for (let i = 0; i < coments.length; i++) {
         let text = coments.item(i);
+        if (text.offsetHeight > 96) {
+            text.style.cssText = "overflow:hidden; max-height:96px";
+            let p = document.createElement('div');
+            p.innerText = "Ler mais";
+            p.classList.add('escondetexto');
+            p.addEventListener('click', ()=> aumentar(text, p));
+            text.after(p);
+        }
+    } 
+}
+
+function texto() {
+    let coments = document.getElementsByClassName("comentario");
+    for (let i = 0; i < coments.length; i++) {
+        let text = coments.item(i);
+        if (text.offsetHeight > 96) {
+            text.style.cssText = "overflow:hidden; max-height:96px";
+            let p = document.createElement('div');
+            p.innerText = "Ler mais";
+            p.classList.add('escondetexto');
+            p.addEventListener('click', ()=> aumentar(text, p));
+            text.after(p);
+        }
+    } 
+}
+
+function imagem() {
+    let coments = document.getElementsByClassName("comentario");
+    for (let i = 0; i < coments.length; i++) {
+        let galeria = coments.item(i);
         if (text.offsetHeight > 96) {
             text.style.cssText = "overflow:hidden; max-height:96px";
             let p = document.createElement('div');
@@ -46,39 +79,9 @@ function aumentar(text, p) {
     text.after(x);
 }
 
-function altNomeUser(){
-    document.getElementById("altNomeUser").style.display = "block";
-    document.getElementById("nomeUser").style.display = "none";
-    document.getElementById("editIcon").style.display = "none";
-    document.getElementById("cancelIcon").style.display = "block";
-    document.getElementById("checkIcon").style.display = "block";
-    document.getElementById("altNomeUser").focus();
-}
-
-function cancelAltNome(){
-    document.getElementById("altNomeUser").style.display = "none";
-    document.getElementById("nomeUser").style.display = "block";
-    document.getElementById("editIcon").style.display = "block";
-    document.getElementById("cancelIcon").style.display = "none";
-    document.getElementById("checkIcon").style.display = "none";
-}
-
-function commitAltNome(){
-    document.getElementById("altNomeUser").style.display = "none";
-    document.getElementById("nomeUser").style.display = "block";
-    document.getElementById("editIcon").style.display = "block";
-    document.getElementById("cancelIcon").style.display = "none";
-    document.getElementById("checkIcon").style.display = "none";
-    document.getElementById("saveAlt").style.display = "block";
-}
-
-function read(val) {
-  const reader = new FileReader();
-
-  reader.onload = (event) => {
-    document.getElementById("fotoPerfil").src = event.target.result;
-  }
-
-  reader.readAsDataURL(val.files[0]);
-  document.getElementById("saveAlt").style.display = "block";
+function exibirModal(modalName) {
+    let modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    let alteraSenhaModal = document.getElementById(modalName);
+    alteraSenhaModal.classList.add("modalSelecionado");
 }

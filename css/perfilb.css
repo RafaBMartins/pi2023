@@ -97,17 +97,6 @@
   z-index: 1;
 }
 
-#altNomeUser{
-  background-color: var(--color-4);
-  border: none;
-  border-bottom: 1px solid white;
-  display: none;
-  font-size: 2em;
-  margin-bottom: 5px;
-  color: white;
-  outline: none
-}
-
 .containerBotoes{
   display: flex;
   flex-direction: row;
@@ -149,8 +138,6 @@
   align-items: center;
   width: 100%;
   justify-content: center;
-  gap: 15px;
-  cursor: pointer;
 }
 
 #fotoPerfil{
@@ -181,4 +168,88 @@
   cursor: pointer;
 }
 
+.modalSelecionado {
+  display: flex !important;
+}
+
 .escondetexto:hover {color: #c4c4c4;}
+
+.container-editaperfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.container-editaperfil form {
+  background-color: var(--color-smoothWhite);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  border-radius: 8px;
+  gap: 30px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+  height: fit-content;
+  border: 3px solid var(--color-blue5);
+}
+
+#form_header h1 {
+  font-size: 40px;
+  position: relative;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-box label {
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 3px;
+  cursor: text;
+  border-bottom: 1px solid var(--color-blue5)
+}
+
+.input-field input {
+  border: none;
+  background-color: transparent;
+  width: 280px;
+  font-size: 18px;
+  padding: 0px 5px;
+}
+
+.input-field input:focus {
+  outline: none;
+}
+
+#btnModals {
+  border: none;
+  background: var(--color-mainGradient);
+  color: var(--color-smoothWhite);
+  padding: 7px;
+  font-size: 18px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.novaFotoLabel {
+  padding: 10px 10px;
+  width: 200px;
+  background-color: var(--color-blue5);
+  color: var(--color-white);
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
