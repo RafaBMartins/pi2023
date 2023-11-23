@@ -68,7 +68,7 @@
         </button>
       </form>
 
-      <form id="editarPerfil" action="" method="POST" style="display:none;">
+      <form id="editarPerfil" action="php/editarPerfil.php" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Editar Perfil</h1>
         </div>
