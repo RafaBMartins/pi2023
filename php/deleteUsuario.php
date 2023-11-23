@@ -1,4 +1,5 @@
 <?php
+    //esse arquivo recebe uma senha por um formulario e usa o email da sessao para procurar no banco uma correspondencia e apagar
     require("pdoConnect.php");
     session_start();
     if(isset($_SESSION["email"]) && isset($_POST["senhaAtual"])){    

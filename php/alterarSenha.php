@@ -1,4 +1,5 @@
 <?php
+    //ainda, nao funcional
     require("pdoConnect.php");
     session_start();
     if(isset($_SESSION["email"]) && isset($_POST["senhaAtual"]) && isset($_POST["newPassword"]) && isset($_POST["confirmNewPassword"])){

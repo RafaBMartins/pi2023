@@ -1,4 +1,6 @@
 <?php
+    //esse arquivo recebe um nome pelo formulario e procura por uma correspondecia no banco usando o email que esta armazenado na sessao e altera o nome do usuario
+    //tambem atualiza a sessao com os dados novos
     require("pdoConnect.php");
     session_start();
     if(!(isset($_POST["novoNome"]) && isset($_SESSION["email"]))){

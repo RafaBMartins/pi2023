@@ -1,6 +1,9 @@
 <?php 
     require("../pdoConnect.php");
-
+    //recebe os dados do form
+    //criptografa a senha com o hash padrao
+    //salva no banco
+    //inicia e define a sessao
     $resposta = array();
 
     if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["userName"])){

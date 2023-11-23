@@ -1,4 +1,6 @@
 <?php 
+    //recebe um email e uma senha pelo form e procura por uma correspondencia no banco
+    //salva na sessao
     require("pdoConnect.php");
     
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
