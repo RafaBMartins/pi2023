@@ -1,14 +1,20 @@
 const checkBoxCategory = [...document.getElementsByClassName("checkbox-category")];
-checkBoxCategory.forEach(check => {
-    check.addEventListener("change", (e) => {
-        if(e.target.checked){
-            e.target.parentElement.children[0].classList.add("category-checked");
-        }
-        else{
-            e.target.parentElement.children[0].classList.remove("category-checked");
-        }
-    })
-});
+
+for (let i = 0; i < checkBoxCategory.length; i++) {
+  checkBoxCategory[i].addEventListener('change', () => {
+    for (let j = 0; j < checkBoxCategory.length; j++) {
+      if (checkBoxCategory[j] !== checkBoxCategory[i]) {
+        checkBoxCategory[j].parentElement.children[0].classList.remove("category-checked");
+      }
+    }
+
+    if (checkBoxCategory[i].checked) {
+      checkBoxCategory[i].parentElement.children[0].classList.add("category-checked");
+    } else {
+      checkBoxCategory[i].parentElement.children[0].classList.remove("category-checked");
+    }
+  });
+}
 
 function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
