@@ -45,10 +45,15 @@ function texto() {
 }
 
 function imagem() {
-    let coments = document.getElementsByClassName("comentario");
+    let coments = document.getElementsByClassName("imagens");
     for (let i = 0; i < coments.length; i++) {
         let galeria = coments.item(i);
-        if (text.offsetHeight > 96) {
+        let listaImagens = galeria.childNodes;
+        if (listaImagens.lenght > 5) {
+            for (let j = 5; j < listaImagens.length; i++) {
+                
+            }
+
             text.style.cssText = "overflow:hidden; max-height:96px";
             let p = document.createElement('div');
             p.innerText = "Ler mais";
