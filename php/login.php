@@ -13,6 +13,7 @@
             session_start();
             $linha = $consulta->fetch(PDO::FETCH_ASSOC);
             $_SESSION["nome"] = $linha["nome"];
+            $_SESSION["email"] = $linha["email"];
             header('location: http://localhost:8080/pi2023/');
             die();
         }

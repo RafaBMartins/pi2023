@@ -21,15 +21,19 @@
 
 <body onload="texto()" onload="imagem()">
   <?php 
-  include("header.php");
+    include("header.php");
   ?>
 
+  <?php if(!isset($_SESSION["email"])){
+    header("location: http://localhost:8080/pi2023/login.html");
+    die();
+  }?>
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
     <img class="modal-content" onclick="event.stopPropagation()" id="img01">
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form id="alterarSenha" action="" method="POST" style="display:none;">
+      <form id="alterarSenha" action="php/alterarSenha.php" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Alterar Senha</h1>
         </div>
@@ -93,7 +97,7 @@
         </button>
       </form>
 
-      <form id="excluirConta" action="" method="POST" style="display:none;">
+      <form id="excluirConta" action="php/deleteUsuario.php" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Excluir Perfil</h1>
         </div>
@@ -124,7 +128,7 @@
           </div>
           <div class="rCard">
             <div class="nomeContainer">
-              <p id="nomeUser" class="h1 text-white">Sergio Malandro</p>
+              <p id="nomeUser" class="h1 text-white"><?php echo ucfirst($_SESSION["nome"]);?></p>
             </div>
             <div>
               <div class="containerFotos">
