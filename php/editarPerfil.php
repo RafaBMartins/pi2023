@@ -21,6 +21,6 @@
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "erro: " . $consulta->error;
     }
-    header("location: http://localhost:8080/pi2023/pusu.php");
+    header("location: http://localhost/pi2023/pusu.php");
     die();
 ?>
