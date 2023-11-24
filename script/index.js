@@ -22,7 +22,7 @@ function geraCards(estabJson){
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div")
         divStoreCard.classList.add("store-card");
-        divStoreCard.innerHTML = `<img src="${estabelecimento["foto_estabelecimento"]} class="store-photo">
+        divStoreCard.innerHTML = `<img src="${estabelecimento["foto_estabelecimento"]}" class="store-photo">
         <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
           <!--categoria do estabelecimento-->

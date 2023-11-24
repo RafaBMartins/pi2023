@@ -13,12 +13,16 @@
 <body>
     <!--conteúdo do login-->
     <div id="login_content">
-        <form id="login_form" method="post" action="php/login.php">
+        <form id="login_form" method="post" action="php/loginServer.php">
             <!--header-->
             <div id="form_header">
                 <h1>Entrar</h1>
             </div>
-
+            <?php if(isset($GLOBALS["erroLoginMes"])):?>
+                <script>
+                    alert(<?php echo $GLOBALS["erroLoginMes"]?>);
+                </script>
+            <?php endif ?>
             <!--inputs-->
             <div id="inputs">
                 <div class="input-box">
