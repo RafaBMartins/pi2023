@@ -13,16 +13,17 @@
 <body>
     <!--conteúdo do login-->
     <div id="login_content">
+    <?php if(isset($_GET["erro"])):?>
+        <div class="error-box">
+            <i class="fa-solid fa-triangle-exclamation" style="color: #ffffff;"></i>
+            <label><?php echo $_GET["erro"]?></label>
+        </div>
+    <?php endif ?>
         <form id="login_form" method="post" action="php/loginServer.php">
             <!--header-->
             <div id="form_header">
                 <h1>Entrar</h1>
             </div>
-            <?php if(isset($GLOBALS["erroLoginMes"])):?>
-                <script>
-                    alert(<?php echo $GLOBALS["erroLoginMes"]?>);
-                </script>
-            <?php endif ?>
             <!--inputs-->
             <div id="inputs">
                 <div class="input-box">
