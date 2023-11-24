@@ -13,6 +13,20 @@ document.getElementById("botCad").addEventListener('click', async (e) => {
     await carregaEndereco();
     console.log(document.getElementById("latitude").value, document.getElementById("longitude").value);
     document.getElementById("form_estab").submit();
+});
+
+document.getElementById("imgPerfil").addEventListener("change", (e) => {
+    var input = document.getElementById("imgPerfil");
+    var label = document.getElementById("selectImgAval");
+    if (input.files.length > 0) {
+      // obter o nome do arquivo selecionado
+      var nome = input.files[0].name;
+      // alterar o texto da label
+      label.textContent = "Arquivo selecionado: " + nome;
+    } else {
+      // restaurar o texto original da label
+      label.textContent = "Foto de perfil do estabelecimento";
+    }
 })
 
 async function carregaEndereco(){

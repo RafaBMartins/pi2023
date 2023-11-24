@@ -147,8 +147,8 @@ input[type="submit"]{
 
 .estilo-select{
     display: flex !important;
-    align-items: baseline;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
     gap: 5px;
 }
 
