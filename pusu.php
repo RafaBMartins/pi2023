@@ -25,7 +25,7 @@
   ?>
 
   <?php if(!isset($_SESSION["email"])){
-    header("location: http://localhost:8080/pi2023/login.html");
+    header("location: http://localhost/pi2023/login.html");
     die();
   }?>
   <div id="myModal" class="modal" onclick="fechaImg()">
@@ -35,7 +35,7 @@
     <img class="modal-content" onclick="event.stopPropagation()" id="img01">
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form id="alterarSenha" action="" method="POST" style="display:none;">
+      <form id="alterarSenha" action="php/alterarSenha.php" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Alterar Senha</h1>
         </div>

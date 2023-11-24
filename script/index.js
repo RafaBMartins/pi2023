@@ -19,10 +19,11 @@ for (let i = 0; i < checkBoxCategory.length; i++) {
 function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
     let estabelecimentos = estabJson["estabelecimentos"];
+    console.log(estabelecimentos);
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div")
         divStoreCard.classList.add("store-card");
-        divStoreCard.innerHTML = `<img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        divStoreCard.innerHTML = `<img src="${estabelecimento["foto_estabelecimento"]} class="store-photo">
         <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
           <!--categoria do estabelecimento-->
@@ -52,7 +53,7 @@ async function carregaEstabelecimento() {
         let dados = {"userLatitude": posicao["coords"]["latitude"], "userLongitude": posicao["coords"]["latitude"]};
         let json = JSON.stringify(dados);
 
-        let resposta = await fetch('http://localhost:8080/pi2023/php/selectEstabelecimento.php', {
+        let resposta = await fetch('http://localhost/pi2023/php/selectEstabelecimento.php', {
         method: 'POST', 
         body: json, 
         headers: { 'Content-Type': 'application/json' } 
