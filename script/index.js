@@ -19,7 +19,6 @@ for (let i = 0; i < checkBoxCategory.length; i++) {
 function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
     let estabelecimentos = estabJson["estabelecimentos"];
-    console.log(estabelecimentos);
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div")
         divStoreCard.classList.add("store-card");
