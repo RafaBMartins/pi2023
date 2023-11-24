@@ -27,17 +27,27 @@
                     else{
                         $resposta["sucesso"] = 0;
                         $resposta["erro"] = "senhas não conferem";
+                        $erro = "Senha incorreta";
+                        header("location: http://localhost/pi2023/login.php?erro=$erro");
+
+                        die();
                     }
             }
         }
         else{
             $resposta["sucesso"] = 0;
             $resposta["erro"] = "usuario nao encontrado";
+            $erro = "Usuário não encontrado";
+            header("location: http://localhost/pi2023/login.php?erro=$erro");
+            die();
         }
     }
     else{
         $resposta["sucesso"] = 0;
         $respota["erro"] = $consulta->error;
+        $erro = "Erro na conexão";
+        header("location: http://localhost/pi2023/login.php?erro=$erro");
+        die();
     }
 
 ?>

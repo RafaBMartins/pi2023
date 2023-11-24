@@ -27,7 +27,45 @@
 
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
-    <img class="modal-content" onclick="event.stopPropagation()" id="img01"><!--event-->
+    <img class="modal-content" onclick="event.stopPropagation()" id="img01">
+
+    <div class="container-editaperfil" onclick="event.stopPropagation()">
+      <form id="avaliarEstabelecimento" action="" method="POST">
+          <div id="form_header">
+              <h1>AVALIE O ESTABELECIMENTO</h1>
+          </div>
+
+          <div id="inputs">
+            <div class="input-box">
+              <label for="comentarioTexto">
+                Descrição da Avaliação
+                <div class="input-field">
+                  <textarea id="comentarioTexto" rows="3" name="comentarioTexto"></textarea>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div id="inputs">
+            <div class="input-box-rating">
+              <label for="comentarioTexto">
+                De Sua Nota Ao Estabelecimento
+                <div class="input-field-rating">
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" id="btnModals">
+            Enviar Avaliação
+          </button>
+        </form>
+      </div>
   </div>
 
   <div class="container text-center p-0">    
@@ -96,7 +134,7 @@
                 <div class=" d-grid row">
                   <div class="d-flex column justify-content-between">
                     <label class="infoTitle">CLASSIFICAÇÃO</label>
-                    <button class="btnAvaliar">AVALIAR ESTABELECIMENTO</button>
+                    <button class="btnAvaliar" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
                   </div>
                   <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;">7.4<i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - Bom (70 Avaliações)</label>
                 </div>
