@@ -52,7 +52,7 @@ async function carregaEstabelecimento() {
         let dados = {"userLatitude": posicao["coords"]["latitude"], "userLongitude": posicao["coords"]["latitude"]};
         let json = JSON.stringify(dados);
 
-        let resposta = await fetch('http://localhost:8080/pi2023/php/selectEstabelecimento.php', {
+        let resposta = await fetch('http://localhost/pi2023/php/selectEstabelecimento.php', {
         method: 'POST', 
         body: json, 
         headers: { 'Content-Type': 'application/json' } 

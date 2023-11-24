@@ -11,15 +11,16 @@
 
     $consulta = $db->prepare("SELECT email, nome, senha FROM USUARIO WHERE email = '$email'");
     if($consulta->execute()){
-        var_dump($consulta->rowCount());
         if($consulta->rowCount() > 0){
             while($linha = $consulta->fetch(PDO::FETCH_ASSOC)){
+                var_dump($senha);
+                var_dump($linha["senha"]);
                     if(password_verify($senha, $linha["senha"])){
+                        echo "teste";
                         $resposta["sucesso"] = 1;
                         session_start();
                          $_SESSION["nome"] = $linha["nome"];
-                         $_SESSION["email"] = $linha["email"];
-                        var_dump($_SESSION);
+                         $_SESSION["email"] = $linha["email"];;
                         header('location: http://localhost/pi2023/pusu.php');
                         die();
                     }
