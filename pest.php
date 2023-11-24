@@ -35,8 +35,9 @@
         <div class="col-md-5">
           <div class="card p-0 grude">
             <p class="h1">
+              <img src="img/selos/seloBronze.svg" class="m-auto" height="60px" width="60px">
               Caixaça Econômica
-              <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-white);"></i>
+              <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue5);"></i>
             </p>
             <!--carrosel-->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -91,23 +92,24 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
-            <div class="well">
-                <p class="m-2 d-flex">
-                  <label class="col-12" style="font-size:25px; font-weight:bold; width:fit-content;">7.4<i class="fa-solid fa-star" style="color:var(--color-blue5); height:fit-content;"></i> - Bom (70 Avaliações)</label>
-                </p>
+            <div class="well m-3">
+                <div class=" d-grid row">
+                  <div class="d-flex column justify-content-between">
+                    <label class="infoTitle">CLASSIFICAÇÃO</label>
+                    <button class="btnAvaliar">AVALIAR ESTABELECIMENTO</button>
+                  </div>
+                  <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;">7.4<i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - Bom (70 Avaliações)</label>
+                </div>
             </div>
             <div class="well">
-              <p class="m-1">
-                <img src="img/selos/seloBronze.svg" class="m-auto" height="auto" width="20%">
-              </p>
             
           </div>
-        <div class="well">
-          <p class="px-2 lh-2">Av. dos Sabiás, 330 - Morada de Laranjeiras, Serra - ES, 29166-630</p>
+        <div class="well m-3">
+          <div>
+            <label class="infoTitle">ENDEREÇO</label>
+            <label class="infoEndereco" style="text-align:start;">Av. dos Sabiás, 330 - Morada de Laranjeiras, Serra - ES</label>
+          </div>
         </div>
-        </div>
-        <div>
-          <button class="mt-2 fs-4 pr-2 pl-2 rounded">Avaliar</button>
         </div>
       </div>
             <div class="col-lg-5 col-md-7">
