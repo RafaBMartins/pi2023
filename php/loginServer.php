@@ -2,7 +2,6 @@
     //recebe um email e uma senha pelo form e procura por uma correspondencia no banco
     //salva na sessao
     require("pdoConnect.php");
-    $erroLoginMes = null;
     
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
  
@@ -28,8 +27,9 @@
                     else{
                         $resposta["sucesso"] = 0;
                         $resposta["erro"] = "senhas não conferem";
-                        $erroLoginMes = "As senha não conferem";
-                        header('location: http://localhost/pi2023/login.php');
+                        $erro = "Senha incorreta";
+                        header("location: http://localhost/pi2023/login.php?erro=$erro");
+
                         die();
                     }
             }
@@ -37,16 +37,16 @@
         else{
             $resposta["sucesso"] = 0;
             $resposta["erro"] = "usuario nao encontrado";
-            $erroLoginMes = "Usuário não encontrado";
-            header('location: http://localhost/pi2023/login.php');
+            $erro = "Usuário não encontrado";
+            header("location: http://localhost/pi2023/login.php?erro=$erro");
             die();
         }
     }
     else{
         $resposta["sucesso"] = 0;
         $respota["erro"] = $consulta->error;
-        $erroLoginMes = "Erro na conexão";
-        header('location: http://localhost/pi2023/login.phps');
+        $erro = "Erro na conexão";
+        header("location: http://localhost/pi2023/login.php?erro=$erro");
         die();
     }
 

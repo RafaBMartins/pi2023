@@ -19,6 +19,15 @@
         gap: 60px;
     }
 
+    .error-box{
+        background-color: red;
+        border-radius: 8px;
+        color: white;
+        height: auto;
+        padding: 10px;
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+    }
+
     .logo {
         height: 15rem;
         width: 15rem;
