@@ -59,17 +59,29 @@ function imagem() {
         let listaImagens = coments[i].childNodes;
         let oculto=0;
         if (listaImagens.length > 10) {
-            for (let j = 13; j < listaImagens.length; j+=2){
+            for (let j = 11; j < listaImagens.length; j+=2){
                 listaImagens[j].style.display = "none";
                 oculto++;
             }
-            let txt = document.createElement('h1');
-            txt.innerText = "+" + oculto;
-            txt.style.position = "absolute";
+            let divF = document.createElement('div');
+            divF.style.cssText = "width: 50px; height: 50px; justify-content: center; position:relative; font-size: 20px;"
+            let imgF = document.createElement('img');
+            imgF.addEventListener('click', ()=> abreImg(listaImagens[11]));
+            imgF.style.cssText = "width: 50px; height: 50px; border-radius: var(--bs-border-radius); filter: brightness(30%); justify-content: center;"
+            imgF.src = listaImagens[11].src;
+            let txtF = document.createElement('div');
+            txtF.style.cssText = "position: absolute; color: #ffffff; top:10px"
+            txtF.style.color = "white;"
+            txtF.innerText = "+" + oculto;
+            console.log(txtF.innerText);
             listaImagens[11].style.filter = "brightness(30%)";
-            txt.append(coments);
+            coments[i].after(divF);
+            divF.append(imgF);
+            divF.append(txtF);
+            console.log(coments[i]);
+            console.log(txtF);
         }
-    } 
+    }
 }
 
 function diminuir(text, p) {
