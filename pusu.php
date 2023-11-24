@@ -28,7 +28,7 @@
     header("location: http://localhost:8080/pi2023/login.html");
     die();
   }?>
-  <div id="myModal" class="modal" onclick="fechaImg()">
+  <div id="myModal" class="modal"> <!--onclick="fechaImg()"-->
     <span class="close" onclick="fechaImg()">&times;</span>
     <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>
     <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
@@ -224,6 +224,13 @@
             </div>
             <div class="col-sm-12 imagens">
               <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfil/5estrela.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <p>dhsajdhsjkahdjkshdjkashdsjk</p>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">

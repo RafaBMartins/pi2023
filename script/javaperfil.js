@@ -31,6 +31,7 @@ function mudaImg(x){
     let modalImg = document.getElementById("img01");
     let listaPai = imagemDentro.parentNode;
     let pos = Array.from(listaPai.children).indexOf(imagemDentro);
+    console.log(Array.from(listaPai.children));
     if (!(x == -1 && pos == 0) && !(x == 1 && pos == Array.from(listaPai.children).length-1)) {
         imagemDentro = listaPai.children[pos+x];
         modalImg.src = imagemDentro.src;
@@ -62,12 +63,12 @@ function imagem() {
                 listaImagens[j].style.display = "none";
                 oculto++;
             }
+            let txt = document.createElement('h1');
+            txt.innerText = "+" + oculto;
+            txt.style.position = "absolute";
+            listaImagens[11].style.filter = "brightness(30%)";
+            txt.append(coments);
         }
-        let txt = document.createElement('h1');
-        txt.innerText = "+" + oculto;
-        txt.style.position = "absolute";
-        listaImagens[11].style.filter = "brightness(30%)";
-        txt.append(coments);
     } 
 }
 
