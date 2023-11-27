@@ -110,3 +110,16 @@ function exibirModal(modalName) {
     let alteraSenhaModal = document.getElementById(modalName);
     alteraSenhaModal.classList.add("modalSelecionado");
 }
+
+document.getElementById("photos").addEventListener("change", (e) => {
+    var input = document.getElementById("photos");
+    var div = document.getElementById("photosName");
+    if (input.files.length > 0) {
+        for(let i = 0; i< input.files.length; i++) {
+            const item = document.createElement('label');
+            item.classList.add("fitContent")
+            item.append(input.files[i].name);
+            div.append(item);
+        }
+      }
+})

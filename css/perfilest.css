@@ -122,7 +122,7 @@
   background-color: var(--color-white);
   color: var(--color-blue5);
   font-weight: bold;
-  border: 2px solid var(--color-blue5);
+  border: 1px solid var(--color-blue5);
 }
 
 .infoTitle {
@@ -206,6 +206,17 @@
   width: 100%;
 }
 
+.input-box-photo label {
+  font-size: 14px;
+  color: var(--color-gray);
+  width: 100%;
+}
+
+.input-box-rating div {
+  font-size: 20px;
+  color: var(--color-blue5);
+}
+
 .input-field {
   display: flex;
   align-items: center;
@@ -251,4 +262,12 @@
   text-align: center;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.fitContent {
+  width: fit-content !important;
+}
+
+#photosName {
+  flex-direction: column !important;
 }

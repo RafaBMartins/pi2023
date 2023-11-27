@@ -14,7 +14,7 @@
     crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="css/perfilest.css">
-  <script src="script/javaperfil.js"></script>
+  <script src="script/javaperfil.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -44,11 +44,9 @@
                 </div>
               </label>
             </div>
-          </div>
 
-          <div id="inputs">
             <div class="input-box-rating">
-              <label for="comentarioTexto">
+              <label>
                 De Sua Nota Ao Estabelecimento
                 <div class="input-field-rating">
                   <i class="fa-regular fa-star"></i>
@@ -56,6 +54,15 @@
                   <i class="fa-regular fa-star"></i>
                   <i class="fa-regular fa-star"></i>
                   <i class="fa-regular fa-star"></i>
+                </div>
+              </label>
+            </div>
+
+            <div class="input-box-photo">
+              <label>
+                Adicione Fotos a Sua Avaliação
+                <div id="photosName" class="d-flex">
+                  <input type="file" name="photos[]" multiple="multiple" id="photos">
                 </div>
               </label>
             </div>
