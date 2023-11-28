@@ -10,9 +10,9 @@ function abreImg(imge){
     let modalImg = document.getElementById("img01");
     let seta1 = document.getElementById("seta1");
     let seta2 = document.getElementById("seta2");
-    seta1.style.display = "block";
-    seta2.style.display = "block";
-    modal.style.display = "block";
+    seta1.style.display = "flex";
+    seta2.style.display = "flex";
+    modal.style.display = "flex";
     modalImg.src = imge.src;
     imagemDentro = imge;
 }
@@ -27,6 +27,7 @@ function fechaImg() {
 }
 
 function mudaImg(x){
+    event.stopPropagation();
     
     let modalImg = document.getElementById("img01");
     let listaPai = imagemDentro.parentNode;
@@ -58,28 +59,25 @@ function imagem() {
     for (let i = 0; i < coments.length; i++) {
         let listaImagens = coments[i].childNodes;
         let oculto=0;
-        if (listaImagens.length > 10) {
-            for (let j = 11; j < listaImagens.length; j+=2){
+        if (listaImagens.length > 11) {
+            for (let j = 9; j < listaImagens.length; j+=2){
                 listaImagens[j].style.display = "none";
                 oculto++;
             }
             let divF = document.createElement('div');
-            divF.style.cssText = "width: 50px; height: 50px; justify-content: center; position:relative; font-size: 20px;"
+            divF.classList.add("divImgEscura");
+            divF.addEventListener('click', ()=> abreImg(listaImagens[9]));
             let imgF = document.createElement('img');
-            imgF.addEventListener('click', ()=> abreImg(listaImagens[11]));
-            imgF.style.cssText = "width: 50px; height: 50px; border-radius: var(--bs-border-radius); filter: brightness(30%); justify-content: center;"
-            imgF.src = listaImagens[11].src;
+            imgF.classList.add("imgEscura");
+            imgF.src = listaImagens[9].src;
             let txtF = document.createElement('div');
-            txtF.style.cssText = "position: absolute; color: #ffffff; top:10px"
-            txtF.style.color = "white;"
+            txtF.classList.add("qtdFotos");
             txtF.innerText = "+" + oculto;
-            console.log(txtF.innerText);
-            listaImagens[11].style.filter = "brightness(30%)";
+            listaImagens[9].style.filter = "brightness(30%)";
             coments[i].after(divF);
             divF.append(imgF);
             divF.append(txtF);
-            console.log(coments[i]);
-            console.log(txtF);
+            console.log(listaImagens);
         }
     }
 }
@@ -106,7 +104,7 @@ function aumentar(text, p) {
 
 function exibirModal(modalName) {
     let modal = document.getElementById("myModal");
-    modal.style.display = "block";
+    modal.style.display = "flex";
     let alteraSenhaModal = document.getElementById(modalName);
     alteraSenhaModal.classList.add("modalSelecionado");
 }
