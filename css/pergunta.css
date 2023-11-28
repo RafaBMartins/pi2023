@@ -80,8 +80,22 @@
 .input-field i {
     font-size: 40px;
     color: var(--color-blue5);
+    transition: all 0.4s;
 }
 
-.input-field #sim:checked + i {
-    color: var(--color-green);
+.input-box label {
+    color: var(--color-blue5);
+    font-weight: bold;
+}
+
+.input-field input {
+    display: none;
+}
+
+.category-checked {
+    color: var(--color-green) !important;
+}
+
+.category-checked-no {
+    color: var(--color-red) !important;
 }
