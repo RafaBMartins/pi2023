@@ -76,20 +76,16 @@
 .seta {
   position: fixed;
   z-index: 1;
-  top: 100px;
   color: #ffffff;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
   cursor: pointer;
-}
-
-#seta1 {
-  left: 1rem;
+  align-self: center;
 }
 
 #seta2 {
-  right: 1rem;
+  right: 0px;
 }
 
 .close:hover,
@@ -167,7 +163,6 @@
 
 .imagens {
   width: fit-content;
-  margin: auto;
 }
 
 .imagemAbre {
@@ -188,6 +183,32 @@
   text-overflow: ellipsis;
 }
 
+.divImgEscura {
+  width: 50px;
+  height: 50px;
+  position:relative; 
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divImgEscura:hover {opacity: 0.8;}
+
+.imgEscura {
+  width: 50px; 
+  height: 50px; 
+  border-radius: var(--bs-border-radius); 
+  filter: brightness(30%); 
+  justify-content: center;
+}
+
+.qtdFotos {
+  position: absolute; 
+  color: #ffffff; 
+}
+
 .escondetexto {
   text-align: left;
   color: #808080;
@@ -203,8 +224,11 @@
 .container-editaperfil {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
 }
 
 .container-editaperfil form {
