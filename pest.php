@@ -19,7 +19,7 @@
 
 </head>
 
-<body onload="texto()">
+<body onload="funcao()">
   <?php 
   include("header.php");
   ?>
@@ -27,10 +27,12 @@
 
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
+    <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>
+    <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
     <img class="modal-content" onclick="event.stopPropagation()" id="img01">
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form id="avaliarEstabelecimento" action="" method="POST">
+      <form id="avaliarEstabelecimento" action="" method="POST" style="display:none;">
           <div id="form_header">
               <h1>AVALIE O ESTABELECIMENTO</h1>
           </div>

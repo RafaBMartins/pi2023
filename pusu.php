@@ -19,7 +19,7 @@
 
 </head>
 
-<body onload="função()">
+<body onload="funcao()">
   <?php 
     include("header.php");
   ?>

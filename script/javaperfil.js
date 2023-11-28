@@ -1,6 +1,6 @@
 let imagemDentro;
 
-function função(){
+function funcao(){
     texto();
     imagem();
 }
