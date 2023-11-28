@@ -32,7 +32,6 @@ function mudaImg(x){
     let modalImg = document.getElementById("img01");
     let listaPai = imagemDentro.parentNode;
     let pos = Array.from(listaPai.children).indexOf(imagemDentro);
-    console.log(Array.from(listaPai.children));
     if (!(x == -1 && pos == 0) && !(x == 1 && pos == Array.from(listaPai.children).length-1)) {
         imagemDentro = listaPai.children[pos+x];
         modalImg.src = imagemDentro.src;
@@ -77,7 +76,6 @@ function imagem() {
             coments[i].after(divF);
             divF.append(imgF);
             divF.append(txtF);
-            console.log(listaImagens);
         }
     }
 }
@@ -103,6 +101,9 @@ function aumentar(text, p) {
 }
 
 function exibirModal(modalName) {
+    let setas = document.getElementsByClassName("seta");
+    setas[0].style.display = "none";
+    setas[1].style.display = "none";
     let modal = document.getElementById("myModal");
     modal.style.display = "flex";
     let alteraSenhaModal = document.getElementById(modalName);

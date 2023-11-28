@@ -224,8 +224,11 @@
 .container-editaperfil {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
 }
 
 .container-editaperfil form {
