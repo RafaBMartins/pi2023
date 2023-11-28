@@ -123,6 +123,10 @@
   color: var(--color-blue5);
   font-weight: bold;
   border: 1px solid var(--color-blue5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .infoTitle {
@@ -270,4 +274,8 @@
 
 #photosName {
   flex-direction: column !important;
+}
+
+#photosName label {
+  color: var(--color-black);
 }

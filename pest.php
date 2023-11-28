@@ -80,9 +80,8 @@
         <div class="col-md-5">
           <div class="card p-0 grude">
             <p class="h1">
-              <img src="img/selos/seloBronze.svg" class="m-auto" height="60px" width="60px">
               Caixaça Econômica
-              <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue5);"></i>
+              <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue3);"></i>
             </p>
             <!--carrosel-->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -140,7 +139,7 @@
             <div class="well m-3">
                 <div class=" d-grid row">
                   <div class="d-flex column justify-content-between">
-                    <label class="infoTitle">CLASSIFICAÇÃO</label>
+                    <label class="infoTitle">CLASSIFICAÇÃO</label><img src="img/selos/seloBronze.svg" class="m-auto" height="55px" width="55px">
                     <button class="btnAvaliar" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
                   </div>
                   <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;">7.4<i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - Bom (70 Avaliações)</label>
