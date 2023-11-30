@@ -19,14 +19,106 @@
 
 </head>
 
-<body onload="texto()">
+<body onload="funcao()">
   <?php 
-  include("header.php");
+    include("header.php");
   ?>
 
+  <?php if(!isset($_SESSION["email"])){
+    header("location: http://localhost/pi2023/login.php");
+    die();
+  }?>
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
-    <img class="modal-content" onclick="event.stopPropagation()" id="img01"><!--event-->
+    <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>
+    <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
+    <img class="modal-content" onclick="event.stopPropagation()" id="img01">
+
+    <div class="container-editaperfil" onclick="event.stopPropagation()">
+      <form id="alterarSenha" action="php/alterarSenha.php" method="POST" style="display:none;">
+        <div id="form_header">
+            <h1>Alterar Senha</h1>
+        </div>
+
+        <div id="inputs">
+          <div class="input-box">
+            <label for="senhaAtual">
+              Senha Atual
+              <div class="input-field">
+                <input type="password" id="senhaAtual" name="senhaAtual">
+              </div>
+            </label>
+          </div>
+
+          <div class="input-box">
+            <label for="newPassword"> 
+              Senha Nova
+              <div class="input-field">
+                <input type="password" id="newPassword" name="newPassword">
+              </div>
+            </label>
+          </div>
+
+          <div class="input-box">
+            <label for="confirmNewPassword"> 
+              Confirmar Senha Nova
+              <div class="input-field">
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword">
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" id="btnModals">
+          Alterar Senha
+        </button>
+      </form>
+
+      <form id="editarPerfil" action="" method="POST" style="display:none;">
+        <div id="form_header">
+            <h1>Editar Perfil</h1>
+        </div>
+        <div id="inputs">
+          <div class="input-box">
+            <label for="novoNome">
+              Novo Nome
+              <div class="input-field">
+                <input type="text" id="novoNome" name="novoNome">
+              </div>
+            </label>
+          </div>
+          
+          <div class="btnFoto">
+              <label for="novaFoto" class="novaFotoLabel">Enviar Nova Foto</label>
+              <input type="file" name="novaFoto" id="novaFoto">
+          </div>
+        </div>
+
+        <button type="submit" id="btnModals">
+          Confirmar Alterações
+        </button>
+      </form>
+
+      <form id="excluirConta" action="php/deleteUsuario.php" method="POST" style="display:none;">
+        <div id="form_header">
+            <h1>Excluir Perfil</h1>
+        </div>
+        <div id="inputs">
+          <div class="input-box">
+            <label for="senhaAtual">
+              Senha Atual
+              <div class="input-field">
+                <input type="password" id="senhaAtual" name="senhaAtual">
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" id="btnModals">
+          Excluir Conta
+        </button>
+      </form>
+    </div>
   </div>
 
   <div class="container text-center p-0">    
@@ -38,33 +130,29 @@
           </div>
           <div class="rCard">
             <div class="nomeContainer">
-              <p id="nomeUser" class="h1 text-white">Sergio Malandro</p><i class="fa-solid fa-pen" id="editIcon" style="color: white; transform:scale(1.5);" onclick="altNomeUser()"></i>
-              <input type="text" name="altNomeUser" id="altNomeUser">
-              <i class="fa-solid fa-xmark" id="cancelIcon" style="color: white; display: none;" onclick="cancelAltNome()"></i>
-              <i class="fa-solid fa-check" id="checkIcon" style="color: white; display: none;" onclick="commitAltNome()"></i>
+              <p id="nomeUser" class="h1 text-white"><?php echo ucfirst($_SESSION["nome"]);?></p>
             </div>
             <div>
               <div class="containerFotos">
                 <p class="m-1">
                   <img src="img/perfil/pcamigos.jfif" id="fotoPerfil" class="rounded-circle" height="370" width="370px" alt="Avatar">
-                  <label>
-                    <input type="file" name="novaFoto" id="novaFoto" onchange="read(this)"> 
-                    <i id="editFotoIcon" class="fa-solid fa-camera" ></i>
-                  </label>
                 </p> 
               </div>
             </div>
           </div>
           <div class="containerBotoes">
-            <button class="store-map-button w-50 m-1">ALTERAR SENHA</button>
-            <button class="store-map-button w-50 m-1" id="saveAlt" style="display: none;">SALVAR ALTERAÇÕES</button>
+            <button class="store-map-button w-50 m-1" onclick="exibirModal('alterarSenha')">ALTERAR SENHA</button>
+            <button class="store-map-button w-50 m-1" style="text-align: center;" onclick="exibirModal('excluirConta')">EXCLUIR CONTA</button>
+            <button class="store-map-button w-50 m-1" style="text-align: right;" onclick="exibirModal('editarPerfil')">EDITAR PERFIL</button>
           </div>
         </div>
       </div>
+      
       <div class="col-lg-5 col-md-7">
         <!--div com avaliações do usuário-->
         <div id="avaliacoes">
           <!--primeira avaliação-->
+
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
@@ -75,13 +163,59 @@
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-              </div>
+            </div>
             <div class="col-sm-12">
-              <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-              <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-              <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-              <img src="img/perfilestabelecimento/propaganda2.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-              <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+              <div class="row justify-content-center">
+                <div class="imagens">
+                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/1500500.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/5estrela.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                </div>
+              </div>
+            </div>
+            <!--comentário e espaçamento do texto da avaliação-->
+            <div class="col-sm-12">
+              <div class="p-1 border-bottom">
+                <p class="text-start comentario">Lá vem o Chaves, Chaves, Chaves, Todos atentos olhando pra TV. Lá vem o Chaves, 
+                  Chaves, Chaves, Com uma historinha bem gostosa de se ver Aí vem o Chaves, Chaves, Chaves, Todos atentos olhando pra 
+                  TV. Aí vem o Chaves, Chaves, Chaves, Com uma historinha bem gostosa de se ver A Chiquinha é uma gracinha, ninguém 
+                  agüenta quando vai chorar E Seu Madruga, sempre muito calado, Não abre a boca só pra não brigar O Professor Girafales 
+                  e a Dona Florinda, Se gostam tanto mas casório, nada ainda E tem o Quico com a bochecha toda inchada, E é claro o Chaves, o rei
+                  da palhaçada E é claro o Chaves, o rei da palhaçada Lá vem o Chaves, Chaves, Chaves, Tô chegando! Lá vem o Chaves, Chaves, Chaves</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row m-1">
+            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
+            <div class="col-sm-12 d-flex align-items-center">
+              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
+              <p class="m-2">Sergio Malandro</p>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
+              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
+            </div>
+            <div class="col-sm-12">
+              <div class="row justify-content-center">
+                <div class="imagens">
+                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                </div>
+              </div>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
@@ -106,29 +240,19 @@
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
-            
-            <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
-                  eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                  A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
-                  momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
-                  possível aglomeração e tempo de espera.</p>
+              <div class="row justify-content-center">
+                <div class="imagens">
+                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
@@ -150,6 +274,13 @@
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
+            </div>
+            <div class="col-sm-12">
+              <div class="row justify-content-center">
+                <div class="imagens">
+                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                </div>
+              </div>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
@@ -173,6 +304,12 @@
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
+            </div>
+            <div class="col-sm-12">
+              <div class="row justify-content-center">
+                <div class="imagens">
+                </div>
+              </div>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">

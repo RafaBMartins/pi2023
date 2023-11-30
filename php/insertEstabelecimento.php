@@ -1,8 +1,7 @@
 <?php
     require("pdoConnect.php");
-
+    //parcialmente funcional
     $resposta = array();
-    
 
     if(isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"]) && isset($_FILES["img_perfil"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
@@ -10,23 +9,28 @@
         error_log(var_dump($_FILES), 0);
 
         $filename = $_FILES['img_perfil']['tmp_name'];
-		$client_id= "488371ea46cb4a3";
-		$handle = fopen($filename, "r");
-		$data = fread($handle, filesize($filename));
-		$pvars   = array('image' => base64_encode($data));
-		$timeout = 30;
-		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_URL, 'https://api.imgur.com/3/image.json');
-		curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Client-ID ' . $client_id));
-		curl_setopt($curl, CURLOPT_POST, 1);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_POSTFIELDS, $pvars);
-		$out = curl_exec($curl);
-		curl_close ($curl);
-		$pms = json_decode($out,true);
-		$img_url=$pms['data']['link'];
-        var_dump($pms);
+        $client_id= "488371ea46cb4a3";
+        $handle = fopen($filename, "r");
+        $data = fread($handle, filesize($filename));
+        $pvars   = array('image' => base64_encode($data));
+        $timeout = 30;
+
+        // Criar um contexto de fluxo com os cabeçalhos e os dados da requisição
+        $context = stream_context_create(array(
+        'http' => array(
+            'method' => 'POST',
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n".
+                        "Authorization: Client-ID ".$client_id."\r\n",
+            'content' => http_build_query($pvars),
+            'timeout' => $timeout
+        )
+        ));
+
+        // Enviar a requisição e obter a resposta
+        $out = file_get_contents('https://api.imgur.com/3/image.json', false, $context);
+        $pms = json_decode($out,true);
+        $img_url=$pms['data']['link'];
+
 
 
         $logradouro = filter_var($_POST["logradouro"], FILTER_SANITIZE_STRING);
@@ -64,7 +68,11 @@
             $idFotoEstab = $resultIdFoto["foto_estabelecimento_pk"];
 
             $insertEstab = $db->prepare("INSERT INTO ESTABELECIMENTO (nota_media, nome, FK_endereco_endereco_PK, FK_tipo_estabelecimento_tipo_estabelecimento_PK, FK_foto_estabelecimento_foto_estabelecimento_PK, FK_selo_selo_PK) VALUES (null, '$nome_estabelecimento', $idEnderecoEstab, '$tipo_estab', $idFotoEstab, null)");
-            if($insertEstab->execute()); $resposta["sucesso"] = 1;
+            if($insertEstab->execute()){
+                $resposta["sucesso"] = 1;
+                //header('location: http://localhost/pi2023/');
+                //die();
+            }
         }
     }
     else{

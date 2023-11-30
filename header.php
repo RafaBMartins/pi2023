@@ -24,19 +24,18 @@
         <!--opções-->
         <div id="header_options">
             <a href="mapa.php" class="header-link">Mapa</a>
-            <a href="" class="header-link">Sobre nós</a>
             <!-- checa se não existe uma sessão ativa-->
             <?php if(!(isset($_SESSION["nome"]))): ?>
                 <!-- carrega header com opcoes de login e sign up -->
                 <a href="registrar.html" class="header-btnRegister">CRIAR CONTA</a>
                 <a href="registrar.html" class="header-link-mobile">CRIAR CONTA</a><!--mobile-->
-                <a href="login.html" class="header-btnLogin">ENTRAR</a>
-                <a href="login.html" class="header-link-mobile">ENTRAR</a><!--mobile-->
+                <a href="login.php" class="header-btnLogin">ENTRAR</a>
+                <a href="login.php" class="header-link-mobile">ENTRAR</a><!--mobile-->
             <?php else: ?>
                 <!-- carrega o nome do usuario e um icone que linka ao perfil -->
-                <label style="color: black;" for="userIcon"><?php echo $_SESSION["nome"];?></label>
+                <label style="color: var(--color-blue5); font-weight:bold;" for="userIcon"><?php echo ucfirst($_SESSION["nome"]);?></label>
                 <a href="perfilusuario.php" class="header-link-mobile">CONTA</a><!--mobile-->
-                <a id="userIcon" href="perfilusuario.php" class="header-iconLink">
+                <a id="userIcon" href="pusu.php" class="header-iconLink">
                     <i class="fa-solid fa-address-card"></i>
                 </a>
             <?php endif; ?>

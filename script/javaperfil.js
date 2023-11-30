@@ -1,14 +1,41 @@
+let imagemDentro;
+
+function funcao(){
+    texto();
+    imagem();
+}
+
 function abreImg(imge){
     let modal = document.getElementById("myModal");
     let modalImg = document.getElementById("img01");
-    modal.style.display = "block";
+    let seta1 = document.getElementById("seta1");
+    let seta2 = document.getElementById("seta2");
+    seta1.style.display = "flex";
+    seta2.style.display = "flex";
+    modal.style.display = "flex";
     modalImg.src = imge.src;
+    imagemDentro = imge;
 }
 
-// When the user clicks on <span> (x), close the modal
 function fechaImg() { 
     let modal = document.getElementById("myModal");
+    let modalImg = document.getElementById("img01");
     modal.style.display = "none";
+    modalImg.src = "";
+    let selecionado = document.getElementsByClassName("modalSelecionado");
+    selecionado[0].classList.remove("modalSelecionado");
+}
+
+function mudaImg(x){
+    event.stopPropagation();
+    
+    let modalImg = document.getElementById("img01");
+    let listaPai = imagemDentro.parentNode;
+    let pos = Array.from(listaPai.children).indexOf(imagemDentro);
+    if (!(x == -1 && pos == 0) && !(x == 1 && pos == Array.from(listaPai.children).length-1)) {
+        imagemDentro = listaPai.children[pos+x];
+        modalImg.src = imagemDentro.src;
+    }
 }
 
 function texto() {
@@ -24,6 +51,33 @@ function texto() {
             text.after(p);
         }
     } 
+}
+
+function imagem() {
+    let coments = document.getElementsByClassName("imagens");
+    for (let i = 0; i < coments.length; i++) {
+        let listaImagens = coments[i].childNodes;
+        let oculto=0;
+        if (listaImagens.length > 11) {
+            for (let j = 9; j < listaImagens.length; j+=2){
+                listaImagens[j].style.display = "none";
+                oculto++;
+            }
+            let divF = document.createElement('div');
+            divF.classList.add("divImgEscura");
+            divF.addEventListener('click', ()=> abreImg(listaImagens[9]));
+            let imgF = document.createElement('img');
+            imgF.classList.add("imgEscura");
+            imgF.src = listaImagens[9].src;
+            let txtF = document.createElement('div');
+            txtF.classList.add("qtdFotos");
+            txtF.innerText = "+" + oculto;
+            listaImagens[9].style.filter = "brightness(30%)";
+            coments[i].after(divF);
+            divF.append(imgF);
+            divF.append(txtF);
+        }
+    }
 }
 
 function diminuir(text, p) {
@@ -46,39 +100,25 @@ function aumentar(text, p) {
     text.after(x);
 }
 
-function altNomeUser(){
-    document.getElementById("altNomeUser").style.display = "block";
-    document.getElementById("nomeUser").style.display = "none";
-    document.getElementById("editIcon").style.display = "none";
-    document.getElementById("cancelIcon").style.display = "block";
-    document.getElementById("checkIcon").style.display = "block";
-    document.getElementById("altNomeUser").focus();
+function exibirModal(modalName) {
+    let setas = document.getElementsByClassName("seta");
+    setas[0].style.display = "none";
+    setas[1].style.display = "none";
+    let modal = document.getElementById("myModal");
+    modal.style.display = "flex";
+    let alteraSenhaModal = document.getElementById(modalName);
+    alteraSenhaModal.classList.add("modalSelecionado");
 }
 
-function cancelAltNome(){
-    document.getElementById("altNomeUser").style.display = "none";
-    document.getElementById("nomeUser").style.display = "block";
-    document.getElementById("editIcon").style.display = "block";
-    document.getElementById("cancelIcon").style.display = "none";
-    document.getElementById("checkIcon").style.display = "none";
-}
-
-function commitAltNome(){
-    document.getElementById("altNomeUser").style.display = "none";
-    document.getElementById("nomeUser").style.display = "block";
-    document.getElementById("editIcon").style.display = "block";
-    document.getElementById("cancelIcon").style.display = "none";
-    document.getElementById("checkIcon").style.display = "none";
-    document.getElementById("saveAlt").style.display = "block";
-}
-
-function read(val) {
-  const reader = new FileReader();
-
-  reader.onload = (event) => {
-    document.getElementById("fotoPerfil").src = event.target.result;
-  }
-
-  reader.readAsDataURL(val.files[0]);
-  document.getElementById("saveAlt").style.display = "block";
-}
+document.getElementById("photos").addEventListener("change", (e) => {
+    var input = document.getElementById("photos");
+    var div = document.getElementById("photosName");
+    if (input.files.length > 0) {
+        for(let i = 0; i< input.files.length; i++) {
+            const item = document.createElement('label');
+            item.classList.add("fitContent")
+            item.append(input.files[i].name);
+            div.append(item);
+        }
+      }
+})

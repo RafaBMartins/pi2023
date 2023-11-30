@@ -1,23 +1,28 @@
 const checkBoxCategory = [...document.getElementsByClassName("checkbox-category")];
-checkBoxCategory.forEach(check => {
-    check.addEventListener("change", (e) => {
-        if(e.target.checked){
-            e.target.parentElement.children[0].classList.add("category-checked");
-        }
-        else{
-            e.target.parentElement.children[0].classList.remove("category-checked");
-        }
-    })
-});
+
+for (let i = 0; i < checkBoxCategory.length; i++) {
+  checkBoxCategory[i].addEventListener('change', () => {
+    for (let j = 0; j < checkBoxCategory.length; j++) {
+      if (checkBoxCategory[j] !== checkBoxCategory[i]) {
+        checkBoxCategory[j].parentElement.children[0].classList.remove("category-checked");
+      }
+    }
+
+    if (checkBoxCategory[i].checked) {
+      checkBoxCategory[i].parentElement.children[0].classList.add("category-checked");
+    } else {
+      checkBoxCategory[i].parentElement.children[0].classList.remove("category-checked");
+    }
+  });
+}
 
 function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
     let estabelecimentos = estabJson["estabelecimentos"];
-    console.log(estabelecimentos);
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div")
         divStoreCard.classList.add("store-card");
-        divStoreCard.innerHTML = `<img src="https://i.imgur.com/S9u0RbB.jpg" class="store-photo">
+        divStoreCard.innerHTML = `<img src="${estabelecimento["foto_estabelecimento"]}" class="store-photo">
         <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
           <!--categoria do estabelecimento-->
@@ -25,7 +30,7 @@ function geraCards(estabJson){
           <!--nome do estabelecimento-->
           <label class="store-name">${estabelecimento["nome_estabelecimento"]}</label>
           <!--nota do estabelecimento-->
-          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70 Avaliações)</label>
           <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
@@ -36,7 +41,6 @@ function geraCards(estabJson){
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>`
-        console.log(divStoreCard);
         document.getElementById("stores_content").append(divStoreCard);
     })
 }
@@ -48,7 +52,7 @@ async function carregaEstabelecimento() {
         let dados = {"userLatitude": posicao["coords"]["latitude"], "userLongitude": posicao["coords"]["latitude"]};
         let json = JSON.stringify(dados);
 
-        let resposta = await fetch('http://localhost:8080/pi2023/php/selectEstabelecimento.php', {
+        let resposta = await fetch('http://localhost/pi2023/php/selectEstabelecimento.php', {
         method: 'POST', 
         body: json, 
         headers: { 'Content-Type': 'application/json' } 
