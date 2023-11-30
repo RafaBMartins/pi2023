@@ -2,10 +2,12 @@
     require("pdoConnect.php");
 
     $resposta = array();
-    var_dump($_FILES);
+    
 
     if(isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"]) && isset($_FILES["img_perfil"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
+
+        error_log(var_dump($_FILES), 0);
 
         $filename = $_FILES['img_perfil']['tmp_name'];
 		$client_id= "488371ea46cb4a3";
