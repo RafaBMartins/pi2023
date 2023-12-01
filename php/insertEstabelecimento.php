@@ -73,6 +73,10 @@
                 //header('location: http://localhost/pi2023/');
                 //die();
             }
+            else {
+                $resposta["sucesso"] = 0;
+                $resposta["erro"] = "error BD " . $insertEstab->error;
+            }
         }
     }
     else{
