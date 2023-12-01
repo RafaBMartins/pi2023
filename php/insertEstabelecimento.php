@@ -77,6 +77,7 @@
                 //die();
             }
             else {
+                error_log("entrou aqui 2 " . $insertEstab->error, 0);
                 $resposta["sucesso"] = 0;
                 $resposta["erro"] = "error BD " . $insertEstab->error;
             }
