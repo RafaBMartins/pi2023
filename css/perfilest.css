@@ -73,20 +73,24 @@
   top: 15px;
   right: 35px;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .seta {
-  position: fixed;
+  flex: 1;
+  font-size: 80px;
   z-index: 1;
   color: #ffffff;
-  font-size: 80px;
   font-weight: bold;
   transition: 0.3s;
   cursor: pointer;
   align-self: center;
+}
+
+#seta1 {
+  justify-content: end;
 }
 
 #seta2 {
