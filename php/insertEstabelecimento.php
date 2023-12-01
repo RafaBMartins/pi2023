@@ -6,7 +6,7 @@
     if(isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"]) && isset($_FILES["img_perfil"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
 
-        error_log(var_dump($_FILES), 0);
+        //error_log(var_dump($_FILES), 0);
 
         $filename = $_FILES['img_perfil']['tmp_name'];
         $client_id= "488371ea46cb4a3";
@@ -48,7 +48,7 @@
         $consulta = $db->prepare($query);
         $consulta->execute();
         
-        if($consulta->rowCount() > 1){
+        if($consulta->rowCount() > 0){
             $resposta["sucesso"] = 0;
             $resposta["erro"] = "estabelecimento ja cadastrado";
         }
@@ -66,12 +66,20 @@
             $idFoto->execute();
             $resultIdFoto = $idFoto->fetch(PDO::FETCH_ASSOC);
             $idFotoEstab = $resultIdFoto["foto_estabelecimento_pk"];
+            error_log("idFotoEstab " . $idFotoEstab, 0);
+            error_log("idEnderecoEstab " . $idEnderecoEstab, 0);
 
             $insertEstab = $db->prepare("INSERT INTO ESTABELECIMENTO (nota_media, nome, FK_endereco_endereco_PK, FK_tipo_estabelecimento_tipo_estabelecimento_PK, FK_foto_estabelecimento_foto_estabelecimento_PK, FK_selo_selo_PK) VALUES (null, '$nome_estabelecimento', $idEnderecoEstab, '$tipo_estab', $idFotoEstab, null)");
             if($insertEstab->execute()){
+                error_log("entrou aqui 1", 0);
                 $resposta["sucesso"] = 1;
                 //header('location: http://localhost/pi2023/');
                 //die();
+            }
+            else {
+                error_log("entrou aqui 2 " . $insertEstab->error, 0);
+                $resposta["sucesso"] = 0;
+                $resposta["erro"] = "error BD " . $insertEstab->error;
             }
         }
     }

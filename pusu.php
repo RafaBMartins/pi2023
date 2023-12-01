@@ -31,8 +31,8 @@
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
     <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>
-    <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
     <img class="modal-content" onclick="event.stopPropagation()" id="img01">
+    <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
       <form id="alterarSenha" action="php/alterarSenha.php" method="POST" style="display:none;">
@@ -135,7 +135,7 @@
             <div>
               <div class="containerFotos">
                 <p class="m-1">
-                  <img src="img/perfil/pcamigos.jfif" id="fotoPerfil" class="rounded-circle" height="370" width="370px" alt="Avatar">
+                  <img src="img/perfil/pcamigos.jfif" id="fotoPerfil" class="rounded-circle" alt="Avatar">
                 </p> 
               </div>
             </div>

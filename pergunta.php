@@ -12,11 +12,27 @@
     <title>Wheelieway</title>
 </head>
 <body>
+    <?php
+        session_start();
+        if($_SESSION["index"] > 4){
+            $_SESSION["index"] = 0;
+            header("location: http://localhost/pi2023/");
+            die();
+        }
+        if(!(isset($_SESSION["index"]) && isset($_SESSION["perguntas"]))){
+            $_SESSION["index"] = 0;
+            $_SESSION["perguntas"] = ["Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"];
+        }
+    ?>
     <div class="background">
-        <form id="login_form" method="post" action="php/loginServer.php">
+        <form id="pergunta_form" method="post" action="php/perguntas.php">
             <!--header-->
             <div id="form_header">
-                <h1>Pergunta 1</h1>
+                <h1>
+                    <?php
+                        echo $_SESSION["perguntas"][$_SESSION["index"]];
+                    ?>
+                </h1>
             </div>
             <!--inputs-->
             <div id="inputs">
@@ -42,7 +58,11 @@
             </div>
 
             <button type="submit" id="login_button">
-                Proximo<i class="fa-solid fa-arrow-right"></i>
+                <?php
+                    if($_SESSION["index"] >= 4) echo "Enviar";
+                    else echo "Próximo";
+                ?>
+                <i class="fa-solid fa-arrow-right"></i>
             </button>
         </form>
         <img src="img/logos/logoBranco.svg" class="logo">
