@@ -54,19 +54,19 @@
             <div class="input-box-rating">
               <label>
                 De Sua Nota Ao Estabelecimento
+              </label>
                 <div class="input-field-rating">
                   <i class="fa-regular fa-star estrelaAvaliacao" id="0"></i>
                   <i class="fa-regular fa-star estrelaAvaliacao" id="1"></i>
                   <i class="fa-regular fa-star estrelaAvaliacao" id="2"></i>
                   <i class="fa-regular fa-star estrelaAvaliacao" id="3"></i>
                   <i class="fa-regular fa-star estrelaAvaliacao" id="4"></i>
-                  <input type="radio" name="estrela" value="1" style="display: none;">
-                  <input type="radio" name="estrela" value="2" style="display: none;">
-                  <input type="radio" name="estrela" value="3" style="display: none;">
-                  <input type="radio" name="estrela" value="4" style="display: none;">
-                  <input type="radio" name="estrela" value="5" style="display: none;">
                 </div>
-              </label>
+                  <input class="estrela" type="radio" name="estrela" value="1" id="0Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="2" id="2Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="3" id="3Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="4" id="4Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="5" id="5Input" style="display: none;">
             </div>
 
             <div class="input-box-photo">
