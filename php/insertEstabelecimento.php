@@ -48,7 +48,7 @@
         $consulta = $db->prepare($query);
         $consulta->execute();
         
-        if($consulta->rowCount() > 1){
+        if($consulta->rowCount() > 0){
             $resposta["sucesso"] = 0;
             $resposta["erro"] = "estabelecimento ja cadastrado";
         }
