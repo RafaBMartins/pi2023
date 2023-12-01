@@ -307,7 +307,7 @@ async function loadMapScenario(estabJson) {
 //funcao que fecha o perfil do estabelecimento
 function fechaPerfil() {
     document.getElementById("perfilEstabelecimento").style.display = "none";
-    document.getElementById("botFechaPerfil").style.display = "none";
+    document.getElementById("botFechaPerfil").classList.add("d-none");
     if (document.getElementById("mapa").style.display == "none") {
         document.getElementById("mapa").style.display = "block"
     }
