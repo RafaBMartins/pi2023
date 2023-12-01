@@ -167,6 +167,8 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 100%;
+  
 }
 
 .container-editaperfil form {
@@ -244,6 +246,10 @@
 
 .input-field input:focus {
   outline: none;
+}
+
+.modalSelecionado {
+  display: flex !important;
 }
 
 #btnModals {

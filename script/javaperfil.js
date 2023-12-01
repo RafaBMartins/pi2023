@@ -8,6 +8,7 @@ function funcao(){
 function abreImg(imge){
     let modal = document.getElementById("myModal");
     let modalImg = document.getElementById("img01");
+    modalImg.style.display = "block";
     let seta1 = document.getElementById("seta1");
     let seta2 = document.getElementById("seta2");
     seta1.style.display = "flex";
@@ -22,7 +23,9 @@ function fechaImg() {
     let modalImg = document.getElementById("img01");
     modal.style.display = "none";
     modalImg.src = "";
+    modalImg.style.display = "none"
     let selecionado = document.getElementsByClassName("modalSelecionado");
+    console.log(selecionado);
     selecionado[0].classList.remove("modalSelecionado");
 }
 

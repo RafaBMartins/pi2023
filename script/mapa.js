@@ -78,7 +78,7 @@ function carregaPerfil(clicada) {
 }
 
 async function carregaEstabelecimento(){
-    let resposta = await fetch('http://localhost:8080/pi2023/php/selectEstabMapa.php', {
+    let resposta = await fetch('http://localhost/pi2023/php/selectEstabMapa.php', {
         method: 'POST',  
         headers: { 'Content-Type': 'application/json' } 
         });
@@ -307,7 +307,7 @@ async function loadMapScenario(estabJson) {
 //funcao que fecha o perfil do estabelecimento
 function fechaPerfil() {
     document.getElementById("perfilEstabelecimento").style.display = "none";
-    document.getElementById("botFechaPerfil").style.display = "none";
+    document.getElementById("botFechaPerfil").classList.add("d-none");
     if (document.getElementById("mapa").style.display == "none") {
         document.getElementById("mapa").style.display = "block"
     }
