@@ -82,7 +82,7 @@
   position: fixed;
   z-index: 1;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 80px;
   font-weight: bold;
   transition: 0.3s;
   cursor: pointer;
@@ -105,14 +105,6 @@
 .grude {
   position: sticky;
   top: 0px;
-
-}
-
-.fAzul {
-  background-color: var(--color-blue5);
-  height: 10vw !important;
-  width: 100%;  
-  position: absolute;
 }
 
 .rCard {
@@ -354,15 +346,6 @@
 .btnAvaliar:hover {
   background-color: var(--color-white);
   color: var(--color-blue2);
-}
-
-.container-editaperfil {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  
 }
 
 .container-editaperfil form {

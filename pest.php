@@ -31,8 +31,8 @@
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
     <span id="seta1" class="seta" onclick="mudaImg(-1)">&lt;</span>
+    <img class="modal-content" onclick="event.stopPropagation()" id="img01">
     <span id="seta2" class="seta" onclick="mudaImg(1)">&gt;</span>
-    <img class="modal-content" onclick="event.stopPropagation()" id="img01" style="display: none;">
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
       <form id="avaliarEstabelecimento" action="" method="POST" style="display: none;">

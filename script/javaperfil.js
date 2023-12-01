@@ -16,9 +16,6 @@ function abreImg(imge){
     modal.style.display = "flex";
     modalImg.src = imge.src;
     imagemDentro = imge;
-    let modalComentario = document.getElementById("container-comentario")
-    modalComentario.classList.remove("modalSelecionado");
-    modalComentario.classList.add("modalNaoSelecionado");
 }
 
 function fechaImg() { 
@@ -28,10 +25,8 @@ function fechaImg() {
     modalImg.src = "";
     modalImg.style.display = "none"
     let selecionado = document.getElementsByClassName("modalSelecionado");
-    console.log(selecionado);
     selecionado[0].classList.remove("modalSelecionado");
-    document.getElementsByClassName("pp")[0].style.display = "none";
-    }
+}
 
 function mudaImg(x){
     event.stopPropagation();
@@ -115,13 +110,6 @@ function exibirModal(modalName) {
     modal.style.display = "flex";
     let alteraSenhaModal = document.getElementById(modalName);
     alteraSenhaModal.classList.add("modalSelecionado");
-}
-
-function alm(modalName) {
-    console.log(document.getElementsByClassName("pp"));
-    let modal = document.getElementById("myModal");
-    modal.style.display = "flex";
-    let alteraSenhaModal = document.getElementById(modalName);
 }
 
 document.getElementById("photos").addEventListener("change", (e) => {
