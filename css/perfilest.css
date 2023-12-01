@@ -1,4 +1,14 @@
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
+@import "fontsAndColors.css";
+
+#header_name h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#nomeUser {
+  margin-top: 5px;
+}
 
 .header-btnRegister {
   background-color: var(--color-blue2);
@@ -9,6 +19,24 @@
   font-size: 0.9rem;
   font-weight: bold;
   transition: all 0.4s;
+}
+
+.store-map-button {
+  background-color: white;
+  border: none;
+  color: var(--color-blue5);
+  padding: 7px;
+  border-radius: 30px;
+  font-size:  11px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.store-map-button:hover {
+  background-color: var(--color-smoothWhite);
+  color: var(--color-blue5);
 }
 
 .zz {
@@ -44,14 +72,31 @@
   z-index: 1;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
+  color: #ffffff;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
 }
 
+.seta {
+  position: fixed;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  align-self: center;
+}
+
+#seta2 {
+  right: 0px;
+}
+
 .close:hover,
-.close:focus {
+.close:focus,
+.seta.hover,
+.seta.focus{
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
@@ -60,6 +105,70 @@
 .grude {
   position: sticky;
   top: 0px;
+
+}
+
+.fAzul {
+  background-color: var(--color-blue5);
+  height: 10vw !important;
+  width: 100%;  
+  position: absolute;
+}
+
+.rCard {
+  z-index: 1;
+}
+
+.containerBotoes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.containerFotos{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#editFotoIcon{
+  position: absolute;
+  top: 50%;  /* position the top  edge of the element at the middle of the parent */
+  left: 50%; /* position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+  color: lightgrey;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+#editFotoIcon:hover{
+  display: block;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#novaFoto{
+  display: none;
+}
+
+.nomeContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+#fotoPerfil{
+  object-fit: cover;
+  width: 60%;
+}
+
+.imagens {
+  width: fit-content;
 }
 
 .imagemAbre {
@@ -69,42 +178,40 @@
 
 .imagemAbre:hover {opacity: 0.8;}
 
-/*tamanho máximo de 80px*/
 .mw {
   max-width: 80px;
-}
-
-/*alinha o texto da taba, coloca espaçamento interno, tira a margem de baixo e faz com que o cursor muda o formato quando em cima*/
-.taba {
-  text-align: center;
-  padding: 0px 16px;
-  cursor: pointer;
-  margin-bottom: 0px;
-}
-
-/*faz com que as tabas mudem de cor quando o cursor passar por cima*/
-#tabas :hover {
-  background-color: #9acff8;
-}
-
-/*cor da taba de avaliação*/
-#tavaliacoes {
-  border-bottom: 3px solid #397FBF;
-}
-
-/*deixa a cor da taba de visita invisível a principio*/
-#visitas {
-  display: none;
 }
 
 .comentario {
   margin-bottom: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  /*
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show s
-  -webkit-box-orient: vertical;*/
+}
+
+.divImgEscura {
+  width: 50px;
+  height: 50px;
+  position:relative; 
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divImgEscura:hover {opacity: 0.8;}
+
+.imgEscura {
+  width: 50px; 
+  height: 50px; 
+  border-radius: var(--bs-border-radius); 
+  filter: brightness(30%); 
+  justify-content: center;
+}
+
+.qtdFotos {
+  position: absolute; 
+  color: #ffffff; 
 }
 
 .escondetexto {
@@ -113,7 +220,94 @@
   cursor: pointer;
 }
 
+.modalSelecionado {
+  display: flex !important;
+}
+
 .escondetexto:hover {color: #c4c4c4;}
+
+.container-editaperfil {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.container-editaperfil form {
+  background-color: var(--color-smoothWhite);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  border-radius: 8px;
+  gap: 30px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+  height: fit-content;
+  border: 3px solid var(--color-blue5);
+}
+
+#form_header h1 {
+  font-size: 40px;
+  position: relative;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-box label {
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 3px;
+  cursor: text;
+  border-bottom: 1px solid var(--color-blue5)
+}
+
+.input-field input {
+  border: none;
+  background-color: transparent;
+  width: 280px;
+  font-size: 18px;
+  padding: 0px 5px;
+}
+
+.input-field input:focus {
+  outline: none;
+}
+
+#btnModals {
+  border: none;
+  background: var(--color-mainGradient);
+  color: var(--color-smoothWhite);
+  padding: 7px;
+  font-size: 18px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.novaFotoLabel {
+  padding: 10px 10px;
+  width: 200px;
+  background-color: var(--color-blue5);
+  color: var(--color-white);
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
 
 .h1 {
   margin: 0;
