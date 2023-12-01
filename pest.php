@@ -32,7 +32,7 @@
     <img class="modal-content" onclick="event.stopPropagation()" id="img01" style="display: none;">
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form id="avaliarEstabelecimento" action="" method="POST" style="display:none;">
+      <form id="avaliarEstabelecimento" action="" method="POST" class="pp">
           <div id="form_header">
               <h1>AVALIE O ESTABELECIMENTO</h1>
           </div>
@@ -56,6 +56,11 @@
                   <i class="fa-regular fa-star"></i>
                   <i class="fa-regular fa-star"></i>
                   <i class="fa-regular fa-star"></i>
+                  <input type="radio" name="estrela" value="1" style="display: none;">
+                  <input type="radio" name="estrela" value="2" style="display: none;">
+                  <input type="radio" name="estrela" value="3" style="display: none;">
+                  <input type="radio" name="estrela" value="4" style="display: none;">
+                  <input type="radio" name="estrela" value="5" style="display: none;">
                 </div>
               </label>
             </div>
@@ -73,8 +78,8 @@
           <button type="submit" id="btnModals">
             Enviar Avaliação
           </button>
-        </form>
-      </div>
+      </form>
+    </div>
   </div>
 
   <div class="container text-center p-0">    
