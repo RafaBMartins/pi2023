@@ -159,6 +159,7 @@
 
 #fotoPerfil{
   object-fit: cover;
+  width: 60%;
 }
 
 .imagens {
@@ -172,7 +173,6 @@
 
 .imagemAbre:hover {opacity: 0.8;}
 
-/*tamanho máximo de 80px*/
 .mw {
   max-width: 80px;
 }
