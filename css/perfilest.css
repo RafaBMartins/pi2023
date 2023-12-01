@@ -248,7 +248,11 @@
 }
 
 .modalSelecionado {
-  display: flex !important;
+  display: flex;
+}
+
+.pp {
+  display: none;
 }
 
 #btnModals {
