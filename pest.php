@@ -14,7 +14,8 @@
     crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="css/perfilest.css">
-  <script src="script/javaperfil.js"></script>
+  <script src="script/javaperfil.js" defer></script>
+  <script src="script/estrelas.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -55,19 +56,19 @@
             <div class="input-box-rating">
               <label>
                 De Sua Nota Ao Estabelecimento
-                <div class="input-field-rating">
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <input type="radio" name="estrela" value="1" style="display: none;">
-                  <input type="radio" name="estrela" value="2" style="display: none;">
-                  <input type="radio" name="estrela" value="3" style="display: none;">
-                  <input type="radio" name="estrela" value="4" style="display: none;">
-                  <input type="radio" name="estrela" value="5" style="display: none;">
-                </div>
               </label>
+                <div class="input-field-rating">
+                  <i class="fa-regular fa-star estrelaAvaliacao" id="0"></i>
+                  <i class="fa-regular fa-star estrelaAvaliacao" id="1"></i>
+                  <i class="fa-regular fa-star estrelaAvaliacao" id="2"></i>
+                  <i class="fa-regular fa-star estrelaAvaliacao" id="3"></i>
+                  <i class="fa-regular fa-star estrelaAvaliacao" id="4"></i>
+                </div>
+                  <input class="estrela" type="radio" name="estrela" value="1" id="0Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="2" id="2Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="3" id="3Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="4" id="4Input" style="display: none;">
+                  <input class="estrela" type="radio" name="estrela" value="5" id="5Input" style="display: none;">
             </div>
 
             <div class="input-box-photo">
