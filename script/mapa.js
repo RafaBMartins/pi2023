@@ -78,7 +78,7 @@ function carregaPerfil(clicada) {
 }
 
 async function carregaEstabelecimento(){
-    let resposta = await fetch('http://localhost:8080/pi2023/php/selectEstabMapa.php', {
+    let resposta = await fetch('http://localhost/pi2023/php/selectEstabMapa.php', {
         method: 'POST',  
         headers: { 'Content-Type': 'application/json' } 
         });
