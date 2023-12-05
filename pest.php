@@ -80,11 +80,11 @@
               </label>
             </div>
           </div>
-          <input type="hidden" name="nomeEstabelecimento" value="01/02" id="nome_estabelecimento">
+          <input type="hidden" name="nomeEstabelecimento" value="01/02 B" id="nome_estabelecimento">
           <input type="hidden" name="tipoLogradouro" value="rua" id="tipo_logradouro">
-          <input type="hidden" name="logradouro" value="dos sabias" id="tipo_logradouro">
+          <input type="hidden" name="logradouro" value="dos Sabias" id="tipo_logradouro">
           <input type="hidden" name="numero" value="2" id="numero">
-          <input type="hidden" name="bairro" value="Morada de laranjeiras" id="bairro">
+          <input type="hidden" name="bairro" value="morada de laranjeiras" id="bairro">
           <input type="hidden" name="cidade" value="Serra" id="cidade">
           <input type="hidden" name="estado" value="ES" id="estado">
 

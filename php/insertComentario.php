@@ -11,23 +11,24 @@
         $cidade = $_POST["cidade"];
         $estado = $_POST["estado"];
         $comentario = $_POST["comentarioTexto"];
-        $estrela = $_POST["estrela"];
-        $queryIdEstab = $db->query("SELECT id FROM estabelecimento
+        $nota = $_POST["estrela"];
+        $queryIdEstab = $db->prepare("SELECT id FROM estabelecimento
         INNER JOIN ENDERECO
         ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
         WHERE estabelecimento.nome='$nomeEstab' and endereco.estado = '$estado' and endereco.cidade = '$cidade' and endereco.bairro = '$bairro' and endereco.tipo_logradouro = '$tipoLogradouro' and endereco.logradouro = '$logradouro' and endereco.numero = $numero");
         if($queryIdEstab->execute()){
             $idEstab = $queryIdEstab->fetch(PDO::FETCH_ASSOC)["id"];
-            $queryIdUser = $db->query("SELECT id FROM usuario where email = '$email'");
+            $queryIdUser = $db->prepare("SELECT id FROM usuario where email = '$email'");
             if($queryIdUser->execute()){
                 $idUser = $queryIdUser->fetch(PDO::FETCH_ASSOC)["id"];
-                $insertAval = $db->query("INSERT INTO avaliacao (descricao, dt_avaliacao, nota, fk_usuario_id, fk_estabelecimento_id) values ('$comentario', null, $estrela, $idUser, $idEstab)");
+                $insertAval = $db->prepare("INSERT INTO avaliacao (descricao, dt_avaliacao, nota, fk_usuario_id, fk_estabelecimento_id) values ('$comentario', null, $nota, $idUser, $idEstab)");
                 $insertAval->execute();
-                $queryIdAval = $db->query("SELECT id FROM avaliacao WHERE descricao = '$comentario' and nota = '$nota' and fk_usuario_id = '$idUser' and fk_estabelecimento_id = '$idEstab' ");
+                $queryIdAval = $db->prepare("SELECT id FROM avaliacao WHERE descricao = '$comentario' and nota = $nota and fk_usuario_id = $idUser and fk_estabelecimento_id = $idEstab ");
                 $queryIdAval->execute();
-                $idAVal->fetch(PDO::FETCH_ASSOC);
+                $idAVal = $queryIdAval->fetch(PDO::FETCH_ASSOC)["id"];
+                
                 foreach($_FILES["photos"]["tmp_name"] as $chave => $valor){
-                    $filename = $_FILES['img_perfil']['tmp_name'];
+                    $filename = $valor;
                     $client_id= "488371ea46cb4a3";
                     $handle = fopen($filename, "r");
                     $data = fread($handle, filesize($filename));
@@ -50,7 +51,8 @@
                     $pms = json_decode($out,true);
                     $img_url=$pms['data']['link'];
 
-                    $consulta = $db->query("INSERT INTO foto_avaliacao (descricao, fk_avaliacao_id) VALUES ('$img_url', $idAVal)");
+                    $consulta = $db->prepare("INSERT INTO fotos_avaliacao (descricao, fk_avaliacao_id) VALUES ('$img_url', $idAVal)");
+                    $consulta->execute();
                 }
             }
         }
