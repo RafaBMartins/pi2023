@@ -22,7 +22,7 @@ function geraCards(estabJson){
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div")
         divStoreCard.classList.add("store-card");
-        divStoreCard.innerHTML = `<img src="${estabelecimento["foto_estabelecimento"]}" class="store-photo">
+        divStoreCard.innerHTML = `<img id="${estabelecimento["id"]}" src="${estabelecimento["foto_estabelecimento"]}" class="store-photo">
         <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
           <!--categoria do estabelecimento-->
@@ -42,6 +42,10 @@ function geraCards(estabJson){
           <button class="store-map-button">VER NO MAPA</button>
         </div>`
         document.getElementById("stores_content").append(divStoreCard);
+      
+      document.getElementById(estabelecimento["id"]).addEventListener('click', (e) => {
+        window.open(`http://localhost/pi2023/pest.php?id=${estabelecimento["id"]}&tipo_estabelecimento=${estabelecimento["tipo_estabelecimento"]}&nome_estabelecimento=${estabelecimento["nome_estabelecimento"]}&tipo_logradouro=${estabelecimento["tipo_logradouro"]}&logradouro=${estabelecimento["logradouro"]}$cidade=${estabelecimento["cidade"]}`)
+      })
     })
 }
 

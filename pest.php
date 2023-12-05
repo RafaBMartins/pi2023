@@ -24,11 +24,6 @@
   <?php 
     include("header.php");
   ?>
-
-  <?php if(!isset($_SESSION["email"])){
-    header("location: http://localhost/pi2023/login.php");
-    die();
-  }?>
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
     <figure style="display: flex; align-items: center;"></figure>
