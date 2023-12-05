@@ -1,5 +1,5 @@
 <?php
-    require("pdoConnect.php");
+    require("../pdoConnect.php");
     $resposta = array();
 
 
