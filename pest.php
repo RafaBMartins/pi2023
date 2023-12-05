@@ -38,7 +38,7 @@
     </figure>
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form id="avaliarEstabelecimento" action="" method="POST" style="display: none;">
+      <form enctype="multipart/form-data"  id="avaliarEstabelecimento" action="php/insertComentario.php" method="POST" style="display: none;">
           <div id="form_header">
               <h1>AVALIE O ESTABELECIMENTO</h1>
           </div>
@@ -80,6 +80,13 @@
               </label>
             </div>
           </div>
+          <input type="hidden" name="nomeEstabelecimento" value="01/02" id="nome_estabelecimento">
+          <input type="hidden" name="tipoLogradouro" value="rua" id="tipo_logradouro">
+          <input type="hidden" name="logradouro" value="dos sabias" id="tipo_logradouro">
+          <input type="hidden" name="numero" value="2" id="numero">
+          <input type="hidden" name="bairro" value="Morada de laranjeiras" id="bairro">
+          <input type="hidden" name="cidade" value="Serra" id="cidade">
+          <input type="hidden" name="estado" value="ES" id="estado">
 
           <button type="submit" id="btnModals">
             Enviar Avaliação
