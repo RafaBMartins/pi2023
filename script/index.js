@@ -5,13 +5,16 @@ for (let i = 0; i < checkBoxCategory.length; i++) {
     for (let j = 0; j < checkBoxCategory.length; j++) {
       if (checkBoxCategory[j] !== checkBoxCategory[i]) {
         checkBoxCategory[j].parentElement.children[0].classList.remove("category-checked");
+        checkBoxCategory[j].parentElement.children[1].classList.remove("category-checked");
       }
     }
 
     if (checkBoxCategory[i].checked) {
       checkBoxCategory[i].parentElement.children[0].classList.add("category-checked");
+      checkBoxCategory[i].parentElement.children[1].classList.add("category-checked");
     } else {
       checkBoxCategory[i].parentElement.children[0].classList.remove("category-checked");
+      checkBoxCategory[i].parentElement.children[1].classList.remove("category-checked");
     }
   });
 }
