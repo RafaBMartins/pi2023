@@ -193,11 +193,7 @@
         <!--div com avaliações do usuário-->
         <div id="avaliacoes">
           <!--primeira avaliação-->
-
-          <div class="row m-1">
-
-         </div>
-         <?php 
+          <?php 
               $consultaComentarios = $db->prepare("SELECT usuario.nome, avaliacao.descricao, avaliacao.nota, avaliacao.id as avalId from estabelecimento inner join avaliacao
               on estabelecimento.id = avaliacao.fk_estabelecimento_id
               inner join usuario
@@ -209,7 +205,9 @@
               <?php if($consultaComentarios->rowCount() > 0): ?>
                 <?php while($linha = $consultaComentarios->fetch(PDO::FETCH_ASSOC)): ?>
 
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
+            
+          <div class="row m-1">
+                  <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
               <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2"><?php echo $linha["nome"]; ?></p>
@@ -246,6 +244,9 @@
           <?php endwhile ?>
           <?php endif ?>
           <?php endif?>
+
+
+          </div>
 
         </div>
 
