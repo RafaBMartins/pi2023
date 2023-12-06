@@ -55,7 +55,7 @@
         else{
             $insertEndereco = $db->prepare("INSERT INTO ENDERECO (logradouro, tipo_logradouro, estado, cidade, bairro, numero, latitude, longitude) VALUES ('$logradouro', '$tipo_logradouro', '$estado', '$cidade', '$bairro', $numero, $latitude, $longitude)");
             $insertEndereco->execute();
-            $idEnderco = $db->prepare("SELECT endereco_pk FROM ENDERECO WHERE bairro = '$bairro' and numero = $numero");
+            $idEnderco = $db->prepare("SELECT endereco_pk FROM ENDERECO WHERE bairro = '$bairro' and logradouro = '$logradouro' and numero = $numero");
             $idEnderco->execute();
             $resulIdEnderco = $idEnderco->fetch(PDO::FETCH_ASSOC);
             $idEnderecoEstab = $resulIdEnderco["endereco_pk"];

@@ -46,7 +46,6 @@
     WHERE estabelecimento.id = $idEstab");
     if($consultaEstab->execute()){
       $resultado = $consultaEstab->fetch(PDO::FETCH_ASSOC);
-      var_dump($resultado);
     }
   ?>
   <div id="myModal" class="modal" onclick="fechaImg()">
@@ -100,14 +99,7 @@
               </label>
             </div>
           </div>
-          <input type="hidden" name="nomeEstabelecimento" value="01/02 B" id="nome_estabelecimento">
-          <input type="hidden" name="tipoLogradouro" value="rua" id="tipo_logradouro">
-          <input type="hidden" name="logradouro" value="dos Sabias" id="tipo_logradouro">
-          <input type="hidden" name="numero" value="2" id="numero">
-          <input type="hidden" name="bairro" value="morada de laranjeiras" id="bairro">
-          <input type="hidden" name="cidade" value="Serra" id="cidade">
-          <input type="hidden" name="estado" value="ES" id="estado">
-
+          <input type="hidden" name="idEstab" value="<?php echo $_GET["id"]; ?>" id="id_estab">
           <button type="submit" id="btnModals">
             Enviar Avaliação
           </button>
@@ -120,7 +112,7 @@
       <div class="col-md-5">
           <div class="card p-0 grude">
             <p class="h1">
-              <?php echo $resultado["nome"] ?>
+              <?php echo $resultado["nome"]; ?>
               <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue3);"></i>
             </p>
             <!--carrosel-->
@@ -141,7 +133,7 @@
                   <div class="carousel-item active">
                     <!--imagem do carrosel com altura de 1/4 da largura e imagem que ocupa o espaço disponível-->
                     <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfilestabelecimento/1006771.png" class="object-fit-cover">
+                      <img src="<?php echo $resultado["uri_image"] ?>" class="object-fit-cover">
                     </div>
                   </div>
                   <!--item do carrosel-->
@@ -191,7 +183,7 @@
         <div class="well m-3">
           <div>
             <label class="infoTitle">ENDEREÇO</label>
-            <label class="infoEndereco" style="text-align:start;"><?php echo($resultado["tipo_logradouro"] . " " . $resultado["logradouro"] . ", " .  $resultado["numero"] . " - " . $resultado["bairro"] . ", " . $resultado["cidade"] . "- " . $resultado["estado"]); ?></label>
+            <label class="infoEndereco" style="text-align:start;"><?php echo($resultado["tipo_logradouro"] . " " . $resultado["logradouro"] . ", " .  $resultado["numero"] . " s- " . $resultado["bairro"] . ", " . $resultado["cidade"] . "- " . $resultado["estado"]); ?></label>
           </div>
         </div>
         </div>
@@ -203,172 +195,57 @@
           <!--primeira avaliação-->
 
           <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/1500500.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/5estrela.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start comentario">Lá vem o Chaves, Chaves, Chaves, Todos atentos olhando pra TV. Lá vem o Chaves, 
-                  Chaves, Chaves, Com uma historinha bem gostosa de se ver Aí vem o Chaves, Chaves, Chaves, Todos atentos olhando pra 
-                  TV. Aí vem o Chaves, Chaves, Chaves, Com uma historinha bem gostosa de se ver A Chiquinha é uma gracinha, ninguém 
-                  agüenta quando vai chorar E Seu Madruga, sempre muito calado, Não abre a boca só pra não brigar O Professor Girafales 
-                  e a Dona Florinda, Se gostam tanto mas casório, nada ainda E tem o Quico com a bochecha toda inchada, E é claro o Chaves, o rei
-                  da palhaçada E é claro o Chaves, o rei da palhaçada Lá vem o Chaves, Chaves, Chaves, Tô chegando! Lá vem o Chaves, Chaves, Chaves</p>
-              </div>
-            </div>
-          </div>
 
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
-                  eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                  A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
-                  momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
-                  possível aglomeração e tempo de espera.</p>
-              </div>
-            </div>
-          </div>
+         </div>
+         <?php 
+              $consultaComentarios = $db->prepare("SELECT usuario.nome, avaliacao.descricao, avaliacao.nota, avaliacao.id as avalId from estabelecimento inner join avaliacao
+              on estabelecimento.id = avaliacao.fk_estabelecimento_id
+              inner join usuario
+              on usuario.id = avaliacao.fk_usuario_id
+              inner join fotos_avaliacao
+              on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where estabelecimento.id = $idEstab");
+            ?>
+            <?php if($consultaComentarios->execute()): ?>
+              <?php if($consultaComentarios->rowCount() > 0): ?>
+                <?php while($linha = $consultaComentarios->fetch(PDO::FETCH_ASSOC)): ?>
 
-          <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
               <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
+              <p class="m-2"><?php echo $linha["nome"]; ?></p>
+              <?php for($i = 0; $i < $linha["nota"]; $i++){ ?>
+               <?php echo "<i class='fa-solid fa-star' style='color:var(--color-blue5);'></i>"; }
+              for($i = 0; $i < 5 - $linha["nota"]; $i++){ ?>
+                <?php echo "<i class='fa-regular fa-star' style='color:var(--color-blue5);'></i>";} ?>
             </div>
             <div class="col-sm-12">
               <div class="row justify-content-center">
                 <div class="imagens">
-                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <?php
+                    $avalId = $linha["avalid"];
+                    $consultaImgComent = $db->prepare("SELECT fotos_avaliacao.descricao as uri_image from estabelecimento inner join avaliacao
+                    on estabelecimento.id = avaliacao.fk_estabelecimento_id
+                    inner join usuario
+                    on usuario.id = avaliacao.fk_usuario_id
+                    inner join fotos_avaliacao
+                    on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where avaliacao.id = $avalId");
+                    $consultaImgComent->execute();?>
+                    <?php while($imagens = $consultaImgComent->fetch(PDO::FETCH_ASSOC)): ?>
+                      <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                    <?php endwhile ?>
                 </div>
               </div>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
               <div class="p-1 border-bottom">
-                <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
-                  eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                  A organização do Tilápia espaço pode ser confusa e o Traíra tempo de.</p>
+                <p class="text-start comentario"><?php echo $linha["descricao"]?></p>
               </div>
             </div>
           </div>
-
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start mb-0 comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
-                  eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                  A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
-                  momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
-                  possível aglomeração e tempo de espera.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start comentario">om bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar
-                  uma dose sjakdhasjkdashdajkshdo wdjka whdjawhd jwahdjhad jhsjk hhas dhsajdkhsajhd kjashdawyhd uawhy udauiwyh uwyd uyuwy duiy uiwy y
-                dhasjhd ahd adk jashdjk haskjdhkj hdsjkadiwo uqoeiu ue qwiou</p>
-              </div>
-            </div>
-          </div>
+          <?php endwhile ?>
+          <?php endif ?>
+          <?php endif?>
 
         </div>
 
