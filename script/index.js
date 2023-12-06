@@ -5,13 +5,16 @@ for (let i = 0; i < checkBoxCategory.length; i++) {
     for (let j = 0; j < checkBoxCategory.length; j++) {
       if (checkBoxCategory[j] !== checkBoxCategory[i]) {
         checkBoxCategory[j].parentElement.children[0].classList.remove("category-checked");
+        checkBoxCategory[j].parentElement.children[1].classList.remove("category-checked");
       }
     }
 
     if (checkBoxCategory[i].checked) {
       checkBoxCategory[i].parentElement.children[0].classList.add("category-checked");
+      checkBoxCategory[i].parentElement.children[1].classList.add("category-checked");
     } else {
       checkBoxCategory[i].parentElement.children[0].classList.remove("category-checked");
+      checkBoxCategory[i].parentElement.children[1].classList.remove("category-checked");
     }
   });
 }
@@ -22,7 +25,7 @@ function geraCards(estabJson){
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div")
         divStoreCard.classList.add("store-card");
-        divStoreCard.innerHTML = `<img id="${estabelecimento["id"]}" src="${estabelecimento["foto_estabelecimento"]}" class="store-photo">
+        divStoreCard.innerHTML = `<div class="store-photo"><img id="${estabelecimento["id"]}" src="${estabelecimento["foto_estabelecimento"]}"></div>
         <!--container com as informações gerais do estabelecimento-->
         <div class="store-infos">
           <!--categoria do estabelecimento-->
