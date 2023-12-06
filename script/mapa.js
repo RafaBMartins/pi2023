@@ -2,24 +2,21 @@ const menuLateral = document.getElementById("menuLateral");
 var ultimoPushpinClicado = null
 var icones = {
     1:	"fa-solid fa-utensils",
-    2:	"Hoteis",
-    3:	"Centros Educativos",
-    4:	"Lazer e Esporte",
-    5:	"Lojas",
-    6:	"Hospitais",
-    7:	"Academias",
-    8:	"Eventos e Festas",
-    11:	"Cafeterias",
-    12:	"Bares",
-    13:	"Farmácias",
-    14:	"Shoppings",
-    15: "Museus",
-    16:	"Padarias",
-    17:	"Cinemas",
-    18:	"Supermercados",
-    19:	"Academias",
-    20:	"Bibliotecas",
-    21:	"Outros"
+    5:	"fa-solid fa-bed",
+    9:	"fa-solid fa-shirt",
+    13:	"fa-solid fa-graduation-cap",
+    10:	"fa-solid fa-stethoscope",
+    12:	"fa-solid fa-dumbbell",
+    3:	"fa-solid fa-mug-hot",
+    4:	"fa-solid fa-wine-glass",
+    11:	"fa-solid fa-prescription-bottle-medical",
+    7:	"fa-solid fa-bag-shopping",
+    15: "fa-solid fa-landmark",
+    2:	"fa-solid fa-bread-slice",
+    6:	"fa-solid fa-film",
+    8:	"fa-solid fa-cart-shopping",
+    14:	"fa-solid fa-book",
+    16:	"fa-solid fa-ellipsis"
 };
 
 
