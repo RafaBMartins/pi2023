@@ -2,7 +2,6 @@
     require("../pdoConnect.php");
     $resposta = array();
 
-
     $userLatitude = $_GET["latitude"];
     $userLongitude = $_GET["longitude"];
     $query = "SELECT estabelecimento.id,

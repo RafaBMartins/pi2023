@@ -23,6 +23,31 @@
 <body onload="funcao()">
   <?php 
     include("header.php");
+    require("php/pdoConnect.php");
+    $idEstab = $_GET["id"];
+    $consultaEstab = $db->prepare("SELECT estabelecimento.id,
+    estabelecimento.nome, 
+    estabelecimento.nota_media, 
+    foto_estabelecimento.uri_image, 
+    tipo_estabelecimento.tipo_estabelecimento,
+    endereco.estado,
+    endereco.cidade,
+    endereco.bairro,
+    endereco.logradouro,
+    endereco.tipo_logradouro,
+    endereco.numero
+    FROM ESTABELECIMENTO 
+    INNER JOIN ENDERECO
+    ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
+    INNER JOIN TIPO_ESTABELECIMENTO
+    ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
+    INNER JOIN FOTO_ESTABELECIMENTO
+    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
+    WHERE estabelecimento.id = $idEstab");
+    if($consultaEstab->execute()){
+      $resultado = $consultaEstab->fetch(PDO::FETCH_ASSOC);
+      var_dump($resultado);
+    }
   ?>
   <div id="myModal" class="modal" onclick="fechaImg()">
     <span class="close" onclick="fechaImg()">&times;</span>
@@ -95,7 +120,7 @@
       <div class="col-md-5">
           <div class="card p-0 grude">
             <p class="h1">
-              Caixaça Econômica
+              <?php echo $resultado["nome"] ?>
               <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue3);"></i>
             </p>
             <!--carrosel-->
@@ -166,7 +191,7 @@
         <div class="well m-3">
           <div>
             <label class="infoTitle">ENDEREÇO</label>
-            <label class="infoEndereco" style="text-align:start;">Av. dos Sabiás, 330 - Morada de Laranjeiras, Serra - ES</label>
+            <label class="infoEndereco" style="text-align:start;"><?php echo($resultado["tipo_logradouro"] . " " . $resultado["logradouro"] . ", " .  $resultado["numero"] . " - " . $resultado["bairro"] . ", " . $resultado["cidade"] . "- " . $resultado["estado"]); ?></label>
           </div>
         </div>
         </div>

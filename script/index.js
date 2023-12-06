@@ -44,7 +44,7 @@ function geraCards(estabJson){
         document.getElementById("stores_content").append(divStoreCard);
       
       document.getElementById(estabelecimento["id"]).addEventListener('click', (e) => {
-        window.open(`http://localhost/pi2023/pest.php?id=${estabelecimento["id"]}&tipo_estabelecimento=${estabelecimento["tipo_estabelecimento"]}&nome_estabelecimento=${estabelecimento["nome_estabelecimento"]}&tipo_logradouro=${estabelecimento["tipo_logradouro"]}&logradouro=${estabelecimento["logradouro"]}$cidade=${estabelecimento["cidade"]}`)
+        window.open(`http://localhost/pi2023/pest.php?id=${estabelecimento["id"]}`);
       })
     })
 }
