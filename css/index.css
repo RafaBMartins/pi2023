@@ -305,6 +305,7 @@
         box-shadow: 1px 5px 10px var(--color-gray);
         border-radius: 10px;
         display: flex;
+        cursor: pointer;
     }
 
     .store-card .store-photo {
@@ -316,13 +317,14 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 10px;
     }
 
     .store-infos {
         width: 50%;
         padding: 16px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 0.8fr;
         grid-template-rows: 0.5fr 0.8fr 1fr;
     }
 
