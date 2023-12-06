@@ -16,7 +16,7 @@
     endereco.cidade, 
     endereco.logradouro,
     endereco.tipo_logradouro,
-    acos(sin(endereco.latitude*PI()/180)*sin($objeto->userLatitude*PI()/180)+cos(endereco.latitude*PI()/180)*cos($objeto->userLatitude*PI()/180)*cos(endereco.longitude*PI()/180 - $objeto->userLongitude*PI()/180))*6371 as distancia
+    acos(sin(endereco.latitude*PI()/180)*sin('$objeto'->userLatitude*PI()/180)+cos(endereco.latitude*PI()/180)*cos('$objeto'->userLatitude*PI()/180)*cos(endereco.longitude*PI()/180 - '$objeto'->userLongitude*PI()/180))*6371 as distancia
     FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
@@ -24,7 +24,7 @@
     ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
     INNER JOIN FOTO_ESTABELECIMENTO
     ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
-    ORDER BY distancia DESC";
+    ORDER BY distancia ASC";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
         $respostas["sucesso"] = 1;
