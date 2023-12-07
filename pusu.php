@@ -14,7 +14,7 @@
     crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="css/perfilb.css">
-  <script src="script/javaperfil.js"></script>
+  <script src="script/javaperfil.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -37,7 +37,7 @@
     </figure>
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form id="alterarSenha" action="php/alterarSenha.php" method="POST" style="display:none;">
+      <form enctype="multipart/form-data" id="alterarSenha" action="php/alterarSenha.php" method="POST" style="display:none;">
         <div id="form_header">
           <h1>Alterar Senha</h1>
         </div>
@@ -76,7 +76,7 @@
         </button>
       </form>
 
-      <form id="editarPerfil" action="" method="POST" style="display:none;">
+      <form enctype="multipart/form-data" id="editarPerfil" action="php/editarPerfil.php" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Editar Perfil</h1>
         </div>
@@ -101,7 +101,7 @@
         </button>
       </form>
 
-      <form id="excluirConta" action="php/deleteUsuario.php" method="POST" style="display:none;">
+      <form enctype="multipart/form-data" id="excluirConta" action="php/deleteUsuario.php" method="POST" style="display:none;">
         <div id="form_header">
             <h1>Excluir Perfil</h1>
         </div>
@@ -137,7 +137,20 @@
             <div>
               <div class="containerFotos">
                 <p class="m-1">
-                  <img src="img/perfil/user.png" id="fotoPerfil" class="rounded-circle" alt="Avatar">
+                  <img src="<?php
+                            require("php/pdoConnect.php");
+                            $email = $_SESSION["email"];
+                            $consulta = $db->prepare("SELECT foto_perfil FROM usuario WHERE email = '$email'");
+                            if($consulta->execute()){
+                              if($consulta->rowCount() > 0){
+                                $linha = $consulta->fetch(PDO::FETCH_ASSOC);
+                                echo $linha["foto_perfil"];
+                              }
+                              else{
+                                echo "img/perfil/user.png";
+                              }
+                            }
+  ?>" id="fotoPerfil" class="rounded-circle" alt="Avatar">
                 </p> 
               </div>
             </div>
@@ -154,7 +167,15 @@
         <!--div com avaliações do usuário-->
         <div id="avaliacoes">
           <!--primeira avaliação-->
-
+          <?php
+            $consultaComentario = $db->prepare("SELECT usuario.id, estabelecimento.nome, foto_estabelecimento.uri_image, avaliacao.descricao, avaliacao.nota FROM ESTABELECIMENTO
+            INNER JOIN foto_estabelecimento ON estabelecimento.fk_foto_estabelecimento_foto_estabelecimento_pk = foto_estabelecimento.foto_estabelecimento_pk
+              INNER JOIN avaliacao ON estabelecimento.id = avaliacao.fk_estabelecimento_id
+              INNER JOIN usuario ON usuario.id = avaliacao.fk_usuario_id
+              WHERE usuario.email = '$email';
+              ")?>
+              <?php if($consulta->execute()): ?>
+              <?php if($consulta->rowCount() > 0): ?>
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
@@ -196,132 +217,10 @@
               </div>
             </div>
           </div>
-
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
-                  eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                  A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
-                  momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
-                  possível aglomeração e tempo de espera.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
-                  eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                  A organização do Tilápia espaço pode ser confusa e o Traíra tempo de.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start mb-0 comentario">O Severino Boteco Porreta é um bar com Pintado decoração agradável, atendimento Tucunaré
-                  eficiente e música ao vivo. O cardápio oferece variedade de Jatuarana pratos a preços razoáveis.
-                  A organização do Tilápia espaço pode ser confusa e o Traíra tempo de espera pode ser longo em
-                  momentos de maior movimento. Recomendado para os amantes da culinária, mas esteja preparado para
-                  possível aglomeração e tempo de espera.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
-            <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
-            </div>
-            <div class="col-sm-12">
-              <div class="row justify-content-center">
-                <div class="imagens">
-                </div>
-              </div>
-            </div>
-            <!--comentário e espaçamento do texto da avaliação-->
-            <div class="col-sm-12">
-              <div class="p-1 border-bottom">
-                <p class="text-start comentario">om bar! A garrafa desce redonda que nus..! Sempre que passo em Uberaba dou uma visita pra tomar
-                  uma dose sjakdhasjkdashdajkshdo wdjka whdjawhd jwahdjhad jhsjk hhas dhsajdkhsajhd kjashdawyhd uawhy udauiwyh uwyd uyuwy duiy uiwy y
-                dhasjhd ahd adk jashdjk haskjdhkj hdsjkadiwo uqoeiu ue qwiou</p>
-              </div>
-            </div>
-          </div>
+          <?php else: ?>
+            <div> não há comentários </div>
+          <?php endif ?>
+          <?php endif ?>
 
         </div>
 

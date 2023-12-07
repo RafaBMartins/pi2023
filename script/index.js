@@ -27,9 +27,9 @@ function geraCards(estabJson){
     let estabelecimentos = estabJson["estabelecimentos"];
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div");
-        if(estabelecimento["nota"] > 0 && estabelecimento["nota"] <= 2 ) qualidade = "Ruim";
-        else if(estabelecimento["nota"] >= 2 && estabelecimento["nota"] < 4) qualidade = "Bom";
-        else if(estabelecimento["nota"] >= 4) qualidade = "Excelente";
+        if(estabelecimento["nota_media"] > 0 && estabelecimento["nota_media"] <= 2 ) qualidade = "Ruim";
+        else if(estabelecimento["nota_media"] >= 2 && estabelecimento["nota_media"] < 4) qualidade = "Bom";
+        else if(estabelecimento["nota_media"] >= 4) qualidade = "Excelente";
         else qualidade = "Não avaliado";
         divStoreCard.classList.add("store-card");
         divStoreCard.innerHTML = `<div class="store-photo"><img id="${estabelecimento["id"]}" src="${estabelecimento["foto_estabelecimento"]}"></div>
@@ -47,7 +47,7 @@ function geraCards(estabJson){
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">${estabelecimento["tipo_logradouro"]}  ${estabelecimento["logradouro"]}, ${estabelecimento["cidade"]}<br>${Math.round(estabelecimento["distancia"]/1000)}km de distância</label>
+          <label class="store-location">${estabelecimento["tipo_logradouro"]}  ${estabelecimento["logradouro"]}, ${estabelecimento["cidade"]}, ${estabelecimento["bairro"]}, ${estabelecimento["numero"]}</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>`
