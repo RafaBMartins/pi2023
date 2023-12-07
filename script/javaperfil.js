@@ -110,6 +110,13 @@ function exibirModal(modalName) {
     modal.style.display = "flex";
     let alteraSenhaModal = document.getElementById(modalName);
     alteraSenhaModal.classList.add("modalSelecionado");
+
+    let inputPhoto = document.getElementById("photos");
+    inputPhoto.value = "";
+    let divnomefotos = [...document.getElementsByClassName("fitContent")]
+    for(let i = 0; i<divnomefotos.length; i++) {
+        divnomefotos[i].remove();
+    }
 }
 
 document.getElementById("photos").addEventListener("change", (e) => {
