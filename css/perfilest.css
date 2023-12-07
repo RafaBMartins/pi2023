@@ -479,3 +479,32 @@
 #photosName label {
   color: var(--color-black);
 }
+
+.btnAvaliarMobile {
+  display: none;
+}
+
+.aa {
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .btnAvaliarMobile {
+    display: flex;
+    align-self: center;
+  }
+  .btnAvaliarDesktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .btnAvaliarMobile {
+    display: flex;
+    align-self: center;
+  }
+  .btnAvaliarDesktop {
+    display: none;
+  }
+}

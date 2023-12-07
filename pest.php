@@ -164,7 +164,7 @@ group by estabelecimento.id,
                 <div class=" d-grid row">
                   <div class="d-flex column justify-content-between">
                     <label class="infoTitle">CLASSIFICAÇÃO</label><img src="img/selos/seloBronze.svg" class="m-auto" height="55px" width="55px">
-                    <button class="btnAvaliar" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
+                    <button class="btnAvaliar btnAvaliarDesktop" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
                   </div>
                   <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;"><?php echo round($resultado["nota_media"], 2); ?><i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - <?php
                   if($resultado["nota_media"] > 0 && $resultado["nota_media"] <= 2 ) $qualidade = "Ruim";
@@ -182,6 +182,9 @@ group by estabelecimento.id,
           <div class="containerEndereco">
             <label class="infoTitle">ENDEREÇO</label>
             <label class="infoEndereco" style="text-align:start;"><?php echo(ucfirst($resultado["tipo_logradouro"]) . " " . $resultado["logradouro"] . ", " .  $resultado["numero"] . " - " . $resultado["bairro"] . ", " . $resultado["cidade"] . "- " . $resultado["estado"]); ?></label>
+          </div>
+          <div class="d-flex aa">
+            <button class="btnAvaliar btnAvaliarMobile" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
           </div>
         </div>
         </div>
