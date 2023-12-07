@@ -64,13 +64,11 @@ var map = null;
 
 function carregaPerfil(clicada) {
     document.getElementById("nomeEstabelecimento").textContent = clicada["pushpin"].getTitle();
-    console.log(document.getElementById("nomeEstabelecimento").textContent)
     document.getElementById("imgPerfilEstabelecimento").setAttribute('src', clicada["imagem"]);
     document.getElementById("estabIcon").setAttribute("class", icones[clicada["icone"]]);
     if (window.innerWidth < 470) {
         document.getElementById("nomeEstabelecimentoMobile").textContent = clicada["pushpin"].getTitle();
         document.getElementById("imgPerfilEstabelecimentoMobile").setAttribute('src', clicada["imagem"]);
-        console.log(document.getElementById("imgPerfilEstabelecimentoMobile").getAttribute("src"))
     }
 }
 
@@ -86,8 +84,6 @@ async function carregaEstabelecimento(){
 /*esta funcao carrega o mapa*/
 async function loadMapScenario(estabJson) {
     estabJson = await carregaEstabelecimento();
-    console.log(estabJson);
-    console.log(estabJson);
     const mapa = document.getElementById("mapa");
     calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
@@ -151,7 +147,6 @@ async function loadMapScenario(estabJson) {
                 if (suggestionResult.length > 0) {
                     document.getElementById("sugestoes").style.display = "block";
                     var quatroSugestoes = suggestionResult.slice(0, 4);
-                    console.log(suggestionResult)
                     var quantidade = correspondentes.length;
                     for (let i = 0; i < quatroSugestoes.length - quantidade; i++) {
                         let local = {
@@ -201,9 +196,12 @@ async function loadMapScenario(estabJson) {
     locaisProprios = Array();
 
     estabJson["estabelecimentos"].forEach((estabelecimento) => {
+        imagemIcon = icones[estabelecimento["tipo_estabelecimento"]].split(" ")["1"];
+        console.log(imagemIcon);
         let pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(estabelecimento["latitude"], estabelecimento["longitude"]), {
             color: "blue",
             title: estabelecimento["nome"],
+            icon: `img/pinos/${imagemIcon}.svg`
         });
         estabelecimento = {
             "nome": estabelecimento["nome"],
