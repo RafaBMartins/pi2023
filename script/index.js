@@ -49,14 +49,22 @@ function geraCards(estabJson){
           <!--endereço em extenso do estabelecimento-->
           <label class="store-location">${estabelecimento["tipo_logradouro"]}  ${estabelecimento["logradouro"]}, ${estabelecimento["cidade"]}, ${estabelecimento["bairro"]}, ${estabelecimento["numero"]}</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
-          <button class="store-map-button">VER NO MAPA</button>
+          <button onclick="verNoMapa(${estabelecimento["latitude"]}, ${estabelecimento["longitude"]})" class="store-map-button">VER NO MAPA</button>
         </div>`
         document.getElementById("stores_content").append(divStoreCard);
       
       document.getElementById(estabelecimento["id"]).addEventListener('click', (e) => {
         window.open(`http://localhost/pi2023/pest.php?id=${estabelecimento["id"]}`);
       })
+
+      document.getElementById('btnVerMapa').addEventListener('click', (e) => {
+        
+      })
     })
+}
+
+function verNoMapa(latitude, longitude){
+  window.open(`http://localhost/pi2023/mapa.php?latitude=${latitude}&longitude=${longitude}`);
 }
 
 function limparFiltros(){

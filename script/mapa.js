@@ -83,7 +83,11 @@ async function carregaEstabelecimento(){
 
 /*esta funcao carrega o mapa*/
 async function loadMapScenario(estabJson) {
+    var param = new URLSearchParams(window.location.search);
+    var latitude = param.get("latitude");
+    var longitude = param.get("longitude");
     estabJson = await carregaEstabelecimento();
+    console.log(estabJson);
     const mapa = document.getElementById("mapa");
     calculaTamanhoMapa(mapa)
     var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);

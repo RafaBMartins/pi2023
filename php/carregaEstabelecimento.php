@@ -13,7 +13,9 @@
     endereco.cidade, 
     endereco.logradouro,
 count(avaliacao.descricao) as qtd_aval,
-    endereco.tipo_logradouro
+    endereco.tipo_logradouro,
+    endereco.latitude,
+    endereco.longitude
     FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
@@ -23,7 +25,7 @@ count(avaliacao.descricao) as qtd_aval,
     ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
     LEFT JOIN AVALIACAO
     ON avaliacao.fk_estabelecimento_id = estabelecimento.id
-group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_image, tipo_estabelecimento.tipo_estabelecimento, endereco.cidade, endereco.logradouro, endereco.tipo_logradouro";
+group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_image, tipo_estabelecimento.tipo_estabelecimento, endereco.cidade, endereco.logradouro, endereco.tipo_logradouro, endereco.latitude, endereco.longitude";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
         $respostas["sucesso"] = 1;
