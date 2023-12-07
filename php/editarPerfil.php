@@ -27,7 +27,7 @@
         }
 
     }
-    if(isset($_FILES["novaFoto"])){
+    if(isset($_FILES["novaFoto"]) && $_FILES["novaFoto"]["tmp_name"] != ""){
         $filename = $_FILES['novaFoto']['tmp_name'];
         $client_id= "488371ea46cb4a3";
         $handle = fopen($filename, "r");

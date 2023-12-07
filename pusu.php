@@ -144,7 +144,12 @@
                             if($consulta->execute()){
                               if($consulta->rowCount() > 0){
                                 $linha = $consulta->fetch(PDO::FETCH_ASSOC);
-                                echo($linha["foto_perfil"]);
+                                if($linha["foto_perfil"] != ""){
+                                  echo($linha["foto_perfil"]);
+                                }
+                                else{
+                                  echo("img/perfil/user.png");
+                                }
                               }
                             }
   ?>" id="fotoPerfil" class="rounded-circle" alt="Avatar">
