@@ -307,15 +307,17 @@
 
 .h1 {
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: var(--color-white);
   color: var(--color-blue5);
   font-weight: bold;
   border: 1px solid var(--color-blue5);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 8px;
 }
 
@@ -331,6 +333,13 @@
 .infoEndereco {
   width: fit-content;
   font-size: 20px;
+  align-self: flex-start;
+}
+
+.containerEndereco {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .btnAvaliar {
@@ -469,4 +478,33 @@
 
 #photosName label {
   color: var(--color-black);
+}
+
+.btnAvaliarMobile {
+  display: none;
+}
+
+.aa {
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .btnAvaliarMobile {
+    display: flex;
+    align-self: center;
+  }
+  .btnAvaliarDesktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .btnAvaliarMobile {
+    display: flex;
+    align-self: center;
+  }
+  .btnAvaliarDesktop {
+    display: none;
+  }
 }

@@ -21,7 +21,11 @@
         }
         if(!(isset($_SESSION["index"]) && isset($_SESSION["perguntas"]))){
             $_SESSION["index"] = 0;
-            $_SESSION["perguntas"] = ["Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"];
+            $_SESSION["perguntas"] = ["A entrada do estabelecimento tem uma rampa com boa inclinação?",
+            "O espaço interno do estabelecimento é o suficiente para cadeirantes se locomoverem?",
+            "O atendimento do estabelecimento foi agradável e respeitoso com você?",
+            "Os cômodos do estabelecimento eram acessíveis para cadeirantes(exemplo: banheiros acessíveis)?",
+            "A altura dos balcões e a largura das portas eram o suficiente para pessoas cadeirantes usarem?"];
         }
     ?>
     <div class="background">
@@ -37,7 +41,7 @@
             <!--inputs-->
             <div id="inputs">
                 <div class="input-box">
-                    <label for="sim">
+                    <label for="sim" class="label_resposta">
                         SIM
                         <div class="input-field">
                             <input type="radio" id="sim" name="resposta" value="sim" class="resposta">
@@ -47,7 +51,7 @@
                 </div>
 
                 <div class="input-box">
-                    <label for="nao">
+                    <label for="nao" class="label_resposta">
                         NÃO
                         <div class="input-field">
                             <input type="radio" id="nao" name="resposta" value="nao" class="resposta">
@@ -57,7 +61,7 @@
                 </div>
             </div>
 
-            <button type="submit" id="login_button">
+            <button type="submit" id="pergunta_button">
                 <?php
                     if($_SESSION["index"] >= 4) echo "Enviar";
                     else echo "Próximo";

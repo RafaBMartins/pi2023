@@ -122,7 +122,7 @@ group by estabelecimento.id,
 
   <div class="container text-center p-0">    
     <div class="row"> 
-      <div class="col-md-5">
+      <div class="col-md-6">
           <div class="card p-0 grude">
             <p class="h1">
               <?php echo $resultado["nome"]; ?>
@@ -150,17 +150,6 @@ group by estabelecimento.id,
             </p>
             <!--carrosel-->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators ">
-                  <!--elementos do carrosel com número do botão associado a eles-->
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    aria-label="Slide 3"></button>
-                </div>
                 <!--item do carrosel inicial-->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -169,43 +158,13 @@ group by estabelecimento.id,
                       <img src="<?php echo $resultado["uri_image"] ?>" class="object-fit-cover">
                     </div>
                   </div>
-                  <!--item do carrosel-->
-                  <div class="carousel-item">
-                    <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfilestabelecimento/6ec80cc0-196c-11ed-bacf-6fad6e8c2d0e--minified.png"
-                        class="object-fit-cover">
-                    </div>
-                  </div>
-                  <!--item do carrosel-->
-                  <div class="carousel-item">
-                    <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfilestabelecimento/caixaca-813072.jpg" class="object-fit-cover">
-                    </div>
-                  </div>
-                  <!--item do carrosel-->
-                  <div class="carousel-item">
-                    <div class="ratio w-100" style="--bs-aspect-ratio: 50%;">
-                      <img src="img/perfil/img1.png" class="object-fit-cover">
-                    </div>
-                  </div>
-                </div>
-                <!--botões nas laterais do carrosel que mudam o item ativo-->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                </div> 
               </div>
             <div class="well m-3">
                 <div class=" d-grid row">
                   <div class="d-flex column justify-content-between">
                     <label class="infoTitle">CLASSIFICAÇÃO</label><img src="img/selos/seloBronze.svg" class="m-auto" height="55px" width="55px">
-                    <button class="btnAvaliar" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
+                    <button class="btnAvaliar btnAvaliarDesktop" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
                   </div>
                   <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;"><?php echo round($resultado["nota_media"], 2); ?><i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - <?php
                   if($resultado["nota_media"] > 0 && $resultado["nota_media"] <= 2 ) $qualidade = "Ruim";
@@ -220,9 +179,12 @@ group by estabelecimento.id,
             
           </div>
         <div class="well m-3">
-          <div>
+          <div class="containerEndereco">
             <label class="infoTitle">ENDEREÇO</label>
             <label class="infoEndereco" style="text-align:start;"><?php echo(ucfirst($resultado["tipo_logradouro"]) . " " . $resultado["logradouro"] . ", " .  $resultado["numero"] . " - " . $resultado["bairro"] . ", " . $resultado["cidade"] . "- " . $resultado["estado"]); ?></label>
+          </div>
+          <div class="d-flex aa">
+            <button class="btnAvaliar btnAvaliarMobile" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
           </div>
         </div>
         </div>
