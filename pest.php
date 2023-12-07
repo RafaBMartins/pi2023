@@ -27,7 +27,7 @@
     $idEstab = $_GET["id"];
     $consultaEstab = $db->prepare("SELECT estabelecimento.id,
     estabelecimento.nome, 
-    tipo_estabelecimento.tipo_estabelecimento,
+    tipo_estabelecimento.tipo_estabelecimento_pk,
     foto_estabelecimento.uri_image,
     endereco.estado,
     endereco.cidade,
@@ -70,7 +70,7 @@ group by estabelecimento.id,
     </figure>
 
     <div class="container-editaperfil" onclick="event.stopPropagation()">
-      <form enctype="multipart/form-data"  id="avaliarEstabelecimento" action="php/insertComentario.php" method="POST" style="display: none;">
+      <form enctype="multipart/form-data"  id="avaliarEstabelecimento" action="php/insertComentario.php?id=<?php echo $_GET["id"]?>" method="POST" style="display: none;">
           <div id="form_header">
               <h1>AVALIE O ESTABELECIMENTO</h1>
           </div>
@@ -145,7 +145,6 @@ group by estabelecimento.id,
                   14 =>	"fa-solid fa-book",
                   16 =>	"fa-solid fa-ellipsis"
                 ];
-                $resultado["tipo_estabelecimento_pk"];
                 echo($icones[$resultado["tipo_estabelecimento_pk"]]);
                 ?>" style="font-size: 42px; color: var(--color-blue3);"></i>
             </p>
@@ -283,7 +282,9 @@ group by estabelecimento.id,
             </div>
           </div>
           <?php endwhile ?>
-          <?php endif ?>
+          <?php else: ?>
+            <div class="nao_comentarios">Não há comentários</div>
+          <?php endif?>
           <?php endif?>
 
 

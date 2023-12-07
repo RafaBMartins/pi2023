@@ -19,7 +19,10 @@
             <label><?php echo $_GET["erro"]?></label>
         </div>
     <?php endif ?>
-        <form id="login_form" method="post" action="php/loginServer.php">
+        <form id="login_form" method="post" action="php/loginServer.php<?php
+            $msg = $_GET["msg"];
+            $id = $_GET["id"];
+            if($msg == "avaliacao") echo "?" . "msg=" . $msg . "&id=" . $id; ?>">
             <!--header-->
             <div id="form_header">
                 <h1>Entrar</h1>

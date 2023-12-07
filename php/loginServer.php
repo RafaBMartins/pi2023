@@ -21,8 +21,9 @@
                         session_start();
                          $_SESSION["nome"] = $linha["nome"];
                          $_SESSION["email"] = $linha["email"];
-                        if($_GET["msg"] == "comentario"){
-                            header('location: http://localhost/pi2023/pest.php');
+                        if($_GET["msg"] == "avaliacao"){
+                            $id = $_GET["id"];
+                            header("location: http://localhost/pi2023/pest.php?id=$id");
                             die();    
                         }
                         else{

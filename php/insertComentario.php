@@ -2,7 +2,8 @@
     require("pdoConnect.php");
     session_start();
     if(!isset($_SESSION["email"])){
-        header('location: http://localhost/pi2023/login.php?msg=avaliacao');
+        $id = $_GET["id"];
+        header("location: http://localhost/pi2023/login.php?msg=avaliacao&id=$id");
         die();
     }
     if(isset($_POST["comentarioTexto"]) && isset($_POST["estrela"]) && isset($_FILES["photos"])){
