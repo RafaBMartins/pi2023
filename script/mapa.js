@@ -215,45 +215,6 @@ async function loadMapScenario(estabJson) {
         locaisProprios.push(estabelecimento);
     })
 
-    //criando os pins do mapa 
-    var ifes = new Microsoft.Maps.Pushpin(locIfes, {
-        color: "green",
-        title: "Ifes Campus Serra",
-    });
-
-    var jaymeDosSantosNeves = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.199232504534884, -40.227077110956316), {
-        color: "red",
-        title: "Hospital Jayme dos Santos Neves",
-    });
-
-    var cafeArrumado = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(-20.19826402415827, -40.224856532079116), {
-        color: "blue",
-        title: "Café Arrumado"
-    })
-    //fim dos pins
-
-    //adiconando os pins no objeto de locais proprios
-    ifes = {
-        "nome": "Ifes campus Serra",
-        "pushpin": ifes,
-        "imagem": "../img/ifesPerfil.jpg"
-    };
-
-    hospitalJayme = {
-        "nome": "Jayme dos Santos Neves",
-        "pushpin": jaymeDosSantosNeves,
-        "imagem": "../img/jaymePerfil.jpg"
-    };
-
-    cafeArrumado = {
-        "nome": "Café Arrumado",
-        "pushpin": cafeArrumado,
-        "imagem": "../img/cafeArrumadoPerfil.jpg"
-    }
-
-    locaisProprios.push(ifes);
-    locaisProprios.push(hospitalJayme);
-    locaisProprios.push(cafeArrumado);
 
     //adicionano evento de mapa nos pins
     for (let item in locaisProprios) {

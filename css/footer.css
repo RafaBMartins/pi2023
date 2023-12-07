@@ -143,6 +143,11 @@
     font-weight: 100;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
 /*responsividade*/
 @media screen and (max-width: 768px) {
     /*configurando para duas colunas*/
