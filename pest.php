@@ -27,15 +27,15 @@
     $idEstab = $_GET["id"];
     $consultaEstab = $db->prepare("SELECT estabelecimento.id,
     estabelecimento.nome, 
-    estabelecimento.nota_media, 
-    foto_estabelecimento.uri_image, 
     tipo_estabelecimento.tipo_estabelecimento,
+    foto_estabelecimento.uri_image,
     endereco.estado,
     endereco.cidade,
     endereco.bairro,
     endereco.logradouro,
     endereco.tipo_logradouro,
-    endereco.numero
+    endereco.numero,
+    avg(avaliacao.nota) as nota_media
     FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
@@ -43,7 +43,19 @@
     ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
     INNER JOIN FOTO_ESTABELECIMENTO
     ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
-    WHERE estabelecimento.id = $idEstab");
+    INNER JOIN AVALIACAO
+ON AVALIACAO.fk_estabelecimento_id = estabelecimento.id
+    WHERE estabelecimento.id = $idEstab
+group by estabelecimento.id,
+    estabelecimento.nome, 
+    tipo_estabelecimento.tipo_estabelecimento,
+    endereco.estado,
+    endereco.cidade,
+    endereco.bairro,
+    endereco.logradouro,
+    endereco.tipo_logradouro,
+    endereco.numero,
+    foto_estabelecimento.uri_image");
     if($consultaEstab->execute()){
       $resultado = $consultaEstab->fetch(PDO::FETCH_ASSOC);
     }
@@ -174,7 +186,7 @@
                     <label class="infoTitle">CLASSIFICAÇÃO</label><img src="img/selos/seloBronze.svg" class="m-auto" height="55px" width="55px">
                     <button class="btnAvaliar" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
                   </div>
-                  <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;">7.4<i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - Bom (70 Avaliações)</label>
+                  <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;"><?php echo round($resultado["nota_media"], 2); ?><i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - Bom (70 Avaliações)</label>
                 </div>
             </div>
             <div class="well">
@@ -199,7 +211,8 @@
               inner join usuario
               on usuario.id = avaliacao.fk_usuario_id
               inner join fotos_avaliacao
-              on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where estabelecimento.id = $idEstab");
+              on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where estabelecimento.id = $idEstab
+              GROUP BY avaliacao.id, usuario.nome");
             ?>
             <?php if($consultaComentarios->execute()): ?>
               <?php if($consultaComentarios->rowCount() > 0): ?>

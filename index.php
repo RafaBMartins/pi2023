@@ -36,27 +36,27 @@
 
     <!--container que armazena todos os tipos de filtros-->
     <div class="filter_content">
-      <form action="" method="POST" class="filter_content">
+      <form action="php/selectEstabelecimento.php" method="POST" class="filter_content">
         <!--container que armazena filtros por categoria, feito com inputs type checkbox-->
         <div class="category-filter">
           <label class="category-title">CATEGORIAS</label>
           <ul id="ul-category">
-            <li><i class="fa-solid fa-utensils"></i><label for="restaurante">RESTAURANTES</label><input class="checkbox-category" type="radio" name="categoryFilters" id="restaurante"></li>
-            <li><i class="fa-solid fa-bread-slice"></i><label for="padaria">PADARIAS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="padaria"></li>
-            <li><i class="fa-solid fa-mug-hot"></i><label for="cafeteria">CAFETERIAS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="cafeteria"></li>
-            <li><i class="fa-solid fa-wine-glass"></i><label for="bar">BARES</label><input class="checkbox-category" type="radio" name="categoryFilters" id="bar"></li>
-            <li><i class="fa-solid fa-bed"></i><label for="hotel">HOTÉIS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="hotel"></li>
-            <li><i class="fa-solid fa-film"></i><label for="cinema">CINEMAS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="cinema"></li>
-            <li><i class="fa-solid fa-bag-shopping"></i><label for="shopping">SHOPPINGS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="shopping"></li>
-            <li><i class="fa-solid fa-cart-shopping"></i><label for="supermercado">SUPERMERCADOS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="supermercado"></li>
-            <li><i class="fa-solid fa-shirt"></i><label for="lojaderoupa">LOJAS DE ROUPA</label><input class="checkbox-category" type="radio" name="categoryFilters" id="lojaderoupa"></li>
-            <li><i class="fa-solid fa-stethoscope"></i><label for="hospital">HOSPITAIS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="hospital"></li>
-            <li><i class="fa-solid fa-prescription-bottle-medical"></i><label for="farmácias">FARMÁCIAS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="farmácias"></li>
-            <li><i class="fa-solid fa-dumbbell"></i><label for="academia">ACADEMIAS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="academia"></li>
-            <li><i class="fa-solid fa-graduation-cap"></i><label for="escola">ESCOLAS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="escola"></li>
-            <li><i class="fa-solid fa-book"></i><label for="biblioteca">BIBLIOTECAS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="biblioteca"></li>
-            <li><i class="fa-solid fa-landmark"></i><label for="museus">MUSEUS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="museus"></li>
-            <li><i class="fa-solid fa-ellipsis"></i><label for="outros">OUTROS</label><input class="checkbox-category" type="radio" name="categoryFilters" id="outros"></li>
+            <li><i class="fa-solid fa-utensils"></i><label for="restaurante">RESTAURANTES</label><input value="1" class="checkbox-category" type="radio" name="categoryFilters" id="restaurante"></li>
+            <li><i class="fa-solid fa-bread-slice"></i><label for="padaria">PADARIAS</label><input value="2" class="checkbox-category" type="radio" name="categoryFilters" id="padaria"></li>
+            <li><i class="fa-solid fa-mug-hot"></i><label for="cafeteria">CAFETERIAS</label><input value="3" class="checkbox-category" type="radio" name="categoryFilters" id="cafeteria"></li>
+            <li><i class="fa-solid fa-wine-glass"></i><label for="bar">BARES</label><input value="4" class="checkbox-category" type="radio" name="categoryFilters" id="bar"></li>
+            <li><i class="fa-solid fa-bed"></i><label for="hotel">HOTÉIS</label><input value="5" class="checkbox-category" type="radio" name="categoryFilters" id="hotel"></li>
+            <li><i class="fa-solid fa-film"></i><label for="cinema">CINEMAS</label><input value="6" class="checkbox-category" type="radio" name="categoryFilters" id="cinema"></li>
+            <li><i class="fa-solid fa-bag-shopping"></i><label for="shopping">SHOPPINGS</label><input value="7" class="checkbox-category" type="radio" name="categoryFilters" id="shopping"></li>
+            <li><i class="fa-solid fa-cart-shopping"></i><label for="supermercado">SUPERMERCADOS</label><input value="8" class="checkbox-category" type="radio" name="categoryFilters" id="supermercado"></li>
+            <li><i class="fa-solid fa-shirt"></i><label for="lojaderoupa">LOJAS DE ROUPA</label><input value="9" class="checkbox-category" type="radio" name="categoryFilters" id="lojaderoupa"></li>
+            <li><i class="fa-solid fa-stethoscope"></i><label for="hospital">HOSPITAIS</label><input value="10" class="checkbox-category" type="radio" name="categoryFilters" id="hospital"></li>
+            <li><i class="fa-solid fa-prescription-bottle-medical"></i><label for="farmácias">FARMÁCIAS</label><input value="11" class="checkbox-category" type="radio" name="categoryFilters" id="farmácias"></li>
+            <li><i class="fa-solid fa-dumbbell"></i><label for="academia">ACADEMIAS</label><input value="12" class="checkbox-category" type="radio" name="categoryFilters" id="academia"></li>
+            <li><i class="fa-solid fa-graduation-cap"></i><label for="escola">ESCOLAS</label><input value="13" class="checkbox-category" type="radio" name="categoryFilters" id="escola"></li>
+            <li><i class="fa-solid fa-book"></i><label for="biblioteca">BIBLIOTECAS</label><input value="14" class="checkbox-category" type="radio" name="categoryFilters" id="biblioteca"></li>
+            <li><i class="fa-solid fa-landmark"></i><label for="museus">MUSEUS</label><input value="15" class="checkbox-category" type="radio" name="categoryFilters" id="museus"></li>
+            <li><i class="fa-solid fa-ellipsis"></i><label for="outros">OUTROS</label><input value="16" class="checkbox-category" type="radio" name="categoryFilters" id="outros"></li>
           </ul>
         </div>
         <!--divisoria que conecta os diferentes filtros-->
@@ -69,7 +69,7 @@
           <label class="distance-title">DISTÂNCIA</label>
           <div class="input-box">
             <label>ATÉ</label>
-            <input type="number">
+            <input name="distancia" type="number">
             <label>KILOMETROS</label>
           </div>
         </div>
@@ -83,7 +83,7 @@
           <label class="rating-title">NOTA</label>
           <ul>
             <li>
-              <input type="radio" id="1star" name="starRadio">
+              <input value="1" type="radio" id="1star" name="starRadio">
               <label for="1star">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
@@ -94,7 +94,7 @@
               </label>
             </li>
             <li>
-              <input type="radio" id="2star" name="starRadio">
+              <input value="2" type="radio" id="2star" name="starRadio">
               <label for="2star">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -105,7 +105,7 @@
               </label>
             </li>
             <li>
-              <input type="radio" id="3star" name="starRadio">
+              <input value="3" type="radio" id="3star" name="starRadio">
               <label for="3star">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -116,7 +116,7 @@
               </label>
             </li>
             <li>
-              <input type="radio" id="4star" name="starRadio">
+              <input value="4" type="radio" id="4star" name="starRadio">
               <label for="4star">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -127,7 +127,7 @@
               </label>
             </li>
             <li>
-              <input type="radio" id="5star" name="starRadio">
+              <input value="5" type="radio" id="5star" name="starRadio">
               <label for="5star">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -148,15 +148,15 @@
         <div class="seal-filter">
           <label class="seal-title">SELO</label>
           <div class="seals">
-            <input type="radio" id="goldSeal" name="sealFilter">
+            <input value="1" type="radio" id="goldSeal" name="sealFilter">
             <label for="goldSeal">
               <img src="img/selos/seloOuro.svg">
             </label>
-            <input type="radio" id="silverSeal" name="sealFilter">
+            <input value="2" type="radio" id="silverSeal" name="sealFilter">
             <label for="silverSeal">
               <img src="img/selos/seloPrata.svg">
             </label>
-            <input type="radio" id="bronzeSeal" name="sealFilter">
+            <input value="3" type="radio" id="bronzeSeal" name="sealFilter">
             <label for="bronzeSeal">
               <img src="img/selos/seloBronze.svg">
             </label>

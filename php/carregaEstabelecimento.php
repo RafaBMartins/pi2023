@@ -1,33 +1,29 @@
 <?php
-    require("../pdoConnect.php");
+    require("pdoConnect.php");
     $resposta = array();
+    //var_dump($_GET);
 
-    $userLatitude = $_GET["latitude"];
-    $userLongitude = $_GET["longitude"];
+    $dados = file_get_contents("php://input");
+    $objeto = json_decode($dados);
+
+    // $user_latitude = $_POST["latitude"];
+    // $user_longitude = $_POST["longitude"];
     $query = "SELECT estabelecimento.id,
     estabelecimento.nome, 
+    estabelecimento.nota_media, 
     foto_estabelecimento.uri_image, 
     tipo_estabelecimento.tipo_estabelecimento,
-    avg(avaliacao.nota) as nota_media,
     endereco.cidade, 
     endereco.logradouro,
-    endereco.tipo_logradouro
+    endereco.tipo_logradouro,
+    acos(sin(endereco.latitude*PI()/180)*sin($objeto->userLatitude*PI()/180)+cos(endereco.latitude*PI()/180)*cos($objeto->userLatitude*PI()/180)*cos(endereco.longitude*PI()/180 - $objeto->userLongitude*PI()/180))*6371 as distancia
     FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
     INNER JOIN TIPO_ESTABELECIMENTO
     ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
     INNER JOIN FOTO_ESTABELECIMENTO
-    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
-    INNER JOIN AVALIACAO ON AVALIACAO.FK_ESTABELECIMENTO_ID = ESTABELECIMENTO.ID
-    GROUP BY estabelecimento.id,
-    estabelecimento.nome, 
-    foto_estabelecimento.uri_image, 
-    tipo_estabelecimento.tipo_estabelecimento,
-    endereco.cidade, 
-    endereco.logradouro,
-    endereco.tipo_logradouro
-    ORDER BY distancia DESC";
+    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
         $respostas["sucesso"] = 1;

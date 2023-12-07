@@ -20,9 +20,15 @@
                         $resposta["sucesso"] = 1;
                         session_start();
                          $_SESSION["nome"] = $linha["nome"];
-                         $_SESSION["email"] = $linha["email"];;
-                        header('location: http://localhost/pi2023/pusu.php');
-                        die();
+                         $_SESSION["email"] = $linha["email"];
+                        if($_GET["msg"] == "comentario"){
+                            header('location: http://localhost/pi2023/pest.php');
+                            die();    
+                        }
+                        else{
+                            header('location: http://localhost/pi2023/pusu.php');
+                            die();
+                        }
                     }
                     else{
                         $resposta["sucesso"] = 0;

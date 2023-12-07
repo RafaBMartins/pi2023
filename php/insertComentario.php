@@ -1,7 +1,11 @@
 <?php
     require("pdoConnect.php");
     session_start();
-    if(isset($_POST["comentarioTexto"]) && isset($_POST["estrela"]) && isset($_FILES["photos"]) && isset($_SESSION["email"])){
+    if(!isset($_SESSION["email"])){
+        header('location: http://localhost/pi2023/login.php?msg=avaliacao');
+        die();
+    }
+    if(isset($_POST["comentarioTexto"]) && isset($_POST["estrela"]) && isset($_FILES["photos"])){
         $email = $_SESSION["email"];
         $comentario = $_POST["comentarioTexto"];
         $nota = $_POST["estrela"];
