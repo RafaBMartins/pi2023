@@ -89,7 +89,6 @@ async function carregaEstabelecimento() {
         }
 
   }
-  
 
 async function buscarEstabelecimentos(){
     let resposta = await fetch(`https://dev.virtualearth.net/REST/v1/Locations?query={${endereco}}&maxResults=1&key=Agz-GsinzRU8zLEoIGspfeW14MkrCmOv1RXL5foc3GtKtQWkGHydai2rkhG_ZwQu`, {
@@ -101,4 +100,19 @@ async function buscarEstabelecimentos(){
       });
     let dados = await resposta.json();
     return dados;    
+}
+
+function filtro(){
+  let input = document.getElementById("pesquisa").value.toUpperCase();
+  let cards = document.getElementsByClassName("store-card");
+
+  for (i = 0; i < cards.length; i++) {
+    let a = cards[i].getElementsByClassName("store-name")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(input) > -1) {
+        cards[i].style.display = "";
+    } else {
+        cards[i].style.display = "none";
+    }
+  }
 }

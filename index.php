@@ -30,7 +30,7 @@
   <div id="search_content">
     <!--container que armazena a barra de busca para os estabelecimentos-->
     <div id="searchBar_content">
-      <input type="search" spellcheck="false">
+      <input id="pesquisa" type="search" spellcheck="false" onkeyup="filtro()">
       <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
     </div>
 
