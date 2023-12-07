@@ -26,8 +26,7 @@
     tipo_estabelecimento.tipo_estabelecimento,
     endereco.cidade, 
     endereco.logradouro,
-    endereco.tipo_logradouro
-    ORDER BY distancia DESC";
+    endereco.tipo_logradouro";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
         $respostas["sucesso"] = 1;
