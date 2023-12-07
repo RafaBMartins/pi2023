@@ -42,6 +42,8 @@ group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_imag
                 $estabelecimento["logradouro"] = $linha["logradouro"];
                 $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
                 $estabelecimento["qtd_aval"] = $linha["qtd_aval"];
+                $estabelecimento["latitude"] = $linha["latitude"];
+                $estabelecimento["longitude"] = $linha["longitude"];
                 array_push($respostas["estabelecimentos"], $estabelecimento);
             }
         }

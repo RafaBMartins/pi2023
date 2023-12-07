@@ -86,15 +86,20 @@ async function loadMapScenario(estabJson) {
     var param = new URLSearchParams(window.location.search);
     var latitude = param.get("latitude");
     var longitude = param.get("longitude");
+    if(latitude != null && longitude != null){
+        var locInicial = new Microsoft.Maps.Location(latitude, longitude);
+    }
+    else{
+        var locInicial = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
+    }
     estabJson = await carregaEstabelecimento();
     console.log(estabJson);
     const mapa = document.getElementById("mapa");
     calculaTamanhoMapa(mapa)
-    var locIfes = new Microsoft.Maps.Location(-20.197329691804068, -40.2170160437478);
     /*cria um objeto de mapa da microsoft e adiciona a div que ira conter o mapa*/
     if (window.innerWidth <= 540) {
         map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
-            center: locIfes,
+            center: locInicial,
             zoom: 16,
             NavigationBarMode: "minified",
             navigationBarOrientation: "vertical",
@@ -105,7 +110,7 @@ async function loadMapScenario(estabJson) {
     //se a tela for maior que 540px inicializa o mapa com outras configuracoes
     else {
         map = new Microsoft.Maps.Map(document.getElementById("mapa"), {
-            center: locIfes,
+            center: locInicial,
             zoom: 16,
             NavigationBarMode: "minified",
             navigationBarOrientation: "horizontal"

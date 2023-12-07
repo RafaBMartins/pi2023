@@ -57,9 +57,6 @@ function geraCards(estabJson){
         window.open(`http://localhost/pi2023/pest.php?id=${estabelecimento["id"]}`);
       })
 
-      document.getElementById('btnVerMapa').addEventListener('click', (e) => {
-        
-      })
     })
 }
 
