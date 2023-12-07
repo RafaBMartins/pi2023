@@ -92,7 +92,7 @@
           
           <div class="btnFoto">
               <label for="novaFoto" class="novaFotoLabel">Enviar Nova Foto</label>
-              <input type="file" name="novaFoto" id="novaFoto">
+              <input require="true" type="file" name="novaFoto" id="novaFoto">
           </div>
         </div>
 
@@ -144,10 +144,7 @@
                             if($consulta->execute()){
                               if($consulta->rowCount() > 0){
                                 $linha = $consulta->fetch(PDO::FETCH_ASSOC);
-                                echo $linha["foto_perfil"];
-                              }
-                              else{
-                                echo "img/perfil/user.png";
+                                echo($linha["foto_perfil"]);
                               }
                             }
   ?>" id="fotoPerfil" class="rounded-circle" alt="Avatar">
@@ -167,60 +164,57 @@
         <!--div com avaliações do usuário-->
         <div id="avaliacoes">
           <!--primeira avaliação-->
-          <?php
-            $consultaComentario = $db->prepare("SELECT usuario.id, estabelecimento.nome, foto_estabelecimento.uri_image, avaliacao.descricao, avaliacao.nota FROM ESTABELECIMENTO
-            INNER JOIN foto_estabelecimento ON estabelecimento.fk_foto_estabelecimento_foto_estabelecimento_pk = foto_estabelecimento.foto_estabelecimento_pk
+          <?php 
+              $consultaComentarios = $db->prepare("SELECT estabelecimento.nome, foto_estabelecimento.uri_image, avaliacao.descricao, avaliacao.nota, avaliacao.id as avalid FROM ESTABELECIMENTO
+              INNER JOIN foto_estabelecimento ON estabelecimento.fk_foto_estabelecimento_foto_estabelecimento_pk = foto_estabelecimento.foto_estabelecimento_pk
               INNER JOIN avaliacao ON estabelecimento.id = avaliacao.fk_estabelecimento_id
               INNER JOIN usuario ON usuario.id = avaliacao.fk_usuario_id
-              WHERE usuario.email = '$email';
-              ")?>
-              <?php if($consulta->execute()): ?>
-              <?php if($consulta->rowCount() > 0): ?>
+              WHERE usuario.email = '$email'");
+            ?>
+            <?php if($consultaComentarios->execute()): ?>
+              <?php if($consultaComentarios->rowCount() > 0): ?>
+                <?php while($linha = $consultaComentarios->fetch(PDO::FETCH_ASSOC)): ?>
+            
           <div class="row m-1">
-            <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
+                  <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/1500500.jpg" class="rounded-circle" height="50" width="50" alt="Avatar">
-              <p class="m-2">Sergio Malandro</p>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
-              <i class="fa-regular fa-star" style="color:var(--color-blue5);"></i>
+              <img src="<?php echo $linha["uri_image"]?>" class="rounded-circle" height="50" width="50" alt="Avatar">
+              <p class="m-2"><?php echo $linha["nome"];?></p>
+              <?php for($i = 0; $i < $linha["nota"]; $i++){ ?>
+               <?php echo "<i class='fa-solid fa-star' style='color:var(--color-blue5);'></i>"; }
+              for($i = 0; $i < 5 - $linha["nota"]; $i++){ ?>
+                <?php echo "<i class='fa-regular fa-star' style='color:var(--color-blue5);'></i>";} ?>
             </div>
             <div class="col-sm-12">
               <div class="row justify-content-center">
                 <div class="imagens">
-                  <img src="img/perfilestabelecimento/1006771.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/1500500.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/grelhazeze.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/propaganda.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfilestabelecimento/1601677114568.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/5estrela.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.png" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/img1.jpg" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
-                  <img src="img/perfil/pcamigos.jfif" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                  <?php
+                    $avalId = $linha["avalid"];
+                    $consultaImgComent = $db->prepare("SELECT fotos_avaliacao.descricao as uri_image from estabelecimento inner join avaliacao
+                    on estabelecimento.id = avaliacao.fk_estabelecimento_id
+                    inner join usuario
+                    on usuario.id = avaliacao.fk_usuario_id
+                    inner join fotos_avaliacao
+                    on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where avaliacao.id = $avalId");
+                    $consultaImgComent->execute();?>
+                    <?php while($imagens = $consultaImgComent->fetch(PDO::FETCH_ASSOC)): ?>
+                      <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                    <?php endwhile ?>
                 </div>
               </div>
             </div>
             <!--comentário e espaçamento do texto da avaliação-->
             <div class="col-sm-12">
               <div class="p-1 border-bottom">
-                <p class="text-start comentario">Lá vem o Chaves, Chaves, Chaves, Todos atentos olhando pra TV. Lá vem o Chaves, 
-                  Chaves, Chaves, Com uma historinha bem gostosa de se ver Aí vem o Chaves, Chaves, Chaves, Todos atentos olhando pra 
-                  TV. Aí vem o Chaves, Chaves, Chaves, Com uma historinha bem gostosa de se ver A Chiquinha é uma gracinha, ninguém 
-                  agüenta quando vai chorar E Seu Madruga, sempre muito calado, Não abre a boca só pra não brigar O Professor Girafales 
-                  e a Dona Florinda, Se gostam tanto mas casório, nada ainda E tem o Quico com a bochecha toda inchada, E é claro o Chaves, o rei
-                  da palhaçada E é claro o Chaves, o rei da palhaçada Lá vem o Chaves, Chaves, Chaves, Tô chegando! Lá vem o Chaves, Chaves, Chaves</p>
+                <p class="text-start comentario"><?php echo $linha["descricao"]?></p>
               </div>
             </div>
           </div>
+          <?php endwhile ?>
           <?php else: ?>
-            <div> não há comentários </div>
-          <?php endif ?>
-          <?php endif ?>
+            <div class="nao_comentarios">Não há comentários</div>
+          <?php endif?>
+          <?php endif?>
 
         </div>
 

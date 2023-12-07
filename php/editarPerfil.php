@@ -12,7 +12,7 @@
     $resposta["nome"] = array();
     $respos["foto"] = array();
     $email = $_SESSION["email"];
-    if(isset($_POST["novoNome"])){
+    if(isset($_POST["novoNome"]) && $_POST["novoNome"] != ""){
         $novoNome = filter_var($_POST["novoNome"], FILTER_SANITIZE_STRING);
         $consulta = $db->prepare("UPDATE usuario SET nome = :novoNome WHERE email = :email");
         $consulta->bindParam(':novoNome', $novoNome);
