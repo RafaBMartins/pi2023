@@ -3,9 +3,6 @@
     $resposta = array();
     //var_dump($_GET);
 
-    $dados = file_get_contents("php://input");
-    $objeto = json_decode($dados);
-
     // $user_latitude = $_POST["latitude"];
     // $user_longitude = $_POST["longitude"];
     $query = "SELECT estabelecimento.id,
@@ -16,7 +13,6 @@
     endereco.cidade, 
     endereco.logradouro,
     endereco.tipo_logradouro,
-    acos(sin(endereco.latitude*PI()/180)*sin($objeto->userLatitude*PI()/180)+cos(endereco.latitude*PI()/180)*cos($objeto->userLatitude*PI()/180)*cos(endereco.longitude*PI()/180 - $objeto->userLongitude*PI()/180))*6371 as distancia
     FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
@@ -39,7 +35,6 @@
                 $estabelecimento["cidade"] = $linha["cidade"];
                 $estabelecimento["logradouro"] = $linha["logradouro"];
                 $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
-                $estabelecimento["distancia"] = $linha["distancia"];
                 array_push($respostas["estabelecimentos"], $estabelecimento);
             }
         }
