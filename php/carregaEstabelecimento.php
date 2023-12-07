@@ -7,19 +7,23 @@
     // $user_longitude = $_POST["longitude"];
     $query = "SELECT estabelecimento.id,
     estabelecimento.nome, 
-    estabelecimento.nota_media, 
+    avg(avaliacao.nota) as nota_media, 
     foto_estabelecimento.uri_image, 
     tipo_estabelecimento.tipo_estabelecimento,
     endereco.cidade, 
     endereco.logradouro,
-    endereco.tipo_logradouro,
+count(avaliacao.descricao) as qtd_aval,
+    endereco.tipo_logradouro
     FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
     INNER JOIN TIPO_ESTABELECIMENTO
     ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
     INNER JOIN FOTO_ESTABELECIMENTO
-    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK";
+    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
+    LEFT JOIN AVALIACAO
+    ON avaliacao.fk_estabelecimento_id = estabelecimento.id
+group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_image, tipo_estabelecimento.tipo_estabelecimento, endereco.cidade, endereco.logradouro, endereco.tipo_logradouro";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
         $respostas["sucesso"] = 1;
@@ -35,6 +39,7 @@
                 $estabelecimento["cidade"] = $linha["cidade"];
                 $estabelecimento["logradouro"] = $linha["logradouro"];
                 $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
+                $estabelecimento["qtd_aval"] = $linha["qtd_aval"];
                 array_push($respostas["estabelecimentos"], $estabelecimento);
             }
         }

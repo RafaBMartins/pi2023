@@ -23,7 +23,11 @@ function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
     let estabelecimentos = estabJson["estabelecimentos"];
     estabelecimentos.forEach((estabelecimento) => {
-        divStoreCard = document.createElement("div")
+        divStoreCard = document.createElement("div");
+        if(estabelecimento["nota"] > 0 && estabelecimento["nota"] <= 2 ) qualidade = "Ruim";
+        else if(estabelecimento["nota"] >= 2 && estabelecimento["nota"] < 4) qualidade = "Bom";
+        else if(estabelecimento["nota"] >= 4) qualidade = "Excelente";
+        else qualidade = "Não avaliado";
         divStoreCard.classList.add("store-card");
         divStoreCard.innerHTML = `<div class="store-photo"><img id="${estabelecimento["id"]}" src="${estabelecimento["foto_estabelecimento"]}"></div>
         <!--container com as informações gerais do estabelecimento-->
@@ -33,7 +37,7 @@ function geraCards(estabJson){
           <!--nome do estabelecimento-->
           <label class="store-name">${estabelecimento["nome_estabelecimento"]}</label>
           <!--nota do estabelecimento-->
-          <label class="store-rating">7.4<i class="fa-solid fa-star"></i> - Bom (70 Avaliações)</label>
+          <label class="store-rating">${Math.round(estabelecimento["nota_media"])}<i class="fa-solid fa-star"></i> - ${qualidade} (${estabelecimento["qtd_aval"]} Avaliações)</label>
           <!--selo do estabelecimento-->
           <img src="img/selos/seloOuro.svg" class="store-seal">
         </div>
@@ -52,27 +56,31 @@ function geraCards(estabJson){
     })
 }
 
-document.getElementById("applyFilters").addEventListener('submit', async (e) => {
-  e.preventDefault();
-  let categoria = document.getElementById("")
-  let dados = {"categoryFilters": document.getELe}
-  let resposta = await fetch('http://localhost/pi2023/php/carregaEstabelecimento.php');
-});
-
 async function carregaEstabelecimento() {
-        let posicao = await new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resolve, reject);
-        });
-        let dados = {"userLatitude": posicao["coords"]["latitude"], "userLongitude": posicao["coords"]["latitude"]};
-        let json = JSON.stringify(dados);
+        var param = new URLSearchParams(window.location.search);
+        var estabelecimentos = param.get("json");
+        console.log(estabelecimentos);
+        if(estabelecimentos != null){
+          estabJson = JSON.parse(estabelecimentos);
+          geraCards(estabJson);
+        }
+        else{
+          var estab = JSON.parse(estabelecimentos);
+          let posicao = await new Promise((resolve, reject) => {
+              navigator.geolocation.getCurrentPosition(resolve, reject);
+          });
+          let dados = {"userLatitude": posicao["coords"]["latitude"], "userLongitude": posicao["coords"]["latitude"]};
+          let json = JSON.stringify(dados);
 
-        let resposta = await fetch('http://localhost/pi2023/php/carregaEstabelecimento.php', {
-        method: 'POST', 
-        body: json, 
-        headers: { 'Content-Type': 'application/json' } 
-        });
-        let estabJson = await resposta.json();
-        geraCards(estabJson);
+          let resposta = await fetch('http://localhost/pi2023/php/carregaEstabelecimento.php', {
+          method: 'POST', 
+          body: json, 
+          headers: { 'Content-Type': 'application/json' } 
+          });
+          let estabJson = await resposta.json();
+          console.log(estabJson);
+          geraCards(estabJson);
+        }
 
   }
   

@@ -7,6 +7,7 @@
         foto_estabelecimento.uri_image, 
         tipo_estabelecimento.tipo_estabelecimento,
         endereco.cidade, 
+        count(avaliacao.descricao) as qtd_aval, 
         endereco.logradouro,
         endereco.tipo_logradouro
         FROM ESTABELECIMENTO 
@@ -16,7 +17,7 @@
         ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
         INNER JOIN FOTO_ESTABELECIMENTO
         ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
-        INNER JOIN AVALIACAO
+        LEFT JOIN AVALIACAO
         ON avaliacao.fk_estabelecimento_id = estabelecimento.id
         WHERE ";
         $primeiro = true;
@@ -25,18 +26,16 @@
             $consulta = $consulta . "tipo_estabelecimento.tipo_estabelecimento_pk = $categoria";
             $primeiro = false;
         }
+        $consulta = $consulta . " group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_image, tipo_estabelecimento.tipo_estabelecimento, endereco.cidade, endereco.logradouro, endereco.tipo_logradouro";
         if(isset($_POST["starRadio"])){
             $starRadio = $_POST["starRadio"];
-            if(!$primeiro){
-                $consulta = $consulta . " and ";
-            }
-            $consulta = $consulta . "nota_media >= $starRadio";
+            $consulta = $consulta . " having avg(avaliacao.nota) >= $starRadio";
             $primeiro = false;
         }
-        $consulta = $consulta . "group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_image, tipo_estabelecimento.tipo_estabelecimento, endereco.cidade, endereco.logradouro, endereco.tipo_logradouro";
         $query = $db->prepare($consulta);
         if($query->execute()){
             $resposta = array();
+            $resposta["sucesso"] = 1;
             $resposta["estabelecimentos"] = array();
             if($query->rowCount() > 0){
                 while($linha = $query->fetch(PDO::FETCH_ASSOC)){
@@ -49,10 +48,11 @@
                     $estabelecimento["cidade"] = $linha["cidade"];
                     $estabelecimento["logradouro"] = $linha["logradouro"];
                     $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
-                    $estabelecimento["distancia"] = $linha["distancia"];
+                    $estabelecimento["qtd_aval"] = $linha["qtd_aval"];
                     array_push($resposta["estabelecimentos"], $estabelecimento);
                 }
             }
         }
-        echo json_encode($resposta);
+        $json = json_encode($resposta);
+       header("location: http://localhost/pi2023/index.php?json=$json");
 ?>
