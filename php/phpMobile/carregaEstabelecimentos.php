@@ -42,7 +42,6 @@
                 $estabelecimento["cidade"] = $linha["cidade"];
                 $estabelecimento["logradouro"] = $linha["logradouro"];
                 $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
-                $estabelecimento["distancia"] = $linha["distancia"];
                 array_push($respostas["estabelecimentos"], $estabelecimento);
             }
         }
