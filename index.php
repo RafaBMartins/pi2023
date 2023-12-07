@@ -64,20 +64,6 @@
           <span class="connect-line"></span>
           <span class="connect-line"></span>
         </div>
-        <!--container que armazena o filtro por distancia, em km feito com input type number-->
-        <div class="distance-filter">
-          <label class="distance-title">DISTÂNCIA</label>
-          <div class="input-box">
-            <label>ATÉ</label>
-            <input name="distancia" type="number">
-            <label>KILOMETROS</label>
-          </div>
-        </div>
-        <!--divisoria que conecta os diferentes filtros-->
-        <div class="connect-lines">
-          <span class="connect-line"></span>
-          <span class="connect-line"></span>
-        </div>
         <!--container que armazena os filtros por notas do estabelecimento, dimensionado em estrelas e feito com inputs type radio-->
         <div class="rating-filter">
           <label class="rating-title">NOTA</label>
