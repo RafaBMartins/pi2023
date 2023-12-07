@@ -18,6 +18,20 @@ function abreImg(imge){
     imagemDentro = imge;
 }
 
+document.getElementById("novaFoto").addEventListener("change", (e) => {
+    var label = document.querySelector('label[for="novaFoto"]');
+    var input = document.getElementById("novaFoto");
+    if (input.files.length > 0) {
+      // obter o nome do arquivo selecionado
+      var nome = input.files[0].name;
+      // alterar o texto da label
+      label.textContent = "Arquivo selecionado: " + nome;
+    } else {
+      // restaurar o texto original da label
+      label.textContent = "ENVIAR NOVA FOTO";
+    }
+})
+
 function fechaImg() { 
     let modal = document.getElementById("myModal");
     let modalImg = document.getElementById("img01");

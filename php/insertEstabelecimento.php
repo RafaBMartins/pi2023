@@ -2,6 +2,7 @@
     require("pdoConnect.php");
     //parcialmente funcional
     $resposta = array();
+    var_dump($_POST["latitude"], $_POST["longitude"]);
 
     if(isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"]) && isset($_FILES["img_perfil"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
@@ -41,7 +42,6 @@
         $tipo_logradouro = $_POST["tipo_logradouro"];
         $numero = $_POST["numero"];
         $latitude = $_POST["latitude"];
-
         $longitude = $_POST["longitude"];
         $tipo_estab = $_POST["tipo_estab"];
         $query = trim("SELECT * FROM ENDERECO WHERE endereco.estado = '$estado' and endereco.cidade = '$cidade' and endereco.bairro = '$bairro' and endereco.tipo_logradouro = '$tipo_logradouro' and endereco.logradouro = '$logradouro' and endereco.numero = $numero");

@@ -27,9 +27,9 @@ function geraCards(estabJson){
     let estabelecimentos = estabJson["estabelecimentos"];
     estabelecimentos.forEach((estabelecimento) => {
         divStoreCard = document.createElement("div");
-        if(estabelecimento["nota"] > 0 && estabelecimento["nota"] <= 2 ) qualidade = "Ruim";
-        else if(estabelecimento["nota"] >= 2 && estabelecimento["nota"] < 4) qualidade = "Bom";
-        else if(estabelecimento["nota"] >= 4) qualidade = "Excelente";
+        if(estabelecimento["nota_media"] > 0 && estabelecimento["nota_media"] <= 2 ) qualidade = "Ruim";
+        else if(estabelecimento["nota_media"] >= 2 && estabelecimento["nota_media"] < 4) qualidade = "Bom";
+        else if(estabelecimento["nota_media"] >= 4) qualidade = "Excelente";
         else qualidade = "Não avaliado";
         divStoreCard.classList.add("store-card");
         divStoreCard.innerHTML = `<div class="store-photo"><img id="${estabelecimento["id"]}" src="${estabelecimento["foto_estabelecimento"]}"></div>
