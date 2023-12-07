@@ -18,6 +18,9 @@ for (let i = 0; i < checkBoxCategory.length; i++) {
     }
   });
 }
+window.addEventListener('beforeunload', (e) => {
+  window.location.href = "http://localhost/pi2023/";
+});
 
 function geraCards(estabJson){
     let storeContent = document.getElementById("stores_content");
@@ -56,10 +59,13 @@ function geraCards(estabJson){
     })
 }
 
+function limparFiltros(){
+  window.location.href = "http://localhost/pi2023/";
+}
+
 async function carregaEstabelecimento() {
         var param = new URLSearchParams(window.location.search);
         var estabelecimentos = param.get("json");
-        console.log(estabelecimentos);
         if(estabelecimentos != null){
           estabJson = JSON.parse(estabelecimentos);
           geraCards(estabJson);
