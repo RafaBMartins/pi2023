@@ -231,7 +231,9 @@ group by estabelecimento.id,
                     on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where avaliacao.id = $avalId");
                     $consultaImgComent->execute();?>
                     <?php while($imagens = $consultaImgComent->fetch(PDO::FETCH_ASSOC)): ?>
-                      <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                      <?php if($imagens["uri_image"] != ""): ?>
+                        <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                      <?php endif ?>
                     <?php endwhile ?>
                 </div>
               </div>
