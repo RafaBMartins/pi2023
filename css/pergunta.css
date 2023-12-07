@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+.label_resposta {
+    cursor: pointer;
+}
+
+.label_resposta i {
+    cursor: pointer;
+}
+
+
 .background {
     background: var(--color-mainGradient);
     width: 100%;
@@ -24,7 +33,7 @@
     justify-content: center;
 }
 
-#login_form {
+#pergunta_form {
     background-color: var(--color-smoothWhite);
     display: flex;
     flex-direction: column;
@@ -39,7 +48,7 @@
     font-size: 25px;
 }
 
-#login_button {
+#pergunta_button {
     display: flex;
     justify-content: center;
     gap: 8px;
