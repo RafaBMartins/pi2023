@@ -154,7 +154,7 @@
           <span class="connect-line"></span>
         </div>
         <!--botão usado para desmarcar todos os filtros utilizados-->
-        <button class="btn-filters" type="submit">APLICAR FILTROS</button>
+        <button id="applyFilters" class="btn-filters" type="submit">APLICAR FILTROS</button>
         <!--divisoria que conecta os diferentes filtros-->
         <div class="connect-lines">
           <span class="connect-line"></span>

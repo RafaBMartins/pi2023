@@ -8,7 +8,6 @@
     estabelecimento.nome, 
     foto_estabelecimento.uri_image, 
     tipo_estabelecimento.tipo_estabelecimento,
-    avg(avaliacao.nota) as nota_media,
     endereco.cidade, 
     endereco.logradouro,
     endereco.tipo_logradouro
@@ -18,15 +17,7 @@
     INNER JOIN TIPO_ESTABELECIMENTO
     ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
     INNER JOIN FOTO_ESTABELECIMENTO
-    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
-    INNER JOIN AVALIACAO ON AVALIACAO.FK_ESTABELECIMENTO_ID = ESTABELECIMENTO.ID
-    GROUP BY estabelecimento.id,
-    estabelecimento.nome, 
-    foto_estabelecimento.uri_image, 
-    tipo_estabelecimento.tipo_estabelecimento,
-    endereco.cidade, 
-    endereco.logradouro,
-    endereco.tipo_logradouro";
+    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
         $respostas["sucesso"] = 1;

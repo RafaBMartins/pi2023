@@ -52,6 +52,13 @@ function geraCards(estabJson){
     })
 }
 
+document.getElementById("applyFilters").addEventListener('submit', async (e) => {
+  e.preventDefault();
+  let categoria = document.getElementById("")
+  let dados = {"categoryFilters": document.getELe}
+  let resposta = await fetch('http://localhost/pi2023/php/carregaEstabelecimento.php');
+});
+
 async function carregaEstabelecimento() {
         let posicao = await new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(resolve, reject);
