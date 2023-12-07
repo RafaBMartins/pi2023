@@ -42,6 +42,5 @@
         $respostas["erro"] = "erro: " . $consulta->error;
   
     }
-    header('location :')
     echo json_encode($respostas);
 ?>

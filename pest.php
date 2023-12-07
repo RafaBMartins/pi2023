@@ -35,7 +35,8 @@
     endereco.logradouro,
     endereco.tipo_logradouro,
     endereco.numero,
-    avg(avaliacao.nota) as nota_media
+    avg(avaliacao.nota) as nota_media,
+    count(avaliacao.descricao) as qtd_aval
     FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
     ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
@@ -43,12 +44,12 @@
     ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
     INNER JOIN FOTO_ESTABELECIMENTO
     ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
-    INNER JOIN AVALIACAO
+    LEFT JOIN AVALIACAO
 ON AVALIACAO.fk_estabelecimento_id = estabelecimento.id
     WHERE estabelecimento.id = $idEstab
 group by estabelecimento.id,
     estabelecimento.nome, 
-    tipo_estabelecimento.tipo_estabelecimento,
+    tipo_estabelecimento.tipo_estabelecimento_pk,
     endereco.estado,
     endereco.cidade,
     endereco.bairro,
@@ -125,7 +126,28 @@ group by estabelecimento.id,
           <div class="card p-0 grude">
             <p class="h1">
               <?php echo $resultado["nome"]; ?>
-              <i class="fa-solid fa-graduation-cap" style="font-size: 42px; color: var(--color-blue3);"></i>
+              <i class="<?php
+                $icones = [
+                  1 =>	"fa-solid fa-utensils",
+                  5 =>	"fa-solid fa-bed",
+                  9 =>	"fa-solid fa-shirt",
+                  13 =>	"fa-solid fa-graduation-cap",
+                  10 =>	"fa-solid fa-stethoscope",
+                  12 =>	"fa-solid fa-dumbbell",
+                  3 =>	"fa-solid fa-mug-hot",
+                  4 =>	"fa-solid fa-wine-glass",
+                  11 =>	"fa-solid fa-prescription-bottle-medical",
+                  7 =>	"fa-solid fa-bag-shopping",
+                  15 => "fa-solid fa-landmark",
+                  2 =>	"fa-solid fa-bread-slice",
+                  6 =>	"fa-solid fa-film",
+                  8 =>	"fa-solid fa-cart-shopping",
+                  14 =>	"fa-solid fa-book",
+                  16 =>	"fa-solid fa-ellipsis"
+                ];
+                $resultado["tipo_estabelecimento_pk"];
+                echo($icones[$resultado["tipo_estabelecimento_pk"]]);
+                ?>" style="font-size: 42px; color: var(--color-blue3);"></i>
             </p>
             <!--carrosel-->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -186,7 +208,13 @@ group by estabelecimento.id,
                     <label class="infoTitle">CLASSIFICAÇÃO</label><img src="img/selos/seloBronze.svg" class="m-auto" height="55px" width="55px">
                     <button class="btnAvaliar" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
                   </div>
-                  <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;"><?php echo round($resultado["nota_media"], 2); ?><i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - Bom (70 Avaliações)</label>
+                  <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;"><?php echo round($resultado["nota_media"], 2); ?><i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - <?php
+                  if($resultado["nota_media"] > 0 && $resultado["nota_media"] <= 2 ) $qualidade = "Ruim";
+                  else if($resultado["nota_media"] >= 2 && $resultado["nota_media"] < 4) $qualidade = "Bom";
+                  else if($resultado["nota_media"] >= 4) $qualidade = "Excelente";
+                  else $qualidade = "Não avaliado";
+                  echo $qualidade;
+                  ?> (<?php echo $resultado["qtd_aval"]; ?> Avaliações)</label>
                 </div>
             </div>
             <div class="well">
@@ -195,7 +223,7 @@ group by estabelecimento.id,
         <div class="well m-3">
           <div>
             <label class="infoTitle">ENDEREÇO</label>
-            <label class="infoEndereco" style="text-align:start;"><?php echo($resultado["tipo_logradouro"] . " " . $resultado["logradouro"] . ", " .  $resultado["numero"] . " s- " . $resultado["bairro"] . ", " . $resultado["cidade"] . "- " . $resultado["estado"]); ?></label>
+            <label class="infoEndereco" style="text-align:start;"><?php echo(ucfirst($resultado["tipo_logradouro"]) . " " . $resultado["logradouro"] . ", " .  $resultado["numero"] . " - " . $resultado["bairro"] . ", " . $resultado["cidade"] . "- " . $resultado["estado"]); ?></label>
           </div>
         </div>
         </div>
