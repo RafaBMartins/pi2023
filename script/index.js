@@ -47,7 +47,7 @@ function geraCards(estabJson){
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
-          <label class="store-location">${estabelecimento["tipo_logradouro"]}  ${estabelecimento["logradouro"]}, ${estabelecimento["cidade"]}<br>${Math.round(estabelecimento["distancia"]/1000)}km de distância</label>
+          <label class="store-location">${estabelecimento["tipo_logradouro"]}  ${estabelecimento["logradouro"]}, ${estabelecimento["cidade"]}, ${estabelecimento["bairro"]}, ${estabelecimento["numero"]}</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
           <button class="store-map-button">VER NO MAPA</button>
         </div>`
