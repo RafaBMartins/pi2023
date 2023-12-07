@@ -160,7 +160,7 @@
           <span class="connect-line"></span>
           <span class="connect-line"></span>
         </div>
-        <button class="btn-filters" type="submit">LIMPAR FILTROS</button>
+        <button class="btn-filters" type="button" onclick="limparFiltros()">LIMPAR FILTROS</button>
       </form>
     </div>
 

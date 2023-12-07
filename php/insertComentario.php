@@ -1,8 +1,8 @@
 <?php
     require("pdoConnect.php");
     session_start();
+    $id = $_GET["id"];
     if(!isset($_SESSION["email"])){
-        $id = $_GET["id"];
         header("location: http://localhost/pi2023/login.php?msg=avaliacao&id=$id");
         die();
     }
@@ -49,5 +49,6 @@
                 $consulta->execute();
             }
         }
+        header("location: http://localhost/pi2023/pest.php?id=$id");
     }
 ?>
