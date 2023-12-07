@@ -82,7 +82,7 @@
   flex: 1;
   font-size: 80px;
   z-index: 1;
-  color: #ffffff;
+  color: var(--color-blue1);
   font-weight: bold;
   transition: 0.3s;
   cursor: pointer;
@@ -167,7 +167,8 @@
 
 #fotoPerfil{
   object-fit: cover;
-  width: 60%;
+  width: 200px;
+  height: 200px;
 }
 
 .imagens {

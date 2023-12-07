@@ -137,7 +137,7 @@
             <div>
               <div class="containerFotos">
                 <p class="m-1">
-                  <img src="img/perfil/pcamigos.jfif" id="fotoPerfil" class="rounded-circle" alt="Avatar">
+                  <img src="img/perfil/user.png" id="fotoPerfil" class="rounded-circle" alt="Avatar">
                 </p> 
               </div>
             </div>
@@ -158,7 +158,7 @@
           <div class="row m-1">
             <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
+              <img src="img/perfil/1500500.jpg" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2">Sergio Malandro</p>
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
               <i class="fa-solid fa-star" style="color:var(--color-blue5);"></i>
