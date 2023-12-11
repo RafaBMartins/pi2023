@@ -197,7 +197,7 @@ group by estabelecimento.id,
         <div id="avaliacoes">
           <!--primeira avaliação-->
           <?php 
-              $consultaComentarios = $db->prepare("SELECT usuario.nome, avaliacao.descricao, avaliacao.nota, avaliacao.id as avalId from estabelecimento inner join avaliacao
+              $consultaComentarios = $db->prepare("SELECT usuario.nome, usuario.foto_perfil, avaliacao.descricao, avaliacao.nota, avaliacao.id as avalId from estabelecimento inner join avaliacao
               on estabelecimento.id = avaliacao.fk_estabelecimento_id
               inner join usuario
               on usuario.id = avaliacao.fk_usuario_id
@@ -213,7 +213,7 @@ group by estabelecimento.id,
           <div class="row m-1">
                   <!--nome e imagem de quem comentou no canto superior esquerdo da avaliação-->
             <div class="col-sm-12 d-flex align-items-center">
-              <img src="img/perfil/pcamigos.jfif" class="rounded-circle" height="50" width="50" alt="Avatar">
+              <img src="<?php echo $linha["foto_perfil"]; ?>" class="rounded-circle" height="50" width="50" alt="Avatar">
               <p class="m-2"><?php echo $linha["nome"]; ?></p>
               <?php for($i = 0; $i < $linha["nota"]; $i++){ ?>
                <?php echo "<i class='fa-solid fa-star' style='color:var(--color-blue5);'></i>"; }
