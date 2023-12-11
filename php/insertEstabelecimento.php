@@ -2,7 +2,6 @@
     require("pdoConnect.php");
     //parcialmente funcional
     $resposta = array();
-    var_dump($_POST["latitude"], $_POST["longitude"]);
 
     if(isset($_POST["nome_estabelecimento"]) && isset($_POST["tipo_estab"]) && isset($_POST["estado"]) && isset($_POST["cidade"]) && isset($_POST["bairro"]) && isset($_POST["tipo_logradouro"]) && isset($_POST["logradouro"]) && isset($_POST["latitude"]) && isset($_POST["longitude"]) && isset($_FILES["img_perfil"])){
         $nome_estabelecimento = filter_var($_POST["nome_estabelecimento"], FILTER_SANITIZE_STRING);
@@ -88,6 +87,6 @@
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "faltam parametros";
     }
-    $db = null;
-    echo json_encode($resposta);
+    header("location: http://localhost/pi2023/");
+    //echo json_encode($resposta);
 ?>

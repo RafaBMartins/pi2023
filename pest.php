@@ -29,6 +29,7 @@
     estabelecimento.nome, 
     tipo_estabelecimento.tipo_estabelecimento_pk,
     foto_estabelecimento.uri_image,
+    estabelecimento.fk_selo_selo_pk as selo,
     endereco.estado,
     endereco.cidade,
     endereco.bairro,
@@ -56,6 +57,7 @@ group by estabelecimento.id,
     endereco.logradouro,
     endereco.tipo_logradouro,
     endereco.numero,
+    estabelecimento.fk_selo_selo_pk,
     foto_estabelecimento.uri_image");
     if($consultaEstab->execute()){
       $resultado = $consultaEstab->fetch(PDO::FETCH_ASSOC);
@@ -125,7 +127,7 @@ group by estabelecimento.id,
       <div class="col-md-6">
           <div class="card p-0 grude">
             <p class="h1">
-              <?php echo $resultado["nome"]; ?>
+              <?php echo ucfirst($resultado["nome"]); ?>
               <i class="<?php
                 $icones = [
                   1 =>	"fa-solid fa-utensils",
@@ -163,7 +165,7 @@ group by estabelecimento.id,
             <div class="well m-3">
                 <div class=" d-grid row">
                   <div class="d-flex column justify-content-between">
-                    <label class="infoTitle">CLASSIFICAÇÃO</label><img src="img/selos/seloBronze.svg" class="m-auto" height="55px" width="55px">
+                    <label class="infoTitle">CLASSIFICAÇÃO</label><img style="display:<?php if($resultado["selo"] == null) echo "none";?>" src="img/selos/selo<?php echo $resultado["selo"] ?>.svg" class="m-auto" height="55px" width="55px">
                     <button class="btnAvaliar btnAvaliarDesktop" onclick="exibirModal('avaliarEstabelecimento')">AVALIAR ESTABELECIMENTO</button>
                   </div>
                   <label class="col-12 d-flex w-100" style="font-size:20px; align-self:start; align-items:center;"><?php echo round($resultado["nota_media"], 2); ?><i class="fa-solid fa-star d-flex" style="color:var(--color-blue5); align-items:center; height:30px;"></i> - <?php
@@ -231,7 +233,9 @@ group by estabelecimento.id,
                     on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where avaliacao.id = $avalId");
                     $consultaImgComent->execute();?>
                     <?php while($imagens = $consultaImgComent->fetch(PDO::FETCH_ASSOC)): ?>
-                      <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                      <?php if($imagens["uri_image"] != ""): ?>
+                        <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                      <?php endif ?>
                     <?php endwhile ?>
                 </div>
               </div>

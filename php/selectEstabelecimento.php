@@ -6,7 +6,8 @@
         avg(avaliacao.nota) as nota_media, 
         foto_estabelecimento.uri_image, 
         tipo_estabelecimento.tipo_estabelecimento,
-        endereco.cidade, 
+        endereco.cidade,
+        estabelecimento.fk_selo_selo_pk as selo,
         count(avaliacao.descricao) as qtd_aval, 
         endereco.logradouro,
         endereco.tipo_logradouro
@@ -18,12 +19,11 @@
         INNER JOIN FOTO_ESTABELECIMENTO
         ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
         LEFT JOIN AVALIACAO
-        ON avaliacao.fk_estabelecimento_id = estabelecimento.id
-        WHERE ";
+        ON avaliacao.fk_estabelecimento_id = estabelecimento.id ";
         $primeiro = true;
         if(isset($_POST["categoryFilters"])){
             $categoria = $_POST["categoryFilters"];
-            $consulta = $consulta . "tipo_estabelecimento.tipo_estabelecimento_pk = $categoria";
+            $consulta = $consulta . "WHERE " . "tipo_estabelecimento.tipo_estabelecimento_pk = $categoria";
             $primeiro = false;
         }
         $consulta = $consulta . " group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_image, tipo_estabelecimento.tipo_estabelecimento, endereco.cidade, endereco.logradouro, endereco.tipo_logradouro";
@@ -49,6 +49,7 @@
                     $estabelecimento["logradouro"] = $linha["logradouro"];
                     $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
                     $estabelecimento["qtd_aval"] = $linha["qtd_aval"];
+                    $estabelecimento["selo"] = $linha["selo"];
                     array_push($resposta["estabelecimentos"], $estabelecimento);
                 }
             }

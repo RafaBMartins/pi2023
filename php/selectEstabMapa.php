@@ -3,14 +3,24 @@
 
     $resposta = array();
 
-    $query = "SELECT estabelecimento.nome,
+    $query = "SELECT estabelecimento.id,
+    estabelecimento.nome, 
+    avg(avaliacao.nota) as nota_media, 
     tipo_estabelecimento.tipo_estabelecimento_pk,
+count(avaliacao.descricao) as qtd_aval,
     endereco.latitude,
+    estabelecimento.fk_selo_selo_pk as selo,
     endereco.longitude
-    FROM ESTABELECIMENTO INNER JOIN tipo_estabelecimento
-    ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
+    FROM ESTABELECIMENTO 
     INNER JOIN ENDERECO
-    ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK";
+    ON endereco.endereco_PK = estabelecimento.FK_endereco_endereco_PK
+    INNER JOIN TIPO_ESTABELECIMENTO
+    ON tipo_estabelecimento.tipo_estabelecimento_PK = estabelecimento.FK_tipo_estabelecimento_tipo_estabelecimento_PK
+    INNER JOIN FOTO_ESTABELECIMENTO
+    ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
+    LEFT JOIN AVALIACAO
+    ON avaliacao.fk_estabelecimento_id = estabelecimento.id
+group by estabelecimento.id, estabelecimento.nome, tipo_estabelecimento.tipo_estabelecimento_pk, endereco.latitude, endereco.longitude, estabelecimento.fk_selo_selo_pk";
     $consulta = $db->prepare($query);
     if($consulta->execute()){
         $resposta["estabelecimentos"] = array();
@@ -22,6 +32,10 @@
                 $estabelecimento["tipo_estabelecimento"] = $linha["tipo_estabelecimento_pk"];
                 $estabelecimento["latitude"] = $linha["latitude"];
                 $estabelecimento["longitude"] = $linha["longitude"];
+                $estabelecimento["nota_media"] = $linha["nota_media"];
+                $estabelecimento["qtd_aval"] = $linha["qtd_aval"];
+                $estabelecimento["id"] = $linha["id"];
+                $estabelecimento["selo"] = $linha["selo"];
                 array_push($resposta["estabelecimentos"], $estabelecimento);
             }
         }

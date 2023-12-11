@@ -42,21 +42,27 @@ function geraCards(estabJson){
           <!--nota do estabelecimento-->
           <label class="store-rating">${Math.round(estabelecimento["nota_media"])}<i class="fa-solid fa-star"></i> - ${qualidade} (${estabelecimento["qtd_aval"]} Avaliações)</label>
           <!--selo do estabelecimento-->
-          <img src="img/selos/seloOuro.svg" class="store-seal">
+          <img id="seloIndex" src="img/selos/selo${estabelecimento["selo"]}.svg" class="store-seal">
         </div>
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
           <!--endereço em extenso do estabelecimento-->
           <label class="store-location">${estabelecimento["tipo_logradouro"]}  ${estabelecimento["logradouro"]}, ${estabelecimento["cidade"]}, ${estabelecimento["bairro"]}, ${estabelecimento["numero"]}</label>
           <!--botão para redirecionar o usuario ao mapa, na localização do estabelecimento-->
-          <button class="store-map-button">VER NO MAPA</button>
+          <button onclick="verNoMapa(${estabelecimento["latitude"]}, ${estabelecimento["longitude"]})" class="store-map-button">VER NO MAPA</button>
         </div>`
         document.getElementById("stores_content").append(divStoreCard);
       
       document.getElementById(estabelecimento["id"]).addEventListener('click', (e) => {
         window.open(`http://localhost/pi2023/pest.php?id=${estabelecimento["id"]}`);
       })
+      if(estabelecimento["selo"] == null) {document.getElementById("seloIndex").style.display = "none";}
+
     })
+}
+
+function verNoMapa(latitude, longitude){
+  window.open(`http://localhost/pi2023/mapa.php?latitude=${latitude}&longitude=${longitude}`);
 }
 
 function limparFiltros(){

@@ -83,10 +83,10 @@
           <i class="fa-solid fa-graduation-cap" id="estabIcon" style="font-size: 42px; color: var(--color-blue5);"></i>
         </div>
         <div class="row align-items-start justify-content-start">
-          <label class="col-12">5<i class="fa-solid fa-star"></i> - Bom (70)</label>
+          <label class="col-12">7.4<i class="fa-solid fa-star"></i> - Bom (70)</label>
           <div class="d-flex justify-content-between align-items-end">
-            <img src="img//selos/seloOuro.svg" alt="" class="img-fluid col-6 mt-0" style="width: 50px; height: 50px;">
-            <a href="perfilestabelecimento.html" class="card-link col-6 justify-self-end botao">Ver Mais</a>
+            <img id="seloMap" src="img//selos/seloOuro.svg" alt="" class="img-fluid col-6 mt-0" style="width: 50px; height: 50px;">
+            <a href="http://localhost/pi2023/mapa.php" id="verMaisLink" class="card-link col-6 justify-self-end botao">Ver Mais</a>
           </div>
         </div>
       </div>

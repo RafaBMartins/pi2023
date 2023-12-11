@@ -50,6 +50,8 @@
                 </div>
             </div>
 
+            <a href="registrar.html" class="text-link">Não tem uma conta?</a>
+
             <!--botão-->
             <button type="submit" id="login_button">
                 Entrar

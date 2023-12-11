@@ -119,3 +119,8 @@
         transform: scale(1.05);
     }
 /*------------------*/
+
+/*design e posicionamento do textlink*/
+.text-link {
+    text-decoration: none;
+}
