@@ -6,7 +6,8 @@
         avg(avaliacao.nota) as nota_media, 
         foto_estabelecimento.uri_image, 
         tipo_estabelecimento.tipo_estabelecimento,
-        endereco.cidade, 
+        endereco.cidade,
+        estabelecimento.fk_selo_selo_pk as selo,
         count(avaliacao.descricao) as qtd_aval, 
         endereco.logradouro,
         endereco.tipo_logradouro
@@ -48,6 +49,7 @@
                     $estabelecimento["logradouro"] = $linha["logradouro"];
                     $estabelecimento["tipo_logradouro"] = $linha["tipo_logradouro"];
                     $estabelecimento["qtd_aval"] = $linha["qtd_aval"];
+                    $estabelecimento["selo"] = $linha["selo"];
                     array_push($resposta["estabelecimentos"], $estabelecimento);
                 }
             }

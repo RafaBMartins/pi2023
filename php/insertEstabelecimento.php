@@ -87,14 +87,6 @@
         $resposta["sucesso"] = 0;
         $resposta["erro"] = "faltam parametros";
     }
-    $consultaIdNovoEstab = $db->prepare("SELECT estabelecimento.id FROM ESTABELECIMENTO
-    INNER JOIN ENDERECO ON estabelecimento.fk_endereco_endereco_pk = endereco.endereco_pk
-    WHERE estabelecimento.nome '$nome_estabelecimento' and endereco.tipo_logradouro = '$tipo_logradouro' and endereco.logradouro = '$logradouro' and endereco.bairro = '$bairro' and endereco.cidade = '$cidade' and enderco.estado = '$estado'
-    ");
-    $consultaIdNovoEstab->execute();
-    $consultaIdNovoEstab->fetch(PDO::FETCH_ASSOC);
-    $idNovoEstab = $consultaIdNovoEstab["id"];
-    $db = null;
-    header("location: http://localhost/pi2023/pest.php?id=$idNovoEstab");
+    header("location: http://localhost/pi2023/");
     //echo json_encode($resposta);
 ?>

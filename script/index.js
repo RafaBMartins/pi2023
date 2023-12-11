@@ -42,7 +42,7 @@ function geraCards(estabJson){
           <!--nota do estabelecimento-->
           <label class="store-rating">${Math.round(estabelecimento["nota_media"])}<i class="fa-solid fa-star"></i> - ${qualidade} (${estabelecimento["qtd_aval"]} Avaliações)</label>
           <!--selo do estabelecimento-->
-          <img src="img/selos/seloOuro.svg" class="store-seal">
+          <img id="seloIndex" src="img/selos/selo${estabelecimento["selo"]}.svg" class="store-seal">
         </div>
         <!--container com as informações referentes a endereço do estabelecimento-->
         <div class="location-infos">
@@ -56,6 +56,7 @@ function geraCards(estabJson){
       document.getElementById(estabelecimento["id"]).addEventListener('click', (e) => {
         window.open(`http://localhost/pi2023/pest.php?id=${estabelecimento["id"]}`);
       })
+      if(estabelecimento["selo"] == null) {document.getElementById("seloIndex").style.display = "none";}
 
     })
 }

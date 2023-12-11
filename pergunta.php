@@ -14,10 +14,7 @@
 <body>
     <?php
         session_start();
-        if($_SESSION["index"] > 4){
-            $_SESSION["index"] = 0;
-            var_dump($_SESSION["respostas"]);
-        }
+        $id = $_GET["id"];
         if(!(isset($_SESSION["index"]) && isset($_SESSION["perguntas"]))){
             $_SESSION["index"] = 0;
             $_SESSION["perguntas"] = ["A entrada do estabelecimento tem uma rampa com boa inclinação?",
@@ -28,7 +25,7 @@
         }
     ?>
     <div class="background">
-        <form id="pergunta_form" method="post" action="php/perguntas.php">
+        <form id="pergunta_form" method="post" action="php/perguntas.php?id=<?php echo($id); ?>">
             <!--header-->
             <div id="form_header">
                 <h1>

@@ -66,6 +66,18 @@ function carregaPerfil(clicada) {
     document.getElementById("nomeEstabelecimento").textContent = clicada["pushpin"].getTitle();
     document.getElementById("imgPerfilEstabelecimento").setAttribute('src', clicada["imagem"]);
     document.getElementById("estabIcon").setAttribute("class", icones[clicada["icone"]]);
+    if(clicada["selo"] == null) document.getElementById("seloMap").style.display = "none";
+    else{
+        document.getElementById("seloMap").style.display = "block";
+        document.getElementById("seloMap").setAttribute('src', `img/selos/selo${clicada["selo"]}.svg`);
+    }
+    document.getElementById("verMaisLink").setAttribute('href', `http://localhost/pi2023/pest.php?id=${clicada["id"]}`);
+    if(clicada["nota_media"] == null) clicada["nota_media"] = 0; 
+    if(clicada["nota_media"] > 0 && clicada["nota_media"] <= 2 ) qualidade = "Ruim";
+        else if(clicada["nota_media"] >= 2 && clicada["nota_media"] < 4) qualidade = "Bom";
+        else if(clicada["nota_media"] >= 4) qualidade = "Excelente";
+        else qualidade = "Não avaliado";
+    document.getElementById("notaEstab").textContent = `${clicada["nota_media"]} - ${qualidade} (${clicada["qtd_aval"]})`;
     if (window.innerWidth < 470) {
         document.getElementById("nomeEstabelecimentoMobile").textContent = clicada["pushpin"].getTitle();
         document.getElementById("imgPerfilEstabelecimentoMobile").setAttribute('src', clicada["imagem"]);
@@ -217,9 +229,14 @@ async function loadMapScenario(estabJson) {
             "pushpin": pushpin,
             "imagem": null,
             "icone": estabelecimento["tipo_estabelecimento"],
+            "nota_media": estabelecimento["nota_media"],
+            "qtd_aval": estabelecimento["qtd_aval"],
+            "id": estabelecimento["id"],
+            "selo": estabelecimento["selo"]
         }
 
         locaisProprios.push(estabelecimento);
+        console.log(estabelecimento);
     })
 
 

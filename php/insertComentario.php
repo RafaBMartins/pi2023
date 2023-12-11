@@ -49,6 +49,6 @@
                 $consulta->execute();
             }
         }
-        header("location: http://localhost/pi2023/pest.php?id=$id");
+        header("location: http://localhost/pi2023/pergunta.php?id=$id");
     }
 ?>

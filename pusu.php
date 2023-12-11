@@ -162,7 +162,9 @@
             <button class="store-map-button w-50 m-1" style="text-align: center;" onclick="exibirModal('excluirConta')">EXCLUIR CONTA</button>
             <button class="store-map-button w-50 m-1" style="text-align: right;" onclick="exibirModal('editarPerfil')">EDITAR PERFIL</button>
           </div>
-          <button class="sair_btn p-2 m-1" style="text-align: center;" onclick="">SAIR DA CONTA</button>
+          <form method="get" action="php/encerrarSessao.php" >
+            <button type="submit" class="sair_btn p-2 m-1" style="text-align: center;" onclick="">SAIR DA CONTA</button>
+          </form>
         </div>
       </div>
       
@@ -204,7 +206,9 @@
                     on avaliacao.id = fotos_avaliacao.fk_avaliacao_id where avaliacao.id = $avalId");
                     $consultaImgComent->execute();?>
                     <?php while($imagens = $consultaImgComent->fetch(PDO::FETCH_ASSOC)): ?>
-                      <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                      <?php if($imagens["uri_image"] != null): ?>
+                        <img src="<?php echo $imagens["uri_image"]?>" onclick="abreImg(this)" width="50px" height="50px" class="imagemAbre rounded">
+                      <?php endif?>
                     <?php endwhile ?>
                 </div>
               </div>
