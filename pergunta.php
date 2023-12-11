@@ -16,8 +16,7 @@
         session_start();
         if($_SESSION["index"] > 4){
             $_SESSION["index"] = 0;
-            header("location: http://localhost/pi2023/");
-            die();
+            var_dump($_SESSION["respostas"]);
         }
         if(!(isset($_SESSION["index"]) && isset($_SESSION["perguntas"]))){
             $_SESSION["index"] = 0;

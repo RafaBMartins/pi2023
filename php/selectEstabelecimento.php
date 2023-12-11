@@ -18,12 +18,11 @@
         INNER JOIN FOTO_ESTABELECIMENTO
         ON foto_estabelecimento.foto_estabelecimento_PK = estabelecimento.FK_foto_estabelecimento_foto_estabelecimento_PK
         LEFT JOIN AVALIACAO
-        ON avaliacao.fk_estabelecimento_id = estabelecimento.id
-        WHERE ";
+        ON avaliacao.fk_estabelecimento_id = estabelecimento.id ";
         $primeiro = true;
         if(isset($_POST["categoryFilters"])){
             $categoria = $_POST["categoryFilters"];
-            $consulta = $consulta . "tipo_estabelecimento.tipo_estabelecimento_pk = $categoria";
+            $consulta = $consulta . "WHERE " . "tipo_estabelecimento.tipo_estabelecimento_pk = $categoria";
             $primeiro = false;
         }
         $consulta = $consulta . " group by estabelecimento.id, estabelecimento.nome, foto_estabelecimento.uri_image, tipo_estabelecimento.tipo_estabelecimento, endereco.cidade, endereco.logradouro, endereco.tipo_logradouro";

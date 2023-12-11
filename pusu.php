@@ -162,6 +162,7 @@
             <button class="store-map-button w-50 m-1" style="text-align: center;" onclick="exibirModal('excluirConta')">EXCLUIR CONTA</button>
             <button class="store-map-button w-50 m-1" style="text-align: right;" onclick="exibirModal('editarPerfil')">EDITAR PERFIL</button>
           </div>
+          <button class="sair_btn p-2 m-1" style="text-align: center;" onclick="">SAIR DA CONTA</button>
         </div>
       </div>
       

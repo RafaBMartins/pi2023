@@ -2,6 +2,7 @@
     session_start();
     if(!isset($_SESSION["email"])){
         header('location: http://localhost/pi2023/login.php');
+        die();
     }
         if(isset($_POST["resposta"])){
             if(!isset($_SESSION["respostas"])) $_SESSION["respostas"] = array();
@@ -10,7 +11,6 @@
             header("location: http://localhost/pi2023/pergunta.php");
             die();
         }
-    }
     else{
         var_dump($_SESSION["respostas"]);
     }
